@@ -1,0 +1,74 @@
+Serious-game 
+    SGname : "GeoFall" 
+    SGdeveloper : 1 
+    SGdesc : "A small serious game for learning european capitals" 
+    SGlanguage : EN 
+End 
+
+Player 
+   gender: Char 
+   age: Int 
+   country: String 
+End 
+
+Learning-outcomes 
+   european_capitals "Associate a capital to the right country" 
+End 
+
+Feedback-messages 
+   correct_match "Well done! [capital] is indeed the capital of [country]." positive 
+   wrong_match "Sorry! [capital] is not the capital of [country]." negative 
+   capitalBadge "Well done you know european capitals!" badge
+   user_confused "Are you okay? Use the right and left arrows to select a cloud and then press the upper arrow to jump when you're sure about your answer." 
+   user_needsHelp "Hum... Do you need help? You might need to revise a little bit your geography. Click here for a quick overview of europ's capitals." 
+End 
+
+Evidence-model 
+ associate_CountyCapital ( String country, String capital ) 
+   european_capitals -> 1 
+      UK, London 
+      Italy, Rome 
+      Spain, Madrid 
+      France, Paris 
+      Ireland, Dublin 
+   End 
+   european_capitals -> 2 
+      Norway, Oslo 
+      Sweden, Stockholm 
+      Greece, Athens 
+      Austria, Vienna 
+   End 
+   european_capitals -> 3 
+      Poland, Warsaw 
+   End 
+   european_capitals -> -4
+      others 
+   End 
+   When 
+      any (+) : correct_match 
+      any (-) : wrong_match 
+   End 
+ End 
+ Timer-actions
+ 	selectGame 
+ 		after 180 sec 
+ 			: user_needsHelp
+ 		End
+ 		within 60 sec
+ 			: capitalBadge
+ 		End
+ 	End
+ End
+ Action-sequence
+ 	selectGame before associate_CountyCapital else
+ 		: user_confused
+ 	End
+ End
+End 
+
+Feedback-model
+   inactivity > 30 sec : user_confused 
+   european_capitals < -5 : user_needsHelp 
+End
+
+	

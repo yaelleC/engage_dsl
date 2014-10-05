@@ -1,0 +1,60 @@
+Serious-game
+	SGname : "On déménage!"
+	SGdeveloper : 1
+	SGdesc : "A serious game teaching vocabulary of the house"
+	SGageRange : 8-99
+	SGlanguage : FR
+End
+
+Player
+	gender: Enum("female", "male")
+	age: Int
+	country: String
+	language: String
+End
+
+Learning-outcomes
+	vocabLivingroomClick "Apprendre a reconnaitre le vocabulaire du salon" 0
+	vocabBedroomClick "Apprendre a reconnaitre le vocabulaire de la chambre" 0
+	vocabStudyClick "Apprendre a reconnaitre le vocabulaire du bureau" 0
+	vocabKitchenClick "Apprendre a reconnaitre le vocabulaire de la cuisine" 0
+	vocabBathroomClick "Apprendre a reconnaitre le vocabulaire de la salle de bain" 0
+End
+
+Feedback-messages
+	goodClick "Bravo, tu as bien cliqué sur [word]" positive
+	wrongClick "Non, ce n'est pas [word], tu as cliqué sur [object]" negative
+	
+	userNeedsHelp "Tu as peut-etre besoin de révisions? Clique ici!" hint
+	LOAcheived "Bravo! Tu as validé cette piece!" badge
+	
+	userConfused "Tu as compris la regle du jeu? Regarde le mot en haut de l'écran et clique sur l'objet correspondant."
+End
+
+Evidence-model
+	clickOnObject(String word)
+		vocabLivingroomClick -> -1
+			others
+		End
+		When
+			any (+) : goodClick 
+			any (-) : wrongClick 			
+		End
+	End		
+End
+
+Feedback-model
+   vocabLivingroomClick < -3 : userNeedsHelp 	
+   vocabBedroomClick < -3 : userNeedsHelp 	
+   vocabStudyClick < -3 : userNeedsHelp 	
+   vocabKitchenClick < -3 : userNeedsHelp 	
+   vocabBathroomClick < -3 : userNeedsHelp 	
+   
+   vocabLivingroomClick > 24 : LOAcheived 	
+   vocabBedroomClick > 24 : LOAcheived 	 	
+   vocabStudyClick > 20 : LOAcheived 	 	
+   vocabKitchenClick > 20 : LOAcheived 	 	
+   vocabBathroomClick > 24 : LOAcheived 	 
+   
+   inactivity > 20 sec : userConfused
+End

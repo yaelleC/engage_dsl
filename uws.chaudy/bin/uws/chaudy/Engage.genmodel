@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/uws.chaudy/src-gen" editDirectory="/uws.chaudy.edit/src"
+    editorDirectory="/uws.chaudy.editor/src" modelPluginID="uws.chaudy" forceOverwrite="true"
+    modelName="Engage" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    complianceLevel="5.0" copyrightFields="false" editPluginID="uws.chaudy.edit" editorPluginID="uws.chaudy.editor"
+    runtimeVersion="2.8">
+  <genPackages prefix="Engage" basePackage="uws.chaudy" disposableProviderFactory="true"
+      ecorePackage="Engage.ecore#/">
+    <genClasses ecoreClass="Engage.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//Model/game"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//Model/player"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//Model/learningOutcomes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//Model/feedbackMessages"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//Model/evidenceModel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//Model/feedbackModel"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//Type">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//Type/simpleType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//Type/enumType"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//Enum">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//Enum/enumValues"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//GameDescription">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//GameDescription/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//GameDescription/dev"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//GameDescription/desc"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//GameDescription/ageRange"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//GameDescription/lang"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//GameDescription/country"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//GameDescription/genre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//GameDescription/subject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//GameDescription/public"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//Age">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//Age/ageMin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//Age/ageMax"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//PlayerDescription">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//PlayerDescription/characteristics"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//Characteristic">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//Characteristic/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//Characteristic/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//LearningOutcomes">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//LearningOutcomes/outcomes"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//Outcome">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//Outcome/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//Outcome/desc"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//Outcome/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//Outcome/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//TypeOutcome">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//TypeOutcome/knowledge"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//TypeOutcome/skill"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//TypeOutcome/competence"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//FeedbackMessages">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//FeedbackMessages/feedbackMsgs"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//Feedback">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//Feedback/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//Feedback/message"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//Feedback/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//Feedback/final"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//EvidenceModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//EvidenceModel/actions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//EvidenceModel/timerActions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//EvidenceModel/actionSequence"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//ActionSequences">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//ActionSequences/actionSequences"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//ActionSequence">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//ActionSequence/action1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//ActionSequence/before"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//ActionSequence/after"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//ActionSequence/action2"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//ActionSequence/sequenceReactions"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//TimerActions">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//TimerActions/timerActions"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//TimerAction">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//TimerAction/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//TimerAction/timings"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//Timing">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//Timing/before"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//Timing/after"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//Timing/limit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//Timing/timingReactions"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//ActionReaction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//ActionReaction/updateScore"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//ActionReaction/triggerFeedback"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//UpdateScore">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Engage.ecore#//UpdateScore/outcome"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//UpdateScore/pts"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//TriggerFeedback">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Engage.ecore#//TriggerFeedback/feedback"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//Action/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//Action/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//Action/points"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//Action/reactions"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//Parameter">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//Parameter/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//Parameter/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//Points">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Engage.ecore#//Points/outcome"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//Points/pts"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//Points/others"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//Points/params"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//Point">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//Point/negative"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//Point/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//Params">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//Params/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//Params/values"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//Reactions">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//Reactions/reaction"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//Reaction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//Reaction/paramsC"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//Reaction/pointsC"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Engage.ecore#//Reaction/feedback"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//ParamCondition">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Engage.ecore#//ParamCondition/params"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//PointsCondition">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//PointsCondition/keyWd"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//PointsCondition/sign"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//PointsCondition/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//FeedbackModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//FeedbackModel/triggers"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//Trigger">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//Trigger/perf"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//Trigger/inactivity"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//OutcomeValueLimit">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Engage.ecore#//OutcomeValueLimit/outcome"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//OutcomeValueLimit/sign"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//OutcomeValueLimit/negativeLimit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//OutcomeValueLimit/limit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//OutcomeValueLimit/triggerReactions"/>
+    </genClasses>
+    <genClasses ecoreClass="Engage.ecore#//InactivityLimit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//InactivityLimit/sign"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Engage.ecore#//InactivityLimit/limit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Engage.ecore#//InactivityLimit/triggerReactions"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

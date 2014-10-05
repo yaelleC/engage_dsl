@@ -1,0 +1,235 @@
+grammar uws.chaudy.Engage with org.eclipse.xtext.common.Terminals
+
+generate engage "http://www.chaudy.uws/Engage"
+
+Model:
+	game = GameDescription
+	(player = PlayerDescription)?
+	learningOutcomes = LearningOutcomes 
+	(feedbackMessages = FeedbackMessages)?
+	evidenceModel = EvidenceModel
+	(feedbackModel = FeedbackModel)?
+;
+	
+End:
+	'End'
+;
+
+Separator:
+	':'
+;
+
+Type:
+	simpleType = ('Int'| 'Float'| 'String'| 'Bool' | 'Char' | 'Text') | enumType = Enum
+;
+
+Enum:
+	'Enum' '('enumValues += STRING (',' enumValues += STRING)* ')'
+;
+
+// ******************************* Game Description ******************************* //
+GameDescription:
+	'Serious-game'
+		'SGname' Separator name=STRING
+		'SGdeveloper' Separator dev=INT
+		('SGdesc' Separator desc=STRING)?
+		('SGageRange' Separator ageRange=Age)?
+		('SGlanguage' Separator lang=ID )?
+		('SGcountry' Separator country=ID)?
+		('SGgenre' Separator genre=STRING)?
+		('SGsubject' Separator subject=STRING)?
+		('SGpublic' Separator public=BOOL)?
+	End
+;
+
+Age:
+	ageMin=INT '-' ageMax=INT
+;
+
+// ******************************* Player Description ******************************* //
+
+PlayerDescription:
+	'Player'
+		characteristics += Characteristic+
+	End
+;
+
+Characteristic:
+	name=ID Separator type=Type
+;
+
+
+// ******************************* Learning Outcomes ******************************* //
+LearningOutcomes: 
+	'Learning-outcomes'
+		outcomes += Outcome+
+	End
+;
+
+Outcome:
+	name=ID (desc=STRING)? (value=INT)? (type=TypeOutcome)? 
+;
+
+TypeOutcome:
+	knowledge ?= 'knowledge' | skill ?= 'skill' | competence ?= 'competence'
+;
+
+
+// ******************************* Feedback Messages ******************************* //
+
+FeedbackMessages:
+	'Feedback-messages'
+		feedbackMsgs += Feedback+
+	End
+;
+
+Feedback:
+	name=ID message=STRING (type=TypeFeedback)? final?='final'?
+;
+
+TypeFeedback:
+	'positive' |'negative' | 'neutral' | 'badge' | 'hint'
+;
+
+
+// ********************************* Evidence Model ********************************* //
+EvidenceModel:
+	'Evidence-model'
+		actions += Action+
+		(timerActions = TimerActions)?
+		(actionSequence = ActionSequences)?
+	End
+;
+
+ActionSequences:
+	'Action-sequence'
+		actionSequences += ActionSequence
+	End
+;
+
+ActionSequence:
+	action1 = ID (before ?= 'before' | after ?= 'after') action2 = ID 'else'
+		sequenceReactions += ActionReaction+
+	End
+;
+
+TimerActions:
+	'Timer-actions'
+		timerActions += TimerAction+
+	End
+;
+
+TimerAction:
+	name=ID
+		timings += Timing+
+	End
+;
+
+Timing:
+	(before ?= 'within' | after ?= 'after') limit = INT 'sec'
+		timingReactions += ActionReaction+
+	End
+;
+
+ActionReaction:
+	updateScore = UpdateScore | triggerFeedback = TriggerFeedback
+;
+
+UpdateScore:
+	outcome= [Outcome] '->' pts=Point	
+;
+
+TriggerFeedback:
+	':' feedback=[Feedback]
+;
+
+Action:
+	name=ID '('params += Parameter (',' params += Parameter)* ')'
+		points += Points+
+		(reactions = Reactions)?
+	End
+;
+
+Parameter:
+	type=Type name=ID
+;
+
+Points:
+	(outcome= [Outcome] '->')? pts=Point
+		(others ?= 'others' | params += Params+)
+	End
+;
+
+Point:
+	negative ?= '-'? value = INT
+;
+
+Sign:
+	'+' | '-'
+;
+
+Params:
+	(name=ID ':')? values += Param (',' values += Param)
+;
+
+Param:
+	INT | FLOAT | STRING | BOOL | ID
+;
+
+FLOAT:
+	INT ('.' INT)
+;
+
+BOOL:
+	"true" | "false"
+;
+
+Reactions:
+	'When'
+		reaction += Reaction+
+	End
+;
+
+Reaction:
+	paramsC = ParamCondition | pointsC = PointsCondition  ':' feedback=[Feedback]
+;
+
+ParamCondition:
+	params = [Params] 
+;
+
+PointsCondition:
+	keyWd = PointsKeyWd '(' (sign = Sign | value=Point) ')'
+;
+
+PointsKeyWd:
+	'any' | 'all'
+;
+
+
+// ********************************* Feedback Model ********************************* //
+FeedbackModel:
+	'Feedback-model'
+		triggers += Trigger+
+	End
+;
+
+Trigger:
+	perf = OutcomeValueLimit | inactivity = InactivityLimit
+;
+
+OutcomeValueLimit:
+	outcome = [Outcome] sign=CompSign negativeLimit?='-'? limit=INT
+		triggerReactions += TriggerFeedback+
+;
+
+CompSign:
+	'<' | '>'
+;
+
+InactivityLimit:
+	'inactivity' sign=CompSign limit=INT 'sec'
+		triggerReactions += ActionReaction+
+;
+
+
