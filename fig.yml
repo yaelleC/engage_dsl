@@ -1,0 +1,7 @@
+ws:
+  build: .
+  ports:
+    - "8080:8080"
+  volumes:
+    - .:/opt/WebService
+    - /tmp/m2:/root/.m2

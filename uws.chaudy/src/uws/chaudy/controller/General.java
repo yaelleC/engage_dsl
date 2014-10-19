@@ -13,7 +13,7 @@ public class General {
 		public boolean DEBUG_SQL = false;
 	
 		// --------------------------- Database codes --------------------------- //
-		public String DB_NAME = "jdbc:mysql://localhost:3306/engage_dev";
+		public String DB_NAME = "jdbc:mysql://mysql:3306/engage_dev";
 		public String DB_USERNAME = "engage";
 		public String DB_PASSWD = "uws2013";
 	

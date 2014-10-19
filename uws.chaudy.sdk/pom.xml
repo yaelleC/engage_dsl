@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <relativePath>../uws.engage.releng/pom.xml</relativePath>
+    <groupId>uws.engage</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>uws.chaudy.sdk</artifactId>
+  <packaging>eclipse-feature</packaging>
+
+  <name>UWS Engage Feature</name>
+</project>

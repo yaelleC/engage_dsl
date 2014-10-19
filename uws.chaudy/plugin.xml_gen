@@ -7,10 +7,9 @@
     <package 
        uri = "http://www.chaudy.uws/Engage" 
        class = "uws.chaudy.engage.EngagePackage"
-       genModel = "uws/chaudy/Engage.genmodel" /> 
+       genModel = "model/generated/Engage.genmodel" /> 
 	
   </extension>
-
 
 
 

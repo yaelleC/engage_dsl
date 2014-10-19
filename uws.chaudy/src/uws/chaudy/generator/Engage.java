@@ -10,6 +10,7 @@ import java.util.Set;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.mwe.utils.StandaloneSetup;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.resource.XtextResourceSet;
 
@@ -50,6 +51,7 @@ import uws.chaudy.engage.Trigger;
 import uws.chaudy.engage.TriggerFeedback;
 
 import org.json.simple.JSONObject;
+
 
 
 import com.google.inject.Injector;
@@ -270,18 +272,27 @@ public class Engage {
 	
 	// ********************** Serious Game Creation and Versioning ********************** //
 		
-	private JSONObject getJSONfromDSL(String dsl) throws IOException
+	public JSONObject getJSONfromDSL(String dsl) throws IOException
 	{
-		new org.eclipse.emf.mwe.utils.StandaloneSetup().setPlatformUri("../");
+//		System.out.println("dsl-1");
+		new StandaloneSetup().setPlatformUri("../");
+//		System.out.println("dsl-2");
 		Injector injector = new EngageStandaloneSetup().createInjectorAndDoEMFRegistration();
+//		System.out.println("dsl-3");
 		XtextResourceSet resourceSet = injector.getInstance(XtextResourceSet.class);
+//		System.out.println("dsl-4");
 		resourceSet.addLoadOption(XtextResource.OPTION_RESOLVE_ALL, Boolean.TRUE);
 		
+//		System.out.println("dsl-5");
 		Resource resource = resourceSet.createResource(URI.createURI("file:/example.assess"));
+		System.out.println("dsl-6");
 		InputStream in = new ByteArrayInputStream(dsl.getBytes());
+		System.out.println("dsl-7");
 		resource.load(in, resourceSet.getLoadOptions());
+		System.out.println("dsl-8");
 		Model model = (Model) resource.getContents().get(0);	
 		
+		System.out.println("dsl-9");
 		return DSLtoJSON(model);
 	}
 	
@@ -498,7 +509,7 @@ public class Engage {
 		PlayerDescription player = model.getPlayer();
 		if (player != null)
 		{
-			ArrayList<JSONObject> playerJson = new ArrayList<>();
+			ArrayList<JSONObject> playerJson = new ArrayList<JSONObject>();
 			
 			for (Characteristic c : player.getCharacteristics()) {
 				JSONObject characteristicJson = new JSONObject();
