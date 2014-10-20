@@ -1390,10 +1390,10 @@ public class InternalEngageLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../uws.chaudy.ui/src-gen/uws/chaudy/ui/contentassist/antlr/internal/InternalEngage.g:8209:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../uws.chaudy.ui/src-gen/uws/chaudy/ui/contentassist/antlr/internal/InternalEngage.g:8209:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../uws.chaudy.ui/src-gen/uws/chaudy/ui/contentassist/antlr/internal/InternalEngage.g:8209:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../uws.chaudy.ui/src-gen/uws/chaudy/ui/contentassist/antlr/internal/InternalEngage.g:8209:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../uws.chaudy.ui/src-gen/uws/chaudy/ui/contentassist/antlr/internal/InternalEngage.g:8209:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../uws.chaudy.ui/src-gen/uws/chaudy/ui/contentassist/antlr/internal/InternalEngage.g:8209:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1411,10 +1411,10 @@ public class InternalEngageLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../uws.chaudy.ui/src-gen/uws/chaudy/ui/contentassist/antlr/internal/InternalEngage.g:8209:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../uws.chaudy.ui/src-gen/uws/chaudy/ui/contentassist/antlr/internal/InternalEngage.g:8209:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../uws.chaudy.ui/src-gen/uws/chaudy/ui/contentassist/antlr/internal/InternalEngage.g:8209:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../uws.chaudy.ui/src-gen/uws/chaudy/ui/contentassist/antlr/internal/InternalEngage.g:8209:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1430,23 +1430,15 @@ public class InternalEngageLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../uws.chaudy.ui/src-gen/uws/chaudy/ui/contentassist/antlr/internal/InternalEngage.g:8209:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../uws.chaudy.ui/src-gen/uws/chaudy/ui/contentassist/antlr/internal/InternalEngage.g:8209:21: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../uws.chaudy.ui/src-gen/uws/chaudy/ui/contentassist/antlr/internal/InternalEngage.g:8209:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../uws.chaudy.ui/src-gen/uws/chaudy/ui/contentassist/antlr/internal/InternalEngage.g:8209:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1471,10 +1463,10 @@ public class InternalEngageLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../uws.chaudy.ui/src-gen/uws/chaudy/ui/contentassist/antlr/internal/InternalEngage.g:8209:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../uws.chaudy.ui/src-gen/uws/chaudy/ui/contentassist/antlr/internal/InternalEngage.g:8209:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../uws.chaudy.ui/src-gen/uws/chaudy/ui/contentassist/antlr/internal/InternalEngage.g:8209:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../uws.chaudy.ui/src-gen/uws/chaudy/ui/contentassist/antlr/internal/InternalEngage.g:8209:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1490,23 +1482,15 @@ public class InternalEngageLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../uws.chaudy.ui/src-gen/uws/chaudy/ui/contentassist/antlr/internal/InternalEngage.g:8209:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../uws.chaudy.ui/src-gen/uws/chaudy/ui/contentassist/antlr/internal/InternalEngage.g:8209:54: '\\\\' .
                     	    {
                     	    match('\\'); 
-                    	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
-                    	        input.consume();
-
-                    	    }
-                    	    else {
-                    	        MismatchedSetException mse = new MismatchedSetException(null,input);
-                    	        recover(mse);
-                    	        throw mse;}
-
+                    	    matchAny(); 
 
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../uws.chaudy.ui/src-gen/uws/chaudy/ui/contentassist/antlr/internal/InternalEngage.g:8209:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../uws.chaudy.ui/src-gen/uws/chaudy/ui/contentassist/antlr/internal/InternalEngage.g:8209:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();

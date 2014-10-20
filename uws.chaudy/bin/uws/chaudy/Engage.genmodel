@@ -4,7 +4,7 @@
     editorDirectory="/uws.chaudy.editor/src" modelPluginID="uws.chaudy" forceOverwrite="true"
     modelName="Engage" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     complianceLevel="5.0" copyrightFields="false" editPluginID="uws.chaudy.edit" editorPluginID="uws.chaudy.editor"
-    runtimeVersion="2.8">
+    runtimeVersion="2.10">
   <genPackages prefix="Engage" basePackage="uws.chaudy" disposableProviderFactory="true"
       ecorePackage="Engage.ecore#/">
     <genClasses ecoreClass="Engage.ecore#//Model">

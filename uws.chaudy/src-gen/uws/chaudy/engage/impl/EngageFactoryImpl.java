@@ -64,7 +64,7 @@ public class EngageFactoryImpl extends EFactoryImpl implements EngageFactory
   {
     try
     {
-      EngageFactory theEngageFactory = (EngageFactory)EPackage.Registry.INSTANCE.getEFactory("http://www.chaudy.uws/Engage"); 
+      EngageFactory theEngageFactory = (EngageFactory)EPackage.Registry.INSTANCE.getEFactory(EngagePackage.eNS_URI);
       if (theEngageFactory != null)
       {
         return theEngageFactory;
