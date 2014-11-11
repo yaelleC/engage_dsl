@@ -169,7 +169,7 @@ Sign:
 ;
 
 Params:
-	(name=ID ':')? values += Param (',' values += Param)
+	(name=ID ':')? values += Param (',' values += Param+)
 ;
 
 Param:
