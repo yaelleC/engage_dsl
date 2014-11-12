@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link uws.engage.dsl.assess.Points#getOutcome <em>Outcome</em>}</li>
+ *   <li>{@link uws.engage.dsl.assess.Points#isResetValue <em>Reset Value</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.Points#getPts <em>Pts</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.Points#isOthers <em>Others</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.Points#getParams <em>Params</em>}</li>
@@ -52,6 +53,32 @@ public interface Points extends EObject
    * @generated
    */
   void setOutcome(Outcome value);
+
+  /**
+   * Returns the value of the '<em><b>Reset Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Reset Value</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Reset Value</em>' attribute.
+   * @see #setResetValue(boolean)
+   * @see uws.engage.dsl.assess.AssessPackage#getPoints_ResetValue()
+   * @model
+   * @generated
+   */
+  boolean isResetValue();
+
+  /**
+   * Sets the value of the '{@link uws.engage.dsl.assess.Points#isResetValue <em>Reset Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Reset Value</em>' attribute.
+   * @see #isResetValue()
+   * @generated
+   */
+  void setResetValue(boolean value);
 
   /**
    * Returns the value of the '<em><b>Pts</b></em>' containment reference.

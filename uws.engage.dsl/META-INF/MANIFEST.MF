@@ -21,15 +21,16 @@ Require-Bundle: org.eclipse.xtext;visibility:=reexport,
  org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
 Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: uws.engage.dsl,
- uws.engage.dsl.services,
+Export-Package: org.json.simple,
+ uws.engage.dsl,
  uws.engage.dsl.assess,
  uws.engage.dsl.assess.impl,
  uws.engage.dsl.assess.util,
- uws.engage.dsl.serializer,
+ uws.engage.dsl.formatting,
+ uws.engage.dsl.generator,
  uws.engage.dsl.parser.antlr,
  uws.engage.dsl.parser.antlr.internal,
- uws.engage.dsl.validation,
  uws.engage.dsl.scoping,
- uws.engage.dsl.generator,
- uws.engage.dsl.formatting
+ uws.engage.dsl.serializer,
+ uws.engage.dsl.services,
+ uws.engage.dsl.validation

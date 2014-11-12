@@ -22,6 +22,7 @@ import uws.engage.dsl.assess.Type;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link uws.engage.dsl.assess.impl.ParameterImpl#isLogOnly <em>Log Only</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.ParameterImpl#getType <em>Type</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.ParameterImpl#getName <em>Name</em>}</li>
  * </ul>
@@ -31,6 +32,26 @@ import uws.engage.dsl.assess.Type;
  */
 public class ParameterImpl extends MinimalEObjectImpl.Container implements Parameter
 {
+  /**
+   * The default value of the '{@link #isLogOnly() <em>Log Only</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isLogOnly()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean LOG_ONLY_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isLogOnly() <em>Log Only</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isLogOnly()
+   * @generated
+   * @ordered
+   */
+  protected boolean logOnly = LOG_ONLY_EDEFAULT;
+
   /**
    * The cached value of the '{@link #getType() <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -80,6 +101,29 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
   protected EClass eStaticClass()
   {
     return AssessPackage.Literals.PARAMETER;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isLogOnly()
+  {
+    return logOnly;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setLogOnly(boolean newLogOnly)
+  {
+    boolean oldLogOnly = logOnly;
+    logOnly = newLogOnly;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AssessPackage.PARAMETER__LOG_ONLY, oldLogOnly, logOnly));
   }
 
   /**
@@ -179,6 +223,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
   {
     switch (featureID)
     {
+      case AssessPackage.PARAMETER__LOG_ONLY:
+        return isLogOnly();
       case AssessPackage.PARAMETER__TYPE:
         return getType();
       case AssessPackage.PARAMETER__NAME:
@@ -197,6 +243,9 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
   {
     switch (featureID)
     {
+      case AssessPackage.PARAMETER__LOG_ONLY:
+        setLogOnly((Boolean)newValue);
+        return;
       case AssessPackage.PARAMETER__TYPE:
         setType((Type)newValue);
         return;
@@ -217,6 +266,9 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
   {
     switch (featureID)
     {
+      case AssessPackage.PARAMETER__LOG_ONLY:
+        setLogOnly(LOG_ONLY_EDEFAULT);
+        return;
       case AssessPackage.PARAMETER__TYPE:
         setType((Type)null);
         return;
@@ -237,6 +289,8 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
   {
     switch (featureID)
     {
+      case AssessPackage.PARAMETER__LOG_ONLY:
+        return logOnly != LOG_ONLY_EDEFAULT;
       case AssessPackage.PARAMETER__TYPE:
         return type != null;
       case AssessPackage.PARAMETER__NAME:
@@ -256,7 +310,9 @@ public class ParameterImpl extends MinimalEObjectImpl.Container implements Param
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
+    result.append(" (logOnly: ");
+    result.append(logOnly);
+    result.append(", name: ");
     result.append(name);
     result.append(')');
     return result.toString();

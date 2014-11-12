@@ -32,6 +32,7 @@ import uws.engage.dsl.assess.Points;
  * The following features are implemented:
  * <ul>
  *   <li>{@link uws.engage.dsl.assess.impl.PointsImpl#getOutcome <em>Outcome</em>}</li>
+ *   <li>{@link uws.engage.dsl.assess.impl.PointsImpl#isResetValue <em>Reset Value</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.PointsImpl#getPts <em>Pts</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.PointsImpl#isOthers <em>Others</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.PointsImpl#getParams <em>Params</em>}</li>
@@ -51,6 +52,26 @@ public class PointsImpl extends MinimalEObjectImpl.Container implements Points
    * @ordered
    */
   protected Outcome outcome;
+
+  /**
+   * The default value of the '{@link #isResetValue() <em>Reset Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isResetValue()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean RESET_VALUE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isResetValue() <em>Reset Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isResetValue()
+   * @generated
+   * @ordered
+   */
+  protected boolean resetValue = RESET_VALUE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getPts() <em>Pts</em>}' containment reference.
@@ -154,6 +175,29 @@ public class PointsImpl extends MinimalEObjectImpl.Container implements Points
     outcome = newOutcome;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, AssessPackage.POINTS__OUTCOME, oldOutcome, outcome));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isResetValue()
+  {
+    return resetValue;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setResetValue(boolean newResetValue)
+  {
+    boolean oldResetValue = resetValue;
+    resetValue = newResetValue;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AssessPackage.POINTS__RESET_VALUE, oldResetValue, resetValue));
   }
 
   /**
@@ -272,6 +316,8 @@ public class PointsImpl extends MinimalEObjectImpl.Container implements Points
       case AssessPackage.POINTS__OUTCOME:
         if (resolve) return getOutcome();
         return basicGetOutcome();
+      case AssessPackage.POINTS__RESET_VALUE:
+        return isResetValue();
       case AssessPackage.POINTS__PTS:
         return getPts();
       case AssessPackage.POINTS__OTHERS:
@@ -295,6 +341,9 @@ public class PointsImpl extends MinimalEObjectImpl.Container implements Points
     {
       case AssessPackage.POINTS__OUTCOME:
         setOutcome((Outcome)newValue);
+        return;
+      case AssessPackage.POINTS__RESET_VALUE:
+        setResetValue((Boolean)newValue);
         return;
       case AssessPackage.POINTS__PTS:
         setPts((Point)newValue);
@@ -323,6 +372,9 @@ public class PointsImpl extends MinimalEObjectImpl.Container implements Points
       case AssessPackage.POINTS__OUTCOME:
         setOutcome((Outcome)null);
         return;
+      case AssessPackage.POINTS__RESET_VALUE:
+        setResetValue(RESET_VALUE_EDEFAULT);
+        return;
       case AssessPackage.POINTS__PTS:
         setPts((Point)null);
         return;
@@ -348,6 +400,8 @@ public class PointsImpl extends MinimalEObjectImpl.Container implements Points
     {
       case AssessPackage.POINTS__OUTCOME:
         return outcome != null;
+      case AssessPackage.POINTS__RESET_VALUE:
+        return resetValue != RESET_VALUE_EDEFAULT;
       case AssessPackage.POINTS__PTS:
         return pts != null;
       case AssessPackage.POINTS__OTHERS:
@@ -369,7 +423,9 @@ public class PointsImpl extends MinimalEObjectImpl.Container implements Points
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (others: ");
+    result.append(" (resetValue: ");
+    result.append(resetValue);
+    result.append(", others: ");
     result.append(others);
     result.append(')');
     return result.toString();

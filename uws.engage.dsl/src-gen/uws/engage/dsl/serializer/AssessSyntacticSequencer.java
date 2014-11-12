@@ -23,11 +23,24 @@ public class AssessSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if(ruleCall.getRule() == grammarAccess.getEndRule())
+		if(ruleCall.getRule() == grammarAccess.getDelimitatorRule())
+			return getDelimitatorToken(semanticObject, ruleCall, node);
+		else if(ruleCall.getRule() == grammarAccess.getEndRule())
 			return getEndToken(semanticObject, ruleCall, node);
 		else if(ruleCall.getRule() == grammarAccess.getSeparatorRule())
 			return getSeparatorToken(semanticObject, ruleCall, node);
 		return "";
+	}
+	
+	/**
+	 * Delimitator:
+	 * 	';'
+	 * ;
+	 */
+	protected String getDelimitatorToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return ";";
 	}
 	
 	/**

@@ -92,6 +92,18 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getEndKeyword() { return cEndKeyword; }
 	}
 
+	public class DelimitatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Delimitator");
+		private final Keyword cSemicolonKeyword = (Keyword)rule.eContents().get(1);
+		
+		//Delimitator:
+		//	";";
+		public ParserRule getRule() { return rule; }
+
+		//";"
+		public Keyword getSemicolonKeyword() { return cSemicolonKeyword; }
+	}
+
 	public class SeparatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Separator");
 		private final Keyword cColonKeyword = (Keyword)rule.eContents().get(1);
@@ -1128,29 +1140,37 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	public class ParameterElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Parameter");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cTypeTypeParserRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cLogOnlyAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cLogOnlyLogOnlyKeyword_0_0 = (Keyword)cLogOnlyAssignment_0.eContents().get(0);
+		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTypeTypeParserRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
 		//Parameter:
-		//	type=Type name=ID;
+		//	logOnly?="LogOnly"? type=Type name=ID;
 		public ParserRule getRule() { return rule; }
 
-		//type=Type name=ID
+		//logOnly?="LogOnly"? type=Type name=ID
 		public Group getGroup() { return cGroup; }
 
+		//logOnly?="LogOnly"?
+		public Assignment getLogOnlyAssignment_0() { return cLogOnlyAssignment_0; }
+
+		//"LogOnly"
+		public Keyword getLogOnlyLogOnlyKeyword_0_0() { return cLogOnlyLogOnlyKeyword_0_0; }
+
 		//type=Type
-		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
+		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
 
 		//Type
-		public RuleCall getTypeTypeParserRuleCall_0_0() { return cTypeTypeParserRuleCall_0_0; }
+		public RuleCall getTypeTypeParserRuleCall_1_0() { return cTypeTypeParserRuleCall_1_0; }
 
 		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 	}
 
 	public class PointsElements extends AbstractParserRuleElementFinder {
@@ -1161,20 +1181,24 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cOutcomeOutcomeCrossReference_0_0_0 = (CrossReference)cOutcomeAssignment_0_0.eContents().get(0);
 		private final RuleCall cOutcomeOutcomeIDTerminalRuleCall_0_0_0_1 = (RuleCall)cOutcomeOutcomeCrossReference_0_0_0.eContents().get(1);
 		private final Keyword cHyphenMinusGreaterThanSignKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
-		private final Assignment cPtsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cPtsPointParserRuleCall_1_0 = (RuleCall)cPtsAssignment_1.eContents().get(0);
-		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
-		private final Assignment cOthersAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
-		private final Keyword cOthersOthersKeyword_2_0_0 = (Keyword)cOthersAssignment_2_0.eContents().get(0);
-		private final Assignment cParamsAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
-		private final RuleCall cParamsParamsParserRuleCall_2_1_0 = (RuleCall)cParamsAssignment_2_1.eContents().get(0);
-		private final RuleCall cEndParserRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		private final Assignment cResetValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cResetValueEqualsSignKeyword_1_0 = (Keyword)cResetValueAssignment_1.eContents().get(0);
+		private final Assignment cPtsAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cPtsPointParserRuleCall_2_0 = (RuleCall)cPtsAssignment_2.eContents().get(0);
+		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
+		private final Assignment cOthersAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
+		private final Alternatives cOthersAlternatives_3_0_0 = (Alternatives)cOthersAssignment_3_0.eContents().get(0);
+		private final Keyword cOthersOthersKeyword_3_0_0_0 = (Keyword)cOthersAlternatives_3_0_0.eContents().get(0);
+		private final Keyword cOthersElseKeyword_3_0_0_1 = (Keyword)cOthersAlternatives_3_0_0.eContents().get(1);
+		private final Assignment cParamsAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
+		private final RuleCall cParamsParamsParserRuleCall_3_1_0 = (RuleCall)cParamsAssignment_3_1.eContents().get(0);
+		private final RuleCall cEndParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
 		//Points:
-		//	(outcome=[Outcome] "->")? pts=Point (others?="others" | params+=Params+) End;
+		//	(outcome=[Outcome] "->")? resetValue?="="? pts=Point (others?=("others" | "else") | params+=Params+) End;
 		public ParserRule getRule() { return rule; }
 
-		//(outcome=[Outcome] "->")? pts=Point (others?="others" | params+=Params+) End
+		//(outcome=[Outcome] "->")? resetValue?="="? pts=Point (others?=("others" | "else") | params+=Params+) End
 		public Group getGroup() { return cGroup; }
 
 		//(outcome=[Outcome] "->")?
@@ -1192,29 +1216,41 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		//"->"
 		public Keyword getHyphenMinusGreaterThanSignKeyword_0_1() { return cHyphenMinusGreaterThanSignKeyword_0_1; }
 
+		//resetValue?="="?
+		public Assignment getResetValueAssignment_1() { return cResetValueAssignment_1; }
+
+		//"="
+		public Keyword getResetValueEqualsSignKeyword_1_0() { return cResetValueEqualsSignKeyword_1_0; }
+
 		//pts=Point
-		public Assignment getPtsAssignment_1() { return cPtsAssignment_1; }
+		public Assignment getPtsAssignment_2() { return cPtsAssignment_2; }
 
 		//Point
-		public RuleCall getPtsPointParserRuleCall_1_0() { return cPtsPointParserRuleCall_1_0; }
+		public RuleCall getPtsPointParserRuleCall_2_0() { return cPtsPointParserRuleCall_2_0; }
 
-		//others?="others" | params+=Params+
-		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+		//others?=("others" | "else") | params+=Params+
+		public Alternatives getAlternatives_3() { return cAlternatives_3; }
 
-		//others?="others"
-		public Assignment getOthersAssignment_2_0() { return cOthersAssignment_2_0; }
+		//others?=("others" | "else")
+		public Assignment getOthersAssignment_3_0() { return cOthersAssignment_3_0; }
+
+		//"others" | "else"
+		public Alternatives getOthersAlternatives_3_0_0() { return cOthersAlternatives_3_0_0; }
 
 		//"others"
-		public Keyword getOthersOthersKeyword_2_0_0() { return cOthersOthersKeyword_2_0_0; }
+		public Keyword getOthersOthersKeyword_3_0_0_0() { return cOthersOthersKeyword_3_0_0_0; }
+
+		//"else"
+		public Keyword getOthersElseKeyword_3_0_0_1() { return cOthersElseKeyword_3_0_0_1; }
 
 		//params+=Params+
-		public Assignment getParamsAssignment_2_1() { return cParamsAssignment_2_1; }
+		public Assignment getParamsAssignment_3_1() { return cParamsAssignment_3_1; }
 
 		//Params
-		public RuleCall getParamsParamsParserRuleCall_2_1_0() { return cParamsParamsParserRuleCall_2_1_0; }
+		public RuleCall getParamsParamsParserRuleCall_3_1_0() { return cParamsParamsParserRuleCall_3_1_0; }
 
 		//End
-		public RuleCall getEndParserRuleCall_3() { return cEndParserRuleCall_3; }
+		public RuleCall getEndParserRuleCall_4() { return cEndParserRuleCall_4; }
 	}
 
 	public class PointElements extends AbstractParserRuleElementFinder {
@@ -1278,12 +1314,13 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cValuesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cValuesParamParserRuleCall_2_1_0 = (RuleCall)cValuesAssignment_2_1.eContents().get(0);
+		private final RuleCall cDelimitatorParserRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//Params:
-		//	(name=ID ":")? values+=Param ("," values+=Param);
+		//	(name=ID ":")? values+=Param ("," values+=Param)* Delimitator;
 		public ParserRule getRule() { return rule; }
 
-		//(name=ID ":")? values+=Param ("," values+=Param)
+		//(name=ID ":")? values+=Param ("," values+=Param)* Delimitator
 		public Group getGroup() { return cGroup; }
 
 		//(name=ID ":")?
@@ -1304,7 +1341,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		//Param
 		public RuleCall getValuesParamParserRuleCall_1_0() { return cValuesParamParserRuleCall_1_0; }
 
-		//"," values+=Param
+		//("," values+=Param)*
 		public Group getGroup_2() { return cGroup_2; }
 
 		//","
@@ -1315,6 +1352,9 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Param
 		public RuleCall getValuesParamParserRuleCall_2_1_0() { return cValuesParamParserRuleCall_2_1_0; }
+
+		//Delimitator
+		public RuleCall getDelimitatorParserRuleCall_3() { return cDelimitatorParserRuleCall_3; }
 	}
 
 	public class ParamElements extends AbstractParserRuleElementFinder {
@@ -1741,6 +1781,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private final ModelElements pModel;
 	private final EndElements pEnd;
+	private final DelimitatorElements pDelimitator;
 	private final SeparatorElements pSeparator;
 	private final TypeElements pType;
 	private final EnumElements pEnum;
@@ -1794,6 +1835,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
 		this.pEnd = new EndElements();
+		this.pDelimitator = new DelimitatorElements();
 		this.pSeparator = new SeparatorElements();
 		this.pType = new TypeElements();
 		this.pEnum = new EnumElements();
@@ -1883,6 +1925,16 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getEndRule() {
 		return getEndAccess().getRule();
+	}
+
+	//Delimitator:
+	//	";";
+	public DelimitatorElements getDelimitatorAccess() {
+		return pDelimitator;
+	}
+	
+	public ParserRule getDelimitatorRule() {
+		return getDelimitatorAccess().getRule();
 	}
 
 	//Separator:
@@ -2123,7 +2175,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Parameter:
-	//	type=Type name=ID;
+	//	logOnly?="LogOnly"? type=Type name=ID;
 	public ParameterElements getParameterAccess() {
 		return pParameter;
 	}
@@ -2133,7 +2185,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Points:
-	//	(outcome=[Outcome] "->")? pts=Point (others?="others" | params+=Params+) End;
+	//	(outcome=[Outcome] "->")? resetValue?="="? pts=Point (others?=("others" | "else") | params+=Params+) End;
 	public PointsElements getPointsAccess() {
 		return pPoints;
 	}
@@ -2163,7 +2215,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Params:
-	//	(name=ID ":")? values+=Param ("," values+=Param);
+	//	(name=ID ":")? values+=Param ("," values+=Param)* Delimitator;
 	public ParamsElements getParamsAccess() {
 		return pParams;
 	}

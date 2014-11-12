@@ -473,26 +473,16 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (type=Type name=ID)
+	 *     (logOnly?='LogOnly'? type=Type name=ID)
 	 */
 	protected void sequence_Parameter(EObject context, Parameter semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AssessPackage.Literals.PARAMETER__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AssessPackage.Literals.PARAMETER__TYPE));
-			if(transientValues.isValueTransient(semanticObject, AssessPackage.Literals.PARAMETER__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AssessPackage.Literals.PARAMETER__NAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getParameterAccess().getTypeTypeParserRuleCall_0_0(), semanticObject.getType());
-		feeder.accept(grammarAccess.getParameterAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (name=ID? values+=Param values+=Param)
+	 *     (name=ID? values+=Param values+=Param*)
 	 */
 	protected void sequence_Params(EObject context, Params semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -528,7 +518,7 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (outcome=[Outcome|ID]? pts=Point (others?='others' | params+=Params+))
+	 *     (outcome=[Outcome|ID]? resetValue?='='? pts=Point (others?='others' | others?='else' | params+=Params+))
 	 */
 	protected void sequence_Points(EObject context, Points semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

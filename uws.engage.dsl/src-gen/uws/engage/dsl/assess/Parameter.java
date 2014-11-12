@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link uws.engage.dsl.assess.Parameter#isLogOnly <em>Log Only</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.Parameter#getType <em>Type</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.Parameter#getName <em>Name</em>}</li>
  * </ul>
@@ -23,6 +24,32 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Parameter extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Log Only</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Log Only</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Log Only</em>' attribute.
+   * @see #setLogOnly(boolean)
+   * @see uws.engage.dsl.assess.AssessPackage#getParameter_LogOnly()
+   * @model
+   * @generated
+   */
+  boolean isLogOnly();
+
+  /**
+   * Sets the value of the '{@link uws.engage.dsl.assess.Parameter#isLogOnly <em>Log Only</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Log Only</em>' attribute.
+   * @see #isLogOnly()
+   * @generated
+   */
+  void setLogOnly(boolean value);
+
   /**
    * Returns the value of the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->

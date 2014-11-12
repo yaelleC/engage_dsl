@@ -1034,13 +1034,22 @@ public interface AssessPackage extends EPackage
   int PARAMETER = 22;
 
   /**
+   * The feature id for the '<em><b>Log Only</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMETER__LOG_ONLY = 0;
+
+  /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PARAMETER__TYPE = 0;
+  int PARAMETER__TYPE = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1049,7 +1058,7 @@ public interface AssessPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PARAMETER__NAME = 1;
+  int PARAMETER__NAME = 2;
 
   /**
    * The number of structural features of the '<em>Parameter</em>' class.
@@ -1058,7 +1067,7 @@ public interface AssessPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PARAMETER_FEATURE_COUNT = 2;
+  int PARAMETER_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link uws.engage.dsl.assess.impl.PointsImpl <em>Points</em>}' class.
@@ -1080,13 +1089,22 @@ public interface AssessPackage extends EPackage
   int POINTS__OUTCOME = 0;
 
   /**
+   * The feature id for the '<em><b>Reset Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POINTS__RESET_VALUE = 1;
+
+  /**
    * The feature id for the '<em><b>Pts</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int POINTS__PTS = 1;
+  int POINTS__PTS = 2;
 
   /**
    * The feature id for the '<em><b>Others</b></em>' attribute.
@@ -1095,7 +1113,7 @@ public interface AssessPackage extends EPackage
    * @generated
    * @ordered
    */
-  int POINTS__OTHERS = 2;
+  int POINTS__OTHERS = 3;
 
   /**
    * The feature id for the '<em><b>Params</b></em>' containment reference list.
@@ -1104,7 +1122,7 @@ public interface AssessPackage extends EPackage
    * @generated
    * @ordered
    */
-  int POINTS__PARAMS = 3;
+  int POINTS__PARAMS = 4;
 
   /**
    * The number of structural features of the '<em>Points</em>' class.
@@ -1113,7 +1131,7 @@ public interface AssessPackage extends EPackage
    * @generated
    * @ordered
    */
-  int POINTS_FEATURE_COUNT = 4;
+  int POINTS_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link uws.engage.dsl.assess.impl.PointImpl <em>Point</em>}' class.
@@ -2415,6 +2433,17 @@ public interface AssessPackage extends EPackage
   EClass getParameter();
 
   /**
+   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.Parameter#isLogOnly <em>Log Only</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Log Only</em>'.
+   * @see uws.engage.dsl.assess.Parameter#isLogOnly()
+   * @see #getParameter()
+   * @generated
+   */
+  EAttribute getParameter_LogOnly();
+
+  /**
    * Returns the meta object for the containment reference '{@link uws.engage.dsl.assess.Parameter#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2456,6 +2485,17 @@ public interface AssessPackage extends EPackage
    * @generated
    */
   EReference getPoints_Outcome();
+
+  /**
+   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.Points#isResetValue <em>Reset Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Reset Value</em>'.
+   * @see uws.engage.dsl.assess.Points#isResetValue()
+   * @see #getPoints()
+   * @generated
+   */
+  EAttribute getPoints_ResetValue();
 
   /**
    * Returns the meta object for the containment reference '{@link uws.engage.dsl.assess.Points#getPts <em>Pts</em>}'.
@@ -3585,6 +3625,14 @@ public interface AssessPackage extends EPackage
     EClass PARAMETER = eINSTANCE.getParameter();
 
     /**
+     * The meta object literal for the '<em><b>Log Only</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PARAMETER__LOG_ONLY = eINSTANCE.getParameter_LogOnly();
+
+    /**
      * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3617,6 +3665,14 @@ public interface AssessPackage extends EPackage
      * @generated
      */
     EReference POINTS__OUTCOME = eINSTANCE.getPoints_Outcome();
+
+    /**
+     * The meta object literal for the '<em><b>Reset Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute POINTS__RESET_VALUE = eINSTANCE.getPoints_ResetValue();
 
     /**
      * The meta object literal for the '<em><b>Pts</b></em>' containment reference feature.

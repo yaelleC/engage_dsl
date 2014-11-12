@@ -1199,9 +1199,19 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getParameter_LogOnly()
+  {
+    return (EAttribute)parameterEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getParameter_Type()
   {
-    return (EReference)parameterEClass.getEStructuralFeatures().get(0);
+    return (EReference)parameterEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1211,7 +1221,7 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    */
   public EAttribute getParameter_Name()
   {
-    return (EAttribute)parameterEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)parameterEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1239,9 +1249,19 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getPoints_ResetValue()
+  {
+    return (EAttribute)pointsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getPoints_Pts()
   {
-    return (EReference)pointsEClass.getEStructuralFeatures().get(1);
+    return (EReference)pointsEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1251,7 +1271,7 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    */
   public EAttribute getPoints_Others()
   {
-    return (EAttribute)pointsEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)pointsEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1261,7 +1281,7 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    */
   public EReference getPoints_Params()
   {
-    return (EReference)pointsEClass.getEStructuralFeatures().get(3);
+    return (EReference)pointsEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1730,11 +1750,13 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
     createEReference(actionEClass, ACTION__REACTIONS);
 
     parameterEClass = createEClass(PARAMETER);
+    createEAttribute(parameterEClass, PARAMETER__LOG_ONLY);
     createEReference(parameterEClass, PARAMETER__TYPE);
     createEAttribute(parameterEClass, PARAMETER__NAME);
 
     pointsEClass = createEClass(POINTS);
     createEReference(pointsEClass, POINTS__OUTCOME);
+    createEAttribute(pointsEClass, POINTS__RESET_VALUE);
     createEReference(pointsEClass, POINTS__PTS);
     createEAttribute(pointsEClass, POINTS__OTHERS);
     createEReference(pointsEClass, POINTS__PARAMS);
@@ -1920,11 +1942,13 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
     initEReference(getAction_Reactions(), this.getReactions(), null, "reactions", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getParameter_LogOnly(), ecorePackage.getEBoolean(), "logOnly", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getParameter_Type(), this.getType(), null, "type", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(pointsEClass, Points.class, "Points", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPoints_Outcome(), this.getOutcome(), null, "outcome", null, 0, 1, Points.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPoints_ResetValue(), ecorePackage.getEBoolean(), "resetValue", null, 0, 1, Points.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPoints_Pts(), this.getPoint(), null, "pts", null, 0, 1, Points.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPoints_Others(), ecorePackage.getEBoolean(), "others", null, 0, 1, Points.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPoints_Params(), this.getParams(), null, "params", null, 0, -1, Points.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

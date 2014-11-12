@@ -15,6 +15,10 @@ End:
 	'End'
 ;
 
+Delimitator:
+	';'
+;
+
 Separator:
 	':'
 ;
@@ -151,12 +155,12 @@ Action:
 ;
 
 Parameter:
-	type=Type name=ID
+	logOnly ?= "LogOnly"? type=Type name=ID
 ;
 
 Points:
-	(outcome= [Outcome] '->')? pts=Point
-		(others ?= 'others' | params += Params+)
+	(outcome= [Outcome] '->')? resetValue ?= '='? pts=Point
+		(others ?= ('others'|'else') | params += Params+)
 	End
 ;
 
@@ -169,7 +173,7 @@ Sign:
 ;
 
 Params:
-	(name=ID ':')? values += Param (',' values += Param+)
+	(name=ID ':')? values += Param (',' values += Param)* Delimitator
 ;
 
 Param:

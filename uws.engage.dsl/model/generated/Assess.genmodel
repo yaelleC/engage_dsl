@@ -113,11 +113,13 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//Action/reactions"/>
     </genClasses>
     <genClasses ecoreClass="Assess.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Parameter/logOnly"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//Parameter/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Parameter/name"/>
     </genClasses>
     <genClasses ecoreClass="Assess.ecore#//Points">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Assess.ecore#//Points/outcome"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Points/resetValue"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//Points/pts"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Points/others"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//Points/params"/>
