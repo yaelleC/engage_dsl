@@ -315,6 +315,10 @@ public class Parser {
 				{
 					markJson.put("mark", new Integer(assess.getPts().getValue()));
 				}
+				if (assess.isResetValue())
+				{
+					markJson.put("reset", new Boolean(true));
+				}
 				assessJson.put("mark", markJson);
 				
 				if (a.getReactions() != null)
