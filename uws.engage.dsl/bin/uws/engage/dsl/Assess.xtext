@@ -173,7 +173,7 @@ Sign:
 ;
 
 Params:
-	(name=ID ':')? values += Param (',' values += Param)* Delimitator
+	(name=ID ':')? values += Param (',' values += Param)*
 ;
 
 Param:

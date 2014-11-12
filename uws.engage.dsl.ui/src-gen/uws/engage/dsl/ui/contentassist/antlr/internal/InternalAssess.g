@@ -114,34 +114,6 @@ finally {
 
 
 
-// Entry rule entryRuleDelimitator
-entryRuleDelimitator 
-:
-{ before(grammarAccess.getDelimitatorRule()); }
-	 ruleDelimitator
-{ after(grammarAccess.getDelimitatorRule()); } 
-	 EOF 
-;
-
-// Rule Delimitator
-ruleDelimitator
-    @init {
-		int stackSize = keepStackSize();
-    }
-	:
-(
-{ before(grammarAccess.getDelimitatorAccess().getSemicolonKeyword()); }
-
-	';' 
-
-{ after(grammarAccess.getDelimitatorAccess().getSemicolonKeyword()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 
 
 // Entry rule entryRuleSeparator
@@ -5783,7 +5755,6 @@ rule__Params__Group__2
     }
 :
 	rule__Params__Group__2__Impl
-	rule__Params__Group__3
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -5804,36 +5775,6 @@ rule__Params__Group__2__Impl
 finally {
 	restoreStackSize(stackSize);
 }
-
-
-rule__Params__Group__3
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-	rule__Params__Group__3__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Params__Group__3__Impl
-    @init {
-		int stackSize = keepStackSize();
-    }
-:
-(
-{ before(grammarAccess.getParamsAccess().getDelimitatorParserRuleCall_3()); }
-	ruleDelimitator
-{ after(grammarAccess.getParamsAccess().getDelimitatorParserRuleCall_3()); }
-)
-
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
 
 
 

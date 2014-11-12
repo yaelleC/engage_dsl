@@ -1314,13 +1314,12 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
 		private final Assignment cValuesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cValuesParamParserRuleCall_2_1_0 = (RuleCall)cValuesAssignment_2_1.eContents().get(0);
-		private final RuleCall cDelimitatorParserRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//Params:
-		//	(name=ID ":")? values+=Param ("," values+=Param)* Delimitator;
+		//	(name=ID ":")? values+=Param ("," values+=Param)*;
 		public ParserRule getRule() { return rule; }
 
-		//(name=ID ":")? values+=Param ("," values+=Param)* Delimitator
+		//(name=ID ":")? values+=Param ("," values+=Param)*
 		public Group getGroup() { return cGroup; }
 
 		//(name=ID ":")?
@@ -1352,9 +1351,6 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Param
 		public RuleCall getValuesParamParserRuleCall_2_1_0() { return cValuesParamParserRuleCall_2_1_0; }
-
-		//Delimitator
-		public RuleCall getDelimitatorParserRuleCall_3() { return cDelimitatorParserRuleCall_3; }
 	}
 
 	public class ParamElements extends AbstractParserRuleElementFinder {
@@ -2215,7 +2211,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Params:
-	//	(name=ID ":")? values+=Param ("," values+=Param)* Delimitator;
+	//	(name=ID ":")? values+=Param ("," values+=Param)*;
 	public ParamsElements getParamsAccess() {
 		return pParams;
 	}

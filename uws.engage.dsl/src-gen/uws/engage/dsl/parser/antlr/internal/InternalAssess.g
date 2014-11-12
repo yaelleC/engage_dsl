@@ -219,31 +219,6 @@ ruleEnd returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 
 
 
-// Entry rule entryRuleDelimitator
-entryRuleDelimitator returns [String current=null] 
-	:
-	{ newCompositeNode(grammarAccess.getDelimitatorRule()); } 
-	 iv_ruleDelimitator=ruleDelimitator 
-	 { $current=$iv_ruleDelimitator.current.getText(); }  
-	 EOF 
-;
-
-// Rule Delimitator
-ruleDelimitator returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] 
-    @init { enterRule(); 
-    }
-    @after { leaveRule(); }:
-
-	kw=';' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getDelimitatorAccess().getSemicolonKeyword()); 
-    }
-
-    ;
-
-
-
 
 
 // Entry rule entryRuleSeparator
@@ -2471,15 +2446,7 @@ ruleParams returns [EObject current=null]
 	    }
 
 )
-))*
-    { 
-        newCompositeNode(grammarAccess.getParamsAccess().getDelimitatorParserRuleCall_3()); 
-    }
-ruleDelimitator
-    { 
-        afterParserOrEnumRuleCall();
-    }
-)
+))*)
 ;
 
 
