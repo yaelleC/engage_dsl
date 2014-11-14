@@ -110,9 +110,9 @@ public class Parser {
 		// ##################### PLAYER ######################	
 		
 		PlayerDescription player = model.getPlayer();
+		ArrayList<JSONObject> playerJson = new ArrayList<JSONObject>();
 		if (player != null)
 		{
-			ArrayList<JSONObject> playerJson = new ArrayList<JSONObject>();
 			
 			for (Characteristic c : player.getCharacteristics()) {
 				JSONObject characteristicJson = new JSONObject();
@@ -137,10 +137,9 @@ public class Parser {
 				characteristicJson.put("type", type);
 							
 				playerJson.add(characteristicJson);
-			}
-			
-			json.put("player", playerJson);
+			}	
 		}
+		json.put("player", playerJson);
 
 		// ##################### LEARNING OUTCOME ######################
 		
