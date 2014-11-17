@@ -518,7 +518,7 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (outcome=[Outcome|ID]? resetValue?='='? pts=Point (others?='others' | others?='else' | params+=Params+))
+	 *     (outcome=[Outcome|ID]? resetValue?='='? (pts=Point | var=[Parameter|ID]) (others?='others' | others?='else' | params+=Params+))
 	 */
 	protected void sequence_Points(EObject context, Points semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uws.engage.dsl.assess.Points#getOutcome <em>Outcome</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.Points#isResetValue <em>Reset Value</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.Points#getPts <em>Pts</em>}</li>
+ *   <li>{@link uws.engage.dsl.assess.Points#getVar <em>Var</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.Points#isOthers <em>Others</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.Points#getParams <em>Params</em>}</li>
  * </ul>
@@ -105,6 +106,32 @@ public interface Points extends EObject
    * @generated
    */
   void setPts(Point value);
+
+  /**
+   * Returns the value of the '<em><b>Var</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Var</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Var</em>' reference.
+   * @see #setVar(Parameter)
+   * @see uws.engage.dsl.assess.AssessPackage#getPoints_Var()
+   * @model
+   * @generated
+   */
+  Parameter getVar();
+
+  /**
+   * Sets the value of the '{@link uws.engage.dsl.assess.Points#getVar <em>Var</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Var</em>' reference.
+   * @see #getVar()
+   * @generated
+   */
+  void setVar(Parameter value);
 
   /**
    * Returns the value of the '<em><b>Others</b></em>' attribute.

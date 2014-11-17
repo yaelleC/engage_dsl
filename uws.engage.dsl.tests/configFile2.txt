@@ -28,20 +28,20 @@ Evidence-model
  
  associate_CountyCapital ( String country, String capital, LogOnly Int time ) 
    european_capitals -> 1 
-      UK, London ;
-      Italy, Rome ;
-      Spain, Madrid ;
-      France, Paris ;
-      Ireland, Dublin ;
+      UK, London 
+      Italy, Rome
+      Spain, Madrid
+      France, Paris 
+      Ireland, Dublin 
    End 
    european_capitals -> 2 
-      Norway, Oslo ;
-      Sweden, Stockholm ; 
-      Greece, Athens ;
-      Austria, Vienna ;
+      Norway, Oslo 
+      Sweden, Stockholm 
+      Greece, Athens
+      Austria, Vienna 
    End 
    european_capitals -> 3 
-      Poland, Warsaw ;
+      Poland, Warsaw 
    End 
    european_capitals -> -1
       others 
@@ -53,12 +53,18 @@ Evidence-model
  End 
  chainCount(Bool success)
  	biggerChain -> 1
- 		true ;
+ 		true 
  	End
  	biggerChain -> = 0
  		else
  	End
  End
+ testValue ( Int toReset )
+ 	european_capitals -> toReset
+ 		else
+ 	End
+ End
+ 		
  Timer-actions
  	selectGame 
  		after 180 sec 

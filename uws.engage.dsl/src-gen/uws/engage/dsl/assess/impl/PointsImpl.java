@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import uws.engage.dsl.assess.AssessPackage;
 import uws.engage.dsl.assess.Outcome;
+import uws.engage.dsl.assess.Parameter;
 import uws.engage.dsl.assess.Params;
 import uws.engage.dsl.assess.Point;
 import uws.engage.dsl.assess.Points;
@@ -34,6 +35,7 @@ import uws.engage.dsl.assess.Points;
  *   <li>{@link uws.engage.dsl.assess.impl.PointsImpl#getOutcome <em>Outcome</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.PointsImpl#isResetValue <em>Reset Value</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.PointsImpl#getPts <em>Pts</em>}</li>
+ *   <li>{@link uws.engage.dsl.assess.impl.PointsImpl#getVar <em>Var</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.PointsImpl#isOthers <em>Others</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.PointsImpl#getParams <em>Params</em>}</li>
  * </ul>
@@ -82,6 +84,16 @@ public class PointsImpl extends MinimalEObjectImpl.Container implements Points
    * @ordered
    */
   protected Point pts;
+
+  /**
+   * The cached value of the '{@link #getVar() <em>Var</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getVar()
+   * @generated
+   * @ordered
+   */
+  protected Parameter var;
 
   /**
    * The default value of the '{@link #isOthers() <em>Others</em>}' attribute.
@@ -253,6 +265,49 @@ public class PointsImpl extends MinimalEObjectImpl.Container implements Points
    * <!-- end-user-doc -->
    * @generated
    */
+  public Parameter getVar()
+  {
+    if (var != null && var.eIsProxy())
+    {
+      InternalEObject oldVar = (InternalEObject)var;
+      var = (Parameter)eResolveProxy(oldVar);
+      if (var != oldVar)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AssessPackage.POINTS__VAR, oldVar, var));
+      }
+    }
+    return var;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Parameter basicGetVar()
+  {
+    return var;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setVar(Parameter newVar)
+  {
+    Parameter oldVar = var;
+    var = newVar;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AssessPackage.POINTS__VAR, oldVar, var));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public boolean isOthers()
   {
     return others;
@@ -320,6 +375,9 @@ public class PointsImpl extends MinimalEObjectImpl.Container implements Points
         return isResetValue();
       case AssessPackage.POINTS__PTS:
         return getPts();
+      case AssessPackage.POINTS__VAR:
+        if (resolve) return getVar();
+        return basicGetVar();
       case AssessPackage.POINTS__OTHERS:
         return isOthers();
       case AssessPackage.POINTS__PARAMS:
@@ -347,6 +405,9 @@ public class PointsImpl extends MinimalEObjectImpl.Container implements Points
         return;
       case AssessPackage.POINTS__PTS:
         setPts((Point)newValue);
+        return;
+      case AssessPackage.POINTS__VAR:
+        setVar((Parameter)newValue);
         return;
       case AssessPackage.POINTS__OTHERS:
         setOthers((Boolean)newValue);
@@ -378,6 +439,9 @@ public class PointsImpl extends MinimalEObjectImpl.Container implements Points
       case AssessPackage.POINTS__PTS:
         setPts((Point)null);
         return;
+      case AssessPackage.POINTS__VAR:
+        setVar((Parameter)null);
+        return;
       case AssessPackage.POINTS__OTHERS:
         setOthers(OTHERS_EDEFAULT);
         return;
@@ -404,6 +468,8 @@ public class PointsImpl extends MinimalEObjectImpl.Container implements Points
         return resetValue != RESET_VALUE_EDEFAULT;
       case AssessPackage.POINTS__PTS:
         return pts != null;
+      case AssessPackage.POINTS__VAR:
+        return var != null;
       case AssessPackage.POINTS__OTHERS:
         return others != OTHERS_EDEFAULT;
       case AssessPackage.POINTS__PARAMS:

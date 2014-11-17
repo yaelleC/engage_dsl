@@ -1107,13 +1107,22 @@ public interface AssessPackage extends EPackage
   int POINTS__PTS = 2;
 
   /**
+   * The feature id for the '<em><b>Var</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int POINTS__VAR = 3;
+
+  /**
    * The feature id for the '<em><b>Others</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int POINTS__OTHERS = 3;
+  int POINTS__OTHERS = 4;
 
   /**
    * The feature id for the '<em><b>Params</b></em>' containment reference list.
@@ -1122,7 +1131,7 @@ public interface AssessPackage extends EPackage
    * @generated
    * @ordered
    */
-  int POINTS__PARAMS = 4;
+  int POINTS__PARAMS = 5;
 
   /**
    * The number of structural features of the '<em>Points</em>' class.
@@ -1131,7 +1140,7 @@ public interface AssessPackage extends EPackage
    * @generated
    * @ordered
    */
-  int POINTS_FEATURE_COUNT = 5;
+  int POINTS_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link uws.engage.dsl.assess.impl.PointImpl <em>Point</em>}' class.
@@ -2509,6 +2518,17 @@ public interface AssessPackage extends EPackage
   EReference getPoints_Pts();
 
   /**
+   * Returns the meta object for the reference '{@link uws.engage.dsl.assess.Points#getVar <em>Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Var</em>'.
+   * @see uws.engage.dsl.assess.Points#getVar()
+   * @see #getPoints()
+   * @generated
+   */
+  EReference getPoints_Var();
+
+  /**
    * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.Points#isOthers <em>Others</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3681,6 +3701,14 @@ public interface AssessPackage extends EPackage
      * @generated
      */
     EReference POINTS__PTS = eINSTANCE.getPoints_Pts();
+
+    /**
+     * The meta object literal for the '<em><b>Var</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference POINTS__VAR = eINSTANCE.getPoints_Var();
 
     /**
      * The meta object literal for the '<em><b>Others</b></em>' attribute feature.

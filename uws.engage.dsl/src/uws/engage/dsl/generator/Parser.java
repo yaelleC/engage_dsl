@@ -306,13 +306,20 @@ public class Parser {
 				{
 					markJson.put("learningOutcome", model.getLearningOutcomes().getOutcomes().get(0).getName());					
 				}
-				if (assess.getPts().isNegative())
+				if (assess.getPts() != null)
 				{
-					markJson.put("mark", new Integer(assess.getPts().getValue()*-1));
+					if (assess.getPts().isNegative())					
+					{
+						markJson.put("mark", new Integer(assess.getPts().getValue()*-1));
+					}
+					else
+					{
+						markJson.put("mark", new Integer(assess.getPts().getValue()));
+					}
 				}
-				else
+				else if (assess.getVar() != null)
 				{
-					markJson.put("mark", new Integer(assess.getPts().getValue()));
+					markJson.put("markVar", assess.getVar().getName());					
 				}
 				if (assess.isResetValue())
 				{

@@ -1491,6 +1491,28 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+rule__Points__Alternatives_2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getPointsAccess().getPtsAssignment_2_0()); }
+(rule__Points__PtsAssignment_2_0)
+{ after(grammarAccess.getPointsAccess().getPtsAssignment_2_0()); }
+)
+
+    |(
+{ before(grammarAccess.getPointsAccess().getVarAssignment_2_1()); }
+(rule__Points__VarAssignment_2_1)
+{ after(grammarAccess.getPointsAccess().getVarAssignment_2_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__Points__Alternatives_3
     @init {
 		int stackSize = keepStackSize();
@@ -5489,9 +5511,9 @@ rule__Points__Group__2__Impl
     }
 :
 (
-{ before(grammarAccess.getPointsAccess().getPtsAssignment_2()); }
-(rule__Points__PtsAssignment_2)
-{ after(grammarAccess.getPointsAccess().getPtsAssignment_2()); }
+{ before(grammarAccess.getPointsAccess().getAlternatives_2()); }
+(rule__Points__Alternatives_2)
+{ after(grammarAccess.getPointsAccess().getAlternatives_2()); }
 )
 
 ;
@@ -7896,14 +7918,33 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Points__PtsAssignment_2
+rule__Points__PtsAssignment_2_0
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getPointsAccess().getPtsPointParserRuleCall_2_0()); }
-	rulePoint{ after(grammarAccess.getPointsAccess().getPtsPointParserRuleCall_2_0()); }
+{ before(grammarAccess.getPointsAccess().getPtsPointParserRuleCall_2_0_0()); }
+	rulePoint{ after(grammarAccess.getPointsAccess().getPtsPointParserRuleCall_2_0_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Points__VarAssignment_2_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getPointsAccess().getVarParameterCrossReference_2_1_0()); }
+(
+{ before(grammarAccess.getPointsAccess().getVarParameterIDTerminalRuleCall_2_1_0_1()); }
+	RULE_ID{ after(grammarAccess.getPointsAccess().getVarParameterIDTerminalRuleCall_2_1_0_1()); }
+)
+{ after(grammarAccess.getPointsAccess().getVarParameterCrossReference_2_1_0()); }
 )
 
 ;

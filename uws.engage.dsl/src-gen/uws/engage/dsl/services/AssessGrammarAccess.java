@@ -1183,8 +1183,12 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cHyphenMinusGreaterThanSignKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
 		private final Assignment cResetValueAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final Keyword cResetValueEqualsSignKeyword_1_0 = (Keyword)cResetValueAssignment_1.eContents().get(0);
-		private final Assignment cPtsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cPtsPointParserRuleCall_2_0 = (RuleCall)cPtsAssignment_2.eContents().get(0);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Assignment cPtsAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
+		private final RuleCall cPtsPointParserRuleCall_2_0_0 = (RuleCall)cPtsAssignment_2_0.eContents().get(0);
+		private final Assignment cVarAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
+		private final CrossReference cVarParameterCrossReference_2_1_0 = (CrossReference)cVarAssignment_2_1.eContents().get(0);
+		private final RuleCall cVarParameterIDTerminalRuleCall_2_1_0_1 = (RuleCall)cVarParameterCrossReference_2_1_0.eContents().get(1);
 		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
 		private final Assignment cOthersAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
 		private final Alternatives cOthersAlternatives_3_0_0 = (Alternatives)cOthersAssignment_3_0.eContents().get(0);
@@ -1195,10 +1199,12 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEndParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
 		//Points:
-		//	(outcome=[Outcome] "->")? resetValue?="="? pts=Point (others?=("others" | "else") | params+=Params+) End;
+		//	(outcome=[Outcome] "->")? resetValue?="="? (pts=Point | var=[Parameter]) (others?=("others" | "else") |
+		//	params+=Params+) End;
 		public ParserRule getRule() { return rule; }
 
-		//(outcome=[Outcome] "->")? resetValue?="="? pts=Point (others?=("others" | "else") | params+=Params+) End
+		//(outcome=[Outcome] "->")? resetValue?="="? (pts=Point | var=[Parameter]) (others?=("others" | "else") | params+=Params+)
+		//End
 		public Group getGroup() { return cGroup; }
 
 		//(outcome=[Outcome] "->")?
@@ -1222,11 +1228,23 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		//"="
 		public Keyword getResetValueEqualsSignKeyword_1_0() { return cResetValueEqualsSignKeyword_1_0; }
 
+		//pts=Point | var=[Parameter]
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+
 		//pts=Point
-		public Assignment getPtsAssignment_2() { return cPtsAssignment_2; }
+		public Assignment getPtsAssignment_2_0() { return cPtsAssignment_2_0; }
 
 		//Point
-		public RuleCall getPtsPointParserRuleCall_2_0() { return cPtsPointParserRuleCall_2_0; }
+		public RuleCall getPtsPointParserRuleCall_2_0_0() { return cPtsPointParserRuleCall_2_0_0; }
+
+		//var=[Parameter]
+		public Assignment getVarAssignment_2_1() { return cVarAssignment_2_1; }
+
+		//[Parameter]
+		public CrossReference getVarParameterCrossReference_2_1_0() { return cVarParameterCrossReference_2_1_0; }
+
+		//ID
+		public RuleCall getVarParameterIDTerminalRuleCall_2_1_0_1() { return cVarParameterIDTerminalRuleCall_2_1_0_1; }
 
 		//others?=("others" | "else") | params+=Params+
 		public Alternatives getAlternatives_3() { return cAlternatives_3; }
@@ -2181,7 +2199,8 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Points:
-	//	(outcome=[Outcome] "->")? resetValue?="="? pts=Point (others?=("others" | "else") | params+=Params+) End;
+	//	(outcome=[Outcome] "->")? resetValue?="="? (pts=Point | var=[Parameter]) (others?=("others" | "else") |
+	//	params+=Params+) End;
 	public PointsElements getPointsAccess() {
 		return pPoints;
 	}

@@ -2200,10 +2200,10 @@ rulePoints returns [EObject current=null]
 	    }
 
 )
-)?(
+)?((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getPointsAccess().getPtsPointParserRuleCall_2_0()); 
+	        newCompositeNode(grammarAccess.getPointsAccess().getPtsPointParserRuleCall_2_0_0()); 
 	    }
 		lv_pts_3_0=rulePoint		{
 	        if ($current==null) {
@@ -2218,12 +2218,26 @@ rulePoints returns [EObject current=null]
 	    }
 
 )
-)((
+)
+    |(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getPointsRule());
+	        }
+        }
+	otherlv_4=RULE_ID
+	{
+		newLeafNode(otherlv_4, grammarAccess.getPointsAccess().getVarParameterCrossReference_2_1_0()); 
+	}
+
+)
+))((
 (
 (
-		lv_others_4_1=	'others' 
+		lv_others_5_1=	'others' 
     {
-        newLeafNode(lv_others_4_1, grammarAccess.getPointsAccess().getOthersOthersKeyword_3_0_0_0());
+        newLeafNode(lv_others_5_1, grammarAccess.getPointsAccess().getOthersOthersKeyword_3_0_0_0());
     }
  
 	    {
@@ -2233,9 +2247,9 @@ rulePoints returns [EObject current=null]
        		setWithLastConsumed($current, "others", true, null);
 	    }
 
-    |		lv_others_4_2=	'else' 
+    |		lv_others_5_2=	'else' 
     {
-        newLeafNode(lv_others_4_2, grammarAccess.getPointsAccess().getOthersElseKeyword_3_0_0_1());
+        newLeafNode(lv_others_5_2, grammarAccess.getPointsAccess().getOthersElseKeyword_3_0_0_1());
     }
  
 	    {
@@ -2254,14 +2268,14 @@ rulePoints returns [EObject current=null]
 		{ 
 	        newCompositeNode(grammarAccess.getPointsAccess().getParamsParamsParserRuleCall_3_1_0()); 
 	    }
-		lv_params_5_0=ruleParams		{
+		lv_params_6_0=ruleParams		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getPointsRule());
 	        }
        		add(
        			$current, 
        			"params",
-        		lv_params_5_0, 
+        		lv_params_6_0, 
         		"Params");
 	        afterParserOrEnumRuleCall();
 	    }

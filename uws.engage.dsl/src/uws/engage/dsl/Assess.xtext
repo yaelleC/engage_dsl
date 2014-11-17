@@ -159,7 +159,7 @@ Parameter:
 ;
 
 Points:
-	(outcome= [Outcome] '->')? resetValue ?= '='? pts=Point
+	(outcome= [Outcome] '->')? resetValue ?= '='? ( pts=Point | var=[Parameter] )
 		(others ?= ('others'|'else') | params += Params+)
 	End
 ;

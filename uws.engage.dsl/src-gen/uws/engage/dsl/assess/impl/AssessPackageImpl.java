@@ -1269,9 +1269,19 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getPoints_Var()
+  {
+    return (EReference)pointsEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getPoints_Others()
   {
-    return (EAttribute)pointsEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)pointsEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1281,7 +1291,7 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    */
   public EReference getPoints_Params()
   {
-    return (EReference)pointsEClass.getEStructuralFeatures().get(4);
+    return (EReference)pointsEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1758,6 +1768,7 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
     createEReference(pointsEClass, POINTS__OUTCOME);
     createEAttribute(pointsEClass, POINTS__RESET_VALUE);
     createEReference(pointsEClass, POINTS__PTS);
+    createEReference(pointsEClass, POINTS__VAR);
     createEAttribute(pointsEClass, POINTS__OTHERS);
     createEReference(pointsEClass, POINTS__PARAMS);
 
@@ -1950,6 +1961,7 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
     initEReference(getPoints_Outcome(), this.getOutcome(), null, "outcome", null, 0, 1, Points.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPoints_ResetValue(), ecorePackage.getEBoolean(), "resetValue", null, 0, 1, Points.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPoints_Pts(), this.getPoint(), null, "pts", null, 0, 1, Points.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPoints_Var(), this.getParameter(), null, "var", null, 0, 1, Points.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPoints_Others(), ecorePackage.getEBoolean(), "others", null, 0, 1, Points.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPoints_Params(), this.getParams(), null, "params", null, 0, -1, Points.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
