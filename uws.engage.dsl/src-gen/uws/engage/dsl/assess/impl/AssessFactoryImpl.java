@@ -17,17 +17,21 @@ import uws.engage.dsl.assess.ActionSequences;
 import uws.engage.dsl.assess.Age;
 import uws.engage.dsl.assess.AssessFactory;
 import uws.engage.dsl.assess.AssessPackage;
+import uws.engage.dsl.assess.BadgeModel;
 import uws.engage.dsl.assess.Characteristic;
 import uws.engage.dsl.assess.EvidenceModel;
 import uws.engage.dsl.assess.Feedback;
 import uws.engage.dsl.assess.FeedbackMessages;
 import uws.engage.dsl.assess.FeedbackModel;
 import uws.engage.dsl.assess.GameDescription;
+import uws.engage.dsl.assess.GenericTrigger;
 import uws.engage.dsl.assess.InactivityLimit;
+import uws.engage.dsl.assess.LOTrigger;
 import uws.engage.dsl.assess.LearningOutcomes;
 import uws.engage.dsl.assess.Model;
 import uws.engage.dsl.assess.Outcome;
 import uws.engage.dsl.assess.OutcomeValueLimit;
+import uws.engage.dsl.assess.OutcomesPoints;
 import uws.engage.dsl.assess.ParamCondition;
 import uws.engage.dsl.assess.Parameter;
 import uws.engage.dsl.assess.Params;
@@ -37,6 +41,7 @@ import uws.engage.dsl.assess.Points;
 import uws.engage.dsl.assess.PointsCondition;
 import uws.engage.dsl.assess.Reaction;
 import uws.engage.dsl.assess.Reactions;
+import uws.engage.dsl.assess.SimpleTrigger;
 import uws.engage.dsl.assess.TimerAction;
 import uws.engage.dsl.assess.TimerActions;
 import uws.engage.dsl.assess.Timing;
@@ -122,6 +127,7 @@ public class AssessFactoryImpl extends EFactoryImpl implements AssessFactory
       case AssessPackage.ACTION: return createAction();
       case AssessPackage.PARAMETER: return createParameter();
       case AssessPackage.POINTS: return createPoints();
+      case AssessPackage.OUTCOMES_POINTS: return createOutcomesPoints();
       case AssessPackage.POINT: return createPoint();
       case AssessPackage.PARAMS: return createParams();
       case AssessPackage.REACTIONS: return createReactions();
@@ -132,6 +138,10 @@ public class AssessFactoryImpl extends EFactoryImpl implements AssessFactory
       case AssessPackage.TRIGGER: return createTrigger();
       case AssessPackage.OUTCOME_VALUE_LIMIT: return createOutcomeValueLimit();
       case AssessPackage.INACTIVITY_LIMIT: return createInactivityLimit();
+      case AssessPackage.BADGE_MODEL: return createBadgeModel();
+      case AssessPackage.GENERIC_TRIGGER: return createGenericTrigger();
+      case AssessPackage.SIMPLE_TRIGGER: return createSimpleTrigger();
+      case AssessPackage.LO_TRIGGER: return createLOTrigger();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -406,6 +416,17 @@ public class AssessFactoryImpl extends EFactoryImpl implements AssessFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public OutcomesPoints createOutcomesPoints()
+  {
+    OutcomesPointsImpl outcomesPoints = new OutcomesPointsImpl();
+    return outcomesPoints;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Point createPoint()
   {
     PointImpl point = new PointImpl();
@@ -509,6 +530,50 @@ public class AssessFactoryImpl extends EFactoryImpl implements AssessFactory
   {
     InactivityLimitImpl inactivityLimit = new InactivityLimitImpl();
     return inactivityLimit;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BadgeModel createBadgeModel()
+  {
+    BadgeModelImpl badgeModel = new BadgeModelImpl();
+    return badgeModel;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GenericTrigger createGenericTrigger()
+  {
+    GenericTriggerImpl genericTrigger = new GenericTriggerImpl();
+    return genericTrigger;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SimpleTrigger createSimpleTrigger()
+  {
+    SimpleTriggerImpl simpleTrigger = new SimpleTriggerImpl();
+    return simpleTrigger;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LOTrigger createLOTrigger()
+  {
+    LOTriggerImpl loTrigger = new LOTriggerImpl();
+    return loTrigger;
   }
 
   /**

@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uws.engage.dsl.assess.Reaction#getParamsC <em>Params C</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.Reaction#getPointsC <em>Points C</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.Reaction#getFeedback <em>Feedback</em>}</li>
+ *   <li>{@link uws.engage.dsl.assess.Reaction#isImmediate <em>Immediate</em>}</li>
  * </ul>
  * </p>
  *
@@ -101,5 +102,31 @@ public interface Reaction extends EObject
    * @generated
    */
   void setFeedback(Feedback value);
+
+  /**
+   * Returns the value of the '<em><b>Immediate</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Immediate</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Immediate</em>' attribute.
+   * @see #setImmediate(boolean)
+   * @see uws.engage.dsl.assess.AssessPackage#getReaction_Immediate()
+   * @model
+   * @generated
+   */
+  boolean isImmediate();
+
+  /**
+   * Sets the value of the '{@link uws.engage.dsl.assess.Reaction#isImmediate <em>Immediate</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Immediate</em>' attribute.
+   * @see #isImmediate()
+   * @generated
+   */
+  void setImmediate(boolean value);
 
 } // Reaction

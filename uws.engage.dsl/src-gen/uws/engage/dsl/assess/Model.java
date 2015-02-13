@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uws.engage.dsl.assess.Model#getFeedbackMessages <em>Feedback Messages</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.Model#getEvidenceModel <em>Evidence Model</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.Model#getFeedbackModel <em>Feedback Model</em>}</li>
+ *   <li>{@link uws.engage.dsl.assess.Model#getBadgeModel <em>Badge Model</em>}</li>
  * </ul>
  * </p>
  *
@@ -182,5 +183,31 @@ public interface Model extends EObject
    * @generated
    */
   void setFeedbackModel(FeedbackModel value);
+
+  /**
+   * Returns the value of the '<em><b>Badge Model</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Badge Model</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Badge Model</em>' containment reference.
+   * @see #setBadgeModel(BadgeModel)
+   * @see uws.engage.dsl.assess.AssessPackage#getModel_BadgeModel()
+   * @model containment="true"
+   * @generated
+   */
+  BadgeModel getBadgeModel();
+
+  /**
+   * Sets the value of the '{@link uws.engage.dsl.assess.Model#getBadgeModel <em>Badge Model</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Badge Model</em>' containment reference.
+   * @see #getBadgeModel()
+   * @generated
+   */
+  void setBadgeModel(BadgeModel value);
 
 } // Model

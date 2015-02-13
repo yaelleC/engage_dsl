@@ -121,13 +121,22 @@ public interface AssessPackage extends EPackage
   int MODEL__FEEDBACK_MODEL = 5;
 
   /**
+   * The feature id for the '<em><b>Badge Model</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__BADGE_MODEL = 6;
+
+  /**
    * The number of structural features of the '<em>Model</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 6;
+  int MODEL_FEATURE_COUNT = 7;
 
   /**
    * The meta object id for the '{@link uws.engage.dsl.assess.impl.TypeImpl <em>Type</em>}' class.
@@ -582,22 +591,49 @@ public interface AssessPackage extends EPackage
   int FEEDBACK__MESSAGE = 1;
 
   /**
+   * The feature id for the '<em><b>Image</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEEDBACK__IMAGE = 2;
+
+  /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEEDBACK__TYPE = 2;
+  int FEEDBACK__TYPE = 3;
 
   /**
-   * The feature id for the '<em><b>Final</b></em>' attribute.
+   * The feature id for the '<em><b>Win</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FEEDBACK__FINAL = 3;
+  int FEEDBACK__WIN = 4;
+
+  /**
+   * The feature id for the '<em><b>Lose</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEEDBACK__LOSE = 5;
+
+  /**
+   * The feature id for the '<em><b>End</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FEEDBACK__END = 6;
 
   /**
    * The number of structural features of the '<em>Feedback</em>' class.
@@ -606,7 +642,7 @@ public interface AssessPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FEEDBACK_FEATURE_COUNT = 4;
+  int FEEDBACK_FEATURE_COUNT = 7;
 
   /**
    * The meta object id for the '{@link uws.engage.dsl.assess.impl.EvidenceModelImpl <em>Evidence Model</em>}' class.
@@ -960,13 +996,22 @@ public interface AssessPackage extends EPackage
   int TRIGGER_FEEDBACK__FEEDBACK = 0;
 
   /**
+   * The feature id for the '<em><b>Immediate</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRIGGER_FEEDBACK__IMMEDIATE = 1;
+
+  /**
    * The number of structural features of the '<em>Trigger Feedback</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRIGGER_FEEDBACK_FEATURE_COUNT = 1;
+  int TRIGGER_FEEDBACK_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link uws.engage.dsl.assess.impl.ActionImpl <em>Action</em>}' class.
@@ -997,13 +1042,22 @@ public interface AssessPackage extends EPackage
   int ACTION__PARAMS = 1;
 
   /**
+   * The feature id for the '<em><b>Desc</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION__DESC = 2;
+
+  /**
    * The feature id for the '<em><b>Points</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTION__POINTS = 2;
+  int ACTION__POINTS = 3;
 
   /**
    * The feature id for the '<em><b>Reactions</b></em>' containment reference.
@@ -1012,7 +1066,7 @@ public interface AssessPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION__REACTIONS = 3;
+  int ACTION__REACTIONS = 4;
 
   /**
    * The number of structural features of the '<em>Action</em>' class.
@@ -1021,7 +1075,7 @@ public interface AssessPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_FEATURE_COUNT = 4;
+  int ACTION_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link uws.engage.dsl.assess.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -1080,40 +1134,13 @@ public interface AssessPackage extends EPackage
   int POINTS = 23;
 
   /**
-   * The feature id for the '<em><b>Outcome</b></em>' reference.
+   * The feature id for the '<em><b>Outcomes Points</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int POINTS__OUTCOME = 0;
-
-  /**
-   * The feature id for the '<em><b>Reset Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POINTS__RESET_VALUE = 1;
-
-  /**
-   * The feature id for the '<em><b>Pts</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POINTS__PTS = 2;
-
-  /**
-   * The feature id for the '<em><b>Var</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int POINTS__VAR = 3;
+  int POINTS__OUTCOMES_POINTS = 0;
 
   /**
    * The feature id for the '<em><b>Others</b></em>' attribute.
@@ -1122,7 +1149,7 @@ public interface AssessPackage extends EPackage
    * @generated
    * @ordered
    */
-  int POINTS__OTHERS = 4;
+  int POINTS__OTHERS = 1;
 
   /**
    * The feature id for the '<em><b>Params</b></em>' containment reference list.
@@ -1131,7 +1158,7 @@ public interface AssessPackage extends EPackage
    * @generated
    * @ordered
    */
-  int POINTS__PARAMS = 5;
+  int POINTS__PARAMS = 2;
 
   /**
    * The number of structural features of the '<em>Points</em>' class.
@@ -1140,7 +1167,62 @@ public interface AssessPackage extends EPackage
    * @generated
    * @ordered
    */
-  int POINTS_FEATURE_COUNT = 6;
+  int POINTS_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link uws.engage.dsl.assess.impl.OutcomesPointsImpl <em>Outcomes Points</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uws.engage.dsl.assess.impl.OutcomesPointsImpl
+   * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getOutcomesPoints()
+   * @generated
+   */
+  int OUTCOMES_POINTS = 24;
+
+  /**
+   * The feature id for the '<em><b>Outcome</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTCOMES_POINTS__OUTCOME = 0;
+
+  /**
+   * The feature id for the '<em><b>Reset Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTCOMES_POINTS__RESET_VALUE = 1;
+
+  /**
+   * The feature id for the '<em><b>Pts</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTCOMES_POINTS__PTS = 2;
+
+  /**
+   * The feature id for the '<em><b>Var</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTCOMES_POINTS__VAR = 3;
+
+  /**
+   * The number of structural features of the '<em>Outcomes Points</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUTCOMES_POINTS_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link uws.engage.dsl.assess.impl.PointImpl <em>Point</em>}' class.
@@ -1150,7 +1232,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getPoint()
    * @generated
    */
-  int POINT = 24;
+  int POINT = 25;
 
   /**
    * The feature id for the '<em><b>Negative</b></em>' attribute.
@@ -1187,7 +1269,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getParams()
    * @generated
    */
-  int PARAMS = 25;
+  int PARAMS = 26;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1224,7 +1306,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getReactions()
    * @generated
    */
-  int REACTIONS = 26;
+  int REACTIONS = 27;
 
   /**
    * The feature id for the '<em><b>Reaction</b></em>' containment reference list.
@@ -1252,7 +1334,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getReaction()
    * @generated
    */
-  int REACTION = 27;
+  int REACTION = 28;
 
   /**
    * The feature id for the '<em><b>Params C</b></em>' containment reference.
@@ -1282,13 +1364,22 @@ public interface AssessPackage extends EPackage
   int REACTION__FEEDBACK = 2;
 
   /**
+   * The feature id for the '<em><b>Immediate</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REACTION__IMMEDIATE = 3;
+
+  /**
    * The number of structural features of the '<em>Reaction</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REACTION_FEATURE_COUNT = 3;
+  int REACTION_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link uws.engage.dsl.assess.impl.ParamConditionImpl <em>Param Condition</em>}' class.
@@ -1298,7 +1389,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getParamCondition()
    * @generated
    */
-  int PARAM_CONDITION = 28;
+  int PARAM_CONDITION = 29;
 
   /**
    * The feature id for the '<em><b>Params</b></em>' reference.
@@ -1326,7 +1417,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getPointsCondition()
    * @generated
    */
-  int POINTS_CONDITION = 29;
+  int POINTS_CONDITION = 30;
 
   /**
    * The feature id for the '<em><b>Key Wd</b></em>' attribute.
@@ -1372,7 +1463,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getFeedbackModel()
    * @generated
    */
-  int FEEDBACK_MODEL = 30;
+  int FEEDBACK_MODEL = 31;
 
   /**
    * The feature id for the '<em><b>Triggers</b></em>' containment reference list.
@@ -1400,7 +1491,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getTrigger()
    * @generated
    */
-  int TRIGGER = 31;
+  int TRIGGER = 32;
 
   /**
    * The feature id for the '<em><b>Perf</b></em>' containment reference.
@@ -1437,7 +1528,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getOutcomeValueLimit()
    * @generated
    */
-  int OUTCOME_VALUE_LIMIT = 32;
+  int OUTCOME_VALUE_LIMIT = 33;
 
   /**
    * The feature id for the '<em><b>Outcome</b></em>' reference.
@@ -1501,7 +1592,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getInactivityLimit()
    * @generated
    */
-  int INACTIVITY_LIMIT = 33;
+  int INACTIVITY_LIMIT = 34;
 
   /**
    * The feature id for the '<em><b>Sign</b></em>' attribute.
@@ -1538,6 +1629,208 @@ public interface AssessPackage extends EPackage
    * @ordered
    */
   int INACTIVITY_LIMIT_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link uws.engage.dsl.assess.impl.BadgeModelImpl <em>Badge Model</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uws.engage.dsl.assess.impl.BadgeModelImpl
+   * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getBadgeModel()
+   * @generated
+   */
+  int BADGE_MODEL = 35;
+
+  /**
+   * The feature id for the '<em><b>Generic Triggers</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BADGE_MODEL__GENERIC_TRIGGERS = 0;
+
+  /**
+   * The number of structural features of the '<em>Badge Model</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BADGE_MODEL_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uws.engage.dsl.assess.impl.GenericTriggerImpl <em>Generic Trigger</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uws.engage.dsl.assess.impl.GenericTriggerImpl
+   * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getGenericTrigger()
+   * @generated
+   */
+  int GENERIC_TRIGGER = 36;
+
+  /**
+   * The feature id for the '<em><b>Simple</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERIC_TRIGGER__SIMPLE = 0;
+
+  /**
+   * The feature id for the '<em><b>Lo</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERIC_TRIGGER__LO = 1;
+
+  /**
+   * The number of structural features of the '<em>Generic Trigger</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERIC_TRIGGER_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link uws.engage.dsl.assess.impl.SimpleTriggerImpl <em>Simple Trigger</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uws.engage.dsl.assess.impl.SimpleTriggerImpl
+   * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getSimpleTrigger()
+   * @generated
+   */
+  int SIMPLE_TRIGGER = 37;
+
+  /**
+   * The feature id for the '<em><b>Function</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_TRIGGER__FUNCTION = 0;
+
+  /**
+   * The feature id for the '<em><b>Sign</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_TRIGGER__SIGN = 1;
+
+  /**
+   * The feature id for the '<em><b>Negative Limit</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_TRIGGER__NEGATIVE_LIMIT = 2;
+
+  /**
+   * The feature id for the '<em><b>Limit</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_TRIGGER__LIMIT = 3;
+
+  /**
+   * The feature id for the '<em><b>Trigger Reactions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_TRIGGER__TRIGGER_REACTIONS = 4;
+
+  /**
+   * The number of structural features of the '<em>Simple Trigger</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_TRIGGER_FEATURE_COUNT = 5;
+
+  /**
+   * The meta object id for the '{@link uws.engage.dsl.assess.impl.LOTriggerImpl <em>LO Trigger</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uws.engage.dsl.assess.impl.LOTriggerImpl
+   * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getLOTrigger()
+   * @generated
+   */
+  int LO_TRIGGER = 38;
+
+  /**
+   * The feature id for the '<em><b>Function</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LO_TRIGGER__FUNCTION = 0;
+
+  /**
+   * The feature id for the '<em><b>Outcome</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LO_TRIGGER__OUTCOME = 1;
+
+  /**
+   * The feature id for the '<em><b>Sign</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LO_TRIGGER__SIGN = 2;
+
+  /**
+   * The feature id for the '<em><b>Negative Limit</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LO_TRIGGER__NEGATIVE_LIMIT = 3;
+
+  /**
+   * The feature id for the '<em><b>Limit</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LO_TRIGGER__LIMIT = 4;
+
+  /**
+   * The feature id for the '<em><b>Trigger Reactions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LO_TRIGGER__TRIGGER_REACTIONS = 5;
+
+  /**
+   * The number of structural features of the '<em>LO Trigger</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LO_TRIGGER_FEATURE_COUNT = 6;
 
 
   /**
@@ -1615,6 +1908,17 @@ public interface AssessPackage extends EPackage
    * @generated
    */
   EReference getModel_FeedbackModel();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uws.engage.dsl.assess.Model#getBadgeModel <em>Badge Model</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Badge Model</em>'.
+   * @see uws.engage.dsl.assess.Model#getBadgeModel()
+   * @see #getModel()
+   * @generated
+   */
+  EReference getModel_BadgeModel();
 
   /**
    * Returns the meta object for class '{@link uws.engage.dsl.assess.Type <em>Type</em>}'.
@@ -2035,6 +2339,17 @@ public interface AssessPackage extends EPackage
   EAttribute getFeedback_Message();
 
   /**
+   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.Feedback#getImage <em>Image</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Image</em>'.
+   * @see uws.engage.dsl.assess.Feedback#getImage()
+   * @see #getFeedback()
+   * @generated
+   */
+  EAttribute getFeedback_Image();
+
+  /**
    * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.Feedback#getType <em>Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2046,15 +2361,37 @@ public interface AssessPackage extends EPackage
   EAttribute getFeedback_Type();
 
   /**
-   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.Feedback#isFinal <em>Final</em>}'.
+   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.Feedback#isWin <em>Win</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Final</em>'.
-   * @see uws.engage.dsl.assess.Feedback#isFinal()
+   * @return the meta object for the attribute '<em>Win</em>'.
+   * @see uws.engage.dsl.assess.Feedback#isWin()
    * @see #getFeedback()
    * @generated
    */
-  EAttribute getFeedback_Final();
+  EAttribute getFeedback_Win();
+
+  /**
+   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.Feedback#isLose <em>Lose</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Lose</em>'.
+   * @see uws.engage.dsl.assess.Feedback#isLose()
+   * @see #getFeedback()
+   * @generated
+   */
+  EAttribute getFeedback_Lose();
+
+  /**
+   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.Feedback#isEnd <em>End</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>End</em>'.
+   * @see uws.engage.dsl.assess.Feedback#isEnd()
+   * @see #getFeedback()
+   * @generated
+   */
+  EAttribute getFeedback_End();
 
   /**
    * Returns the meta object for class '{@link uws.engage.dsl.assess.EvidenceModel <em>Evidence Model</em>}'.
@@ -2378,6 +2715,17 @@ public interface AssessPackage extends EPackage
   EReference getTriggerFeedback_Feedback();
 
   /**
+   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.TriggerFeedback#isImmediate <em>Immediate</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Immediate</em>'.
+   * @see uws.engage.dsl.assess.TriggerFeedback#isImmediate()
+   * @see #getTriggerFeedback()
+   * @generated
+   */
+  EAttribute getTriggerFeedback_Immediate();
+
+  /**
    * Returns the meta object for class '{@link uws.engage.dsl.assess.Action <em>Action</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2408,6 +2756,17 @@ public interface AssessPackage extends EPackage
    * @generated
    */
   EReference getAction_Params();
+
+  /**
+   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.Action#getDesc <em>Desc</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Desc</em>'.
+   * @see uws.engage.dsl.assess.Action#getDesc()
+   * @see #getAction()
+   * @generated
+   */
+  EAttribute getAction_Desc();
 
   /**
    * Returns the meta object for the containment reference list '{@link uws.engage.dsl.assess.Action#getPoints <em>Points</em>}'.
@@ -2485,48 +2844,15 @@ public interface AssessPackage extends EPackage
   EClass getPoints();
 
   /**
-   * Returns the meta object for the reference '{@link uws.engage.dsl.assess.Points#getOutcome <em>Outcome</em>}'.
+   * Returns the meta object for the containment reference list '{@link uws.engage.dsl.assess.Points#getOutcomesPoints <em>Outcomes Points</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Outcome</em>'.
-   * @see uws.engage.dsl.assess.Points#getOutcome()
+   * @return the meta object for the containment reference list '<em>Outcomes Points</em>'.
+   * @see uws.engage.dsl.assess.Points#getOutcomesPoints()
    * @see #getPoints()
    * @generated
    */
-  EReference getPoints_Outcome();
-
-  /**
-   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.Points#isResetValue <em>Reset Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Reset Value</em>'.
-   * @see uws.engage.dsl.assess.Points#isResetValue()
-   * @see #getPoints()
-   * @generated
-   */
-  EAttribute getPoints_ResetValue();
-
-  /**
-   * Returns the meta object for the containment reference '{@link uws.engage.dsl.assess.Points#getPts <em>Pts</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Pts</em>'.
-   * @see uws.engage.dsl.assess.Points#getPts()
-   * @see #getPoints()
-   * @generated
-   */
-  EReference getPoints_Pts();
-
-  /**
-   * Returns the meta object for the reference '{@link uws.engage.dsl.assess.Points#getVar <em>Var</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Var</em>'.
-   * @see uws.engage.dsl.assess.Points#getVar()
-   * @see #getPoints()
-   * @generated
-   */
-  EReference getPoints_Var();
+  EReference getPoints_OutcomesPoints();
 
   /**
    * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.Points#isOthers <em>Others</em>}'.
@@ -2549,6 +2875,60 @@ public interface AssessPackage extends EPackage
    * @generated
    */
   EReference getPoints_Params();
+
+  /**
+   * Returns the meta object for class '{@link uws.engage.dsl.assess.OutcomesPoints <em>Outcomes Points</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Outcomes Points</em>'.
+   * @see uws.engage.dsl.assess.OutcomesPoints
+   * @generated
+   */
+  EClass getOutcomesPoints();
+
+  /**
+   * Returns the meta object for the reference '{@link uws.engage.dsl.assess.OutcomesPoints#getOutcome <em>Outcome</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Outcome</em>'.
+   * @see uws.engage.dsl.assess.OutcomesPoints#getOutcome()
+   * @see #getOutcomesPoints()
+   * @generated
+   */
+  EReference getOutcomesPoints_Outcome();
+
+  /**
+   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.OutcomesPoints#isResetValue <em>Reset Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Reset Value</em>'.
+   * @see uws.engage.dsl.assess.OutcomesPoints#isResetValue()
+   * @see #getOutcomesPoints()
+   * @generated
+   */
+  EAttribute getOutcomesPoints_ResetValue();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uws.engage.dsl.assess.OutcomesPoints#getPts <em>Pts</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Pts</em>'.
+   * @see uws.engage.dsl.assess.OutcomesPoints#getPts()
+   * @see #getOutcomesPoints()
+   * @generated
+   */
+  EReference getOutcomesPoints_Pts();
+
+  /**
+   * Returns the meta object for the reference '{@link uws.engage.dsl.assess.OutcomesPoints#getVar <em>Var</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Var</em>'.
+   * @see uws.engage.dsl.assess.OutcomesPoints#getVar()
+   * @see #getOutcomesPoints()
+   * @generated
+   */
+  EReference getOutcomesPoints_Var();
 
   /**
    * Returns the meta object for class '{@link uws.engage.dsl.assess.Point <em>Point</em>}'.
@@ -2677,6 +3057,17 @@ public interface AssessPackage extends EPackage
    * @generated
    */
   EReference getReaction_Feedback();
+
+  /**
+   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.Reaction#isImmediate <em>Immediate</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Immediate</em>'.
+   * @see uws.engage.dsl.assess.Reaction#isImmediate()
+   * @see #getReaction()
+   * @generated
+   */
+  EAttribute getReaction_Immediate();
 
   /**
    * Returns the meta object for class '{@link uws.engage.dsl.assess.ParamCondition <em>Param Condition</em>}'.
@@ -2904,6 +3295,200 @@ public interface AssessPackage extends EPackage
   EReference getInactivityLimit_TriggerReactions();
 
   /**
+   * Returns the meta object for class '{@link uws.engage.dsl.assess.BadgeModel <em>Badge Model</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Badge Model</em>'.
+   * @see uws.engage.dsl.assess.BadgeModel
+   * @generated
+   */
+  EClass getBadgeModel();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uws.engage.dsl.assess.BadgeModel#getGenericTriggers <em>Generic Triggers</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Generic Triggers</em>'.
+   * @see uws.engage.dsl.assess.BadgeModel#getGenericTriggers()
+   * @see #getBadgeModel()
+   * @generated
+   */
+  EReference getBadgeModel_GenericTriggers();
+
+  /**
+   * Returns the meta object for class '{@link uws.engage.dsl.assess.GenericTrigger <em>Generic Trigger</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Generic Trigger</em>'.
+   * @see uws.engage.dsl.assess.GenericTrigger
+   * @generated
+   */
+  EClass getGenericTrigger();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uws.engage.dsl.assess.GenericTrigger#getSimple <em>Simple</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Simple</em>'.
+   * @see uws.engage.dsl.assess.GenericTrigger#getSimple()
+   * @see #getGenericTrigger()
+   * @generated
+   */
+  EReference getGenericTrigger_Simple();
+
+  /**
+   * Returns the meta object for the containment reference '{@link uws.engage.dsl.assess.GenericTrigger#getLo <em>Lo</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Lo</em>'.
+   * @see uws.engage.dsl.assess.GenericTrigger#getLo()
+   * @see #getGenericTrigger()
+   * @generated
+   */
+  EReference getGenericTrigger_Lo();
+
+  /**
+   * Returns the meta object for class '{@link uws.engage.dsl.assess.SimpleTrigger <em>Simple Trigger</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Simple Trigger</em>'.
+   * @see uws.engage.dsl.assess.SimpleTrigger
+   * @generated
+   */
+  EClass getSimpleTrigger();
+
+  /**
+   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.SimpleTrigger#getFunction <em>Function</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Function</em>'.
+   * @see uws.engage.dsl.assess.SimpleTrigger#getFunction()
+   * @see #getSimpleTrigger()
+   * @generated
+   */
+  EAttribute getSimpleTrigger_Function();
+
+  /**
+   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.SimpleTrigger#getSign <em>Sign</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Sign</em>'.
+   * @see uws.engage.dsl.assess.SimpleTrigger#getSign()
+   * @see #getSimpleTrigger()
+   * @generated
+   */
+  EAttribute getSimpleTrigger_Sign();
+
+  /**
+   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.SimpleTrigger#isNegativeLimit <em>Negative Limit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Negative Limit</em>'.
+   * @see uws.engage.dsl.assess.SimpleTrigger#isNegativeLimit()
+   * @see #getSimpleTrigger()
+   * @generated
+   */
+  EAttribute getSimpleTrigger_NegativeLimit();
+
+  /**
+   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.SimpleTrigger#getLimit <em>Limit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Limit</em>'.
+   * @see uws.engage.dsl.assess.SimpleTrigger#getLimit()
+   * @see #getSimpleTrigger()
+   * @generated
+   */
+  EAttribute getSimpleTrigger_Limit();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uws.engage.dsl.assess.SimpleTrigger#getTriggerReactions <em>Trigger Reactions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Trigger Reactions</em>'.
+   * @see uws.engage.dsl.assess.SimpleTrigger#getTriggerReactions()
+   * @see #getSimpleTrigger()
+   * @generated
+   */
+  EReference getSimpleTrigger_TriggerReactions();
+
+  /**
+   * Returns the meta object for class '{@link uws.engage.dsl.assess.LOTrigger <em>LO Trigger</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>LO Trigger</em>'.
+   * @see uws.engage.dsl.assess.LOTrigger
+   * @generated
+   */
+  EClass getLOTrigger();
+
+  /**
+   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.LOTrigger#getFunction <em>Function</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Function</em>'.
+   * @see uws.engage.dsl.assess.LOTrigger#getFunction()
+   * @see #getLOTrigger()
+   * @generated
+   */
+  EAttribute getLOTrigger_Function();
+
+  /**
+   * Returns the meta object for the reference '{@link uws.engage.dsl.assess.LOTrigger#getOutcome <em>Outcome</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Outcome</em>'.
+   * @see uws.engage.dsl.assess.LOTrigger#getOutcome()
+   * @see #getLOTrigger()
+   * @generated
+   */
+  EReference getLOTrigger_Outcome();
+
+  /**
+   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.LOTrigger#getSign <em>Sign</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Sign</em>'.
+   * @see uws.engage.dsl.assess.LOTrigger#getSign()
+   * @see #getLOTrigger()
+   * @generated
+   */
+  EAttribute getLOTrigger_Sign();
+
+  /**
+   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.LOTrigger#isNegativeLimit <em>Negative Limit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Negative Limit</em>'.
+   * @see uws.engage.dsl.assess.LOTrigger#isNegativeLimit()
+   * @see #getLOTrigger()
+   * @generated
+   */
+  EAttribute getLOTrigger_NegativeLimit();
+
+  /**
+   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.LOTrigger#getLimit <em>Limit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Limit</em>'.
+   * @see uws.engage.dsl.assess.LOTrigger#getLimit()
+   * @see #getLOTrigger()
+   * @generated
+   */
+  EAttribute getLOTrigger_Limit();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uws.engage.dsl.assess.LOTrigger#getTriggerReactions <em>Trigger Reactions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Trigger Reactions</em>'.
+   * @see uws.engage.dsl.assess.LOTrigger#getTriggerReactions()
+   * @see #getLOTrigger()
+   * @generated
+   */
+  EReference getLOTrigger_TriggerReactions();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2983,6 +3568,14 @@ public interface AssessPackage extends EPackage
      * @generated
      */
     EReference MODEL__FEEDBACK_MODEL = eINSTANCE.getModel_FeedbackModel();
+
+    /**
+     * The meta object literal for the '<em><b>Badge Model</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MODEL__BADGE_MODEL = eINSTANCE.getModel_BadgeModel();
 
     /**
      * The meta object literal for the '{@link uws.engage.dsl.assess.impl.TypeImpl <em>Type</em>}' class.
@@ -3319,6 +3912,14 @@ public interface AssessPackage extends EPackage
     EAttribute FEEDBACK__MESSAGE = eINSTANCE.getFeedback_Message();
 
     /**
+     * The meta object literal for the '<em><b>Image</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FEEDBACK__IMAGE = eINSTANCE.getFeedback_Image();
+
+    /**
      * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3327,12 +3928,28 @@ public interface AssessPackage extends EPackage
     EAttribute FEEDBACK__TYPE = eINSTANCE.getFeedback_Type();
 
     /**
-     * The meta object literal for the '<em><b>Final</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Win</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute FEEDBACK__FINAL = eINSTANCE.getFeedback_Final();
+    EAttribute FEEDBACK__WIN = eINSTANCE.getFeedback_Win();
+
+    /**
+     * The meta object literal for the '<em><b>Lose</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FEEDBACK__LOSE = eINSTANCE.getFeedback_Lose();
+
+    /**
+     * The meta object literal for the '<em><b>End</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FEEDBACK__END = eINSTANCE.getFeedback_End();
 
     /**
      * The meta object literal for the '{@link uws.engage.dsl.assess.impl.EvidenceModelImpl <em>Evidence Model</em>}' class.
@@ -3593,6 +4210,14 @@ public interface AssessPackage extends EPackage
     EReference TRIGGER_FEEDBACK__FEEDBACK = eINSTANCE.getTriggerFeedback_Feedback();
 
     /**
+     * The meta object literal for the '<em><b>Immediate</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TRIGGER_FEEDBACK__IMMEDIATE = eINSTANCE.getTriggerFeedback_Immediate();
+
+    /**
      * The meta object literal for the '{@link uws.engage.dsl.assess.impl.ActionImpl <em>Action</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3617,6 +4242,14 @@ public interface AssessPackage extends EPackage
      * @generated
      */
     EReference ACTION__PARAMS = eINSTANCE.getAction_Params();
+
+    /**
+     * The meta object literal for the '<em><b>Desc</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ACTION__DESC = eINSTANCE.getAction_Desc();
 
     /**
      * The meta object literal for the '<em><b>Points</b></em>' containment reference list feature.
@@ -3679,36 +4312,12 @@ public interface AssessPackage extends EPackage
     EClass POINTS = eINSTANCE.getPoints();
 
     /**
-     * The meta object literal for the '<em><b>Outcome</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Outcomes Points</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference POINTS__OUTCOME = eINSTANCE.getPoints_Outcome();
-
-    /**
-     * The meta object literal for the '<em><b>Reset Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute POINTS__RESET_VALUE = eINSTANCE.getPoints_ResetValue();
-
-    /**
-     * The meta object literal for the '<em><b>Pts</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference POINTS__PTS = eINSTANCE.getPoints_Pts();
-
-    /**
-     * The meta object literal for the '<em><b>Var</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference POINTS__VAR = eINSTANCE.getPoints_Var();
+    EReference POINTS__OUTCOMES_POINTS = eINSTANCE.getPoints_OutcomesPoints();
 
     /**
      * The meta object literal for the '<em><b>Others</b></em>' attribute feature.
@@ -3725,6 +4334,48 @@ public interface AssessPackage extends EPackage
      * @generated
      */
     EReference POINTS__PARAMS = eINSTANCE.getPoints_Params();
+
+    /**
+     * The meta object literal for the '{@link uws.engage.dsl.assess.impl.OutcomesPointsImpl <em>Outcomes Points</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uws.engage.dsl.assess.impl.OutcomesPointsImpl
+     * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getOutcomesPoints()
+     * @generated
+     */
+    EClass OUTCOMES_POINTS = eINSTANCE.getOutcomesPoints();
+
+    /**
+     * The meta object literal for the '<em><b>Outcome</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OUTCOMES_POINTS__OUTCOME = eINSTANCE.getOutcomesPoints_Outcome();
+
+    /**
+     * The meta object literal for the '<em><b>Reset Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute OUTCOMES_POINTS__RESET_VALUE = eINSTANCE.getOutcomesPoints_ResetValue();
+
+    /**
+     * The meta object literal for the '<em><b>Pts</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OUTCOMES_POINTS__PTS = eINSTANCE.getOutcomesPoints_Pts();
+
+    /**
+     * The meta object literal for the '<em><b>Var</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OUTCOMES_POINTS__VAR = eINSTANCE.getOutcomesPoints_Var();
 
     /**
      * The meta object literal for the '{@link uws.engage.dsl.assess.impl.PointImpl <em>Point</em>}' class.
@@ -3829,6 +4480,14 @@ public interface AssessPackage extends EPackage
      * @generated
      */
     EReference REACTION__FEEDBACK = eINSTANCE.getReaction_Feedback();
+
+    /**
+     * The meta object literal for the '<em><b>Immediate</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REACTION__IMMEDIATE = eINSTANCE.getReaction_Immediate();
 
     /**
      * The meta object literal for the '{@link uws.engage.dsl.assess.impl.ParamConditionImpl <em>Param Condition</em>}' class.
@@ -4009,6 +4668,158 @@ public interface AssessPackage extends EPackage
      * @generated
      */
     EReference INACTIVITY_LIMIT__TRIGGER_REACTIONS = eINSTANCE.getInactivityLimit_TriggerReactions();
+
+    /**
+     * The meta object literal for the '{@link uws.engage.dsl.assess.impl.BadgeModelImpl <em>Badge Model</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uws.engage.dsl.assess.impl.BadgeModelImpl
+     * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getBadgeModel()
+     * @generated
+     */
+    EClass BADGE_MODEL = eINSTANCE.getBadgeModel();
+
+    /**
+     * The meta object literal for the '<em><b>Generic Triggers</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BADGE_MODEL__GENERIC_TRIGGERS = eINSTANCE.getBadgeModel_GenericTriggers();
+
+    /**
+     * The meta object literal for the '{@link uws.engage.dsl.assess.impl.GenericTriggerImpl <em>Generic Trigger</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uws.engage.dsl.assess.impl.GenericTriggerImpl
+     * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getGenericTrigger()
+     * @generated
+     */
+    EClass GENERIC_TRIGGER = eINSTANCE.getGenericTrigger();
+
+    /**
+     * The meta object literal for the '<em><b>Simple</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GENERIC_TRIGGER__SIMPLE = eINSTANCE.getGenericTrigger_Simple();
+
+    /**
+     * The meta object literal for the '<em><b>Lo</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GENERIC_TRIGGER__LO = eINSTANCE.getGenericTrigger_Lo();
+
+    /**
+     * The meta object literal for the '{@link uws.engage.dsl.assess.impl.SimpleTriggerImpl <em>Simple Trigger</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uws.engage.dsl.assess.impl.SimpleTriggerImpl
+     * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getSimpleTrigger()
+     * @generated
+     */
+    EClass SIMPLE_TRIGGER = eINSTANCE.getSimpleTrigger();
+
+    /**
+     * The meta object literal for the '<em><b>Function</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SIMPLE_TRIGGER__FUNCTION = eINSTANCE.getSimpleTrigger_Function();
+
+    /**
+     * The meta object literal for the '<em><b>Sign</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SIMPLE_TRIGGER__SIGN = eINSTANCE.getSimpleTrigger_Sign();
+
+    /**
+     * The meta object literal for the '<em><b>Negative Limit</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SIMPLE_TRIGGER__NEGATIVE_LIMIT = eINSTANCE.getSimpleTrigger_NegativeLimit();
+
+    /**
+     * The meta object literal for the '<em><b>Limit</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SIMPLE_TRIGGER__LIMIT = eINSTANCE.getSimpleTrigger_Limit();
+
+    /**
+     * The meta object literal for the '<em><b>Trigger Reactions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIMPLE_TRIGGER__TRIGGER_REACTIONS = eINSTANCE.getSimpleTrigger_TriggerReactions();
+
+    /**
+     * The meta object literal for the '{@link uws.engage.dsl.assess.impl.LOTriggerImpl <em>LO Trigger</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uws.engage.dsl.assess.impl.LOTriggerImpl
+     * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getLOTrigger()
+     * @generated
+     */
+    EClass LO_TRIGGER = eINSTANCE.getLOTrigger();
+
+    /**
+     * The meta object literal for the '<em><b>Function</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LO_TRIGGER__FUNCTION = eINSTANCE.getLOTrigger_Function();
+
+    /**
+     * The meta object literal for the '<em><b>Outcome</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LO_TRIGGER__OUTCOME = eINSTANCE.getLOTrigger_Outcome();
+
+    /**
+     * The meta object literal for the '<em><b>Sign</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LO_TRIGGER__SIGN = eINSTANCE.getLOTrigger_Sign();
+
+    /**
+     * The meta object literal for the '<em><b>Negative Limit</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LO_TRIGGER__NEGATIVE_LIMIT = eINSTANCE.getLOTrigger_NegativeLimit();
+
+    /**
+     * The meta object literal for the '<em><b>Limit</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LO_TRIGGER__LIMIT = eINSTANCE.getLOTrigger_Limit();
+
+    /**
+     * The meta object literal for the '<em><b>Trigger Reactions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LO_TRIGGER__TRIGGER_REACTIONS = eINSTANCE.getLOTrigger_TriggerReactions();
 
   }
 

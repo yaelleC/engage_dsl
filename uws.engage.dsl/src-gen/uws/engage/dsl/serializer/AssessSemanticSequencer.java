@@ -19,17 +19,21 @@ import uws.engage.dsl.assess.ActionSequence;
 import uws.engage.dsl.assess.ActionSequences;
 import uws.engage.dsl.assess.Age;
 import uws.engage.dsl.assess.AssessPackage;
+import uws.engage.dsl.assess.BadgeModel;
 import uws.engage.dsl.assess.Characteristic;
 import uws.engage.dsl.assess.EvidenceModel;
 import uws.engage.dsl.assess.Feedback;
 import uws.engage.dsl.assess.FeedbackMessages;
 import uws.engage.dsl.assess.FeedbackModel;
 import uws.engage.dsl.assess.GameDescription;
+import uws.engage.dsl.assess.GenericTrigger;
 import uws.engage.dsl.assess.InactivityLimit;
+import uws.engage.dsl.assess.LOTrigger;
 import uws.engage.dsl.assess.LearningOutcomes;
 import uws.engage.dsl.assess.Model;
 import uws.engage.dsl.assess.Outcome;
 import uws.engage.dsl.assess.OutcomeValueLimit;
+import uws.engage.dsl.assess.OutcomesPoints;
 import uws.engage.dsl.assess.ParamCondition;
 import uws.engage.dsl.assess.Parameter;
 import uws.engage.dsl.assess.Params;
@@ -39,6 +43,7 @@ import uws.engage.dsl.assess.Points;
 import uws.engage.dsl.assess.PointsCondition;
 import uws.engage.dsl.assess.Reaction;
 import uws.engage.dsl.assess.Reactions;
+import uws.engage.dsl.assess.SimpleTrigger;
 import uws.engage.dsl.assess.TimerAction;
 import uws.engage.dsl.assess.TimerActions;
 import uws.engage.dsl.assess.Timing;
@@ -87,6 +92,12 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
+			case AssessPackage.BADGE_MODEL:
+				if(context == grammarAccess.getBadgeModelRule()) {
+					sequence_BadgeModel(context, (BadgeModel) semanticObject); 
+					return; 
+				}
+				else break;
 			case AssessPackage.CHARACTERISTIC:
 				if(context == grammarAccess.getCharacteristicRule()) {
 					sequence_Characteristic(context, (Characteristic) semanticObject); 
@@ -129,9 +140,21 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
+			case AssessPackage.GENERIC_TRIGGER:
+				if(context == grammarAccess.getGenericTriggerRule()) {
+					sequence_GenericTrigger(context, (GenericTrigger) semanticObject); 
+					return; 
+				}
+				else break;
 			case AssessPackage.INACTIVITY_LIMIT:
 				if(context == grammarAccess.getInactivityLimitRule()) {
 					sequence_InactivityLimit(context, (InactivityLimit) semanticObject); 
+					return; 
+				}
+				else break;
+			case AssessPackage.LO_TRIGGER:
+				if(context == grammarAccess.getLOTriggerRule()) {
+					sequence_LOTrigger(context, (LOTrigger) semanticObject); 
 					return; 
 				}
 				else break;
@@ -156,6 +179,12 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case AssessPackage.OUTCOME_VALUE_LIMIT:
 				if(context == grammarAccess.getOutcomeValueLimitRule()) {
 					sequence_OutcomeValueLimit(context, (OutcomeValueLimit) semanticObject); 
+					return; 
+				}
+				else break;
+			case AssessPackage.OUTCOMES_POINTS:
+				if(context == grammarAccess.getOutcomesPointsRule()) {
+					sequence_OutcomesPoints(context, (OutcomesPoints) semanticObject); 
 					return; 
 				}
 				else break;
@@ -210,6 +239,12 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case AssessPackage.REACTIONS:
 				if(context == grammarAccess.getReactionsRule()) {
 					sequence_Reactions(context, (Reactions) semanticObject); 
+					return; 
+				}
+				else break;
+			case AssessPackage.SIMPLE_TRIGGER:
+				if(context == grammarAccess.getSimpleTriggerRule()) {
+					sequence_SimpleTrigger(context, (SimpleTrigger) semanticObject); 
 					return; 
 				}
 				else break;
@@ -294,7 +329,14 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (name=ID params+=Parameter params+=Parameter* points+=Points+ reactions=Reactions?)
+	 *     (
+	 *         name=ID 
+	 *         params+=Parameter 
+	 *         params+=Parameter* 
+	 *         desc=STRING 
+	 *         points+=Points+ 
+	 *         reactions=Reactions?
+	 *     )
 	 */
 	protected void sequence_Action(EObject context, Action semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -317,6 +359,15 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		feeder.accept(grammarAccess.getAgeAccess().getAgeMinINTTerminalRuleCall_0_0(), semanticObject.getAgeMin());
 		feeder.accept(grammarAccess.getAgeAccess().getAgeMaxINTTerminalRuleCall_2_0(), semanticObject.getAgeMax());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     genericTriggers+=GenericTrigger+
+	 */
+	protected void sequence_BadgeModel(EObject context, BadgeModel semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -377,7 +428,7 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (name=ID message=STRING type=TypeFeedback? final?='final'?)
+	 *     (name=ID message=STRING image=STRING? type=TypeFeedback? (win?='win' | lose?='lose' | end?='end')?)
 	 */
 	protected void sequence_Feedback(EObject context, Feedback semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -405,9 +456,34 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
+	 *     (simple=SimpleTrigger | lo=LOTrigger)
+	 */
+	protected void sequence_GenericTrigger(EObject context, GenericTrigger semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (sign=CompSign limit=INT triggerReactions+=ActionReaction+)
 	 */
 	protected void sequence_InactivityLimit(EObject context, InactivityLimit semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         function=FeedbackKeywordsComplex 
+	 *         outcome=[Outcome|ID] 
+	 *         sign=CompSign 
+	 *         negativeLimit?='-'? 
+	 *         limit=INT 
+	 *         triggerReactions+=TriggerFeedback+
+	 *     )
+	 */
+	protected void sequence_LOTrigger(EObject context, LOTrigger semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -429,7 +505,8 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         learningOutcomes=LearningOutcomes 
 	 *         feedbackMessages=FeedbackMessages? 
 	 *         evidenceModel=EvidenceModel 
-	 *         feedbackModel=FeedbackModel?
+	 *         feedbackModel=FeedbackModel? 
+	 *         badgeModel=BadgeModel?
 	 *     )
 	 */
 	protected void sequence_Model(EObject context, Model semanticObject) {
@@ -451,6 +528,15 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     (name=ID desc=STRING? value=INT? type=TypeOutcome?)
 	 */
 	protected void sequence_Outcome(EObject context, Outcome semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (outcome=[Outcome|ID]? resetValue?='='? (pts=Point | var=[Parameter|ID]))
+	 */
+	protected void sequence_OutcomesPoints(EObject context, OutcomesPoints semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -518,7 +604,7 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (outcome=[Outcome|ID]? resetValue?='='? (pts=Point | var=[Parameter|ID]) (others?='others' | others?='else' | params+=Params+))
+	 *     (outcomesPoints+=OutcomesPoints outcomesPoints+=OutcomesPoints? (others?='others' | others?='else' | params+=Params+))
 	 */
 	protected void sequence_Points(EObject context, Points semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -527,7 +613,7 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (paramsC=ParamCondition | (pointsC=PointsCondition feedback=[Feedback|ID]))
+	 *     (paramsC=ParamCondition | (pointsC=PointsCondition feedback=[Feedback|ID] immediate?='immediate'?))
 	 */
 	protected void sequence_Reaction(EObject context, Reaction semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -539,6 +625,15 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     reaction+=Reaction+
 	 */
 	protected void sequence_Reactions(EObject context, Reactions semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (function=FeedbackKeywordsSimple sign=CompSign negativeLimit?='-'? limit=INT triggerReactions+=TriggerFeedback+)
+	 */
+	protected void sequence_SimpleTrigger(EObject context, SimpleTrigger semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -572,17 +667,10 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     feedback=[Feedback|ID]
+	 *     (feedback=[Feedback|ID] immediate?='immediate'?)
 	 */
 	protected void sequence_TriggerFeedback(EObject context, TriggerFeedback semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AssessPackage.Literals.TRIGGER_FEEDBACK__FEEDBACK) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AssessPackage.Literals.TRIGGER_FEEDBACK__FEEDBACK));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getTriggerFeedbackAccess().getFeedbackFeedbackIDTerminalRuleCall_1_0_1(), semanticObject.getFeedback());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

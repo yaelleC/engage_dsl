@@ -13,17 +13,21 @@ import uws.engage.dsl.assess.ActionSequence;
 import uws.engage.dsl.assess.ActionSequences;
 import uws.engage.dsl.assess.Age;
 import uws.engage.dsl.assess.AssessPackage;
+import uws.engage.dsl.assess.BadgeModel;
 import uws.engage.dsl.assess.Characteristic;
 import uws.engage.dsl.assess.EvidenceModel;
 import uws.engage.dsl.assess.Feedback;
 import uws.engage.dsl.assess.FeedbackMessages;
 import uws.engage.dsl.assess.FeedbackModel;
 import uws.engage.dsl.assess.GameDescription;
+import uws.engage.dsl.assess.GenericTrigger;
 import uws.engage.dsl.assess.InactivityLimit;
+import uws.engage.dsl.assess.LOTrigger;
 import uws.engage.dsl.assess.LearningOutcomes;
 import uws.engage.dsl.assess.Model;
 import uws.engage.dsl.assess.Outcome;
 import uws.engage.dsl.assess.OutcomeValueLimit;
+import uws.engage.dsl.assess.OutcomesPoints;
 import uws.engage.dsl.assess.ParamCondition;
 import uws.engage.dsl.assess.Parameter;
 import uws.engage.dsl.assess.Params;
@@ -33,6 +37,7 @@ import uws.engage.dsl.assess.Points;
 import uws.engage.dsl.assess.PointsCondition;
 import uws.engage.dsl.assess.Reaction;
 import uws.engage.dsl.assess.Reactions;
+import uws.engage.dsl.assess.SimpleTrigger;
 import uws.engage.dsl.assess.TimerAction;
 import uws.engage.dsl.assess.TimerActions;
 import uws.engage.dsl.assess.Timing;
@@ -273,6 +278,13 @@ public class AssessSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case AssessPackage.OUTCOMES_POINTS:
+      {
+        OutcomesPoints outcomesPoints = (OutcomesPoints)theEObject;
+        T result = caseOutcomesPoints(outcomesPoints);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case AssessPackage.POINT:
       {
         Point point = (Point)theEObject;
@@ -340,6 +352,34 @@ public class AssessSwitch<T> extends Switch<T>
       {
         InactivityLimit inactivityLimit = (InactivityLimit)theEObject;
         T result = caseInactivityLimit(inactivityLimit);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AssessPackage.BADGE_MODEL:
+      {
+        BadgeModel badgeModel = (BadgeModel)theEObject;
+        T result = caseBadgeModel(badgeModel);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AssessPackage.GENERIC_TRIGGER:
+      {
+        GenericTrigger genericTrigger = (GenericTrigger)theEObject;
+        T result = caseGenericTrigger(genericTrigger);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AssessPackage.SIMPLE_TRIGGER:
+      {
+        SimpleTrigger simpleTrigger = (SimpleTrigger)theEObject;
+        T result = caseSimpleTrigger(simpleTrigger);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AssessPackage.LO_TRIGGER:
+      {
+        LOTrigger loTrigger = (LOTrigger)theEObject;
+        T result = caseLOTrigger(loTrigger);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -732,6 +772,22 @@ public class AssessSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Outcomes Points</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Outcomes Points</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOutcomesPoints(OutcomesPoints object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Point</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -887,6 +943,70 @@ public class AssessSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseInactivityLimit(InactivityLimit object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Badge Model</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Badge Model</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBadgeModel(BadgeModel object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Generic Trigger</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Generic Trigger</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGenericTrigger(GenericTrigger object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Simple Trigger</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Simple Trigger</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSimpleTrigger(SimpleTrigger object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>LO Trigger</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>LO Trigger</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLOTrigger(LOTrigger object)
   {
     return null;
   }

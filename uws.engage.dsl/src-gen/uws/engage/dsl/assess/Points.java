@@ -14,10 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link uws.engage.dsl.assess.Points#getOutcome <em>Outcome</em>}</li>
- *   <li>{@link uws.engage.dsl.assess.Points#isResetValue <em>Reset Value</em>}</li>
- *   <li>{@link uws.engage.dsl.assess.Points#getPts <em>Pts</em>}</li>
- *   <li>{@link uws.engage.dsl.assess.Points#getVar <em>Var</em>}</li>
+ *   <li>{@link uws.engage.dsl.assess.Points#getOutcomesPoints <em>Outcomes Points</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.Points#isOthers <em>Others</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.Points#getParams <em>Params</em>}</li>
  * </ul>
@@ -30,108 +27,20 @@ import org.eclipse.emf.ecore.EObject;
 public interface Points extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Outcome</b></em>' reference.
+   * Returns the value of the '<em><b>Outcomes Points</b></em>' containment reference list.
+   * The list contents are of type {@link uws.engage.dsl.assess.OutcomesPoints}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Outcome</em>' reference isn't clear,
+   * If the meaning of the '<em>Outcomes Points</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Outcome</em>' reference.
-   * @see #setOutcome(Outcome)
-   * @see uws.engage.dsl.assess.AssessPackage#getPoints_Outcome()
-   * @model
-   * @generated
-   */
-  Outcome getOutcome();
-
-  /**
-   * Sets the value of the '{@link uws.engage.dsl.assess.Points#getOutcome <em>Outcome</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Outcome</em>' reference.
-   * @see #getOutcome()
-   * @generated
-   */
-  void setOutcome(Outcome value);
-
-  /**
-   * Returns the value of the '<em><b>Reset Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Reset Value</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Reset Value</em>' attribute.
-   * @see #setResetValue(boolean)
-   * @see uws.engage.dsl.assess.AssessPackage#getPoints_ResetValue()
-   * @model
-   * @generated
-   */
-  boolean isResetValue();
-
-  /**
-   * Sets the value of the '{@link uws.engage.dsl.assess.Points#isResetValue <em>Reset Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Reset Value</em>' attribute.
-   * @see #isResetValue()
-   * @generated
-   */
-  void setResetValue(boolean value);
-
-  /**
-   * Returns the value of the '<em><b>Pts</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Pts</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Pts</em>' containment reference.
-   * @see #setPts(Point)
-   * @see uws.engage.dsl.assess.AssessPackage#getPoints_Pts()
+   * @return the value of the '<em>Outcomes Points</em>' containment reference list.
+   * @see uws.engage.dsl.assess.AssessPackage#getPoints_OutcomesPoints()
    * @model containment="true"
    * @generated
    */
-  Point getPts();
-
-  /**
-   * Sets the value of the '{@link uws.engage.dsl.assess.Points#getPts <em>Pts</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Pts</em>' containment reference.
-   * @see #getPts()
-   * @generated
-   */
-  void setPts(Point value);
-
-  /**
-   * Returns the value of the '<em><b>Var</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Var</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Var</em>' reference.
-   * @see #setVar(Parameter)
-   * @see uws.engage.dsl.assess.AssessPackage#getPoints_Var()
-   * @model
-   * @generated
-   */
-  Parameter getVar();
-
-  /**
-   * Sets the value of the '{@link uws.engage.dsl.assess.Points#getVar <em>Var</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Var</em>' reference.
-   * @see #getVar()
-   * @generated
-   */
-  void setVar(Parameter value);
+  EList<OutcomesPoints> getOutcomesPoints();
 
   /**
    * Returns the value of the '<em><b>Others</b></em>' attribute.

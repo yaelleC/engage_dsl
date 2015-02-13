@@ -33,6 +33,7 @@ import uws.engage.dsl.assess.Reactions;
  * <ul>
  *   <li>{@link uws.engage.dsl.assess.impl.ActionImpl#getName <em>Name</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.ActionImpl#getParams <em>Params</em>}</li>
+ *   <li>{@link uws.engage.dsl.assess.impl.ActionImpl#getDesc <em>Desc</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.ActionImpl#getPoints <em>Points</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.ActionImpl#getReactions <em>Reactions</em>}</li>
  * </ul>
@@ -71,6 +72,26 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * @ordered
    */
   protected EList<Parameter> params;
+
+  /**
+   * The default value of the '{@link #getDesc() <em>Desc</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDesc()
+   * @generated
+   * @ordered
+   */
+  protected static final String DESC_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDesc() <em>Desc</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDesc()
+   * @generated
+   * @ordered
+   */
+  protected String desc = DESC_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getPoints() <em>Points</em>}' containment reference list.
@@ -148,6 +169,29 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
       params = new EObjectContainmentEList<Parameter>(Parameter.class, this, AssessPackage.ACTION__PARAMS);
     }
     return params;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getDesc()
+  {
+    return desc;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDesc(String newDesc)
+  {
+    String oldDesc = desc;
+    desc = newDesc;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AssessPackage.ACTION__DESC, oldDesc, desc));
   }
 
   /**
@@ -246,6 +290,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
         return getName();
       case AssessPackage.ACTION__PARAMS:
         return getParams();
+      case AssessPackage.ACTION__DESC:
+        return getDesc();
       case AssessPackage.ACTION__POINTS:
         return getPoints();
       case AssessPackage.ACTION__REACTIONS:
@@ -271,6 +317,9 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
       case AssessPackage.ACTION__PARAMS:
         getParams().clear();
         getParams().addAll((Collection<? extends Parameter>)newValue);
+        return;
+      case AssessPackage.ACTION__DESC:
+        setDesc((String)newValue);
         return;
       case AssessPackage.ACTION__POINTS:
         getPoints().clear();
@@ -299,6 +348,9 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
       case AssessPackage.ACTION__PARAMS:
         getParams().clear();
         return;
+      case AssessPackage.ACTION__DESC:
+        setDesc(DESC_EDEFAULT);
+        return;
       case AssessPackage.ACTION__POINTS:
         getPoints().clear();
         return;
@@ -323,6 +375,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AssessPackage.ACTION__PARAMS:
         return params != null && !params.isEmpty();
+      case AssessPackage.ACTION__DESC:
+        return DESC_EDEFAULT == null ? desc != null : !DESC_EDEFAULT.equals(desc);
       case AssessPackage.ACTION__POINTS:
         return points != null && !points.isEmpty();
       case AssessPackage.ACTION__REACTIONS:
@@ -344,6 +398,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", desc: ");
+    result.append(desc);
     result.append(')');
     return result.toString();
   }

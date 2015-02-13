@@ -19,7 +19,7 @@ public class SG_test {
 	@Test
 	public void test_getJSON() {
 		try {
-			String dsl = readFile("configFile2.txt");
+			String dsl = readFile("configFile.txt");
 			Parser engage = new Parser();
 			JSONObject cf = engage.getJSONfromDSL(dsl);
 			System.out.println(cf);
@@ -34,7 +34,7 @@ public class SG_test {
 	@Test
 	public void test_parseDSL() {
 		try {
-			String dsl = readFile("configFile2.txt");
+			String dsl = readFile("configFile.txt");
 			Parser engage = new Parser();
 			ParseResult result = engage.parse(dsl);
 			

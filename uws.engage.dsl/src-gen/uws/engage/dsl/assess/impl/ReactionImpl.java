@@ -27,6 +27,7 @@ import uws.engage.dsl.assess.Reaction;
  *   <li>{@link uws.engage.dsl.assess.impl.ReactionImpl#getParamsC <em>Params C</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.ReactionImpl#getPointsC <em>Points C</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.ReactionImpl#getFeedback <em>Feedback</em>}</li>
+ *   <li>{@link uws.engage.dsl.assess.impl.ReactionImpl#isImmediate <em>Immediate</em>}</li>
  * </ul>
  * </p>
  *
@@ -63,6 +64,26 @@ public class ReactionImpl extends MinimalEObjectImpl.Container implements Reacti
    * @ordered
    */
   protected Feedback feedback;
+
+  /**
+   * The default value of the '{@link #isImmediate() <em>Immediate</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isImmediate()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean IMMEDIATE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isImmediate() <em>Immediate</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isImmediate()
+   * @generated
+   * @ordered
+   */
+  protected boolean immediate = IMMEDIATE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -229,6 +250,29 @@ public class ReactionImpl extends MinimalEObjectImpl.Container implements Reacti
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isImmediate()
+  {
+    return immediate;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setImmediate(boolean newImmediate)
+  {
+    boolean oldImmediate = immediate;
+    immediate = newImmediate;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AssessPackage.REACTION__IMMEDIATE, oldImmediate, immediate));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -259,6 +303,8 @@ public class ReactionImpl extends MinimalEObjectImpl.Container implements Reacti
       case AssessPackage.REACTION__FEEDBACK:
         if (resolve) return getFeedback();
         return basicGetFeedback();
+      case AssessPackage.REACTION__IMMEDIATE:
+        return isImmediate();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -281,6 +327,9 @@ public class ReactionImpl extends MinimalEObjectImpl.Container implements Reacti
         return;
       case AssessPackage.REACTION__FEEDBACK:
         setFeedback((Feedback)newValue);
+        return;
+      case AssessPackage.REACTION__IMMEDIATE:
+        setImmediate((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -305,6 +354,9 @@ public class ReactionImpl extends MinimalEObjectImpl.Container implements Reacti
       case AssessPackage.REACTION__FEEDBACK:
         setFeedback((Feedback)null);
         return;
+      case AssessPackage.REACTION__IMMEDIATE:
+        setImmediate(IMMEDIATE_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -325,8 +377,27 @@ public class ReactionImpl extends MinimalEObjectImpl.Container implements Reacti
         return pointsC != null;
       case AssessPackage.REACTION__FEEDBACK:
         return feedback != null;
+      case AssessPackage.REACTION__IMMEDIATE:
+        return immediate != IMMEDIATE_EDEFAULT;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (immediate: ");
+    result.append(immediate);
+    result.append(')');
+    return result.toString();
   }
 
 } //ReactionImpl

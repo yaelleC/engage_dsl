@@ -14,6 +14,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//Model/feedbackMessages"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//Model/evidenceModel"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//Model/feedbackModel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//Model/badgeModel"/>
     </genClasses>
     <genClasses ecoreClass="Assess.ecore#//Type">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Type/simpleType"/>
@@ -64,8 +65,11 @@
     <genClasses ecoreClass="Assess.ecore#//Feedback">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Feedback/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Feedback/message"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Feedback/image"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Feedback/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Feedback/final"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Feedback/win"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Feedback/lose"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Feedback/end"/>
     </genClasses>
     <genClasses ecoreClass="Assess.ecore#//EvidenceModel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//EvidenceModel/actions"/>
@@ -105,10 +109,12 @@
     </genClasses>
     <genClasses ecoreClass="Assess.ecore#//TriggerFeedback">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Assess.ecore#//TriggerFeedback/feedback"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//TriggerFeedback/immediate"/>
     </genClasses>
     <genClasses ecoreClass="Assess.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Action/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//Action/params"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Action/desc"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//Action/points"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//Action/reactions"/>
     </genClasses>
@@ -118,12 +124,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Parameter/name"/>
     </genClasses>
     <genClasses ecoreClass="Assess.ecore#//Points">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Assess.ecore#//Points/outcome"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Points/resetValue"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//Points/pts"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Assess.ecore#//Points/var"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//Points/outcomesPoints"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Points/others"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//Points/params"/>
+    </genClasses>
+    <genClasses ecoreClass="Assess.ecore#//OutcomesPoints">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Assess.ecore#//OutcomesPoints/outcome"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//OutcomesPoints/resetValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//OutcomesPoints/pts"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Assess.ecore#//OutcomesPoints/var"/>
     </genClasses>
     <genClasses ecoreClass="Assess.ecore#//Point">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Point/negative"/>
@@ -140,6 +149,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//Reaction/paramsC"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//Reaction/pointsC"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Assess.ecore#//Reaction/feedback"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Reaction/immediate"/>
     </genClasses>
     <genClasses ecoreClass="Assess.ecore#//ParamCondition">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Assess.ecore#//ParamCondition/params"/>
@@ -167,6 +177,28 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//InactivityLimit/sign"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//InactivityLimit/limit"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//InactivityLimit/triggerReactions"/>
+    </genClasses>
+    <genClasses ecoreClass="Assess.ecore#//BadgeModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//BadgeModel/genericTriggers"/>
+    </genClasses>
+    <genClasses ecoreClass="Assess.ecore#//GenericTrigger">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//GenericTrigger/simple"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//GenericTrigger/lo"/>
+    </genClasses>
+    <genClasses ecoreClass="Assess.ecore#//SimpleTrigger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//SimpleTrigger/function"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//SimpleTrigger/sign"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//SimpleTrigger/negativeLimit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//SimpleTrigger/limit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//SimpleTrigger/triggerReactions"/>
+    </genClasses>
+    <genClasses ecoreClass="Assess.ecore#//LOTrigger">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//LOTrigger/function"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Assess.ecore#//LOTrigger/outcome"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//LOTrigger/sign"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//LOTrigger/negativeLimit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//LOTrigger/limit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//LOTrigger/triggerReactions"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

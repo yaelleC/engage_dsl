@@ -15,17 +15,21 @@ import uws.engage.dsl.assess.ActionSequence;
 import uws.engage.dsl.assess.ActionSequences;
 import uws.engage.dsl.assess.Age;
 import uws.engage.dsl.assess.AssessPackage;
+import uws.engage.dsl.assess.BadgeModel;
 import uws.engage.dsl.assess.Characteristic;
 import uws.engage.dsl.assess.EvidenceModel;
 import uws.engage.dsl.assess.Feedback;
 import uws.engage.dsl.assess.FeedbackMessages;
 import uws.engage.dsl.assess.FeedbackModel;
 import uws.engage.dsl.assess.GameDescription;
+import uws.engage.dsl.assess.GenericTrigger;
 import uws.engage.dsl.assess.InactivityLimit;
+import uws.engage.dsl.assess.LOTrigger;
 import uws.engage.dsl.assess.LearningOutcomes;
 import uws.engage.dsl.assess.Model;
 import uws.engage.dsl.assess.Outcome;
 import uws.engage.dsl.assess.OutcomeValueLimit;
+import uws.engage.dsl.assess.OutcomesPoints;
 import uws.engage.dsl.assess.ParamCondition;
 import uws.engage.dsl.assess.Parameter;
 import uws.engage.dsl.assess.Params;
@@ -35,6 +39,7 @@ import uws.engage.dsl.assess.Points;
 import uws.engage.dsl.assess.PointsCondition;
 import uws.engage.dsl.assess.Reaction;
 import uws.engage.dsl.assess.Reactions;
+import uws.engage.dsl.assess.SimpleTrigger;
 import uws.engage.dsl.assess.TimerAction;
 import uws.engage.dsl.assess.TimerActions;
 import uws.engage.dsl.assess.Timing;
@@ -228,6 +233,11 @@ public class AssessAdapterFactory extends AdapterFactoryImpl
         return createPointsAdapter();
       }
       @Override
+      public Adapter caseOutcomesPoints(OutcomesPoints object)
+      {
+        return createOutcomesPointsAdapter();
+      }
+      @Override
       public Adapter casePoint(Point object)
       {
         return createPointAdapter();
@@ -276,6 +286,26 @@ public class AssessAdapterFactory extends AdapterFactoryImpl
       public Adapter caseInactivityLimit(InactivityLimit object)
       {
         return createInactivityLimitAdapter();
+      }
+      @Override
+      public Adapter caseBadgeModel(BadgeModel object)
+      {
+        return createBadgeModelAdapter();
+      }
+      @Override
+      public Adapter caseGenericTrigger(GenericTrigger object)
+      {
+        return createGenericTriggerAdapter();
+      }
+      @Override
+      public Adapter caseSimpleTrigger(SimpleTrigger object)
+      {
+        return createSimpleTriggerAdapter();
+      }
+      @Override
+      public Adapter caseLOTrigger(LOTrigger object)
+      {
+        return createLOTriggerAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -660,6 +690,21 @@ public class AssessAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link uws.engage.dsl.assess.OutcomesPoints <em>Outcomes Points</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uws.engage.dsl.assess.OutcomesPoints
+   * @generated
+   */
+  public Adapter createOutcomesPointsAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link uws.engage.dsl.assess.Point <em>Point</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -805,6 +850,66 @@ public class AssessAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createInactivityLimitAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uws.engage.dsl.assess.BadgeModel <em>Badge Model</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uws.engage.dsl.assess.BadgeModel
+   * @generated
+   */
+  public Adapter createBadgeModelAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uws.engage.dsl.assess.GenericTrigger <em>Generic Trigger</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uws.engage.dsl.assess.GenericTrigger
+   * @generated
+   */
+  public Adapter createGenericTriggerAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uws.engage.dsl.assess.SimpleTrigger <em>Simple Trigger</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uws.engage.dsl.assess.SimpleTrigger
+   * @generated
+   */
+  public Adapter createSimpleTriggerAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uws.engage.dsl.assess.LOTrigger <em>LO Trigger</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uws.engage.dsl.assess.LOTrigger
+   * @generated
+   */
+  public Adapter createLOTriggerAdapter()
   {
     return null;
   }

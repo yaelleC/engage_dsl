@@ -33,14 +33,16 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cEvidenceModelEvidenceModelParserRuleCall_4_0 = (RuleCall)cEvidenceModelAssignment_4.eContents().get(0);
 		private final Assignment cFeedbackModelAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cFeedbackModelFeedbackModelParserRuleCall_5_0 = (RuleCall)cFeedbackModelAssignment_5.eContents().get(0);
+		private final Assignment cBadgeModelAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cBadgeModelBadgeModelParserRuleCall_6_0 = (RuleCall)cBadgeModelAssignment_6.eContents().get(0);
 		
 		//Model:
 		//	game=GameDescription player=PlayerDescription? learningOutcomes=LearningOutcomes feedbackMessages=FeedbackMessages?
-		//	evidenceModel=EvidenceModel feedbackModel=FeedbackModel?;
+		//	evidenceModel=EvidenceModel feedbackModel=FeedbackModel? badgeModel=BadgeModel?;
 		public ParserRule getRule() { return rule; }
 
 		//game=GameDescription player=PlayerDescription? learningOutcomes=LearningOutcomes feedbackMessages=FeedbackMessages?
-		//evidenceModel=EvidenceModel feedbackModel=FeedbackModel?
+		//evidenceModel=EvidenceModel feedbackModel=FeedbackModel? badgeModel=BadgeModel?
 		public Group getGroup() { return cGroup; }
 
 		//game=GameDescription
@@ -78,6 +80,12 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 
 		//FeedbackModel
 		public RuleCall getFeedbackModelFeedbackModelParserRuleCall_5_0() { return cFeedbackModelFeedbackModelParserRuleCall_5_0; }
+
+		//badgeModel=BadgeModel?
+		public Assignment getBadgeModelAssignment_6() { return cBadgeModelAssignment_6; }
+
+		//BadgeModel
+		public RuleCall getBadgeModelBadgeModelParserRuleCall_6_0() { return cBadgeModelBadgeModelParserRuleCall_6_0; }
 	}
 
 	public class EndElements extends AbstractParserRuleElementFinder {
@@ -651,16 +659,23 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final Assignment cMessageAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cMessageSTRINGTerminalRuleCall_1_0 = (RuleCall)cMessageAssignment_1.eContents().get(0);
-		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cTypeTypeFeedbackParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
-		private final Assignment cFinalAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final Keyword cFinalFinalKeyword_3_0 = (Keyword)cFinalAssignment_3.eContents().get(0);
+		private final Assignment cImageAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cImageSTRINGTerminalRuleCall_2_0 = (RuleCall)cImageAssignment_2.eContents().get(0);
+		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTypeTypeFeedbackParserRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
+		private final Alternatives cAlternatives_4 = (Alternatives)cGroup.eContents().get(4);
+		private final Assignment cWinAssignment_4_0 = (Assignment)cAlternatives_4.eContents().get(0);
+		private final Keyword cWinWinKeyword_4_0_0 = (Keyword)cWinAssignment_4_0.eContents().get(0);
+		private final Assignment cLoseAssignment_4_1 = (Assignment)cAlternatives_4.eContents().get(1);
+		private final Keyword cLoseLoseKeyword_4_1_0 = (Keyword)cLoseAssignment_4_1.eContents().get(0);
+		private final Assignment cEndAssignment_4_2 = (Assignment)cAlternatives_4.eContents().get(2);
+		private final Keyword cEndEndKeyword_4_2_0 = (Keyword)cEndAssignment_4_2.eContents().get(0);
 		
 		//Feedback:
-		//	name=ID message=STRING type=TypeFeedback? final?="final"?;
+		//	name=ID message=STRING image=STRING? type=TypeFeedback? (win?="win" | lose?="lose" | end?="end")?;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID message=STRING type=TypeFeedback? final?="final"?
+		//name=ID message=STRING image=STRING? type=TypeFeedback? (win?="win" | lose?="lose" | end?="end")?
 		public Group getGroup() { return cGroup; }
 
 		//name=ID
@@ -675,17 +690,38 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getMessageSTRINGTerminalRuleCall_1_0() { return cMessageSTRINGTerminalRuleCall_1_0; }
 
+		//image=STRING?
+		public Assignment getImageAssignment_2() { return cImageAssignment_2; }
+
+		//STRING
+		public RuleCall getImageSTRINGTerminalRuleCall_2_0() { return cImageSTRINGTerminalRuleCall_2_0; }
+
 		//type=TypeFeedback?
-		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
+		public Assignment getTypeAssignment_3() { return cTypeAssignment_3; }
 
 		//TypeFeedback
-		public RuleCall getTypeTypeFeedbackParserRuleCall_2_0() { return cTypeTypeFeedbackParserRuleCall_2_0; }
+		public RuleCall getTypeTypeFeedbackParserRuleCall_3_0() { return cTypeTypeFeedbackParserRuleCall_3_0; }
 
-		//final?="final"?
-		public Assignment getFinalAssignment_3() { return cFinalAssignment_3; }
+		//(win?="win" | lose?="lose" | end?="end")?
+		public Alternatives getAlternatives_4() { return cAlternatives_4; }
 
-		//"final"
-		public Keyword getFinalFinalKeyword_3_0() { return cFinalFinalKeyword_3_0; }
+		//win?="win"
+		public Assignment getWinAssignment_4_0() { return cWinAssignment_4_0; }
+
+		//"win"
+		public Keyword getWinWinKeyword_4_0_0() { return cWinWinKeyword_4_0_0; }
+
+		//lose?="lose"
+		public Assignment getLoseAssignment_4_1() { return cLoseAssignment_4_1; }
+
+		//"lose"
+		public Keyword getLoseLoseKeyword_4_1_0() { return cLoseLoseKeyword_4_1_0; }
+
+		//end?="end"
+		public Assignment getEndAssignment_4_2() { return cEndAssignment_4_2; }
+
+		//"end"
+		public Keyword getEndEndKeyword_4_2_0() { return cEndEndKeyword_4_2_0; }
 	}
 
 	public class TypeFeedbackElements extends AbstractParserRuleElementFinder {
@@ -1044,12 +1080,14 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cFeedbackAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final CrossReference cFeedbackFeedbackCrossReference_1_0 = (CrossReference)cFeedbackAssignment_1.eContents().get(0);
 		private final RuleCall cFeedbackFeedbackIDTerminalRuleCall_1_0_1 = (RuleCall)cFeedbackFeedbackCrossReference_1_0.eContents().get(1);
+		private final Assignment cImmediateAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Keyword cImmediateImmediateKeyword_2_0 = (Keyword)cImmediateAssignment_2.eContents().get(0);
 		
 		//TriggerFeedback:
-		//	":" feedback=[Feedback];
+		//	":" feedback=[Feedback] immediate?="immediate"?;
 		public ParserRule getRule() { return rule; }
 
-		//":" feedback=[Feedback]
+		//":" feedback=[Feedback] immediate?="immediate"?
 		public Group getGroup() { return cGroup; }
 
 		//":"
@@ -1063,6 +1101,12 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ID
 		public RuleCall getFeedbackFeedbackIDTerminalRuleCall_1_0_1() { return cFeedbackFeedbackIDTerminalRuleCall_1_0_1; }
+
+		//immediate?="immediate"?
+		public Assignment getImmediateAssignment_2() { return cImmediateAssignment_2; }
+
+		//"immediate"
+		public Keyword getImmediateImmediateKeyword_2_0() { return cImmediateImmediateKeyword_2_0; }
 	}
 
 	public class ActionElements extends AbstractParserRuleElementFinder {
@@ -1078,17 +1122,19 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cParamsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cParamsParameterParserRuleCall_3_1_0 = (RuleCall)cParamsAssignment_3_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cPointsAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cPointsPointsParserRuleCall_5_0 = (RuleCall)cPointsAssignment_5.eContents().get(0);
-		private final Assignment cReactionsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cReactionsReactionsParserRuleCall_6_0 = (RuleCall)cReactionsAssignment_6.eContents().get(0);
-		private final RuleCall cEndParserRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
+		private final Assignment cDescAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cDescSTRINGTerminalRuleCall_5_0 = (RuleCall)cDescAssignment_5.eContents().get(0);
+		private final Assignment cPointsAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cPointsPointsParserRuleCall_6_0 = (RuleCall)cPointsAssignment_6.eContents().get(0);
+		private final Assignment cReactionsAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cReactionsReactionsParserRuleCall_7_0 = (RuleCall)cReactionsAssignment_7.eContents().get(0);
+		private final RuleCall cEndParserRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
 		
 		//Action:
-		//	name=ID "(" params+=Parameter ("," params+=Parameter)* ")" points+=Points+ reactions=Reactions? End;
+		//	name=ID "(" params+=Parameter ("," params+=Parameter)* ")" desc=STRING points+=Points+ reactions=Reactions? End;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID "(" params+=Parameter ("," params+=Parameter)* ")" points+=Points+ reactions=Reactions? End
+		//name=ID "(" params+=Parameter ("," params+=Parameter)* ")" desc=STRING points+=Points+ reactions=Reactions? End
 		public Group getGroup() { return cGroup; }
 
 		//name=ID
@@ -1121,20 +1167,26 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 
+		//desc=STRING
+		public Assignment getDescAssignment_5() { return cDescAssignment_5; }
+
+		//STRING
+		public RuleCall getDescSTRINGTerminalRuleCall_5_0() { return cDescSTRINGTerminalRuleCall_5_0; }
+
 		//points+=Points+
-		public Assignment getPointsAssignment_5() { return cPointsAssignment_5; }
+		public Assignment getPointsAssignment_6() { return cPointsAssignment_6; }
 
 		//Points
-		public RuleCall getPointsPointsParserRuleCall_5_0() { return cPointsPointsParserRuleCall_5_0; }
+		public RuleCall getPointsPointsParserRuleCall_6_0() { return cPointsPointsParserRuleCall_6_0; }
 
 		//reactions=Reactions?
-		public Assignment getReactionsAssignment_6() { return cReactionsAssignment_6; }
+		public Assignment getReactionsAssignment_7() { return cReactionsAssignment_7; }
 
 		//Reactions
-		public RuleCall getReactionsReactionsParserRuleCall_6_0() { return cReactionsReactionsParserRuleCall_6_0; }
+		public RuleCall getReactionsReactionsParserRuleCall_7_0() { return cReactionsReactionsParserRuleCall_7_0; }
 
 		//End
-		public RuleCall getEndParserRuleCall_7() { return cEndParserRuleCall_7; }
+		public RuleCall getEndParserRuleCall_8() { return cEndParserRuleCall_8; }
 	}
 
 	public class ParameterElements extends AbstractParserRuleElementFinder {
@@ -1176,6 +1228,75 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	public class PointsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Points");
 		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cOutcomesPointsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cOutcomesPointsOutcomesPointsParserRuleCall_0_0 = (RuleCall)cOutcomesPointsAssignment_0.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
+		private final Assignment cOutcomesPointsAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cOutcomesPointsOutcomesPointsParserRuleCall_1_1_0 = (RuleCall)cOutcomesPointsAssignment_1_1.eContents().get(0);
+		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
+		private final Assignment cOthersAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
+		private final Alternatives cOthersAlternatives_2_0_0 = (Alternatives)cOthersAssignment_2_0.eContents().get(0);
+		private final Keyword cOthersOthersKeyword_2_0_0_0 = (Keyword)cOthersAlternatives_2_0_0.eContents().get(0);
+		private final Keyword cOthersElseKeyword_2_0_0_1 = (Keyword)cOthersAlternatives_2_0_0.eContents().get(1);
+		private final Assignment cParamsAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
+		private final RuleCall cParamsParamsParserRuleCall_2_1_0 = (RuleCall)cParamsAssignment_2_1.eContents().get(0);
+		private final RuleCall cEndParserRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
+		
+		//Points:
+		//	outcomesPoints+=OutcomesPoints ("," outcomesPoints+=OutcomesPoints)? (others?=("others" | "else") | params+=Params+)
+		//	End;
+		public ParserRule getRule() { return rule; }
+
+		//outcomesPoints+=OutcomesPoints ("," outcomesPoints+=OutcomesPoints)? (others?=("others" | "else") | params+=Params+) End
+		public Group getGroup() { return cGroup; }
+
+		//outcomesPoints+=OutcomesPoints
+		public Assignment getOutcomesPointsAssignment_0() { return cOutcomesPointsAssignment_0; }
+
+		//OutcomesPoints
+		public RuleCall getOutcomesPointsOutcomesPointsParserRuleCall_0_0() { return cOutcomesPointsOutcomesPointsParserRuleCall_0_0; }
+
+		//("," outcomesPoints+=OutcomesPoints)?
+		public Group getGroup_1() { return cGroup_1; }
+
+		//","
+		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
+
+		//outcomesPoints+=OutcomesPoints
+		public Assignment getOutcomesPointsAssignment_1_1() { return cOutcomesPointsAssignment_1_1; }
+
+		//OutcomesPoints
+		public RuleCall getOutcomesPointsOutcomesPointsParserRuleCall_1_1_0() { return cOutcomesPointsOutcomesPointsParserRuleCall_1_1_0; }
+
+		//others?=("others" | "else") | params+=Params+
+		public Alternatives getAlternatives_2() { return cAlternatives_2; }
+
+		//others?=("others" | "else")
+		public Assignment getOthersAssignment_2_0() { return cOthersAssignment_2_0; }
+
+		//"others" | "else"
+		public Alternatives getOthersAlternatives_2_0_0() { return cOthersAlternatives_2_0_0; }
+
+		//"others"
+		public Keyword getOthersOthersKeyword_2_0_0_0() { return cOthersOthersKeyword_2_0_0_0; }
+
+		//"else"
+		public Keyword getOthersElseKeyword_2_0_0_1() { return cOthersElseKeyword_2_0_0_1; }
+
+		//params+=Params+
+		public Assignment getParamsAssignment_2_1() { return cParamsAssignment_2_1; }
+
+		//Params
+		public RuleCall getParamsParamsParserRuleCall_2_1_0() { return cParamsParamsParserRuleCall_2_1_0; }
+
+		//End
+		public RuleCall getEndParserRuleCall_3() { return cEndParserRuleCall_3; }
+	}
+
+	public class OutcomesPointsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "OutcomesPoints");
+		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Group cGroup_0 = (Group)cGroup.eContents().get(0);
 		private final Assignment cOutcomeAssignment_0_0 = (Assignment)cGroup_0.eContents().get(0);
 		private final CrossReference cOutcomeOutcomeCrossReference_0_0_0 = (CrossReference)cOutcomeAssignment_0_0.eContents().get(0);
@@ -1189,22 +1310,12 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cVarAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
 		private final CrossReference cVarParameterCrossReference_2_1_0 = (CrossReference)cVarAssignment_2_1.eContents().get(0);
 		private final RuleCall cVarParameterIDTerminalRuleCall_2_1_0_1 = (RuleCall)cVarParameterCrossReference_2_1_0.eContents().get(1);
-		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
-		private final Assignment cOthersAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
-		private final Alternatives cOthersAlternatives_3_0_0 = (Alternatives)cOthersAssignment_3_0.eContents().get(0);
-		private final Keyword cOthersOthersKeyword_3_0_0_0 = (Keyword)cOthersAlternatives_3_0_0.eContents().get(0);
-		private final Keyword cOthersElseKeyword_3_0_0_1 = (Keyword)cOthersAlternatives_3_0_0.eContents().get(1);
-		private final Assignment cParamsAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
-		private final RuleCall cParamsParamsParserRuleCall_3_1_0 = (RuleCall)cParamsAssignment_3_1.eContents().get(0);
-		private final RuleCall cEndParserRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
-		//Points:
-		//	(outcome=[Outcome] "->")? resetValue?="="? (pts=Point | var=[Parameter]) (others?=("others" | "else") |
-		//	params+=Params+) End;
+		//OutcomesPoints:
+		//	(outcome=[Outcome] "->")? resetValue?="="? (pts=Point | var=[Parameter]);
 		public ParserRule getRule() { return rule; }
 
-		//(outcome=[Outcome] "->")? resetValue?="="? (pts=Point | var=[Parameter]) (others?=("others" | "else") | params+=Params+)
-		//End
+		//(outcome=[Outcome] "->")? resetValue?="="? (pts=Point | var=[Parameter])
 		public Group getGroup() { return cGroup; }
 
 		//(outcome=[Outcome] "->")?
@@ -1245,30 +1356,6 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ID
 		public RuleCall getVarParameterIDTerminalRuleCall_2_1_0_1() { return cVarParameterIDTerminalRuleCall_2_1_0_1; }
-
-		//others?=("others" | "else") | params+=Params+
-		public Alternatives getAlternatives_3() { return cAlternatives_3; }
-
-		//others?=("others" | "else")
-		public Assignment getOthersAssignment_3_0() { return cOthersAssignment_3_0; }
-
-		//"others" | "else"
-		public Alternatives getOthersAlternatives_3_0_0() { return cOthersAlternatives_3_0_0; }
-
-		//"others"
-		public Keyword getOthersOthersKeyword_3_0_0_0() { return cOthersOthersKeyword_3_0_0_0; }
-
-		//"else"
-		public Keyword getOthersElseKeyword_3_0_0_1() { return cOthersElseKeyword_3_0_0_1; }
-
-		//params+=Params+
-		public Assignment getParamsAssignment_3_1() { return cParamsAssignment_3_1; }
-
-		//Params
-		public RuleCall getParamsParamsParserRuleCall_3_1_0() { return cParamsParamsParserRuleCall_3_1_0; }
-
-		//End
-		public RuleCall getEndParserRuleCall_4() { return cEndParserRuleCall_4; }
 	}
 
 	public class PointElements extends AbstractParserRuleElementFinder {
@@ -1491,12 +1578,14 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cFeedbackAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final CrossReference cFeedbackFeedbackCrossReference_1_2_0 = (CrossReference)cFeedbackAssignment_1_2.eContents().get(0);
 		private final RuleCall cFeedbackFeedbackIDTerminalRuleCall_1_2_0_1 = (RuleCall)cFeedbackFeedbackCrossReference_1_2_0.eContents().get(1);
+		private final Assignment cImmediateAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
+		private final Keyword cImmediateImmediateKeyword_1_3_0 = (Keyword)cImmediateAssignment_1_3.eContents().get(0);
 		
 		//Reaction:
-		//	paramsC=ParamCondition | pointsC=PointsCondition ":" feedback=[Feedback];
+		//	paramsC=ParamCondition | pointsC=PointsCondition ":" feedback=[Feedback] immediate?="immediate"?;
 		public ParserRule getRule() { return rule; }
 
-		//paramsC=ParamCondition | pointsC=PointsCondition ":" feedback=[Feedback]
+		//paramsC=ParamCondition | pointsC=PointsCondition ":" feedback=[Feedback] immediate?="immediate"?
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//paramsC=ParamCondition
@@ -1505,7 +1594,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		//ParamCondition
 		public RuleCall getParamsCParamConditionParserRuleCall_0_0() { return cParamsCParamConditionParserRuleCall_0_0; }
 
-		//pointsC=PointsCondition ":" feedback=[Feedback]
+		//pointsC=PointsCondition ":" feedback=[Feedback] immediate?="immediate"?
 		public Group getGroup_1() { return cGroup_1; }
 
 		//pointsC=PointsCondition
@@ -1525,6 +1614,12 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ID
 		public RuleCall getFeedbackFeedbackIDTerminalRuleCall_1_2_0_1() { return cFeedbackFeedbackIDTerminalRuleCall_1_2_0_1; }
+
+		//immediate?="immediate"?
+		public Assignment getImmediateAssignment_1_3() { return cImmediateAssignment_1_3; }
+
+		//"immediate"
+		public Keyword getImmediateImmediateKeyword_1_3_0() { return cImmediateImmediateKeyword_1_3_0; }
 	}
 
 	public class ParamConditionElements extends AbstractParserRuleElementFinder {
@@ -1791,6 +1886,237 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		//ActionReaction
 		public RuleCall getTriggerReactionsActionReactionParserRuleCall_4_0() { return cTriggerReactionsActionReactionParserRuleCall_4_0; }
 	}
+
+	public class BadgeModelElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "BadgeModel");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cBadgeModelKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cGenericTriggersAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cGenericTriggersGenericTriggerParserRuleCall_1_0 = (RuleCall)cGenericTriggersAssignment_1.eContents().get(0);
+		private final RuleCall cEndParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		
+		//// ********************************* Badge Model ********************************* //
+		//BadgeModel:
+		//	"Badge-model" genericTriggers+=GenericTrigger+ End;
+		public ParserRule getRule() { return rule; }
+
+		//"Badge-model" genericTriggers+=GenericTrigger+ End
+		public Group getGroup() { return cGroup; }
+
+		//"Badge-model"
+		public Keyword getBadgeModelKeyword_0() { return cBadgeModelKeyword_0; }
+
+		//genericTriggers+=GenericTrigger+
+		public Assignment getGenericTriggersAssignment_1() { return cGenericTriggersAssignment_1; }
+
+		//GenericTrigger
+		public RuleCall getGenericTriggersGenericTriggerParserRuleCall_1_0() { return cGenericTriggersGenericTriggerParserRuleCall_1_0; }
+
+		//End
+		public RuleCall getEndParserRuleCall_2() { return cEndParserRuleCall_2; }
+	}
+
+	public class GenericTriggerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GenericTrigger");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cSimpleAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cSimpleSimpleTriggerParserRuleCall_0_0 = (RuleCall)cSimpleAssignment_0.eContents().get(0);
+		private final Assignment cLoAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cLoLOTriggerParserRuleCall_1_0 = (RuleCall)cLoAssignment_1.eContents().get(0);
+		
+		//GenericTrigger:
+		//	simple=SimpleTrigger | lo=LOTrigger;
+		public ParserRule getRule() { return rule; }
+
+		//simple=SimpleTrigger | lo=LOTrigger
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//simple=SimpleTrigger
+		public Assignment getSimpleAssignment_0() { return cSimpleAssignment_0; }
+
+		//SimpleTrigger
+		public RuleCall getSimpleSimpleTriggerParserRuleCall_0_0() { return cSimpleSimpleTriggerParserRuleCall_0_0; }
+
+		//lo=LOTrigger
+		public Assignment getLoAssignment_1() { return cLoAssignment_1; }
+
+		//LOTrigger
+		public RuleCall getLoLOTriggerParserRuleCall_1_0() { return cLoLOTriggerParserRuleCall_1_0; }
+	}
+
+	public class SimpleTriggerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "SimpleTrigger");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cFunctionAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cFunctionFeedbackKeywordsSimpleParserRuleCall_0_0 = (RuleCall)cFunctionAssignment_0.eContents().get(0);
+		private final Assignment cSignAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cSignCompSignParserRuleCall_1_0 = (RuleCall)cSignAssignment_1.eContents().get(0);
+		private final Assignment cNegativeLimitAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Keyword cNegativeLimitHyphenMinusKeyword_2_0 = (Keyword)cNegativeLimitAssignment_2.eContents().get(0);
+		private final Assignment cLimitAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cLimitINTTerminalRuleCall_3_0 = (RuleCall)cLimitAssignment_3.eContents().get(0);
+		private final Assignment cTriggerReactionsAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cTriggerReactionsTriggerFeedbackParserRuleCall_4_0 = (RuleCall)cTriggerReactionsAssignment_4.eContents().get(0);
+		
+		//SimpleTrigger:
+		//	function=FeedbackKeywordsSimple sign=CompSign negativeLimit?="-"? limit=INT triggerReactions+=TriggerFeedback+;
+		public ParserRule getRule() { return rule; }
+
+		//function=FeedbackKeywordsSimple sign=CompSign negativeLimit?="-"? limit=INT triggerReactions+=TriggerFeedback+
+		public Group getGroup() { return cGroup; }
+
+		//function=FeedbackKeywordsSimple
+		public Assignment getFunctionAssignment_0() { return cFunctionAssignment_0; }
+
+		//FeedbackKeywordsSimple
+		public RuleCall getFunctionFeedbackKeywordsSimpleParserRuleCall_0_0() { return cFunctionFeedbackKeywordsSimpleParserRuleCall_0_0; }
+
+		//sign=CompSign
+		public Assignment getSignAssignment_1() { return cSignAssignment_1; }
+
+		//CompSign
+		public RuleCall getSignCompSignParserRuleCall_1_0() { return cSignCompSignParserRuleCall_1_0; }
+
+		//negativeLimit?="-"?
+		public Assignment getNegativeLimitAssignment_2() { return cNegativeLimitAssignment_2; }
+
+		//"-"
+		public Keyword getNegativeLimitHyphenMinusKeyword_2_0() { return cNegativeLimitHyphenMinusKeyword_2_0; }
+
+		//limit=INT
+		public Assignment getLimitAssignment_3() { return cLimitAssignment_3; }
+
+		//INT
+		public RuleCall getLimitINTTerminalRuleCall_3_0() { return cLimitINTTerminalRuleCall_3_0; }
+
+		//triggerReactions+=TriggerFeedback+
+		public Assignment getTriggerReactionsAssignment_4() { return cTriggerReactionsAssignment_4; }
+
+		//TriggerFeedback
+		public RuleCall getTriggerReactionsTriggerFeedbackParserRuleCall_4_0() { return cTriggerReactionsTriggerFeedbackParserRuleCall_4_0; }
+	}
+
+	public class LOTriggerElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LOTrigger");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cFunctionAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cFunctionFeedbackKeywordsComplexParserRuleCall_0_0 = (RuleCall)cFunctionAssignment_0.eContents().get(0);
+		private final Assignment cOutcomeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cOutcomeOutcomeCrossReference_1_0 = (CrossReference)cOutcomeAssignment_1.eContents().get(0);
+		private final RuleCall cOutcomeOutcomeIDTerminalRuleCall_1_0_1 = (RuleCall)cOutcomeOutcomeCrossReference_1_0.eContents().get(1);
+		private final Assignment cSignAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cSignCompSignParserRuleCall_2_0 = (RuleCall)cSignAssignment_2.eContents().get(0);
+		private final Assignment cNegativeLimitAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Keyword cNegativeLimitHyphenMinusKeyword_3_0 = (Keyword)cNegativeLimitAssignment_3.eContents().get(0);
+		private final Assignment cLimitAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cLimitINTTerminalRuleCall_4_0 = (RuleCall)cLimitAssignment_4.eContents().get(0);
+		private final Assignment cTriggerReactionsAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cTriggerReactionsTriggerFeedbackParserRuleCall_5_0 = (RuleCall)cTriggerReactionsAssignment_5.eContents().get(0);
+		
+		//LOTrigger:
+		//	function=FeedbackKeywordsComplex outcome=[Outcome] sign=CompSign negativeLimit?="-"? limit=INT
+		//	triggerReactions+=TriggerFeedback+;
+		public ParserRule getRule() { return rule; }
+
+		//function=FeedbackKeywordsComplex outcome=[Outcome] sign=CompSign negativeLimit?="-"? limit=INT
+		//triggerReactions+=TriggerFeedback+
+		public Group getGroup() { return cGroup; }
+
+		//function=FeedbackKeywordsComplex
+		public Assignment getFunctionAssignment_0() { return cFunctionAssignment_0; }
+
+		//FeedbackKeywordsComplex
+		public RuleCall getFunctionFeedbackKeywordsComplexParserRuleCall_0_0() { return cFunctionFeedbackKeywordsComplexParserRuleCall_0_0; }
+
+		//outcome=[Outcome]
+		public Assignment getOutcomeAssignment_1() { return cOutcomeAssignment_1; }
+
+		//[Outcome]
+		public CrossReference getOutcomeOutcomeCrossReference_1_0() { return cOutcomeOutcomeCrossReference_1_0; }
+
+		//ID
+		public RuleCall getOutcomeOutcomeIDTerminalRuleCall_1_0_1() { return cOutcomeOutcomeIDTerminalRuleCall_1_0_1; }
+
+		//sign=CompSign
+		public Assignment getSignAssignment_2() { return cSignAssignment_2; }
+
+		//CompSign
+		public RuleCall getSignCompSignParserRuleCall_2_0() { return cSignCompSignParserRuleCall_2_0; }
+
+		//negativeLimit?="-"?
+		public Assignment getNegativeLimitAssignment_3() { return cNegativeLimitAssignment_3; }
+
+		//"-"
+		public Keyword getNegativeLimitHyphenMinusKeyword_3_0() { return cNegativeLimitHyphenMinusKeyword_3_0; }
+
+		//limit=INT
+		public Assignment getLimitAssignment_4() { return cLimitAssignment_4; }
+
+		//INT
+		public RuleCall getLimitINTTerminalRuleCall_4_0() { return cLimitINTTerminalRuleCall_4_0; }
+
+		//triggerReactions+=TriggerFeedback+
+		public Assignment getTriggerReactionsAssignment_5() { return cTriggerReactionsAssignment_5; }
+
+		//TriggerFeedback
+		public RuleCall getTriggerReactionsTriggerFeedbackParserRuleCall_5_0() { return cTriggerReactionsTriggerFeedbackParserRuleCall_5_0; }
+	}
+
+	public class FeedbackKeywordsSimpleElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FeedbackKeywordsSimple");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cNumberGameplaysKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cNumberWinKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cTotalTimeKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cAverageTimeKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		
+		//FeedbackKeywordsSimple:
+		//	"numberGameplays" | "numberWin" | "totalTime" | "averageTime";
+		public ParserRule getRule() { return rule; }
+
+		//"numberGameplays" | "numberWin" | "totalTime" | "averageTime"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"numberGameplays"
+		public Keyword getNumberGameplaysKeyword_0() { return cNumberGameplaysKeyword_0; }
+
+		//"numberWin"
+		public Keyword getNumberWinKeyword_1() { return cNumberWinKeyword_1; }
+
+		//"totalTime"
+		public Keyword getTotalTimeKeyword_2() { return cTotalTimeKeyword_2; }
+
+		//"averageTime"
+		public Keyword getAverageTimeKeyword_3() { return cAverageTimeKeyword_3; }
+	}
+
+	public class FeedbackKeywordsComplexElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FeedbackKeywordsComplex");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cSumScoreKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cAverageScoreKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cMaxScoreKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cMinScoreKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
+		
+		//FeedbackKeywordsComplex:
+		//	"sumScore" | "averageScore" | "maxScore" | "minScore";
+		public ParserRule getRule() { return rule; }
+
+		//"sumScore" | "averageScore" | "maxScore" | "minScore"
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//"sumScore"
+		public Keyword getSumScoreKeyword_0() { return cSumScoreKeyword_0; }
+
+		//"averageScore"
+		public Keyword getAverageScoreKeyword_1() { return cAverageScoreKeyword_1; }
+
+		//"maxScore"
+		public Keyword getMaxScoreKeyword_2() { return cMaxScoreKeyword_2; }
+
+		//"minScore"
+		public Keyword getMinScoreKeyword_3() { return cMinScoreKeyword_3; }
+	}
 	
 	
 	private final ModelElements pModel;
@@ -1821,6 +2147,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	private final ActionElements pAction;
 	private final ParameterElements pParameter;
 	private final PointsElements pPoints;
+	private final OutcomesPointsElements pOutcomesPoints;
 	private final PointElements pPoint;
 	private final SignElements pSign;
 	private final ParamsElements pParams;
@@ -1837,6 +2164,12 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	private final OutcomeValueLimitElements pOutcomeValueLimit;
 	private final CompSignElements pCompSign;
 	private final InactivityLimitElements pInactivityLimit;
+	private final BadgeModelElements pBadgeModel;
+	private final GenericTriggerElements pGenericTrigger;
+	private final SimpleTriggerElements pSimpleTrigger;
+	private final LOTriggerElements pLOTrigger;
+	private final FeedbackKeywordsSimpleElements pFeedbackKeywordsSimple;
+	private final FeedbackKeywordsComplexElements pFeedbackKeywordsComplex;
 	
 	private final Grammar grammar;
 
@@ -1875,6 +2208,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		this.pAction = new ActionElements();
 		this.pParameter = new ParameterElements();
 		this.pPoints = new PointsElements();
+		this.pOutcomesPoints = new OutcomesPointsElements();
 		this.pPoint = new PointElements();
 		this.pSign = new SignElements();
 		this.pParams = new ParamsElements();
@@ -1891,6 +2225,12 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		this.pOutcomeValueLimit = new OutcomeValueLimitElements();
 		this.pCompSign = new CompSignElements();
 		this.pInactivityLimit = new InactivityLimitElements();
+		this.pBadgeModel = new BadgeModelElements();
+		this.pGenericTrigger = new GenericTriggerElements();
+		this.pSimpleTrigger = new SimpleTriggerElements();
+		this.pLOTrigger = new LOTriggerElements();
+		this.pFeedbackKeywordsSimple = new FeedbackKeywordsSimpleElements();
+		this.pFeedbackKeywordsComplex = new FeedbackKeywordsComplexElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -1922,7 +2262,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Model:
 	//	game=GameDescription player=PlayerDescription? learningOutcomes=LearningOutcomes feedbackMessages=FeedbackMessages?
-	//	evidenceModel=EvidenceModel feedbackModel=FeedbackModel?;
+	//	evidenceModel=EvidenceModel feedbackModel=FeedbackModel? badgeModel=BadgeModel?;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -2068,7 +2408,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Feedback:
-	//	name=ID message=STRING type=TypeFeedback? final?="final"?;
+	//	name=ID message=STRING image=STRING? type=TypeFeedback? (win?="win" | lose?="lose" | end?="end")?;
 	public FeedbackElements getFeedbackAccess() {
 		return pFeedback;
 	}
@@ -2169,7 +2509,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TriggerFeedback:
-	//	":" feedback=[Feedback];
+	//	":" feedback=[Feedback] immediate?="immediate"?;
 	public TriggerFeedbackElements getTriggerFeedbackAccess() {
 		return pTriggerFeedback;
 	}
@@ -2179,7 +2519,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Action:
-	//	name=ID "(" params+=Parameter ("," params+=Parameter)* ")" points+=Points+ reactions=Reactions? End;
+	//	name=ID "(" params+=Parameter ("," params+=Parameter)* ")" desc=STRING points+=Points+ reactions=Reactions? End;
 	public ActionElements getActionAccess() {
 		return pAction;
 	}
@@ -2199,14 +2539,24 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Points:
-	//	(outcome=[Outcome] "->")? resetValue?="="? (pts=Point | var=[Parameter]) (others?=("others" | "else") |
-	//	params+=Params+) End;
+	//	outcomesPoints+=OutcomesPoints ("," outcomesPoints+=OutcomesPoints)? (others?=("others" | "else") | params+=Params+)
+	//	End;
 	public PointsElements getPointsAccess() {
 		return pPoints;
 	}
 	
 	public ParserRule getPointsRule() {
 		return getPointsAccess().getRule();
+	}
+
+	//OutcomesPoints:
+	//	(outcome=[Outcome] "->")? resetValue?="="? (pts=Point | var=[Parameter]);
+	public OutcomesPointsElements getOutcomesPointsAccess() {
+		return pOutcomesPoints;
+	}
+	
+	public ParserRule getOutcomesPointsRule() {
+		return getOutcomesPointsAccess().getRule();
 	}
 
 	//Point:
@@ -2280,7 +2630,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Reaction:
-	//	paramsC=ParamCondition | pointsC=PointsCondition ":" feedback=[Feedback];
+	//	paramsC=ParamCondition | pointsC=PointsCondition ":" feedback=[Feedback] immediate?="immediate"?;
 	public ReactionElements getReactionAccess() {
 		return pReaction;
 	}
@@ -2368,6 +2718,68 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getInactivityLimitRule() {
 		return getInactivityLimitAccess().getRule();
+	}
+
+	//// ********************************* Badge Model ********************************* //
+	//BadgeModel:
+	//	"Badge-model" genericTriggers+=GenericTrigger+ End;
+	public BadgeModelElements getBadgeModelAccess() {
+		return pBadgeModel;
+	}
+	
+	public ParserRule getBadgeModelRule() {
+		return getBadgeModelAccess().getRule();
+	}
+
+	//GenericTrigger:
+	//	simple=SimpleTrigger | lo=LOTrigger;
+	public GenericTriggerElements getGenericTriggerAccess() {
+		return pGenericTrigger;
+	}
+	
+	public ParserRule getGenericTriggerRule() {
+		return getGenericTriggerAccess().getRule();
+	}
+
+	//SimpleTrigger:
+	//	function=FeedbackKeywordsSimple sign=CompSign negativeLimit?="-"? limit=INT triggerReactions+=TriggerFeedback+;
+	public SimpleTriggerElements getSimpleTriggerAccess() {
+		return pSimpleTrigger;
+	}
+	
+	public ParserRule getSimpleTriggerRule() {
+		return getSimpleTriggerAccess().getRule();
+	}
+
+	//LOTrigger:
+	//	function=FeedbackKeywordsComplex outcome=[Outcome] sign=CompSign negativeLimit?="-"? limit=INT
+	//	triggerReactions+=TriggerFeedback+;
+	public LOTriggerElements getLOTriggerAccess() {
+		return pLOTrigger;
+	}
+	
+	public ParserRule getLOTriggerRule() {
+		return getLOTriggerAccess().getRule();
+	}
+
+	//FeedbackKeywordsSimple:
+	//	"numberGameplays" | "numberWin" | "totalTime" | "averageTime";
+	public FeedbackKeywordsSimpleElements getFeedbackKeywordsSimpleAccess() {
+		return pFeedbackKeywordsSimple;
+	}
+	
+	public ParserRule getFeedbackKeywordsSimpleRule() {
+		return getFeedbackKeywordsSimpleAccess().getRule();
+	}
+
+	//FeedbackKeywordsComplex:
+	//	"sumScore" | "averageScore" | "maxScore" | "minScore";
+	public FeedbackKeywordsComplexElements getFeedbackKeywordsComplexAccess() {
+		return pFeedbackKeywordsComplex;
+	}
+	
+	public ParserRule getFeedbackKeywordsComplexRule() {
+		return getFeedbackKeywordsComplexAccess().getRule();
 	}
 
 	//terminal ID:

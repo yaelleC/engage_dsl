@@ -9,6 +9,7 @@ Model:
 	(feedbackMessages = FeedbackMessages)?
 	evidenceModel = EvidenceModel
 	(feedbackModel = FeedbackModel)?
+	(badgeModel = BadgeModel)?
 ;
 	
 End:
@@ -88,7 +89,7 @@ FeedbackMessages:
 ;
 
 Feedback:
-	name=ID message=STRING (type=TypeFeedback)? final?='final'?
+	name=ID message=STRING (image=STRING)? (type=TypeFeedback)? (win ?= 'win' | lose ?= 'lose' | end ?= 'end')?
 ;
 
 TypeFeedback:
@@ -144,11 +145,12 @@ UpdateScore:
 ;
 
 TriggerFeedback:
-	':' feedback=[Feedback]
+	':' feedback=[Feedback] immediate ?= 'immediate'?
 ;
 
 Action:
 	name=ID '('params += Parameter (',' params += Parameter)* ')'
+	desc = STRING
 		points += Points+
 		(reactions = Reactions)?
 	End
@@ -159,9 +161,13 @@ Parameter:
 ;
 
 Points:
-	(outcome= [Outcome] '->')? resetValue ?= '='? ( pts=Point | var=[Parameter] )
+	outcomesPoints += OutcomesPoints (',' outcomesPoints += OutcomesPoints)?
 		(others ?= ('others'|'else') | params += Params+)
 	End
+;
+
+OutcomesPoints:
+	(outcome= [Outcome] '->')? resetValue ?= '='? ( pts=Point | var=[Parameter] )
 ;
 
 Point:
@@ -195,7 +201,7 @@ Reactions:
 ;
 
 Reaction:
-	paramsC = ParamCondition | pointsC = PointsCondition  ':' feedback=[Feedback]
+	paramsC = ParamCondition | pointsC = PointsCondition  ':' feedback=[Feedback] immediate?= 'immediate'?
 ;
 
 ParamCondition:
@@ -214,7 +220,7 @@ PointsKeyWd:
 // ********************************* Feedback Model ********************************* //
 FeedbackModel:
 	'Feedback-model'
-		triggers += Trigger+
+			triggers += Trigger+
 	End
 ;
 
@@ -236,4 +242,31 @@ InactivityLimit:
 		triggerReactions += ActionReaction+
 ;
 
+// ********************************* Badge Model ********************************* //
+BadgeModel:
+	'Badge-model'
+			genericTriggers += GenericTrigger+
+	End
+;
 
+GenericTrigger:
+	simple = SimpleTrigger | lo = LOTrigger
+;
+
+SimpleTrigger:
+	function = FeedbackKeywordsSimple sign=CompSign negativeLimit?='-'? limit=INT
+		triggerReactions += TriggerFeedback+
+;
+
+LOTrigger:
+	function = FeedbackKeywordsComplex outcome = [Outcome] sign=CompSign negativeLimit?='-'? limit=INT
+		triggerReactions += TriggerFeedback+
+;
+
+FeedbackKeywordsSimple:
+	'numberGameplays' | 'numberWin' | 'totalTime' | 'averageTime'
+;
+
+FeedbackKeywordsComplex:
+	'sumScore' | 'averageScore' | 'maxScore' | 'minScore'
+;

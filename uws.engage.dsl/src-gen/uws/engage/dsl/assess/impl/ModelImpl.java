@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import uws.engage.dsl.assess.AssessPackage;
+import uws.engage.dsl.assess.BadgeModel;
 import uws.engage.dsl.assess.EvidenceModel;
 import uws.engage.dsl.assess.FeedbackMessages;
 import uws.engage.dsl.assess.FeedbackModel;
@@ -33,6 +34,7 @@ import uws.engage.dsl.assess.PlayerDescription;
  *   <li>{@link uws.engage.dsl.assess.impl.ModelImpl#getFeedbackMessages <em>Feedback Messages</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.ModelImpl#getEvidenceModel <em>Evidence Model</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.ModelImpl#getFeedbackModel <em>Feedback Model</em>}</li>
+ *   <li>{@link uws.engage.dsl.assess.impl.ModelImpl#getBadgeModel <em>Badge Model</em>}</li>
  * </ul>
  * </p>
  *
@@ -99,6 +101,16 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @ordered
    */
   protected FeedbackModel feedbackModel;
+
+  /**
+   * The cached value of the '{@link #getBadgeModel() <em>Badge Model</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBadgeModel()
+   * @generated
+   * @ordered
+   */
+  protected BadgeModel badgeModel;
 
   /**
    * <!-- begin-user-doc -->
@@ -414,6 +426,54 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
+  public BadgeModel getBadgeModel()
+  {
+    return badgeModel;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetBadgeModel(BadgeModel newBadgeModel, NotificationChain msgs)
+  {
+    BadgeModel oldBadgeModel = badgeModel;
+    badgeModel = newBadgeModel;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AssessPackage.MODEL__BADGE_MODEL, oldBadgeModel, newBadgeModel);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBadgeModel(BadgeModel newBadgeModel)
+  {
+    if (newBadgeModel != badgeModel)
+    {
+      NotificationChain msgs = null;
+      if (badgeModel != null)
+        msgs = ((InternalEObject)badgeModel).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AssessPackage.MODEL__BADGE_MODEL, null, msgs);
+      if (newBadgeModel != null)
+        msgs = ((InternalEObject)newBadgeModel).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AssessPackage.MODEL__BADGE_MODEL, null, msgs);
+      msgs = basicSetBadgeModel(newBadgeModel, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AssessPackage.MODEL__BADGE_MODEL, newBadgeModel, newBadgeModel));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -431,6 +491,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return basicSetEvidenceModel(null, msgs);
       case AssessPackage.MODEL__FEEDBACK_MODEL:
         return basicSetFeedbackModel(null, msgs);
+      case AssessPackage.MODEL__BADGE_MODEL:
+        return basicSetBadgeModel(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -457,6 +519,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return getEvidenceModel();
       case AssessPackage.MODEL__FEEDBACK_MODEL:
         return getFeedbackModel();
+      case AssessPackage.MODEL__BADGE_MODEL:
+        return getBadgeModel();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -488,6 +552,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return;
       case AssessPackage.MODEL__FEEDBACK_MODEL:
         setFeedbackModel((FeedbackModel)newValue);
+        return;
+      case AssessPackage.MODEL__BADGE_MODEL:
+        setBadgeModel((BadgeModel)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -521,6 +588,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
       case AssessPackage.MODEL__FEEDBACK_MODEL:
         setFeedbackModel((FeedbackModel)null);
         return;
+      case AssessPackage.MODEL__BADGE_MODEL:
+        setBadgeModel((BadgeModel)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -547,6 +617,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
         return evidenceModel != null;
       case AssessPackage.MODEL__FEEDBACK_MODEL:
         return feedbackModel != null;
+      case AssessPackage.MODEL__BADGE_MODEL:
+        return badgeModel != null;
     }
     return super.eIsSet(featureID);
   }

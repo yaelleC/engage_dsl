@@ -24,14 +24,17 @@ import com.google.inject.Provider;
 
 import uws.engage.dsl.assess.Action;
 import uws.engage.dsl.assess.ActionReaction;
+import uws.engage.dsl.assess.BadgeModel;
 import uws.engage.dsl.assess.Characteristic;
 import uws.engage.dsl.assess.EvidenceModel;
 import uws.engage.dsl.assess.Feedback;
 import uws.engage.dsl.assess.FeedbackMessages;
 import uws.engage.dsl.assess.FeedbackModel;
 import uws.engage.dsl.assess.GameDescription;
+import uws.engage.dsl.assess.GenericTrigger;
 import uws.engage.dsl.assess.LearningOutcomes;
 import uws.engage.dsl.assess.Outcome;
+import uws.engage.dsl.assess.OutcomesPoints;
 import uws.engage.dsl.assess.Parameter;
 import uws.engage.dsl.assess.Params;
 import uws.engage.dsl.assess.PlayerDescription;
@@ -166,11 +169,14 @@ public class Parser {
 						
 						f.put("limit", new Integer(t.getPerf().getLimit()));
 						f.put("sign", t.getPerf().getSign());
-						ArrayList<String> feedbackToTrigger = new ArrayList<String>();
+						ArrayList<JSONObject> feedbackToTrigger = new ArrayList<JSONObject>();
 						
 						for (TriggerFeedback reaction : t.getPerf().getTriggerReactions())
 						{
-							feedbackToTrigger.add(reaction.getFeedback().getName());
+							JSONObject feedbackDesc = new JSONObject();
+							feedbackDesc.put("name", reaction.getFeedback().getName());
+							feedbackDesc.put("immediate", reaction.isImmediate());
+							feedbackToTrigger.add(feedbackDesc);
 						}
 						
 						f.put("feedback", feedbackToTrigger);
@@ -201,8 +207,11 @@ public class Parser {
 				JSONObject fJson = new JSONObject();
 				
 				fJson.put("message", f.getMessage());
+				if (f.getImage() != null) { fJson.put("image", f.getImage()); }
 				if (f.getType() != null) { fJson.put("type", f.getType()); }
-				if (f.isFinal()) { fJson.put("final", "true"); }
+				if (f.isWin()) { fJson.put("final", "win"); }
+				if (f.isLose()) { fJson.put("final", "lose"); }
+				if (f.isEnd()) { fJson.put("final", "end"); }
 				
 				fdbckJson.put(f.getName(), fJson);
 			}
@@ -220,6 +229,9 @@ public class Parser {
 			// prepare the new JSON object
 			String actionName = a.getName();
 			JSONObject assessment = new JSONObject();
+			
+			// get the action description
+			if (a.getDesc() != null) { assessment.put("desc", a.getDesc()); }
 			
 			// get the action parameters
 			JSONObject paramsJson = new JSONObject();
@@ -297,58 +309,84 @@ public class Parser {
 					assessJson.put("values", valuesJson);
 				}
 				
-				JSONObject markJson = new JSONObject();
-				if (assess.getOutcome() != null)
-				{
-					markJson.put("learningOutcome", assess.getOutcome().getName());
-				}
-				else
-				{
-					markJson.put("learningOutcome", model.getLearningOutcomes().getOutcomes().get(0).getName());					
-				}
-				if (assess.getPts() != null)
-				{
-					if (assess.getPts().isNegative())					
+				ArrayList<JSONObject> marksJson = new ArrayList<JSONObject>();
+				for (OutcomesPoints outcomePoints : assess.getOutcomesPoints())
+				{				
+					JSONObject markJson = new JSONObject();
+					if (outcomePoints.getOutcome() != null)
 					{
-						markJson.put("mark", new Integer(assess.getPts().getValue()*-1));
+						markJson.put("learningOutcome", outcomePoints.getOutcome().getName());
 					}
 					else
 					{
-						markJson.put("mark", new Integer(assess.getPts().getValue()));
+						markJson.put("learningOutcome", model.getLearningOutcomes().getOutcomes().get(0).getName());					
 					}
+					if (outcomePoints.getPts() != null)
+					{
+						if (outcomePoints.getPts().isNegative())					
+						{
+							markJson.put("mark", new Integer(outcomePoints.getPts().getValue()*-1));
+						}
+						else
+						{
+							markJson.put("mark", new Integer(outcomePoints.getPts().getValue()));
+						}
+					}
+					else if (outcomePoints.getVar() != null)
+					{
+						markJson.put("markVar", outcomePoints.getVar().getName());					
+					}
+					if (outcomePoints.isResetValue())
+					{
+						markJson.put("reset", new Boolean(true));
+					}
+					marksJson.add(markJson);
 				}
-				else if (assess.getVar() != null)
-				{
-					markJson.put("markVar", assess.getVar().getName());					
-				}
-				if (assess.isResetValue())
-				{
-					markJson.put("reset", new Boolean(true));
-				}
-				assessJson.put("mark", markJson);
+				assessJson.put("marks", marksJson);
+				
+				
 				
 				if (a.getReactions() != null)
 				{
-					ArrayList<String> feedbackJson = new ArrayList<String>();
+					ArrayList<JSONObject> feedbackJson = new ArrayList<JSONObject>();
 					
 					for (Reaction r : a.getReactions().getReaction())
 					{
 						if (r.getPointsC() != null && r.getPointsC().getKeyWd().equals("any"))
 						{
-							if (r.getPointsC().getSign() != null && 
-									((r.getPointsC().getSign().equals("+") && !assess.getPts().isNegative())
-									 || (r.getPointsC().getSign().equals("-") && assess.getPts().isNegative())))
+							Boolean negativePoints = false;
+							Boolean positivePoints = false;
+							for (OutcomesPoints op : assess.getOutcomesPoints())
 							{
-								feedbackJson.add(r.getFeedback().getName());
+								if (op.getPts().isNegative()) { negativePoints = true; }
+								else { positivePoints = true; }
+							}
+							
+							if (r.getPointsC().getSign() != null && 
+									((r.getPointsC().getSign().equals("+") && positivePoints)
+									 || (r.getPointsC().getSign().equals("-") && negativePoints)))
+							{
+								JSONObject f = new JSONObject();
+								f.put("name", r.getFeedback().getName());
+								f.put("immediate", r.isImmediate());
+								feedbackJson.add(f);
 							}
 							else if (r.getPointsC().getValue() != null)
 							{
 								Point ptForFeedback = r.getPointsC().getValue();
 								int ptForFeedbackInt = (ptForFeedback.isNegative())? ptForFeedback.getValue() * -1 : ptForFeedback.getValue();
-								int ptToTest = (assess.getPts().isNegative())? assess.getPts().getValue() * -1 : assess.getPts().getValue();
-								if ( ptForFeedbackInt == ptToTest )
+								
+								for (OutcomesPoints op : assess.getOutcomesPoints())
 								{
-									feedbackJson.add(r.getFeedback().getName());								
+									int ptToTest = (op.getPts().isNegative())? op.getPts().getValue() * -1 : op.getPts().getValue();
+									if ( ptForFeedbackInt == ptToTest )
+									{
+										JSONObject f = new JSONObject();
+										f.put("name", r.getFeedback().getName());
+										f.put("immediate", r.isImmediate());
+										feedbackJson.add(f);	
+										break;
+									}
 								}
 							}
 						}
@@ -411,8 +449,63 @@ public class Parser {
 			}
 			json.put("inactivityFeedback", inactivityJson);
 		}
+
+		// ##################### BADGE MODEL ACTIONS ######################
 		
-		// ##################### INACTIVITY FEEDBACK ######################
+		BadgeModel badgeModel = model.getBadgeModel();
+				
+		if (badgeModel != null)
+		{
+			ArrayList<JSONObject> badgeJson = new ArrayList<JSONObject>();
+		
+			for (GenericTrigger b : badgeModel.getGenericTriggers())
+			{
+				if (b.getSimple() != null)
+				{
+					JSONObject simple = new JSONObject();
+
+					int limit = (b.getSimple().isNegativeLimit())? b.getSimple().getLimit() * 1 : b.getSimple().getLimit();
+					simple.put("limit", new Integer(limit));
+					simple.put("sign", b.getSimple().getSign());
+					simple.put("function", b.getSimple().getFunction());
+					
+					ArrayList<String> feedbackToTrigger = new ArrayList<String>();
+					
+					for (TriggerFeedback reaction : b.getSimple().getTriggerReactions())
+					{
+						feedbackToTrigger.add(reaction.getFeedback().getName());						
+					}
+					simple.put("feedback", feedbackToTrigger);
+					
+					badgeJson.add(simple);
+				}
+				else if (b.getLo() != null)
+				{
+					JSONObject lo = new JSONObject();
+
+					int limit = (b.getLo().isNegativeLimit())? b.getLo().getLimit() * 1 : b.getLo().getLimit();
+					lo.put("limit", new Integer(limit));
+					lo.put("sign", b.getLo().getSign());
+					lo.put("function", b.getLo().getFunction());
+					lo.put("outcome", b.getLo().getOutcome().getName());
+					
+					ArrayList<String> feedbackToTrigger = new ArrayList<String>();
+					
+					for (TriggerFeedback reaction : b.getLo().getTriggerReactions())
+					{
+						feedbackToTrigger.add(reaction.getFeedback().getName());
+						
+					}
+					lo.put("feedback", feedbackToTrigger);
+					
+					badgeJson.add(lo);
+				}
+			}
+			json.put("badgeModel", badgeJson);
+		}
+		
+		
+		// ##################### TIMER ACTIONS ######################
 		
 		TimerActions timerActions = model.getEvidenceModel().getTimerActions();
 		

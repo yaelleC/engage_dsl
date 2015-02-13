@@ -16,17 +16,21 @@ import uws.engage.dsl.assess.ActionSequences;
 import uws.engage.dsl.assess.Age;
 import uws.engage.dsl.assess.AssessFactory;
 import uws.engage.dsl.assess.AssessPackage;
+import uws.engage.dsl.assess.BadgeModel;
 import uws.engage.dsl.assess.Characteristic;
 import uws.engage.dsl.assess.EvidenceModel;
 import uws.engage.dsl.assess.Feedback;
 import uws.engage.dsl.assess.FeedbackMessages;
 import uws.engage.dsl.assess.FeedbackModel;
 import uws.engage.dsl.assess.GameDescription;
+import uws.engage.dsl.assess.GenericTrigger;
 import uws.engage.dsl.assess.InactivityLimit;
+import uws.engage.dsl.assess.LOTrigger;
 import uws.engage.dsl.assess.LearningOutcomes;
 import uws.engage.dsl.assess.Model;
 import uws.engage.dsl.assess.Outcome;
 import uws.engage.dsl.assess.OutcomeValueLimit;
+import uws.engage.dsl.assess.OutcomesPoints;
 import uws.engage.dsl.assess.ParamCondition;
 import uws.engage.dsl.assess.Parameter;
 import uws.engage.dsl.assess.Params;
@@ -36,6 +40,7 @@ import uws.engage.dsl.assess.Points;
 import uws.engage.dsl.assess.PointsCondition;
 import uws.engage.dsl.assess.Reaction;
 import uws.engage.dsl.assess.Reactions;
+import uws.engage.dsl.assess.SimpleTrigger;
 import uws.engage.dsl.assess.TimerAction;
 import uws.engage.dsl.assess.TimerActions;
 import uws.engage.dsl.assess.Timing;
@@ -226,6 +231,13 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass outcomesPointsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass pointEClass = null;
 
   /**
@@ -290,6 +302,34 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    * @generated
    */
   private EClass inactivityLimitEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass badgeModelEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass genericTriggerEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass simpleTriggerEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass loTriggerEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -422,6 +462,16 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
   public EReference getModel_FeedbackModel()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getModel_BadgeModel()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -819,7 +869,7 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFeedback_Type()
+  public EAttribute getFeedback_Image()
   {
     return (EAttribute)feedbackEClass.getEStructuralFeatures().get(2);
   }
@@ -829,9 +879,39 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getFeedback_Final()
+  public EAttribute getFeedback_Type()
   {
     return (EAttribute)feedbackEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFeedback_Win()
+  {
+    return (EAttribute)feedbackEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFeedback_Lose()
+  {
+    return (EAttribute)feedbackEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFeedback_End()
+  {
+    return (EAttribute)feedbackEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -1139,6 +1219,16 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getTriggerFeedback_Immediate()
+  {
+    return (EAttribute)triggerFeedbackEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getAction()
   {
     return actionEClass;
@@ -1169,9 +1259,19 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getAction_Desc()
+  {
+    return (EAttribute)actionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getAction_Points()
   {
-    return (EReference)actionEClass.getEStructuralFeatures().get(2);
+    return (EReference)actionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1181,7 +1281,7 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    */
   public EReference getAction_Reactions()
   {
-    return (EReference)actionEClass.getEStructuralFeatures().get(3);
+    return (EReference)actionEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1239,7 +1339,7 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPoints_Outcome()
+  public EReference getPoints_OutcomesPoints()
   {
     return (EReference)pointsEClass.getEStructuralFeatures().get(0);
   }
@@ -1249,7 +1349,7 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getPoints_ResetValue()
+  public EAttribute getPoints_Others()
   {
     return (EAttribute)pointsEClass.getEStructuralFeatures().get(1);
   }
@@ -1259,7 +1359,7 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPoints_Pts()
+  public EReference getPoints_Params()
   {
     return (EReference)pointsEClass.getEStructuralFeatures().get(2);
   }
@@ -1269,9 +1369,9 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPoints_Var()
+  public EClass getOutcomesPoints()
   {
-    return (EReference)pointsEClass.getEStructuralFeatures().get(3);
+    return outcomesPointsEClass;
   }
 
   /**
@@ -1279,9 +1379,9 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getPoints_Others()
+  public EReference getOutcomesPoints_Outcome()
   {
-    return (EAttribute)pointsEClass.getEStructuralFeatures().get(4);
+    return (EReference)outcomesPointsEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1289,9 +1389,29 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getPoints_Params()
+  public EAttribute getOutcomesPoints_ResetValue()
   {
-    return (EReference)pointsEClass.getEStructuralFeatures().get(5);
+    return (EAttribute)outcomesPointsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOutcomesPoints_Pts()
+  {
+    return (EReference)outcomesPointsEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getOutcomesPoints_Var()
+  {
+    return (EReference)outcomesPointsEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1412,6 +1532,16 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
   public EReference getReaction_Feedback()
   {
     return (EReference)reactionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getReaction_Immediate()
+  {
+    return (EAttribute)reactionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1629,6 +1759,186 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getBadgeModel()
+  {
+    return badgeModelEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBadgeModel_GenericTriggers()
+  {
+    return (EReference)badgeModelEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGenericTrigger()
+  {
+    return genericTriggerEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGenericTrigger_Simple()
+  {
+    return (EReference)genericTriggerEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGenericTrigger_Lo()
+  {
+    return (EReference)genericTriggerEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSimpleTrigger()
+  {
+    return simpleTriggerEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSimpleTrigger_Function()
+  {
+    return (EAttribute)simpleTriggerEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSimpleTrigger_Sign()
+  {
+    return (EAttribute)simpleTriggerEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSimpleTrigger_NegativeLimit()
+  {
+    return (EAttribute)simpleTriggerEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSimpleTrigger_Limit()
+  {
+    return (EAttribute)simpleTriggerEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSimpleTrigger_TriggerReactions()
+  {
+    return (EReference)simpleTriggerEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLOTrigger()
+  {
+    return loTriggerEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLOTrigger_Function()
+  {
+    return (EAttribute)loTriggerEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLOTrigger_Outcome()
+  {
+    return (EReference)loTriggerEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLOTrigger_Sign()
+  {
+    return (EAttribute)loTriggerEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLOTrigger_NegativeLimit()
+  {
+    return (EAttribute)loTriggerEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLOTrigger_Limit()
+  {
+    return (EAttribute)loTriggerEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLOTrigger_TriggerReactions()
+  {
+    return (EReference)loTriggerEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public AssessFactory getAssessFactory()
   {
     return (AssessFactory)getEFactoryInstance();
@@ -1661,6 +1971,7 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
     createEReference(modelEClass, MODEL__FEEDBACK_MESSAGES);
     createEReference(modelEClass, MODEL__EVIDENCE_MODEL);
     createEReference(modelEClass, MODEL__FEEDBACK_MODEL);
+    createEReference(modelEClass, MODEL__BADGE_MODEL);
 
     typeEClass = createEClass(TYPE);
     createEAttribute(typeEClass, TYPE__SIMPLE_TYPE);
@@ -1711,8 +2022,11 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
     feedbackEClass = createEClass(FEEDBACK);
     createEAttribute(feedbackEClass, FEEDBACK__NAME);
     createEAttribute(feedbackEClass, FEEDBACK__MESSAGE);
+    createEAttribute(feedbackEClass, FEEDBACK__IMAGE);
     createEAttribute(feedbackEClass, FEEDBACK__TYPE);
-    createEAttribute(feedbackEClass, FEEDBACK__FINAL);
+    createEAttribute(feedbackEClass, FEEDBACK__WIN);
+    createEAttribute(feedbackEClass, FEEDBACK__LOSE);
+    createEAttribute(feedbackEClass, FEEDBACK__END);
 
     evidenceModelEClass = createEClass(EVIDENCE_MODEL);
     createEReference(evidenceModelEClass, EVIDENCE_MODEL__ACTIONS);
@@ -1752,10 +2066,12 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
 
     triggerFeedbackEClass = createEClass(TRIGGER_FEEDBACK);
     createEReference(triggerFeedbackEClass, TRIGGER_FEEDBACK__FEEDBACK);
+    createEAttribute(triggerFeedbackEClass, TRIGGER_FEEDBACK__IMMEDIATE);
 
     actionEClass = createEClass(ACTION);
     createEAttribute(actionEClass, ACTION__NAME);
     createEReference(actionEClass, ACTION__PARAMS);
+    createEAttribute(actionEClass, ACTION__DESC);
     createEReference(actionEClass, ACTION__POINTS);
     createEReference(actionEClass, ACTION__REACTIONS);
 
@@ -1765,12 +2081,15 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
     createEAttribute(parameterEClass, PARAMETER__NAME);
 
     pointsEClass = createEClass(POINTS);
-    createEReference(pointsEClass, POINTS__OUTCOME);
-    createEAttribute(pointsEClass, POINTS__RESET_VALUE);
-    createEReference(pointsEClass, POINTS__PTS);
-    createEReference(pointsEClass, POINTS__VAR);
+    createEReference(pointsEClass, POINTS__OUTCOMES_POINTS);
     createEAttribute(pointsEClass, POINTS__OTHERS);
     createEReference(pointsEClass, POINTS__PARAMS);
+
+    outcomesPointsEClass = createEClass(OUTCOMES_POINTS);
+    createEReference(outcomesPointsEClass, OUTCOMES_POINTS__OUTCOME);
+    createEAttribute(outcomesPointsEClass, OUTCOMES_POINTS__RESET_VALUE);
+    createEReference(outcomesPointsEClass, OUTCOMES_POINTS__PTS);
+    createEReference(outcomesPointsEClass, OUTCOMES_POINTS__VAR);
 
     pointEClass = createEClass(POINT);
     createEAttribute(pointEClass, POINT__NEGATIVE);
@@ -1787,6 +2106,7 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
     createEReference(reactionEClass, REACTION__PARAMS_C);
     createEReference(reactionEClass, REACTION__POINTS_C);
     createEReference(reactionEClass, REACTION__FEEDBACK);
+    createEAttribute(reactionEClass, REACTION__IMMEDIATE);
 
     paramConditionEClass = createEClass(PARAM_CONDITION);
     createEReference(paramConditionEClass, PARAM_CONDITION__PARAMS);
@@ -1814,6 +2134,28 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
     createEAttribute(inactivityLimitEClass, INACTIVITY_LIMIT__SIGN);
     createEAttribute(inactivityLimitEClass, INACTIVITY_LIMIT__LIMIT);
     createEReference(inactivityLimitEClass, INACTIVITY_LIMIT__TRIGGER_REACTIONS);
+
+    badgeModelEClass = createEClass(BADGE_MODEL);
+    createEReference(badgeModelEClass, BADGE_MODEL__GENERIC_TRIGGERS);
+
+    genericTriggerEClass = createEClass(GENERIC_TRIGGER);
+    createEReference(genericTriggerEClass, GENERIC_TRIGGER__SIMPLE);
+    createEReference(genericTriggerEClass, GENERIC_TRIGGER__LO);
+
+    simpleTriggerEClass = createEClass(SIMPLE_TRIGGER);
+    createEAttribute(simpleTriggerEClass, SIMPLE_TRIGGER__FUNCTION);
+    createEAttribute(simpleTriggerEClass, SIMPLE_TRIGGER__SIGN);
+    createEAttribute(simpleTriggerEClass, SIMPLE_TRIGGER__NEGATIVE_LIMIT);
+    createEAttribute(simpleTriggerEClass, SIMPLE_TRIGGER__LIMIT);
+    createEReference(simpleTriggerEClass, SIMPLE_TRIGGER__TRIGGER_REACTIONS);
+
+    loTriggerEClass = createEClass(LO_TRIGGER);
+    createEAttribute(loTriggerEClass, LO_TRIGGER__FUNCTION);
+    createEReference(loTriggerEClass, LO_TRIGGER__OUTCOME);
+    createEAttribute(loTriggerEClass, LO_TRIGGER__SIGN);
+    createEAttribute(loTriggerEClass, LO_TRIGGER__NEGATIVE_LIMIT);
+    createEAttribute(loTriggerEClass, LO_TRIGGER__LIMIT);
+    createEReference(loTriggerEClass, LO_TRIGGER__TRIGGER_REACTIONS);
   }
 
   /**
@@ -1854,6 +2196,7 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
     initEReference(getModel_FeedbackMessages(), this.getFeedbackMessages(), null, "feedbackMessages", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_EvidenceModel(), this.getEvidenceModel(), null, "evidenceModel", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_FeedbackModel(), this.getFeedbackModel(), null, "feedbackModel", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_BadgeModel(), this.getBadgeModel(), null, "badgeModel", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeEClass, Type.class, "Type", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getType_SimpleType(), ecorePackage.getEString(), "simpleType", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1904,8 +2247,11 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
     initEClass(feedbackEClass, Feedback.class, "Feedback", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFeedback_Name(), ecorePackage.getEString(), "name", null, 0, 1, Feedback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFeedback_Message(), ecorePackage.getEString(), "message", null, 0, 1, Feedback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFeedback_Image(), ecorePackage.getEString(), "image", null, 0, 1, Feedback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFeedback_Type(), ecorePackage.getEString(), "type", null, 0, 1, Feedback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFeedback_Final(), ecorePackage.getEBoolean(), "final", null, 0, 1, Feedback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFeedback_Win(), ecorePackage.getEBoolean(), "win", null, 0, 1, Feedback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFeedback_Lose(), ecorePackage.getEBoolean(), "lose", null, 0, 1, Feedback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getFeedback_End(), ecorePackage.getEBoolean(), "end", null, 0, 1, Feedback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(evidenceModelEClass, EvidenceModel.class, "EvidenceModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getEvidenceModel_Actions(), this.getAction(), null, "actions", null, 0, -1, EvidenceModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1945,10 +2291,12 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
 
     initEClass(triggerFeedbackEClass, TriggerFeedback.class, "TriggerFeedback", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTriggerFeedback_Feedback(), this.getFeedback(), null, "feedback", null, 0, 1, TriggerFeedback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTriggerFeedback_Immediate(), ecorePackage.getEBoolean(), "immediate", null, 0, 1, TriggerFeedback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAction_Params(), this.getParameter(), null, "params", null, 0, -1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getAction_Desc(), ecorePackage.getEString(), "desc", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAction_Points(), this.getPoints(), null, "points", null, 0, -1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAction_Reactions(), this.getReactions(), null, "reactions", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1958,12 +2306,15 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
     initEAttribute(getParameter_Name(), ecorePackage.getEString(), "name", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(pointsEClass, Points.class, "Points", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPoints_Outcome(), this.getOutcome(), null, "outcome", null, 0, 1, Points.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPoints_ResetValue(), ecorePackage.getEBoolean(), "resetValue", null, 0, 1, Points.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPoints_Pts(), this.getPoint(), null, "pts", null, 0, 1, Points.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPoints_Var(), this.getParameter(), null, "var", null, 0, 1, Points.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPoints_OutcomesPoints(), this.getOutcomesPoints(), null, "outcomesPoints", null, 0, -1, Points.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPoints_Others(), ecorePackage.getEBoolean(), "others", null, 0, 1, Points.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPoints_Params(), this.getParams(), null, "params", null, 0, -1, Points.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(outcomesPointsEClass, OutcomesPoints.class, "OutcomesPoints", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getOutcomesPoints_Outcome(), this.getOutcome(), null, "outcome", null, 0, 1, OutcomesPoints.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getOutcomesPoints_ResetValue(), ecorePackage.getEBoolean(), "resetValue", null, 0, 1, OutcomesPoints.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOutcomesPoints_Pts(), this.getPoint(), null, "pts", null, 0, 1, OutcomesPoints.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOutcomesPoints_Var(), this.getParameter(), null, "var", null, 0, 1, OutcomesPoints.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(pointEClass, Point.class, "Point", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPoint_Negative(), ecorePackage.getEBoolean(), "negative", null, 0, 1, Point.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1980,6 +2331,7 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
     initEReference(getReaction_ParamsC(), this.getParamCondition(), null, "paramsC", null, 0, 1, Reaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getReaction_PointsC(), this.getPointsCondition(), null, "pointsC", null, 0, 1, Reaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getReaction_Feedback(), this.getFeedback(), null, "feedback", null, 0, 1, Reaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getReaction_Immediate(), ecorePackage.getEBoolean(), "immediate", null, 0, 1, Reaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(paramConditionEClass, ParamCondition.class, "ParamCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getParamCondition_Params(), this.getParams(), null, "params", null, 0, 1, ParamCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2007,6 +2359,28 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
     initEAttribute(getInactivityLimit_Sign(), ecorePackage.getEString(), "sign", null, 0, 1, InactivityLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getInactivityLimit_Limit(), ecorePackage.getEInt(), "limit", null, 0, 1, InactivityLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getInactivityLimit_TriggerReactions(), this.getActionReaction(), null, "triggerReactions", null, 0, -1, InactivityLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(badgeModelEClass, BadgeModel.class, "BadgeModel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBadgeModel_GenericTriggers(), this.getGenericTrigger(), null, "genericTriggers", null, 0, -1, BadgeModel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(genericTriggerEClass, GenericTrigger.class, "GenericTrigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getGenericTrigger_Simple(), this.getSimpleTrigger(), null, "simple", null, 0, 1, GenericTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGenericTrigger_Lo(), this.getLOTrigger(), null, "lo", null, 0, 1, GenericTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(simpleTriggerEClass, SimpleTrigger.class, "SimpleTrigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSimpleTrigger_Function(), ecorePackage.getEString(), "function", null, 0, 1, SimpleTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSimpleTrigger_Sign(), ecorePackage.getEString(), "sign", null, 0, 1, SimpleTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSimpleTrigger_NegativeLimit(), ecorePackage.getEBoolean(), "negativeLimit", null, 0, 1, SimpleTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSimpleTrigger_Limit(), ecorePackage.getEInt(), "limit", null, 0, 1, SimpleTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSimpleTrigger_TriggerReactions(), this.getTriggerFeedback(), null, "triggerReactions", null, 0, -1, SimpleTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(loTriggerEClass, LOTrigger.class, "LOTrigger", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLOTrigger_Function(), ecorePackage.getEString(), "function", null, 0, 1, LOTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLOTrigger_Outcome(), this.getOutcome(), null, "outcome", null, 0, 1, LOTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLOTrigger_Sign(), ecorePackage.getEString(), "sign", null, 0, 1, LOTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLOTrigger_NegativeLimit(), ecorePackage.getEBoolean(), "negativeLimit", null, 0, 1, LOTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getLOTrigger_Limit(), ecorePackage.getEInt(), "limit", null, 0, 1, LOTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLOTrigger_TriggerReactions(), this.getTriggerFeedback(), null, "triggerReactions", null, 0, -1, LOTrigger.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

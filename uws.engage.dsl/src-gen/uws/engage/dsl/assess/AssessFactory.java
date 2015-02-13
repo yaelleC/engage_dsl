@@ -239,6 +239,15 @@ public interface AssessFactory extends EFactory
   Points createPoints();
 
   /**
+   * Returns a new object of class '<em>Outcomes Points</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Outcomes Points</em>'.
+   * @generated
+   */
+  OutcomesPoints createOutcomesPoints();
+
+  /**
    * Returns a new object of class '<em>Point</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -327,6 +336,42 @@ public interface AssessFactory extends EFactory
    * @generated
    */
   InactivityLimit createInactivityLimit();
+
+  /**
+   * Returns a new object of class '<em>Badge Model</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Badge Model</em>'.
+   * @generated
+   */
+  BadgeModel createBadgeModel();
+
+  /**
+   * Returns a new object of class '<em>Generic Trigger</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Generic Trigger</em>'.
+   * @generated
+   */
+  GenericTrigger createGenericTrigger();
+
+  /**
+   * Returns a new object of class '<em>Simple Trigger</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Simple Trigger</em>'.
+   * @generated
+   */
+  SimpleTrigger createSimpleTrigger();
+
+  /**
+   * Returns a new object of class '<em>LO Trigger</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>LO Trigger</em>'.
+   * @generated
+   */
+  LOTrigger createLOTrigger();
 
   /**
    * Returns the package supported by this factory.

@@ -21,8 +21,11 @@ import uws.engage.dsl.assess.Feedback;
  * <ul>
  *   <li>{@link uws.engage.dsl.assess.impl.FeedbackImpl#getName <em>Name</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.FeedbackImpl#getMessage <em>Message</em>}</li>
+ *   <li>{@link uws.engage.dsl.assess.impl.FeedbackImpl#getImage <em>Image</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.FeedbackImpl#getType <em>Type</em>}</li>
- *   <li>{@link uws.engage.dsl.assess.impl.FeedbackImpl#isFinal <em>Final</em>}</li>
+ *   <li>{@link uws.engage.dsl.assess.impl.FeedbackImpl#isWin <em>Win</em>}</li>
+ *   <li>{@link uws.engage.dsl.assess.impl.FeedbackImpl#isLose <em>Lose</em>}</li>
+ *   <li>{@link uws.engage.dsl.assess.impl.FeedbackImpl#isEnd <em>End</em>}</li>
  * </ul>
  * </p>
  *
@@ -71,6 +74,26 @@ public class FeedbackImpl extends MinimalEObjectImpl.Container implements Feedba
   protected String message = MESSAGE_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getImage() <em>Image</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getImage()
+   * @generated
+   * @ordered
+   */
+  protected static final String IMAGE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getImage() <em>Image</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getImage()
+   * @generated
+   * @ordered
+   */
+  protected String image = IMAGE_EDEFAULT;
+
+  /**
    * The default value of the '{@link #getType() <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -91,24 +114,64 @@ public class FeedbackImpl extends MinimalEObjectImpl.Container implements Feedba
   protected String type = TYPE_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isFinal() <em>Final</em>}' attribute.
+   * The default value of the '{@link #isWin() <em>Win</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isFinal()
+   * @see #isWin()
    * @generated
    * @ordered
    */
-  protected static final boolean FINAL_EDEFAULT = false;
+  protected static final boolean WIN_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #isFinal() <em>Final</em>}' attribute.
+   * The cached value of the '{@link #isWin() <em>Win</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isFinal()
+   * @see #isWin()
    * @generated
    * @ordered
    */
-  protected boolean final_ = FINAL_EDEFAULT;
+  protected boolean win = WIN_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isLose() <em>Lose</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isLose()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean LOSE_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isLose() <em>Lose</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isLose()
+   * @generated
+   * @ordered
+   */
+  protected boolean lose = LOSE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isEnd() <em>End</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isEnd()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean END_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isEnd() <em>End</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isEnd()
+   * @generated
+   * @ordered
+   */
+  protected boolean end = END_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -182,6 +245,29 @@ public class FeedbackImpl extends MinimalEObjectImpl.Container implements Feedba
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getImage()
+  {
+    return image;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setImage(String newImage)
+  {
+    String oldImage = image;
+    image = newImage;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AssessPackage.FEEDBACK__IMAGE, oldImage, image));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getType()
   {
     return type;
@@ -205,9 +291,9 @@ public class FeedbackImpl extends MinimalEObjectImpl.Container implements Feedba
    * <!-- end-user-doc -->
    * @generated
    */
-  public boolean isFinal()
+  public boolean isWin()
   {
-    return final_;
+    return win;
   }
 
   /**
@@ -215,12 +301,58 @@ public class FeedbackImpl extends MinimalEObjectImpl.Container implements Feedba
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFinal(boolean newFinal)
+  public void setWin(boolean newWin)
   {
-    boolean oldFinal = final_;
-    final_ = newFinal;
+    boolean oldWin = win;
+    win = newWin;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AssessPackage.FEEDBACK__FINAL, oldFinal, final_));
+      eNotify(new ENotificationImpl(this, Notification.SET, AssessPackage.FEEDBACK__WIN, oldWin, win));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isLose()
+  {
+    return lose;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setLose(boolean newLose)
+  {
+    boolean oldLose = lose;
+    lose = newLose;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AssessPackage.FEEDBACK__LOSE, oldLose, lose));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isEnd()
+  {
+    return end;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setEnd(boolean newEnd)
+  {
+    boolean oldEnd = end;
+    end = newEnd;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AssessPackage.FEEDBACK__END, oldEnd, end));
   }
 
   /**
@@ -237,10 +369,16 @@ public class FeedbackImpl extends MinimalEObjectImpl.Container implements Feedba
         return getName();
       case AssessPackage.FEEDBACK__MESSAGE:
         return getMessage();
+      case AssessPackage.FEEDBACK__IMAGE:
+        return getImage();
       case AssessPackage.FEEDBACK__TYPE:
         return getType();
-      case AssessPackage.FEEDBACK__FINAL:
-        return isFinal();
+      case AssessPackage.FEEDBACK__WIN:
+        return isWin();
+      case AssessPackage.FEEDBACK__LOSE:
+        return isLose();
+      case AssessPackage.FEEDBACK__END:
+        return isEnd();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -261,11 +399,20 @@ public class FeedbackImpl extends MinimalEObjectImpl.Container implements Feedba
       case AssessPackage.FEEDBACK__MESSAGE:
         setMessage((String)newValue);
         return;
+      case AssessPackage.FEEDBACK__IMAGE:
+        setImage((String)newValue);
+        return;
       case AssessPackage.FEEDBACK__TYPE:
         setType((String)newValue);
         return;
-      case AssessPackage.FEEDBACK__FINAL:
-        setFinal((Boolean)newValue);
+      case AssessPackage.FEEDBACK__WIN:
+        setWin((Boolean)newValue);
+        return;
+      case AssessPackage.FEEDBACK__LOSE:
+        setLose((Boolean)newValue);
+        return;
+      case AssessPackage.FEEDBACK__END:
+        setEnd((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -287,11 +434,20 @@ public class FeedbackImpl extends MinimalEObjectImpl.Container implements Feedba
       case AssessPackage.FEEDBACK__MESSAGE:
         setMessage(MESSAGE_EDEFAULT);
         return;
+      case AssessPackage.FEEDBACK__IMAGE:
+        setImage(IMAGE_EDEFAULT);
+        return;
       case AssessPackage.FEEDBACK__TYPE:
         setType(TYPE_EDEFAULT);
         return;
-      case AssessPackage.FEEDBACK__FINAL:
-        setFinal(FINAL_EDEFAULT);
+      case AssessPackage.FEEDBACK__WIN:
+        setWin(WIN_EDEFAULT);
+        return;
+      case AssessPackage.FEEDBACK__LOSE:
+        setLose(LOSE_EDEFAULT);
+        return;
+      case AssessPackage.FEEDBACK__END:
+        setEnd(END_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -311,10 +467,16 @@ public class FeedbackImpl extends MinimalEObjectImpl.Container implements Feedba
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AssessPackage.FEEDBACK__MESSAGE:
         return MESSAGE_EDEFAULT == null ? message != null : !MESSAGE_EDEFAULT.equals(message);
+      case AssessPackage.FEEDBACK__IMAGE:
+        return IMAGE_EDEFAULT == null ? image != null : !IMAGE_EDEFAULT.equals(image);
       case AssessPackage.FEEDBACK__TYPE:
         return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
-      case AssessPackage.FEEDBACK__FINAL:
-        return final_ != FINAL_EDEFAULT;
+      case AssessPackage.FEEDBACK__WIN:
+        return win != WIN_EDEFAULT;
+      case AssessPackage.FEEDBACK__LOSE:
+        return lose != LOSE_EDEFAULT;
+      case AssessPackage.FEEDBACK__END:
+        return end != END_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -334,10 +496,16 @@ public class FeedbackImpl extends MinimalEObjectImpl.Container implements Feedba
     result.append(name);
     result.append(", message: ");
     result.append(message);
+    result.append(", image: ");
+    result.append(image);
     result.append(", type: ");
     result.append(type);
-    result.append(", final: ");
-    result.append(final_);
+    result.append(", win: ");
+    result.append(win);
+    result.append(", lose: ");
+    result.append(lose);
+    result.append(", end: ");
+    result.append(end);
     result.append(')');
     return result.toString();
   }

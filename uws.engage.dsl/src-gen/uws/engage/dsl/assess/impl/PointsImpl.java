@@ -19,10 +19,8 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import uws.engage.dsl.assess.AssessPackage;
-import uws.engage.dsl.assess.Outcome;
-import uws.engage.dsl.assess.Parameter;
+import uws.engage.dsl.assess.OutcomesPoints;
 import uws.engage.dsl.assess.Params;
-import uws.engage.dsl.assess.Point;
 import uws.engage.dsl.assess.Points;
 
 /**
@@ -32,10 +30,7 @@ import uws.engage.dsl.assess.Points;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link uws.engage.dsl.assess.impl.PointsImpl#getOutcome <em>Outcome</em>}</li>
- *   <li>{@link uws.engage.dsl.assess.impl.PointsImpl#isResetValue <em>Reset Value</em>}</li>
- *   <li>{@link uws.engage.dsl.assess.impl.PointsImpl#getPts <em>Pts</em>}</li>
- *   <li>{@link uws.engage.dsl.assess.impl.PointsImpl#getVar <em>Var</em>}</li>
+ *   <li>{@link uws.engage.dsl.assess.impl.PointsImpl#getOutcomesPoints <em>Outcomes Points</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.PointsImpl#isOthers <em>Others</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.PointsImpl#getParams <em>Params</em>}</li>
  * </ul>
@@ -46,54 +41,14 @@ import uws.engage.dsl.assess.Points;
 public class PointsImpl extends MinimalEObjectImpl.Container implements Points
 {
   /**
-   * The cached value of the '{@link #getOutcome() <em>Outcome</em>}' reference.
+   * The cached value of the '{@link #getOutcomesPoints() <em>Outcomes Points</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getOutcome()
+   * @see #getOutcomesPoints()
    * @generated
    * @ordered
    */
-  protected Outcome outcome;
-
-  /**
-   * The default value of the '{@link #isResetValue() <em>Reset Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isResetValue()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean RESET_VALUE_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isResetValue() <em>Reset Value</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isResetValue()
-   * @generated
-   * @ordered
-   */
-  protected boolean resetValue = RESET_VALUE_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getPts() <em>Pts</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getPts()
-   * @generated
-   * @ordered
-   */
-  protected Point pts;
-
-  /**
-   * The cached value of the '{@link #getVar() <em>Var</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getVar()
-   * @generated
-   * @ordered
-   */
-  protected Parameter var;
+  protected EList<OutcomesPoints> outcomesPoints;
 
   /**
    * The default value of the '{@link #isOthers() <em>Others</em>}' attribute.
@@ -151,156 +106,13 @@ public class PointsImpl extends MinimalEObjectImpl.Container implements Points
    * <!-- end-user-doc -->
    * @generated
    */
-  public Outcome getOutcome()
+  public EList<OutcomesPoints> getOutcomesPoints()
   {
-    if (outcome != null && outcome.eIsProxy())
+    if (outcomesPoints == null)
     {
-      InternalEObject oldOutcome = (InternalEObject)outcome;
-      outcome = (Outcome)eResolveProxy(oldOutcome);
-      if (outcome != oldOutcome)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AssessPackage.POINTS__OUTCOME, oldOutcome, outcome));
-      }
+      outcomesPoints = new EObjectContainmentEList<OutcomesPoints>(OutcomesPoints.class, this, AssessPackage.POINTS__OUTCOMES_POINTS);
     }
-    return outcome;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Outcome basicGetOutcome()
-  {
-    return outcome;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setOutcome(Outcome newOutcome)
-  {
-    Outcome oldOutcome = outcome;
-    outcome = newOutcome;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AssessPackage.POINTS__OUTCOME, oldOutcome, outcome));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public boolean isResetValue()
-  {
-    return resetValue;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setResetValue(boolean newResetValue)
-  {
-    boolean oldResetValue = resetValue;
-    resetValue = newResetValue;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AssessPackage.POINTS__RESET_VALUE, oldResetValue, resetValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Point getPts()
-  {
-    return pts;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetPts(Point newPts, NotificationChain msgs)
-  {
-    Point oldPts = pts;
-    pts = newPts;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AssessPackage.POINTS__PTS, oldPts, newPts);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setPts(Point newPts)
-  {
-    if (newPts != pts)
-    {
-      NotificationChain msgs = null;
-      if (pts != null)
-        msgs = ((InternalEObject)pts).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AssessPackage.POINTS__PTS, null, msgs);
-      if (newPts != null)
-        msgs = ((InternalEObject)newPts).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AssessPackage.POINTS__PTS, null, msgs);
-      msgs = basicSetPts(newPts, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AssessPackage.POINTS__PTS, newPts, newPts));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Parameter getVar()
-  {
-    if (var != null && var.eIsProxy())
-    {
-      InternalEObject oldVar = (InternalEObject)var;
-      var = (Parameter)eResolveProxy(oldVar);
-      if (var != oldVar)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, AssessPackage.POINTS__VAR, oldVar, var));
-      }
-    }
-    return var;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Parameter basicGetVar()
-  {
-    return var;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setVar(Parameter newVar)
-  {
-    Parameter oldVar = var;
-    var = newVar;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, AssessPackage.POINTS__VAR, oldVar, var));
+    return outcomesPoints;
   }
 
   /**
@@ -350,8 +162,8 @@ public class PointsImpl extends MinimalEObjectImpl.Container implements Points
   {
     switch (featureID)
     {
-      case AssessPackage.POINTS__PTS:
-        return basicSetPts(null, msgs);
+      case AssessPackage.POINTS__OUTCOMES_POINTS:
+        return ((InternalEList<?>)getOutcomesPoints()).basicRemove(otherEnd, msgs);
       case AssessPackage.POINTS__PARAMS:
         return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
     }
@@ -368,16 +180,8 @@ public class PointsImpl extends MinimalEObjectImpl.Container implements Points
   {
     switch (featureID)
     {
-      case AssessPackage.POINTS__OUTCOME:
-        if (resolve) return getOutcome();
-        return basicGetOutcome();
-      case AssessPackage.POINTS__RESET_VALUE:
-        return isResetValue();
-      case AssessPackage.POINTS__PTS:
-        return getPts();
-      case AssessPackage.POINTS__VAR:
-        if (resolve) return getVar();
-        return basicGetVar();
+      case AssessPackage.POINTS__OUTCOMES_POINTS:
+        return getOutcomesPoints();
       case AssessPackage.POINTS__OTHERS:
         return isOthers();
       case AssessPackage.POINTS__PARAMS:
@@ -397,17 +201,9 @@ public class PointsImpl extends MinimalEObjectImpl.Container implements Points
   {
     switch (featureID)
     {
-      case AssessPackage.POINTS__OUTCOME:
-        setOutcome((Outcome)newValue);
-        return;
-      case AssessPackage.POINTS__RESET_VALUE:
-        setResetValue((Boolean)newValue);
-        return;
-      case AssessPackage.POINTS__PTS:
-        setPts((Point)newValue);
-        return;
-      case AssessPackage.POINTS__VAR:
-        setVar((Parameter)newValue);
+      case AssessPackage.POINTS__OUTCOMES_POINTS:
+        getOutcomesPoints().clear();
+        getOutcomesPoints().addAll((Collection<? extends OutcomesPoints>)newValue);
         return;
       case AssessPackage.POINTS__OTHERS:
         setOthers((Boolean)newValue);
@@ -430,17 +226,8 @@ public class PointsImpl extends MinimalEObjectImpl.Container implements Points
   {
     switch (featureID)
     {
-      case AssessPackage.POINTS__OUTCOME:
-        setOutcome((Outcome)null);
-        return;
-      case AssessPackage.POINTS__RESET_VALUE:
-        setResetValue(RESET_VALUE_EDEFAULT);
-        return;
-      case AssessPackage.POINTS__PTS:
-        setPts((Point)null);
-        return;
-      case AssessPackage.POINTS__VAR:
-        setVar((Parameter)null);
+      case AssessPackage.POINTS__OUTCOMES_POINTS:
+        getOutcomesPoints().clear();
         return;
       case AssessPackage.POINTS__OTHERS:
         setOthers(OTHERS_EDEFAULT);
@@ -462,14 +249,8 @@ public class PointsImpl extends MinimalEObjectImpl.Container implements Points
   {
     switch (featureID)
     {
-      case AssessPackage.POINTS__OUTCOME:
-        return outcome != null;
-      case AssessPackage.POINTS__RESET_VALUE:
-        return resetValue != RESET_VALUE_EDEFAULT;
-      case AssessPackage.POINTS__PTS:
-        return pts != null;
-      case AssessPackage.POINTS__VAR:
-        return var != null;
+      case AssessPackage.POINTS__OUTCOMES_POINTS:
+        return outcomesPoints != null && !outcomesPoints.isEmpty();
       case AssessPackage.POINTS__OTHERS:
         return others != OTHERS_EDEFAULT;
       case AssessPackage.POINTS__PARAMS:
@@ -489,9 +270,7 @@ public class PointsImpl extends MinimalEObjectImpl.Container implements Points
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (resetValue: ");
-    result.append(resetValue);
-    result.append(", others: ");
+    result.append(" (others: ");
     result.append(others);
     result.append(')');
     return result.toString();
