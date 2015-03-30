@@ -22,6 +22,7 @@ import uws.engage.dsl.assess.Params;
  * The following features are implemented:
  * <ul>
  *   <li>{@link uws.engage.dsl.assess.impl.ParamConditionImpl#getParams <em>Params</em>}</li>
+ *   <li>{@link uws.engage.dsl.assess.impl.ParamConditionImpl#isConditionOther <em>Condition Other</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,6 +39,26 @@ public class ParamConditionImpl extends MinimalEObjectImpl.Container implements 
    * @ordered
    */
   protected Params params;
+
+  /**
+   * The default value of the '{@link #isConditionOther() <em>Condition Other</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isConditionOther()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean CONDITION_OTHER_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isConditionOther() <em>Condition Other</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isConditionOther()
+   * @generated
+   * @ordered
+   */
+  protected boolean conditionOther = CONDITION_OTHER_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -108,6 +129,29 @@ public class ParamConditionImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isConditionOther()
+  {
+    return conditionOther;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setConditionOther(boolean newConditionOther)
+  {
+    boolean oldConditionOther = conditionOther;
+    conditionOther = newConditionOther;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AssessPackage.PARAM_CONDITION__CONDITION_OTHER, oldConditionOther, conditionOther));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -116,6 +160,8 @@ public class ParamConditionImpl extends MinimalEObjectImpl.Container implements 
       case AssessPackage.PARAM_CONDITION__PARAMS:
         if (resolve) return getParams();
         return basicGetParams();
+      case AssessPackage.PARAM_CONDITION__CONDITION_OTHER:
+        return isConditionOther();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -132,6 +178,9 @@ public class ParamConditionImpl extends MinimalEObjectImpl.Container implements 
     {
       case AssessPackage.PARAM_CONDITION__PARAMS:
         setParams((Params)newValue);
+        return;
+      case AssessPackage.PARAM_CONDITION__CONDITION_OTHER:
+        setConditionOther((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -150,6 +199,9 @@ public class ParamConditionImpl extends MinimalEObjectImpl.Container implements 
       case AssessPackage.PARAM_CONDITION__PARAMS:
         setParams((Params)null);
         return;
+      case AssessPackage.PARAM_CONDITION__CONDITION_OTHER:
+        setConditionOther(CONDITION_OTHER_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -166,8 +218,27 @@ public class ParamConditionImpl extends MinimalEObjectImpl.Container implements 
     {
       case AssessPackage.PARAM_CONDITION__PARAMS:
         return params != null;
+      case AssessPackage.PARAM_CONDITION__CONDITION_OTHER:
+        return conditionOther != CONDITION_OTHER_EDEFAULT;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (conditionOther: ");
+    result.append(conditionOther);
+    result.append(')');
+    return result.toString();
   }
 
 } //ParamConditionImpl

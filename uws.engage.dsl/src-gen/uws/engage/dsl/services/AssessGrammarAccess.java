@@ -1696,86 +1696,107 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class ReactionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Reaction");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cParamsCAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cParamsCParamConditionParserRuleCall_0_0 = (RuleCall)cParamsCAssignment_0.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Assignment cPointsCAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
-		private final RuleCall cPointsCPointsConditionParserRuleCall_1_0_0 = (RuleCall)cPointsCAssignment_1_0.eContents().get(0);
-		private final Keyword cColonKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cFeedbackAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final CrossReference cFeedbackFeedbackCrossReference_1_2_0 = (CrossReference)cFeedbackAssignment_1_2.eContents().get(0);
-		private final RuleCall cFeedbackFeedbackIDTerminalRuleCall_1_2_0_1 = (RuleCall)cFeedbackFeedbackCrossReference_1_2_0.eContents().get(1);
-		private final Assignment cImmediateAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
-		private final Keyword cImmediateImmediateKeyword_1_3_0 = (Keyword)cImmediateAssignment_1_3.eContents().get(0);
-		private final Assignment cDelayedAssignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
-		private final Keyword cDelayedDelayedKeyword_1_4_0 = (Keyword)cDelayedAssignment_1_4.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Assignment cParamsCAssignment_0_0 = (Assignment)cAlternatives_0.eContents().get(0);
+		private final RuleCall cParamsCParamConditionParserRuleCall_0_0_0 = (RuleCall)cParamsCAssignment_0_0.eContents().get(0);
+		private final Assignment cPointsCAssignment_0_1 = (Assignment)cAlternatives_0.eContents().get(1);
+		private final RuleCall cPointsCPointsConditionParserRuleCall_0_1_0 = (RuleCall)cPointsCAssignment_0_1.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cFeedbackAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cFeedbackFeedbackCrossReference_2_0 = (CrossReference)cFeedbackAssignment_2.eContents().get(0);
+		private final RuleCall cFeedbackFeedbackIDTerminalRuleCall_2_0_1 = (RuleCall)cFeedbackFeedbackCrossReference_2_0.eContents().get(1);
+		private final Assignment cImmediateAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Keyword cImmediateImmediateKeyword_3_0 = (Keyword)cImmediateAssignment_3.eContents().get(0);
+		private final Assignment cDelayedAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final Keyword cDelayedDelayedKeyword_4_0 = (Keyword)cDelayedAssignment_4.eContents().get(0);
 		
 		//Reaction:
-		//	paramsC=ParamCondition | pointsC=PointsCondition ":" feedback=[Feedback] immediate?="immediate"? delayed?="delayed"?;
+		//	(paramsC=ParamCondition | pointsC=PointsCondition) ":" feedback=[Feedback] immediate?="immediate"?
+		//	delayed?="delayed"?;
 		public ParserRule getRule() { return rule; }
 
-		//paramsC=ParamCondition | pointsC=PointsCondition ":" feedback=[Feedback] immediate?="immediate"? delayed?="delayed"?
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//(paramsC=ParamCondition | pointsC=PointsCondition) ":" feedback=[Feedback] immediate?="immediate"? delayed?="delayed"?
+		public Group getGroup() { return cGroup; }
+
+		//paramsC=ParamCondition | pointsC=PointsCondition
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 
 		//paramsC=ParamCondition
-		public Assignment getParamsCAssignment_0() { return cParamsCAssignment_0; }
+		public Assignment getParamsCAssignment_0_0() { return cParamsCAssignment_0_0; }
 
 		//ParamCondition
-		public RuleCall getParamsCParamConditionParserRuleCall_0_0() { return cParamsCParamConditionParserRuleCall_0_0; }
-
-		//pointsC=PointsCondition ":" feedback=[Feedback] immediate?="immediate"? delayed?="delayed"?
-		public Group getGroup_1() { return cGroup_1; }
+		public RuleCall getParamsCParamConditionParserRuleCall_0_0_0() { return cParamsCParamConditionParserRuleCall_0_0_0; }
 
 		//pointsC=PointsCondition
-		public Assignment getPointsCAssignment_1_0() { return cPointsCAssignment_1_0; }
+		public Assignment getPointsCAssignment_0_1() { return cPointsCAssignment_0_1; }
 
 		//PointsCondition
-		public RuleCall getPointsCPointsConditionParserRuleCall_1_0_0() { return cPointsCPointsConditionParserRuleCall_1_0_0; }
+		public RuleCall getPointsCPointsConditionParserRuleCall_0_1_0() { return cPointsCPointsConditionParserRuleCall_0_1_0; }
 
 		//":"
-		public Keyword getColonKeyword_1_1() { return cColonKeyword_1_1; }
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 
 		//feedback=[Feedback]
-		public Assignment getFeedbackAssignment_1_2() { return cFeedbackAssignment_1_2; }
+		public Assignment getFeedbackAssignment_2() { return cFeedbackAssignment_2; }
 
 		//[Feedback]
-		public CrossReference getFeedbackFeedbackCrossReference_1_2_0() { return cFeedbackFeedbackCrossReference_1_2_0; }
+		public CrossReference getFeedbackFeedbackCrossReference_2_0() { return cFeedbackFeedbackCrossReference_2_0; }
 
 		//ID
-		public RuleCall getFeedbackFeedbackIDTerminalRuleCall_1_2_0_1() { return cFeedbackFeedbackIDTerminalRuleCall_1_2_0_1; }
+		public RuleCall getFeedbackFeedbackIDTerminalRuleCall_2_0_1() { return cFeedbackFeedbackIDTerminalRuleCall_2_0_1; }
 
 		//immediate?="immediate"?
-		public Assignment getImmediateAssignment_1_3() { return cImmediateAssignment_1_3; }
+		public Assignment getImmediateAssignment_3() { return cImmediateAssignment_3; }
 
 		//"immediate"
-		public Keyword getImmediateImmediateKeyword_1_3_0() { return cImmediateImmediateKeyword_1_3_0; }
+		public Keyword getImmediateImmediateKeyword_3_0() { return cImmediateImmediateKeyword_3_0; }
 
 		//delayed?="delayed"?
-		public Assignment getDelayedAssignment_1_4() { return cDelayedAssignment_1_4; }
+		public Assignment getDelayedAssignment_4() { return cDelayedAssignment_4; }
 
 		//"delayed"
-		public Keyword getDelayedDelayedKeyword_1_4_0() { return cDelayedDelayedKeyword_1_4_0; }
+		public Keyword getDelayedDelayedKeyword_4_0() { return cDelayedDelayedKeyword_4_0; }
 	}
 
 	public class ParamConditionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ParamCondition");
-		private final Assignment cParamsAssignment = (Assignment)rule.eContents().get(1);
-		private final CrossReference cParamsParamsCrossReference_0 = (CrossReference)cParamsAssignment.eContents().get(0);
-		private final RuleCall cParamsParamsIDTerminalRuleCall_0_1 = (RuleCall)cParamsParamsCrossReference_0.eContents().get(1);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Assignment cParamsAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final CrossReference cParamsParamsCrossReference_0_0 = (CrossReference)cParamsAssignment_0.eContents().get(0);
+		private final RuleCall cParamsParamsIDTerminalRuleCall_0_0_1 = (RuleCall)cParamsParamsCrossReference_0_0.eContents().get(1);
+		private final Assignment cConditionOtherAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final Alternatives cConditionOtherAlternatives_1_0 = (Alternatives)cConditionOtherAssignment_1.eContents().get(0);
+		private final Keyword cConditionOtherOthersKeyword_1_0_0 = (Keyword)cConditionOtherAlternatives_1_0.eContents().get(0);
+		private final Keyword cConditionOtherElseKeyword_1_0_1 = (Keyword)cConditionOtherAlternatives_1_0.eContents().get(1);
 		
 		//ParamCondition:
-		//	params=[Params];
+		//	params=[Params] | conditionOther?=("others" | "else");
 		public ParserRule getRule() { return rule; }
 
+		//params=[Params] | conditionOther?=("others" | "else")
+		public Alternatives getAlternatives() { return cAlternatives; }
+
 		//params=[Params]
-		public Assignment getParamsAssignment() { return cParamsAssignment; }
+		public Assignment getParamsAssignment_0() { return cParamsAssignment_0; }
 
 		//[Params]
-		public CrossReference getParamsParamsCrossReference_0() { return cParamsParamsCrossReference_0; }
+		public CrossReference getParamsParamsCrossReference_0_0() { return cParamsParamsCrossReference_0_0; }
 
 		//ID
-		public RuleCall getParamsParamsIDTerminalRuleCall_0_1() { return cParamsParamsIDTerminalRuleCall_0_1; }
+		public RuleCall getParamsParamsIDTerminalRuleCall_0_0_1() { return cParamsParamsIDTerminalRuleCall_0_0_1; }
+
+		//conditionOther?=("others" | "else")
+		public Assignment getConditionOtherAssignment_1() { return cConditionOtherAssignment_1; }
+
+		//"others" | "else"
+		public Alternatives getConditionOtherAlternatives_1_0() { return cConditionOtherAlternatives_1_0; }
+
+		//"others"
+		public Keyword getConditionOtherOthersKeyword_1_0_0() { return cConditionOtherOthersKeyword_1_0_0; }
+
+		//"else"
+		public Keyword getConditionOtherElseKeyword_1_0_1() { return cConditionOtherElseKeyword_1_0_1; }
 	}
 
 	public class PointsConditionElements extends AbstractParserRuleElementFinder {
@@ -2792,7 +2813,8 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Reaction:
-	//	paramsC=ParamCondition | pointsC=PointsCondition ":" feedback=[Feedback] immediate?="immediate"? delayed?="delayed"?;
+	//	(paramsC=ParamCondition | pointsC=PointsCondition) ":" feedback=[Feedback] immediate?="immediate"?
+	//	delayed?="delayed"?;
 	public ReactionElements getReactionAccess() {
 		return pReaction;
 	}
@@ -2802,7 +2824,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ParamCondition:
-	//	params=[Params];
+	//	params=[Params] | conditionOther?=("others" | "else");
 	public ParamConditionElements getParamConditionAccess() {
 		return pParamCondition;
 	}

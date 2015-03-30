@@ -548,17 +548,10 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     params=[Params|ID]
+	 *     (params=[Params|ID] | conditionOther?='others' | conditionOther?='else')
 	 */
 	protected void sequence_ParamCondition(EObject context, ParamCondition semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AssessPackage.Literals.PARAM_CONDITION__PARAMS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AssessPackage.Literals.PARAM_CONDITION__PARAMS));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getParamConditionAccess().getParamsParamsIDTerminalRuleCall_0_1(), semanticObject.getParams());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -636,7 +629,7 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (paramsC=ParamCondition | (pointsC=PointsCondition feedback=[Feedback|ID] immediate?='immediate'? delayed?='delayed'?))
+	 *     ((paramsC=ParamCondition | pointsC=PointsCondition) feedback=[Feedback|ID] immediate?='immediate'? delayed?='delayed'?)
 	 */
 	protected void sequence_Reaction(EObject context, Reaction semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

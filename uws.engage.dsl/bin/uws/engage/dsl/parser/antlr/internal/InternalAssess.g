@@ -3031,10 +3031,10 @@ ruleReaction returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-((
+(((
 (
 		{ 
-	        newCompositeNode(grammarAccess.getReactionAccess().getParamsCParamConditionParserRuleCall_0_0()); 
+	        newCompositeNode(grammarAccess.getReactionAccess().getParamsCParamConditionParserRuleCall_0_0_0()); 
 	    }
 		lv_paramsC_0_0=ruleParamCondition		{
 	        if ($current==null) {
@@ -3050,10 +3050,10 @@ ruleReaction returns [EObject current=null]
 
 )
 )
-    |((
+    |(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getReactionAccess().getPointsCPointsConditionParserRuleCall_1_0_0()); 
+	        newCompositeNode(grammarAccess.getReactionAccess().getPointsCPointsConditionParserRuleCall_0_1_0()); 
 	    }
 		lv_pointsC_1_0=rulePointsCondition		{
 	        if ($current==null) {
@@ -3068,9 +3068,9 @@ ruleReaction returns [EObject current=null]
 	    }
 
 )
-)	otherlv_2=':' 
+))	otherlv_2=':' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getReactionAccess().getColonKeyword_1_1());
+    	newLeafNode(otherlv_2, grammarAccess.getReactionAccess().getColonKeyword_1());
     }
 (
 (
@@ -3081,7 +3081,7 @@ ruleReaction returns [EObject current=null]
         }
 	otherlv_3=RULE_ID
 	{
-		newLeafNode(otherlv_3, grammarAccess.getReactionAccess().getFeedbackFeedbackCrossReference_1_2_0()); 
+		newLeafNode(otherlv_3, grammarAccess.getReactionAccess().getFeedbackFeedbackCrossReference_2_0()); 
 	}
 
 )
@@ -3089,7 +3089,7 @@ ruleReaction returns [EObject current=null]
 (
 		lv_immediate_4_0=	'immediate' 
     {
-        newLeafNode(lv_immediate_4_0, grammarAccess.getReactionAccess().getImmediateImmediateKeyword_1_3_0());
+        newLeafNode(lv_immediate_4_0, grammarAccess.getReactionAccess().getImmediateImmediateKeyword_3_0());
     }
  
 	    {
@@ -3104,7 +3104,7 @@ ruleReaction returns [EObject current=null]
 (
 		lv_delayed_5_0=	'delayed' 
     {
-        newLeafNode(lv_delayed_5_0, grammarAccess.getReactionAccess().getDelayedDelayedKeyword_1_4_0());
+        newLeafNode(lv_delayed_5_0, grammarAccess.getReactionAccess().getDelayedDelayedKeyword_4_0());
     }
  
 	    {
@@ -3115,7 +3115,7 @@ ruleReaction returns [EObject current=null]
 	    }
 
 )
-)?))
+)?)
 ;
 
 
@@ -3136,7 +3136,7 @@ ruleParamCondition returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(
+((
 (
 		{
 			if ($current==null) {
@@ -3145,11 +3145,42 @@ ruleParamCondition returns [EObject current=null]
         }
 	otherlv_0=RULE_ID
 	{
-		newLeafNode(otherlv_0, grammarAccess.getParamConditionAccess().getParamsParamsCrossReference_0()); 
+		newLeafNode(otherlv_0, grammarAccess.getParamConditionAccess().getParamsParamsCrossReference_0_0()); 
 	}
 
 )
 )
+    |(
+(
+(
+		lv_conditionOther_1_1=	'others' 
+    {
+        newLeafNode(lv_conditionOther_1_1, grammarAccess.getParamConditionAccess().getConditionOtherOthersKeyword_1_0_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getParamConditionRule());
+	        }
+       		setWithLastConsumed($current, "conditionOther", true, null);
+	    }
+
+    |		lv_conditionOther_1_2=	'else' 
+    {
+        newLeafNode(lv_conditionOther_1_2, grammarAccess.getParamConditionAccess().getConditionOtherElseKeyword_1_0_1());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getParamConditionRule());
+	        }
+       		setWithLastConsumed($current, "conditionOther", true, null);
+	    }
+
+)
+
+)
+))
 ;
 
 

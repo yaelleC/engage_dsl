@@ -368,7 +368,14 @@ public class Parser {
 					
 					for (Reaction r : a.getReactions().getReaction())
 					{
-						if (r.getPointsC() != null && r.getPointsC().getKeyWd().equals("any"))
+						if (r.getParamsC() != null && r.getParamsC().isConditionOther() && assess.isOthers())
+						{
+							JSONObject f = new JSONObject();
+							f.put("name", r.getFeedback().getName());
+							f.put("immediate", !r.isDelayed());
+							feedbackJson.add(f);
+						}
+						else if (r.getPointsC() != null && r.getPointsC().getKeyWd().equals("any"))
 						{
 							Boolean negativePoints = false;
 							Boolean positivePoints = false;

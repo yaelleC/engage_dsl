@@ -61,7 +61,7 @@ Evidence-model
         greece
         hungary
         ireland
-        italy
+        cond1: italy
         latvia
         lithuania
         luxembourg
@@ -83,6 +83,7 @@ Evidence-model
     
     When 
         any(+) : correct_country
+        others : wrong_country
     End
   End
   

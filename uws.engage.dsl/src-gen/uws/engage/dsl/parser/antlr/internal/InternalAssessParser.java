@@ -7472,7 +7472,7 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
                 int alt63=2;
                 int LA63_0 = input.LA(1);
 
-                if ( (LA63_0==RULE_ID||(LA63_0>=73 && LA63_0<=74)) ) {
+                if ( (LA63_0==RULE_ID||LA63_0==56||LA63_0==66||(LA63_0>=73 && LA63_0<=74)) ) {
                     alt63=1;
                 }
 
@@ -7587,7 +7587,7 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleReaction"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3030:1: ruleReaction returns [EObject current=null] : ( ( (lv_paramsC_0_0= ruleParamCondition ) ) | ( ( (lv_pointsC_1_0= rulePointsCondition ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) ( (lv_immediate_4_0= 'immediate' ) )? ( (lv_delayed_5_0= 'delayed' ) )? ) ) ;
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3030:1: ruleReaction returns [EObject current=null] : ( ( ( (lv_paramsC_0_0= ruleParamCondition ) ) | ( (lv_pointsC_1_0= rulePointsCondition ) ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) ( (lv_immediate_4_0= 'immediate' ) )? ( (lv_delayed_5_0= 'delayed' ) )? ) ;
     public final EObject ruleReaction() throws RecognitionException {
         EObject current = null;
 
@@ -7603,39 +7603,42 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3033:28: ( ( ( (lv_paramsC_0_0= ruleParamCondition ) ) | ( ( (lv_pointsC_1_0= rulePointsCondition ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) ( (lv_immediate_4_0= 'immediate' ) )? ( (lv_delayed_5_0= 'delayed' ) )? ) ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3034:1: ( ( (lv_paramsC_0_0= ruleParamCondition ) ) | ( ( (lv_pointsC_1_0= rulePointsCondition ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) ( (lv_immediate_4_0= 'immediate' ) )? ( (lv_delayed_5_0= 'delayed' ) )? ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3033:28: ( ( ( ( (lv_paramsC_0_0= ruleParamCondition ) ) | ( (lv_pointsC_1_0= rulePointsCondition ) ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) ( (lv_immediate_4_0= 'immediate' ) )? ( (lv_delayed_5_0= 'delayed' ) )? ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3034:1: ( ( ( (lv_paramsC_0_0= ruleParamCondition ) ) | ( (lv_pointsC_1_0= rulePointsCondition ) ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) ( (lv_immediate_4_0= 'immediate' ) )? ( (lv_delayed_5_0= 'delayed' ) )? )
             {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3034:1: ( ( (lv_paramsC_0_0= ruleParamCondition ) ) | ( ( (lv_pointsC_1_0= rulePointsCondition ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) ( (lv_immediate_4_0= 'immediate' ) )? ( (lv_delayed_5_0= 'delayed' ) )? ) )
-            int alt66=2;
-            int LA66_0 = input.LA(1);
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3034:1: ( ( ( (lv_paramsC_0_0= ruleParamCondition ) ) | ( (lv_pointsC_1_0= rulePointsCondition ) ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) ( (lv_immediate_4_0= 'immediate' ) )? ( (lv_delayed_5_0= 'delayed' ) )? )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3034:2: ( ( (lv_paramsC_0_0= ruleParamCondition ) ) | ( (lv_pointsC_1_0= rulePointsCondition ) ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) ( (lv_immediate_4_0= 'immediate' ) )? ( (lv_delayed_5_0= 'delayed' ) )?
+            {
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3034:2: ( ( (lv_paramsC_0_0= ruleParamCondition ) ) | ( (lv_pointsC_1_0= rulePointsCondition ) ) )
+            int alt64=2;
+            int LA64_0 = input.LA(1);
 
-            if ( (LA66_0==RULE_ID) ) {
-                alt66=1;
+            if ( (LA64_0==RULE_ID||LA64_0==56||LA64_0==66) ) {
+                alt64=1;
             }
-            else if ( ((LA66_0>=73 && LA66_0<=74)) ) {
-                alt66=2;
+            else if ( ((LA64_0>=73 && LA64_0<=74)) ) {
+                alt64=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 66, 0, input);
+                    new NoViableAltException("", 64, 0, input);
 
                 throw nvae;
             }
-            switch (alt66) {
+            switch (alt64) {
                 case 1 :
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3034:2: ( (lv_paramsC_0_0= ruleParamCondition ) )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3034:3: ( (lv_paramsC_0_0= ruleParamCondition ) )
                     {
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3034:2: ( (lv_paramsC_0_0= ruleParamCondition ) )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3034:3: ( (lv_paramsC_0_0= ruleParamCondition ) )
                     // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3035:1: (lv_paramsC_0_0= ruleParamCondition )
                     {
                     // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3035:1: (lv_paramsC_0_0= ruleParamCondition )
                     // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3036:3: lv_paramsC_0_0= ruleParamCondition
                     {
                      
-                    	        newCompositeNode(grammarAccess.getReactionAccess().getParamsCParamConditionParserRuleCall_0_0()); 
+                    	        newCompositeNode(grammarAccess.getReactionAccess().getParamsCParamConditionParserRuleCall_0_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleParamCondition_in_ruleReaction6501);
+                    pushFollow(FOLLOW_ruleParamCondition_in_ruleReaction6502);
                     lv_paramsC_0_0=ruleParamCondition();
 
                     state._fsp--;
@@ -7661,19 +7664,16 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3053:6: ( ( (lv_pointsC_1_0= rulePointsCondition ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) ( (lv_immediate_4_0= 'immediate' ) )? ( (lv_delayed_5_0= 'delayed' ) )? )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3053:6: ( (lv_pointsC_1_0= rulePointsCondition ) )
                     {
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3053:6: ( ( (lv_pointsC_1_0= rulePointsCondition ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) ( (lv_immediate_4_0= 'immediate' ) )? ( (lv_delayed_5_0= 'delayed' ) )? )
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3053:7: ( (lv_pointsC_1_0= rulePointsCondition ) ) otherlv_2= ':' ( (otherlv_3= RULE_ID ) ) ( (lv_immediate_4_0= 'immediate' ) )? ( (lv_delayed_5_0= 'delayed' ) )?
-                    {
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3053:7: ( (lv_pointsC_1_0= rulePointsCondition ) )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3053:6: ( (lv_pointsC_1_0= rulePointsCondition ) )
                     // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3054:1: (lv_pointsC_1_0= rulePointsCondition )
                     {
                     // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3054:1: (lv_pointsC_1_0= rulePointsCondition )
                     // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3055:3: lv_pointsC_1_0= rulePointsCondition
                     {
                      
-                    	        newCompositeNode(grammarAccess.getReactionAccess().getPointsCPointsConditionParserRuleCall_1_0_0()); 
+                    	        newCompositeNode(grammarAccess.getReactionAccess().getPointsCPointsConditionParserRuleCall_0_1_0()); 
                     	    
                     pushFollow(FOLLOW_rulePointsCondition_in_ruleReaction6529);
                     lv_pointsC_1_0=rulePointsCondition();
@@ -7697,103 +7697,103 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleReaction6541); 
 
-                        	newLeafNode(otherlv_2, grammarAccess.getReactionAccess().getColonKeyword_1_1());
+                    }
+                    break;
+
+            }
+
+            otherlv_2=(Token)match(input,12,FOLLOW_12_in_ruleReaction6542); 
+
+                	newLeafNode(otherlv_2, grammarAccess.getReactionAccess().getColonKeyword_1());
+                
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3075:1: ( (otherlv_3= RULE_ID ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3076:1: (otherlv_3= RULE_ID )
+            {
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3076:1: (otherlv_3= RULE_ID )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3077:3: otherlv_3= RULE_ID
+            {
+
+            			if (current==null) {
+            	            current = createModelElement(grammarAccess.getReactionRule());
+            	        }
+                    
+            otherlv_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleReaction6562); 
+
+            		newLeafNode(otherlv_3, grammarAccess.getReactionAccess().getFeedbackFeedbackCrossReference_2_0()); 
+            	
+
+            }
+
+
+            }
+
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3088:2: ( (lv_immediate_4_0= 'immediate' ) )?
+            int alt65=2;
+            int LA65_0 = input.LA(1);
+
+            if ( (LA65_0==61) ) {
+                alt65=1;
+            }
+            switch (alt65) {
+                case 1 :
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3089:1: (lv_immediate_4_0= 'immediate' )
+                    {
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3089:1: (lv_immediate_4_0= 'immediate' )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3090:3: lv_immediate_4_0= 'immediate'
+                    {
+                    lv_immediate_4_0=(Token)match(input,61,FOLLOW_61_in_ruleReaction6580); 
+
+                            newLeafNode(lv_immediate_4_0, grammarAccess.getReactionAccess().getImmediateImmediateKeyword_3_0());
                         
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3075:1: ( (otherlv_3= RULE_ID ) )
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3076:1: (otherlv_3= RULE_ID )
-                    {
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3076:1: (otherlv_3= RULE_ID )
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3077:3: otherlv_3= RULE_ID
-                    {
 
-                    			if (current==null) {
+                    	        if (current==null) {
                     	            current = createModelElement(grammarAccess.getReactionRule());
                     	        }
-                            
-                    otherlv_3=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleReaction6561); 
-
-                    		newLeafNode(otherlv_3, grammarAccess.getReactionAccess().getFeedbackFeedbackCrossReference_1_2_0()); 
-                    	
-
-                    }
-
-
-                    }
-
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3088:2: ( (lv_immediate_4_0= 'immediate' ) )?
-                    int alt64=2;
-                    int LA64_0 = input.LA(1);
-
-                    if ( (LA64_0==61) ) {
-                        alt64=1;
-                    }
-                    switch (alt64) {
-                        case 1 :
-                            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3089:1: (lv_immediate_4_0= 'immediate' )
-                            {
-                            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3089:1: (lv_immediate_4_0= 'immediate' )
-                            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3090:3: lv_immediate_4_0= 'immediate'
-                            {
-                            lv_immediate_4_0=(Token)match(input,61,FOLLOW_61_in_ruleReaction6579); 
-
-                                    newLeafNode(lv_immediate_4_0, grammarAccess.getReactionAccess().getImmediateImmediateKeyword_1_3_0());
-                                
-
-                            	        if (current==null) {
-                            	            current = createModelElement(grammarAccess.getReactionRule());
-                            	        }
-                                   		setWithLastConsumed(current, "immediate", true, "immediate");
-                            	    
-
-                            }
-
-
-                            }
-                            break;
-
-                    }
-
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3103:3: ( (lv_delayed_5_0= 'delayed' ) )?
-                    int alt65=2;
-                    int LA65_0 = input.LA(1);
-
-                    if ( (LA65_0==62) ) {
-                        alt65=1;
-                    }
-                    switch (alt65) {
-                        case 1 :
-                            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3104:1: (lv_delayed_5_0= 'delayed' )
-                            {
-                            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3104:1: (lv_delayed_5_0= 'delayed' )
-                            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3105:3: lv_delayed_5_0= 'delayed'
-                            {
-                            lv_delayed_5_0=(Token)match(input,62,FOLLOW_62_in_ruleReaction6611); 
-
-                                    newLeafNode(lv_delayed_5_0, grammarAccess.getReactionAccess().getDelayedDelayedKeyword_1_4_0());
-                                
-
-                            	        if (current==null) {
-                            	            current = createModelElement(grammarAccess.getReactionRule());
-                            	        }
-                                   		setWithLastConsumed(current, "delayed", true, "delayed");
-                            	    
-
-                            }
-
-
-                            }
-                            break;
-
-                    }
-
+                           		setWithLastConsumed(current, "immediate", true, "immediate");
+                    	    
 
                     }
 
 
                     }
                     break;
+
+            }
+
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3103:3: ( (lv_delayed_5_0= 'delayed' ) )?
+            int alt66=2;
+            int LA66_0 = input.LA(1);
+
+            if ( (LA66_0==62) ) {
+                alt66=1;
+            }
+            switch (alt66) {
+                case 1 :
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3104:1: (lv_delayed_5_0= 'delayed' )
+                    {
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3104:1: (lv_delayed_5_0= 'delayed' )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3105:3: lv_delayed_5_0= 'delayed'
+                    {
+                    lv_delayed_5_0=(Token)match(input,62,FOLLOW_62_in_ruleReaction6612); 
+
+                            newLeafNode(lv_delayed_5_0, grammarAccess.getReactionAccess().getDelayedDelayedKeyword_4_0());
+                        
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getReactionRule());
+                    	        }
+                           		setWithLastConsumed(current, "delayed", true, "delayed");
+                    	    
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
 
             }
 
@@ -7851,36 +7851,134 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleParamCondition"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3135:1: ruleParamCondition returns [EObject current=null] : ( (otherlv_0= RULE_ID ) ) ;
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3135:1: ruleParamCondition returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) | ( ( (lv_conditionOther_1_1= 'others' | lv_conditionOther_1_2= 'else' ) ) ) ) ;
     public final EObject ruleParamCondition() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
+        Token lv_conditionOther_1_1=null;
+        Token lv_conditionOther_1_2=null;
 
          enterRule(); 
             
         try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3138:28: ( ( (otherlv_0= RULE_ID ) ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3139:1: ( (otherlv_0= RULE_ID ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3138:28: ( ( ( (otherlv_0= RULE_ID ) ) | ( ( (lv_conditionOther_1_1= 'others' | lv_conditionOther_1_2= 'else' ) ) ) ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3139:1: ( ( (otherlv_0= RULE_ID ) ) | ( ( (lv_conditionOther_1_1= 'others' | lv_conditionOther_1_2= 'else' ) ) ) )
             {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3139:1: ( (otherlv_0= RULE_ID ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3140:1: (otherlv_0= RULE_ID )
-            {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3140:1: (otherlv_0= RULE_ID )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3141:3: otherlv_0= RULE_ID
-            {
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3139:1: ( ( (otherlv_0= RULE_ID ) ) | ( ( (lv_conditionOther_1_1= 'others' | lv_conditionOther_1_2= 'else' ) ) ) )
+            int alt68=2;
+            int LA68_0 = input.LA(1);
 
-            			if (current==null) {
-            	            current = createModelElement(grammarAccess.getParamConditionRule());
-            	        }
-                    
-            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleParamCondition6716); 
-
-            		newLeafNode(otherlv_0, grammarAccess.getParamConditionAccess().getParamsParamsCrossReference_0()); 
-            	
-
+            if ( (LA68_0==RULE_ID) ) {
+                alt68=1;
             }
+            else if ( (LA68_0==56||LA68_0==66) ) {
+                alt68=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 68, 0, input);
 
+                throw nvae;
+            }
+            switch (alt68) {
+                case 1 :
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3139:2: ( (otherlv_0= RULE_ID ) )
+                    {
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3139:2: ( (otherlv_0= RULE_ID ) )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3140:1: (otherlv_0= RULE_ID )
+                    {
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3140:1: (otherlv_0= RULE_ID )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3141:3: otherlv_0= RULE_ID
+                    {
+
+                    			if (current==null) {
+                    	            current = createModelElement(grammarAccess.getParamConditionRule());
+                    	        }
+                            
+                    otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleParamCondition6717); 
+
+                    		newLeafNode(otherlv_0, grammarAccess.getParamConditionAccess().getParamsParamsCrossReference_0_0()); 
+                    	
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3153:6: ( ( (lv_conditionOther_1_1= 'others' | lv_conditionOther_1_2= 'else' ) ) )
+                    {
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3153:6: ( ( (lv_conditionOther_1_1= 'others' | lv_conditionOther_1_2= 'else' ) ) )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3154:1: ( (lv_conditionOther_1_1= 'others' | lv_conditionOther_1_2= 'else' ) )
+                    {
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3154:1: ( (lv_conditionOther_1_1= 'others' | lv_conditionOther_1_2= 'else' ) )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3155:1: (lv_conditionOther_1_1= 'others' | lv_conditionOther_1_2= 'else' )
+                    {
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3155:1: (lv_conditionOther_1_1= 'others' | lv_conditionOther_1_2= 'else' )
+                    int alt67=2;
+                    int LA67_0 = input.LA(1);
+
+                    if ( (LA67_0==66) ) {
+                        alt67=1;
+                    }
+                    else if ( (LA67_0==56) ) {
+                        alt67=2;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 67, 0, input);
+
+                        throw nvae;
+                    }
+                    switch (alt67) {
+                        case 1 :
+                            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3156:3: lv_conditionOther_1_1= 'others'
+                            {
+                            lv_conditionOther_1_1=(Token)match(input,66,FOLLOW_66_in_ruleParamCondition6743); 
+
+                                    newLeafNode(lv_conditionOther_1_1, grammarAccess.getParamConditionAccess().getConditionOtherOthersKeyword_1_0_0());
+                                
+
+                            	        if (current==null) {
+                            	            current = createModelElement(grammarAccess.getParamConditionRule());
+                            	        }
+                                   		setWithLastConsumed(current, "conditionOther", true, null);
+                            	    
+
+                            }
+                            break;
+                        case 2 :
+                            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3168:8: lv_conditionOther_1_2= 'else'
+                            {
+                            lv_conditionOther_1_2=(Token)match(input,56,FOLLOW_56_in_ruleParamCondition6772); 
+
+                                    newLeafNode(lv_conditionOther_1_2, grammarAccess.getParamConditionAccess().getConditionOtherElseKeyword_1_0_1());
+                                
+
+                            	        if (current==null) {
+                            	            current = createModelElement(grammarAccess.getParamConditionRule());
+                            	        }
+                                   		setWithLastConsumed(current, "conditionOther", true, null);
+                            	    
+
+                            }
+                            break;
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -7902,7 +8000,7 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePointsCondition"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3160:1: entryRulePointsCondition returns [EObject current=null] : iv_rulePointsCondition= rulePointsCondition EOF ;
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3191:1: entryRulePointsCondition returns [EObject current=null] : iv_rulePointsCondition= rulePointsCondition EOF ;
     public final EObject entryRulePointsCondition() throws RecognitionException {
         EObject current = null;
 
@@ -7910,17 +8008,17 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3161:2: (iv_rulePointsCondition= rulePointsCondition EOF )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3162:2: iv_rulePointsCondition= rulePointsCondition EOF
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3192:2: (iv_rulePointsCondition= rulePointsCondition EOF )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3193:2: iv_rulePointsCondition= rulePointsCondition EOF
             {
              newCompositeNode(grammarAccess.getPointsConditionRule()); 
-            pushFollow(FOLLOW_rulePointsCondition_in_entryRulePointsCondition6751);
+            pushFollow(FOLLOW_rulePointsCondition_in_entryRulePointsCondition6824);
             iv_rulePointsCondition=rulePointsCondition();
 
             state._fsp--;
 
              current =iv_rulePointsCondition; 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePointsCondition6761); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePointsCondition6834); 
 
             }
 
@@ -7938,7 +8036,7 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePointsCondition"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3169:1: rulePointsCondition returns [EObject current=null] : ( ( (lv_keyWd_0_0= rulePointsKeyWd ) ) otherlv_1= '(' ( ( (lv_sign_2_0= ruleSign ) ) | ( (lv_value_3_0= rulePoint ) ) ) otherlv_4= ')' ) ;
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3200:1: rulePointsCondition returns [EObject current=null] : ( ( (lv_keyWd_0_0= rulePointsKeyWd ) ) otherlv_1= '(' ( ( (lv_sign_2_0= ruleSign ) ) | ( (lv_value_3_0= rulePoint ) ) ) otherlv_4= ')' ) ;
     public final EObject rulePointsCondition() throws RecognitionException {
         EObject current = null;
 
@@ -7954,22 +8052,22 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3172:28: ( ( ( (lv_keyWd_0_0= rulePointsKeyWd ) ) otherlv_1= '(' ( ( (lv_sign_2_0= ruleSign ) ) | ( (lv_value_3_0= rulePoint ) ) ) otherlv_4= ')' ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3173:1: ( ( (lv_keyWd_0_0= rulePointsKeyWd ) ) otherlv_1= '(' ( ( (lv_sign_2_0= ruleSign ) ) | ( (lv_value_3_0= rulePoint ) ) ) otherlv_4= ')' )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3203:28: ( ( ( (lv_keyWd_0_0= rulePointsKeyWd ) ) otherlv_1= '(' ( ( (lv_sign_2_0= ruleSign ) ) | ( (lv_value_3_0= rulePoint ) ) ) otherlv_4= ')' ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3204:1: ( ( (lv_keyWd_0_0= rulePointsKeyWd ) ) otherlv_1= '(' ( ( (lv_sign_2_0= ruleSign ) ) | ( (lv_value_3_0= rulePoint ) ) ) otherlv_4= ')' )
             {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3173:1: ( ( (lv_keyWd_0_0= rulePointsKeyWd ) ) otherlv_1= '(' ( ( (lv_sign_2_0= ruleSign ) ) | ( (lv_value_3_0= rulePoint ) ) ) otherlv_4= ')' )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3173:2: ( (lv_keyWd_0_0= rulePointsKeyWd ) ) otherlv_1= '(' ( ( (lv_sign_2_0= ruleSign ) ) | ( (lv_value_3_0= rulePoint ) ) ) otherlv_4= ')'
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3204:1: ( ( (lv_keyWd_0_0= rulePointsKeyWd ) ) otherlv_1= '(' ( ( (lv_sign_2_0= ruleSign ) ) | ( (lv_value_3_0= rulePoint ) ) ) otherlv_4= ')' )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3204:2: ( (lv_keyWd_0_0= rulePointsKeyWd ) ) otherlv_1= '(' ( ( (lv_sign_2_0= ruleSign ) ) | ( (lv_value_3_0= rulePoint ) ) ) otherlv_4= ')'
             {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3173:2: ( (lv_keyWd_0_0= rulePointsKeyWd ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3174:1: (lv_keyWd_0_0= rulePointsKeyWd )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3204:2: ( (lv_keyWd_0_0= rulePointsKeyWd ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3205:1: (lv_keyWd_0_0= rulePointsKeyWd )
             {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3174:1: (lv_keyWd_0_0= rulePointsKeyWd )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3175:3: lv_keyWd_0_0= rulePointsKeyWd
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3205:1: (lv_keyWd_0_0= rulePointsKeyWd )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3206:3: lv_keyWd_0_0= rulePointsKeyWd
             {
              
             	        newCompositeNode(grammarAccess.getPointsConditionAccess().getKeyWdPointsKeyWdParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_rulePointsKeyWd_in_rulePointsCondition6807);
+            pushFollow(FOLLOW_rulePointsKeyWd_in_rulePointsCondition6880);
             lv_keyWd_0_0=rulePointsKeyWd();
 
             state._fsp--;
@@ -7991,31 +8089,31 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,20,FOLLOW_20_in_rulePointsCondition6819); 
+            otherlv_1=(Token)match(input,20,FOLLOW_20_in_rulePointsCondition6892); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getPointsConditionAccess().getLeftParenthesisKeyword_1());
                 
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3195:1: ( ( (lv_sign_2_0= ruleSign ) ) | ( (lv_value_3_0= rulePoint ) ) )
-            int alt67=2;
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3226:1: ( ( (lv_sign_2_0= ruleSign ) ) | ( (lv_value_3_0= rulePoint ) ) )
+            int alt69=2;
             switch ( input.LA(1) ) {
             case 68:
                 {
-                alt67=1;
+                alt69=1;
                 }
                 break;
             case 34:
                 {
-                int LA67_2 = input.LA(2);
+                int LA69_2 = input.LA(2);
 
-                if ( (LA67_2==RULE_INT) ) {
-                    alt67=2;
+                if ( (LA69_2==22) ) {
+                    alt69=1;
                 }
-                else if ( (LA67_2==22) ) {
-                    alt67=1;
+                else if ( (LA69_2==RULE_INT) ) {
+                    alt69=2;
                 }
                 else {
                     NoViableAltException nvae =
-                        new NoViableAltException("", 67, 2, input);
+                        new NoViableAltException("", 69, 2, input);
 
                     throw nvae;
                 }
@@ -8023,30 +8121,30 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
                 break;
             case RULE_INT:
                 {
-                alt67=2;
+                alt69=2;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 67, 0, input);
+                    new NoViableAltException("", 69, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt67) {
+            switch (alt69) {
                 case 1 :
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3195:2: ( (lv_sign_2_0= ruleSign ) )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3226:2: ( (lv_sign_2_0= ruleSign ) )
                     {
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3195:2: ( (lv_sign_2_0= ruleSign ) )
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3196:1: (lv_sign_2_0= ruleSign )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3226:2: ( (lv_sign_2_0= ruleSign ) )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3227:1: (lv_sign_2_0= ruleSign )
                     {
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3196:1: (lv_sign_2_0= ruleSign )
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3197:3: lv_sign_2_0= ruleSign
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3227:1: (lv_sign_2_0= ruleSign )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3228:3: lv_sign_2_0= ruleSign
                     {
                      
                     	        newCompositeNode(grammarAccess.getPointsConditionAccess().getSignSignParserRuleCall_2_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleSign_in_rulePointsCondition6841);
+                    pushFollow(FOLLOW_ruleSign_in_rulePointsCondition6914);
                     lv_sign_2_0=ruleSign();
 
                     state._fsp--;
@@ -8072,18 +8170,18 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3214:6: ( (lv_value_3_0= rulePoint ) )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3245:6: ( (lv_value_3_0= rulePoint ) )
                     {
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3214:6: ( (lv_value_3_0= rulePoint ) )
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3215:1: (lv_value_3_0= rulePoint )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3245:6: ( (lv_value_3_0= rulePoint ) )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3246:1: (lv_value_3_0= rulePoint )
                     {
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3215:1: (lv_value_3_0= rulePoint )
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3216:3: lv_value_3_0= rulePoint
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3246:1: (lv_value_3_0= rulePoint )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3247:3: lv_value_3_0= rulePoint
                     {
                      
                     	        newCompositeNode(grammarAccess.getPointsConditionAccess().getValuePointParserRuleCall_2_1_0()); 
                     	    
-                    pushFollow(FOLLOW_rulePoint_in_rulePointsCondition6868);
+                    pushFollow(FOLLOW_rulePoint_in_rulePointsCondition6941);
                     lv_value_3_0=rulePoint();
 
                     state._fsp--;
@@ -8111,7 +8209,7 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,22,FOLLOW_22_in_rulePointsCondition6881); 
+            otherlv_4=(Token)match(input,22,FOLLOW_22_in_rulePointsCondition6954); 
 
                 	newLeafNode(otherlv_4, grammarAccess.getPointsConditionAccess().getRightParenthesisKeyword_3());
                 
@@ -8136,7 +8234,7 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePointsKeyWd"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3244:1: entryRulePointsKeyWd returns [String current=null] : iv_rulePointsKeyWd= rulePointsKeyWd EOF ;
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3275:1: entryRulePointsKeyWd returns [String current=null] : iv_rulePointsKeyWd= rulePointsKeyWd EOF ;
     public final String entryRulePointsKeyWd() throws RecognitionException {
         String current = null;
 
@@ -8144,17 +8242,17 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3245:2: (iv_rulePointsKeyWd= rulePointsKeyWd EOF )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3246:2: iv_rulePointsKeyWd= rulePointsKeyWd EOF
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3276:2: (iv_rulePointsKeyWd= rulePointsKeyWd EOF )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3277:2: iv_rulePointsKeyWd= rulePointsKeyWd EOF
             {
              newCompositeNode(grammarAccess.getPointsKeyWdRule()); 
-            pushFollow(FOLLOW_rulePointsKeyWd_in_entryRulePointsKeyWd6918);
+            pushFollow(FOLLOW_rulePointsKeyWd_in_entryRulePointsKeyWd6991);
             iv_rulePointsKeyWd=rulePointsKeyWd();
 
             state._fsp--;
 
              current =iv_rulePointsKeyWd.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePointsKeyWd6929); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePointsKeyWd7002); 
 
             }
 
@@ -8172,7 +8270,7 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePointsKeyWd"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3253:1: rulePointsKeyWd returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'any' | kw= 'all' ) ;
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3284:1: rulePointsKeyWd returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'any' | kw= 'all' ) ;
     public final AntlrDatatypeRuleToken rulePointsKeyWd() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8181,30 +8279,30 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3256:28: ( (kw= 'any' | kw= 'all' ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3257:1: (kw= 'any' | kw= 'all' )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3287:28: ( (kw= 'any' | kw= 'all' ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3288:1: (kw= 'any' | kw= 'all' )
             {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3257:1: (kw= 'any' | kw= 'all' )
-            int alt68=2;
-            int LA68_0 = input.LA(1);
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3288:1: (kw= 'any' | kw= 'all' )
+            int alt70=2;
+            int LA70_0 = input.LA(1);
 
-            if ( (LA68_0==73) ) {
-                alt68=1;
+            if ( (LA70_0==73) ) {
+                alt70=1;
             }
-            else if ( (LA68_0==74) ) {
-                alt68=2;
+            else if ( (LA70_0==74) ) {
+                alt70=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 68, 0, input);
+                    new NoViableAltException("", 70, 0, input);
 
                 throw nvae;
             }
-            switch (alt68) {
+            switch (alt70) {
                 case 1 :
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3258:2: kw= 'any'
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3289:2: kw= 'any'
                     {
-                    kw=(Token)match(input,73,FOLLOW_73_in_rulePointsKeyWd6967); 
+                    kw=(Token)match(input,73,FOLLOW_73_in_rulePointsKeyWd7040); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getPointsKeyWdAccess().getAnyKeyword_0()); 
@@ -8213,9 +8311,9 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3265:2: kw= 'all'
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3296:2: kw= 'all'
                     {
-                    kw=(Token)match(input,74,FOLLOW_74_in_rulePointsKeyWd6986); 
+                    kw=(Token)match(input,74,FOLLOW_74_in_rulePointsKeyWd7059); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getPointsKeyWdAccess().getAllKeyword_1()); 
@@ -8244,7 +8342,7 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFeedbackModel"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3278:1: entryRuleFeedbackModel returns [EObject current=null] : iv_ruleFeedbackModel= ruleFeedbackModel EOF ;
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3309:1: entryRuleFeedbackModel returns [EObject current=null] : iv_ruleFeedbackModel= ruleFeedbackModel EOF ;
     public final EObject entryRuleFeedbackModel() throws RecognitionException {
         EObject current = null;
 
@@ -8252,17 +8350,17 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3279:2: (iv_ruleFeedbackModel= ruleFeedbackModel EOF )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3280:2: iv_ruleFeedbackModel= ruleFeedbackModel EOF
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3310:2: (iv_ruleFeedbackModel= ruleFeedbackModel EOF )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3311:2: iv_ruleFeedbackModel= ruleFeedbackModel EOF
             {
              newCompositeNode(grammarAccess.getFeedbackModelRule()); 
-            pushFollow(FOLLOW_ruleFeedbackModel_in_entryRuleFeedbackModel7026);
+            pushFollow(FOLLOW_ruleFeedbackModel_in_entryRuleFeedbackModel7099);
             iv_ruleFeedbackModel=ruleFeedbackModel();
 
             state._fsp--;
 
              current =iv_ruleFeedbackModel; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFeedbackModel7036); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFeedbackModel7109); 
 
             }
 
@@ -8280,7 +8378,7 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFeedbackModel"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3287:1: ruleFeedbackModel returns [EObject current=null] : (otherlv_0= 'Feedback-model' ( (lv_triggers_1_0= ruleTrigger ) )+ ruleEnd ) ;
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3318:1: ruleFeedbackModel returns [EObject current=null] : (otherlv_0= 'Feedback-model' ( (lv_triggers_1_0= ruleTrigger ) )+ ruleEnd ) ;
     public final EObject ruleFeedbackModel() throws RecognitionException {
         EObject current = null;
 
@@ -8291,39 +8389,39 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3290:28: ( (otherlv_0= 'Feedback-model' ( (lv_triggers_1_0= ruleTrigger ) )+ ruleEnd ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3291:1: (otherlv_0= 'Feedback-model' ( (lv_triggers_1_0= ruleTrigger ) )+ ruleEnd )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3321:28: ( (otherlv_0= 'Feedback-model' ( (lv_triggers_1_0= ruleTrigger ) )+ ruleEnd ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3322:1: (otherlv_0= 'Feedback-model' ( (lv_triggers_1_0= ruleTrigger ) )+ ruleEnd )
             {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3291:1: (otherlv_0= 'Feedback-model' ( (lv_triggers_1_0= ruleTrigger ) )+ ruleEnd )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3291:3: otherlv_0= 'Feedback-model' ( (lv_triggers_1_0= ruleTrigger ) )+ ruleEnd
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3322:1: (otherlv_0= 'Feedback-model' ( (lv_triggers_1_0= ruleTrigger ) )+ ruleEnd )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3322:3: otherlv_0= 'Feedback-model' ( (lv_triggers_1_0= ruleTrigger ) )+ ruleEnd
             {
-            otherlv_0=(Token)match(input,75,FOLLOW_75_in_ruleFeedbackModel7073); 
+            otherlv_0=(Token)match(input,75,FOLLOW_75_in_ruleFeedbackModel7146); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getFeedbackModelAccess().getFeedbackModelKeyword_0());
                 
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3295:1: ( (lv_triggers_1_0= ruleTrigger ) )+
-            int cnt69=0;
-            loop69:
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3326:1: ( (lv_triggers_1_0= ruleTrigger ) )+
+            int cnt71=0;
+            loop71:
             do {
-                int alt69=2;
-                int LA69_0 = input.LA(1);
+                int alt71=2;
+                int LA71_0 = input.LA(1);
 
-                if ( (LA69_0==RULE_ID||LA69_0==78) ) {
-                    alt69=1;
+                if ( (LA71_0==RULE_ID||LA71_0==78) ) {
+                    alt71=1;
                 }
 
 
-                switch (alt69) {
+                switch (alt71) {
             	case 1 :
-            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3296:1: (lv_triggers_1_0= ruleTrigger )
+            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3327:1: (lv_triggers_1_0= ruleTrigger )
             	    {
-            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3296:1: (lv_triggers_1_0= ruleTrigger )
-            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3297:3: lv_triggers_1_0= ruleTrigger
+            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3327:1: (lv_triggers_1_0= ruleTrigger )
+            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3328:3: lv_triggers_1_0= ruleTrigger
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getFeedbackModelAccess().getTriggersTriggerParserRuleCall_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleTrigger_in_ruleFeedbackModel7094);
+            	    pushFollow(FOLLOW_ruleTrigger_in_ruleFeedbackModel7167);
             	    lv_triggers_1_0=ruleTrigger();
 
             	    state._fsp--;
@@ -8347,18 +8445,18 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt69 >= 1 ) break loop69;
+            	    if ( cnt71 >= 1 ) break loop71;
                         EarlyExitException eee =
-                            new EarlyExitException(69, input);
+                            new EarlyExitException(71, input);
                         throw eee;
                 }
-                cnt69++;
+                cnt71++;
             } while (true);
 
              
                     newCompositeNode(grammarAccess.getFeedbackModelAccess().getEndParserRuleCall_2()); 
                 
-            pushFollow(FOLLOW_ruleEnd_in_ruleFeedbackModel7111);
+            pushFollow(FOLLOW_ruleEnd_in_ruleFeedbackModel7184);
             ruleEnd();
 
             state._fsp--;
@@ -8387,7 +8485,7 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTrigger"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3329:1: entryRuleTrigger returns [EObject current=null] : iv_ruleTrigger= ruleTrigger EOF ;
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3360:1: entryRuleTrigger returns [EObject current=null] : iv_ruleTrigger= ruleTrigger EOF ;
     public final EObject entryRuleTrigger() throws RecognitionException {
         EObject current = null;
 
@@ -8395,17 +8493,17 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3330:2: (iv_ruleTrigger= ruleTrigger EOF )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3331:2: iv_ruleTrigger= ruleTrigger EOF
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3361:2: (iv_ruleTrigger= ruleTrigger EOF )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3362:2: iv_ruleTrigger= ruleTrigger EOF
             {
              newCompositeNode(grammarAccess.getTriggerRule()); 
-            pushFollow(FOLLOW_ruleTrigger_in_entryRuleTrigger7146);
+            pushFollow(FOLLOW_ruleTrigger_in_entryRuleTrigger7219);
             iv_ruleTrigger=ruleTrigger();
 
             state._fsp--;
 
              current =iv_ruleTrigger; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTrigger7156); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTrigger7229); 
 
             }
 
@@ -8423,7 +8521,7 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTrigger"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3338:1: ruleTrigger returns [EObject current=null] : ( ( (lv_perf_0_0= ruleOutcomeValueLimit ) ) | ( (lv_inactivity_1_0= ruleInactivityLimit ) ) ) ;
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3369:1: ruleTrigger returns [EObject current=null] : ( ( (lv_perf_0_0= ruleOutcomeValueLimit ) ) | ( (lv_inactivity_1_0= ruleInactivityLimit ) ) ) ;
     public final EObject ruleTrigger() throws RecognitionException {
         EObject current = null;
 
@@ -8435,39 +8533,39 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3341:28: ( ( ( (lv_perf_0_0= ruleOutcomeValueLimit ) ) | ( (lv_inactivity_1_0= ruleInactivityLimit ) ) ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3342:1: ( ( (lv_perf_0_0= ruleOutcomeValueLimit ) ) | ( (lv_inactivity_1_0= ruleInactivityLimit ) ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3372:28: ( ( ( (lv_perf_0_0= ruleOutcomeValueLimit ) ) | ( (lv_inactivity_1_0= ruleInactivityLimit ) ) ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3373:1: ( ( (lv_perf_0_0= ruleOutcomeValueLimit ) ) | ( (lv_inactivity_1_0= ruleInactivityLimit ) ) )
             {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3342:1: ( ( (lv_perf_0_0= ruleOutcomeValueLimit ) ) | ( (lv_inactivity_1_0= ruleInactivityLimit ) ) )
-            int alt70=2;
-            int LA70_0 = input.LA(1);
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3373:1: ( ( (lv_perf_0_0= ruleOutcomeValueLimit ) ) | ( (lv_inactivity_1_0= ruleInactivityLimit ) ) )
+            int alt72=2;
+            int LA72_0 = input.LA(1);
 
-            if ( (LA70_0==RULE_ID) ) {
-                alt70=1;
+            if ( (LA72_0==RULE_ID) ) {
+                alt72=1;
             }
-            else if ( (LA70_0==78) ) {
-                alt70=2;
+            else if ( (LA72_0==78) ) {
+                alt72=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 70, 0, input);
+                    new NoViableAltException("", 72, 0, input);
 
                 throw nvae;
             }
-            switch (alt70) {
+            switch (alt72) {
                 case 1 :
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3342:2: ( (lv_perf_0_0= ruleOutcomeValueLimit ) )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3373:2: ( (lv_perf_0_0= ruleOutcomeValueLimit ) )
                     {
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3342:2: ( (lv_perf_0_0= ruleOutcomeValueLimit ) )
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3343:1: (lv_perf_0_0= ruleOutcomeValueLimit )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3373:2: ( (lv_perf_0_0= ruleOutcomeValueLimit ) )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3374:1: (lv_perf_0_0= ruleOutcomeValueLimit )
                     {
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3343:1: (lv_perf_0_0= ruleOutcomeValueLimit )
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3344:3: lv_perf_0_0= ruleOutcomeValueLimit
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3374:1: (lv_perf_0_0= ruleOutcomeValueLimit )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3375:3: lv_perf_0_0= ruleOutcomeValueLimit
                     {
                      
                     	        newCompositeNode(grammarAccess.getTriggerAccess().getPerfOutcomeValueLimitParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleOutcomeValueLimit_in_ruleTrigger7202);
+                    pushFollow(FOLLOW_ruleOutcomeValueLimit_in_ruleTrigger7275);
                     lv_perf_0_0=ruleOutcomeValueLimit();
 
                     state._fsp--;
@@ -8493,18 +8591,18 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3361:6: ( (lv_inactivity_1_0= ruleInactivityLimit ) )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3392:6: ( (lv_inactivity_1_0= ruleInactivityLimit ) )
                     {
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3361:6: ( (lv_inactivity_1_0= ruleInactivityLimit ) )
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3362:1: (lv_inactivity_1_0= ruleInactivityLimit )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3392:6: ( (lv_inactivity_1_0= ruleInactivityLimit ) )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3393:1: (lv_inactivity_1_0= ruleInactivityLimit )
                     {
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3362:1: (lv_inactivity_1_0= ruleInactivityLimit )
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3363:3: lv_inactivity_1_0= ruleInactivityLimit
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3393:1: (lv_inactivity_1_0= ruleInactivityLimit )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3394:3: lv_inactivity_1_0= ruleInactivityLimit
                     {
                      
                     	        newCompositeNode(grammarAccess.getTriggerAccess().getInactivityInactivityLimitParserRuleCall_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleInactivityLimit_in_ruleTrigger7229);
+                    pushFollow(FOLLOW_ruleInactivityLimit_in_ruleTrigger7302);
                     lv_inactivity_1_0=ruleInactivityLimit();
 
                     state._fsp--;
@@ -8550,7 +8648,7 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOutcomeValueLimit"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3387:1: entryRuleOutcomeValueLimit returns [EObject current=null] : iv_ruleOutcomeValueLimit= ruleOutcomeValueLimit EOF ;
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3418:1: entryRuleOutcomeValueLimit returns [EObject current=null] : iv_ruleOutcomeValueLimit= ruleOutcomeValueLimit EOF ;
     public final EObject entryRuleOutcomeValueLimit() throws RecognitionException {
         EObject current = null;
 
@@ -8558,17 +8656,17 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3388:2: (iv_ruleOutcomeValueLimit= ruleOutcomeValueLimit EOF )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3389:2: iv_ruleOutcomeValueLimit= ruleOutcomeValueLimit EOF
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3419:2: (iv_ruleOutcomeValueLimit= ruleOutcomeValueLimit EOF )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3420:2: iv_ruleOutcomeValueLimit= ruleOutcomeValueLimit EOF
             {
              newCompositeNode(grammarAccess.getOutcomeValueLimitRule()); 
-            pushFollow(FOLLOW_ruleOutcomeValueLimit_in_entryRuleOutcomeValueLimit7265);
+            pushFollow(FOLLOW_ruleOutcomeValueLimit_in_entryRuleOutcomeValueLimit7338);
             iv_ruleOutcomeValueLimit=ruleOutcomeValueLimit();
 
             state._fsp--;
 
              current =iv_ruleOutcomeValueLimit; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOutcomeValueLimit7275); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOutcomeValueLimit7348); 
 
             }
 
@@ -8586,7 +8684,7 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOutcomeValueLimit"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3396:1: ruleOutcomeValueLimit returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_negativeLimit_2_0= '-' ) )? ( (lv_limit_3_0= RULE_INT ) ) ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+ ) ;
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3427:1: ruleOutcomeValueLimit returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_negativeLimit_2_0= '-' ) )? ( (lv_limit_3_0= RULE_INT ) ) ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+ ) ;
     public final EObject ruleOutcomeValueLimit() throws RecognitionException {
         EObject current = null;
 
@@ -8601,24 +8699,24 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3399:28: ( ( ( (otherlv_0= RULE_ID ) ) ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_negativeLimit_2_0= '-' ) )? ( (lv_limit_3_0= RULE_INT ) ) ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+ ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3400:1: ( ( (otherlv_0= RULE_ID ) ) ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_negativeLimit_2_0= '-' ) )? ( (lv_limit_3_0= RULE_INT ) ) ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+ )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3430:28: ( ( ( (otherlv_0= RULE_ID ) ) ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_negativeLimit_2_0= '-' ) )? ( (lv_limit_3_0= RULE_INT ) ) ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+ ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3431:1: ( ( (otherlv_0= RULE_ID ) ) ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_negativeLimit_2_0= '-' ) )? ( (lv_limit_3_0= RULE_INT ) ) ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+ )
             {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3400:1: ( ( (otherlv_0= RULE_ID ) ) ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_negativeLimit_2_0= '-' ) )? ( (lv_limit_3_0= RULE_INT ) ) ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+ )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3400:2: ( (otherlv_0= RULE_ID ) ) ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_negativeLimit_2_0= '-' ) )? ( (lv_limit_3_0= RULE_INT ) ) ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3431:1: ( ( (otherlv_0= RULE_ID ) ) ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_negativeLimit_2_0= '-' ) )? ( (lv_limit_3_0= RULE_INT ) ) ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+ )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3431:2: ( (otherlv_0= RULE_ID ) ) ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_negativeLimit_2_0= '-' ) )? ( (lv_limit_3_0= RULE_INT ) ) ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+
             {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3400:2: ( (otherlv_0= RULE_ID ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3401:1: (otherlv_0= RULE_ID )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3431:2: ( (otherlv_0= RULE_ID ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3432:1: (otherlv_0= RULE_ID )
             {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3401:1: (otherlv_0= RULE_ID )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3402:3: otherlv_0= RULE_ID
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3432:1: (otherlv_0= RULE_ID )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3433:3: otherlv_0= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getOutcomeValueLimitRule());
             	        }
                     
-            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleOutcomeValueLimit7320); 
+            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleOutcomeValueLimit7393); 
 
             		newLeafNode(otherlv_0, grammarAccess.getOutcomeValueLimitAccess().getOutcomeOutcomeCrossReference_0_0()); 
             	
@@ -8628,16 +8726,16 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3413:2: ( (lv_sign_1_0= ruleCompSign ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3414:1: (lv_sign_1_0= ruleCompSign )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3444:2: ( (lv_sign_1_0= ruleCompSign ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3445:1: (lv_sign_1_0= ruleCompSign )
             {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3414:1: (lv_sign_1_0= ruleCompSign )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3415:3: lv_sign_1_0= ruleCompSign
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3445:1: (lv_sign_1_0= ruleCompSign )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3446:3: lv_sign_1_0= ruleCompSign
             {
              
             	        newCompositeNode(grammarAccess.getOutcomeValueLimitAccess().getSignCompSignParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleCompSign_in_ruleOutcomeValueLimit7341);
+            pushFollow(FOLLOW_ruleCompSign_in_ruleOutcomeValueLimit7414);
             lv_sign_1_0=ruleCompSign();
 
             state._fsp--;
@@ -8659,21 +8757,21 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3431:2: ( (lv_negativeLimit_2_0= '-' ) )?
-            int alt71=2;
-            int LA71_0 = input.LA(1);
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3462:2: ( (lv_negativeLimit_2_0= '-' ) )?
+            int alt73=2;
+            int LA73_0 = input.LA(1);
 
-            if ( (LA71_0==34) ) {
-                alt71=1;
+            if ( (LA73_0==34) ) {
+                alt73=1;
             }
-            switch (alt71) {
+            switch (alt73) {
                 case 1 :
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3432:1: (lv_negativeLimit_2_0= '-' )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3463:1: (lv_negativeLimit_2_0= '-' )
                     {
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3432:1: (lv_negativeLimit_2_0= '-' )
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3433:3: lv_negativeLimit_2_0= '-'
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3463:1: (lv_negativeLimit_2_0= '-' )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3464:3: lv_negativeLimit_2_0= '-'
                     {
-                    lv_negativeLimit_2_0=(Token)match(input,34,FOLLOW_34_in_ruleOutcomeValueLimit7359); 
+                    lv_negativeLimit_2_0=(Token)match(input,34,FOLLOW_34_in_ruleOutcomeValueLimit7432); 
 
                             newLeafNode(lv_negativeLimit_2_0, grammarAccess.getOutcomeValueLimitAccess().getNegativeLimitHyphenMinusKeyword_2_0());
                         
@@ -8692,13 +8790,13 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3446:3: ( (lv_limit_3_0= RULE_INT ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3447:1: (lv_limit_3_0= RULE_INT )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3477:3: ( (lv_limit_3_0= RULE_INT ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3478:1: (lv_limit_3_0= RULE_INT )
             {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3447:1: (lv_limit_3_0= RULE_INT )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3448:3: lv_limit_3_0= RULE_INT
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3478:1: (lv_limit_3_0= RULE_INT )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3479:3: lv_limit_3_0= RULE_INT
             {
-            lv_limit_3_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleOutcomeValueLimit7390); 
+            lv_limit_3_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleOutcomeValueLimit7463); 
 
             			newLeafNode(lv_limit_3_0, grammarAccess.getOutcomeValueLimitAccess().getLimitINTTerminalRuleCall_3_0()); 
             		
@@ -8718,29 +8816,29 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3464:2: ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+
-            int cnt72=0;
-            loop72:
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3495:2: ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+
+            int cnt74=0;
+            loop74:
             do {
-                int alt72=2;
-                int LA72_0 = input.LA(1);
+                int alt74=2;
+                int LA74_0 = input.LA(1);
 
-                if ( (LA72_0==12) ) {
-                    alt72=1;
+                if ( (LA74_0==12) ) {
+                    alt74=1;
                 }
 
 
-                switch (alt72) {
+                switch (alt74) {
             	case 1 :
-            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3465:1: (lv_triggerReactions_4_0= ruleTriggerFeedback )
+            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3496:1: (lv_triggerReactions_4_0= ruleTriggerFeedback )
             	    {
-            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3465:1: (lv_triggerReactions_4_0= ruleTriggerFeedback )
-            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3466:3: lv_triggerReactions_4_0= ruleTriggerFeedback
+            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3496:1: (lv_triggerReactions_4_0= ruleTriggerFeedback )
+            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3497:3: lv_triggerReactions_4_0= ruleTriggerFeedback
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getOutcomeValueLimitAccess().getTriggerReactionsTriggerFeedbackParserRuleCall_4_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleTriggerFeedback_in_ruleOutcomeValueLimit7416);
+            	    pushFollow(FOLLOW_ruleTriggerFeedback_in_ruleOutcomeValueLimit7489);
             	    lv_triggerReactions_4_0=ruleTriggerFeedback();
 
             	    state._fsp--;
@@ -8754,320 +8852,6 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
             	           			"triggerReactions",
             	            		lv_triggerReactions_4_0, 
             	            		"TriggerFeedback");
-            	    	        afterParserOrEnumRuleCall();
-            	    	    
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    if ( cnt72 >= 1 ) break loop72;
-                        EarlyExitException eee =
-                            new EarlyExitException(72, input);
-                        throw eee;
-                }
-                cnt72++;
-            } while (true);
-
-
-            }
-
-
-            }
-
-             leaveRule(); 
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleOutcomeValueLimit"
-
-
-    // $ANTLR start "entryRuleCompSign"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3490:1: entryRuleCompSign returns [String current=null] : iv_ruleCompSign= ruleCompSign EOF ;
-    public final String entryRuleCompSign() throws RecognitionException {
-        String current = null;
-
-        AntlrDatatypeRuleToken iv_ruleCompSign = null;
-
-
-        try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3491:2: (iv_ruleCompSign= ruleCompSign EOF )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3492:2: iv_ruleCompSign= ruleCompSign EOF
-            {
-             newCompositeNode(grammarAccess.getCompSignRule()); 
-            pushFollow(FOLLOW_ruleCompSign_in_entryRuleCompSign7454);
-            iv_ruleCompSign=ruleCompSign();
-
-            state._fsp--;
-
-             current =iv_ruleCompSign.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleCompSign7465); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleCompSign"
-
-
-    // $ANTLR start "ruleCompSign"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3499:1: ruleCompSign returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '<' | kw= '>' ) ;
-    public final AntlrDatatypeRuleToken ruleCompSign() throws RecognitionException {
-        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
-
-        Token kw=null;
-
-         enterRule(); 
-            
-        try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3502:28: ( (kw= '<' | kw= '>' ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3503:1: (kw= '<' | kw= '>' )
-            {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3503:1: (kw= '<' | kw= '>' )
-            int alt73=2;
-            int LA73_0 = input.LA(1);
-
-            if ( (LA73_0==76) ) {
-                alt73=1;
-            }
-            else if ( (LA73_0==77) ) {
-                alt73=2;
-            }
-            else {
-                NoViableAltException nvae =
-                    new NoViableAltException("", 73, 0, input);
-
-                throw nvae;
-            }
-            switch (alt73) {
-                case 1 :
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3504:2: kw= '<'
-                    {
-                    kw=(Token)match(input,76,FOLLOW_76_in_ruleCompSign7503); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getCompSignAccess().getLessThanSignKeyword_0()); 
-                        
-
-                    }
-                    break;
-                case 2 :
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3511:2: kw= '>'
-                    {
-                    kw=(Token)match(input,77,FOLLOW_77_in_ruleCompSign7522); 
-
-                            current.merge(kw);
-                            newLeafNode(kw, grammarAccess.getCompSignAccess().getGreaterThanSignKeyword_1()); 
-                        
-
-                    }
-                    break;
-
-            }
-
-
-            }
-
-             leaveRule(); 
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleCompSign"
-
-
-    // $ANTLR start "entryRuleInactivityLimit"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3524:1: entryRuleInactivityLimit returns [EObject current=null] : iv_ruleInactivityLimit= ruleInactivityLimit EOF ;
-    public final EObject entryRuleInactivityLimit() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleInactivityLimit = null;
-
-
-        try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3525:2: (iv_ruleInactivityLimit= ruleInactivityLimit EOF )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3526:2: iv_ruleInactivityLimit= ruleInactivityLimit EOF
-            {
-             newCompositeNode(grammarAccess.getInactivityLimitRule()); 
-            pushFollow(FOLLOW_ruleInactivityLimit_in_entryRuleInactivityLimit7562);
-            iv_ruleInactivityLimit=ruleInactivityLimit();
-
-            state._fsp--;
-
-             current =iv_ruleInactivityLimit; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleInactivityLimit7572); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleInactivityLimit"
-
-
-    // $ANTLR start "ruleInactivityLimit"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3533:1: ruleInactivityLimit returns [EObject current=null] : (otherlv_0= 'inactivity' ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_limit_2_0= RULE_INT ) ) otherlv_3= 'sec' ( (lv_triggerReactions_4_0= ruleActionReaction ) )+ ) ;
-    public final EObject ruleInactivityLimit() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_0=null;
-        Token lv_limit_2_0=null;
-        Token otherlv_3=null;
-        AntlrDatatypeRuleToken lv_sign_1_0 = null;
-
-        EObject lv_triggerReactions_4_0 = null;
-
-
-         enterRule(); 
-            
-        try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3536:28: ( (otherlv_0= 'inactivity' ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_limit_2_0= RULE_INT ) ) otherlv_3= 'sec' ( (lv_triggerReactions_4_0= ruleActionReaction ) )+ ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3537:1: (otherlv_0= 'inactivity' ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_limit_2_0= RULE_INT ) ) otherlv_3= 'sec' ( (lv_triggerReactions_4_0= ruleActionReaction ) )+ )
-            {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3537:1: (otherlv_0= 'inactivity' ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_limit_2_0= RULE_INT ) ) otherlv_3= 'sec' ( (lv_triggerReactions_4_0= ruleActionReaction ) )+ )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3537:3: otherlv_0= 'inactivity' ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_limit_2_0= RULE_INT ) ) otherlv_3= 'sec' ( (lv_triggerReactions_4_0= ruleActionReaction ) )+
-            {
-            otherlv_0=(Token)match(input,78,FOLLOW_78_in_ruleInactivityLimit7609); 
-
-                	newLeafNode(otherlv_0, grammarAccess.getInactivityLimitAccess().getInactivityKeyword_0());
-                
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3541:1: ( (lv_sign_1_0= ruleCompSign ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3542:1: (lv_sign_1_0= ruleCompSign )
-            {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3542:1: (lv_sign_1_0= ruleCompSign )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3543:3: lv_sign_1_0= ruleCompSign
-            {
-             
-            	        newCompositeNode(grammarAccess.getInactivityLimitAccess().getSignCompSignParserRuleCall_1_0()); 
-            	    
-            pushFollow(FOLLOW_ruleCompSign_in_ruleInactivityLimit7630);
-            lv_sign_1_0=ruleCompSign();
-
-            state._fsp--;
-
-
-            	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getInactivityLimitRule());
-            	        }
-                   		set(
-                   			current, 
-                   			"sign",
-                    		lv_sign_1_0, 
-                    		"CompSign");
-            	        afterParserOrEnumRuleCall();
-            	    
-
-            }
-
-
-            }
-
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3559:2: ( (lv_limit_2_0= RULE_INT ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3560:1: (lv_limit_2_0= RULE_INT )
-            {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3560:1: (lv_limit_2_0= RULE_INT )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3561:3: lv_limit_2_0= RULE_INT
-            {
-            lv_limit_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleInactivityLimit7647); 
-
-            			newLeafNode(lv_limit_2_0, grammarAccess.getInactivityLimitAccess().getLimitINTTerminalRuleCall_2_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getInactivityLimitRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"limit",
-                    		lv_limit_2_0, 
-                    		"INT");
-            	    
-
-            }
-
-
-            }
-
-            otherlv_3=(Token)match(input,59,FOLLOW_59_in_ruleInactivityLimit7664); 
-
-                	newLeafNode(otherlv_3, grammarAccess.getInactivityLimitAccess().getSecKeyword_3());
-                
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3581:1: ( (lv_triggerReactions_4_0= ruleActionReaction ) )+
-            int cnt74=0;
-            loop74:
-            do {
-                int alt74=2;
-                int LA74_0 = input.LA(1);
-
-                if ( (LA74_0==RULE_ID) ) {
-                    int LA74_2 = input.LA(2);
-
-                    if ( (LA74_2==60) ) {
-                        alt74=1;
-                    }
-
-
-                }
-                else if ( (LA74_0==12) ) {
-                    alt74=1;
-                }
-
-
-                switch (alt74) {
-            	case 1 :
-            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3582:1: (lv_triggerReactions_4_0= ruleActionReaction )
-            	    {
-            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3582:1: (lv_triggerReactions_4_0= ruleActionReaction )
-            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3583:3: lv_triggerReactions_4_0= ruleActionReaction
-            	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getInactivityLimitAccess().getTriggerReactionsActionReactionParserRuleCall_4_0()); 
-            	    	    
-            	    pushFollow(FOLLOW_ruleActionReaction_in_ruleInactivityLimit7685);
-            	    lv_triggerReactions_4_0=ruleActionReaction();
-
-            	    state._fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getInactivityLimitRule());
-            	    	        }
-            	           		add(
-            	           			current, 
-            	           			"triggerReactions",
-            	            		lv_triggerReactions_4_0, 
-            	            		"ActionReaction");
             	    	        afterParserOrEnumRuleCall();
             	    	    
 
@@ -9103,11 +8887,325 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
+    // $ANTLR end "ruleOutcomeValueLimit"
+
+
+    // $ANTLR start "entryRuleCompSign"
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3521:1: entryRuleCompSign returns [String current=null] : iv_ruleCompSign= ruleCompSign EOF ;
+    public final String entryRuleCompSign() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleCompSign = null;
+
+
+        try {
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3522:2: (iv_ruleCompSign= ruleCompSign EOF )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3523:2: iv_ruleCompSign= ruleCompSign EOF
+            {
+             newCompositeNode(grammarAccess.getCompSignRule()); 
+            pushFollow(FOLLOW_ruleCompSign_in_entryRuleCompSign7527);
+            iv_ruleCompSign=ruleCompSign();
+
+            state._fsp--;
+
+             current =iv_ruleCompSign.getText(); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleCompSign7538); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleCompSign"
+
+
+    // $ANTLR start "ruleCompSign"
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3530:1: ruleCompSign returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= '<' | kw= '>' ) ;
+    public final AntlrDatatypeRuleToken ruleCompSign() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+
+         enterRule(); 
+            
+        try {
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3533:28: ( (kw= '<' | kw= '>' ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3534:1: (kw= '<' | kw= '>' )
+            {
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3534:1: (kw= '<' | kw= '>' )
+            int alt75=2;
+            int LA75_0 = input.LA(1);
+
+            if ( (LA75_0==76) ) {
+                alt75=1;
+            }
+            else if ( (LA75_0==77) ) {
+                alt75=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 75, 0, input);
+
+                throw nvae;
+            }
+            switch (alt75) {
+                case 1 :
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3535:2: kw= '<'
+                    {
+                    kw=(Token)match(input,76,FOLLOW_76_in_ruleCompSign7576); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getCompSignAccess().getLessThanSignKeyword_0()); 
+                        
+
+                    }
+                    break;
+                case 2 :
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3542:2: kw= '>'
+                    {
+                    kw=(Token)match(input,77,FOLLOW_77_in_ruleCompSign7595); 
+
+                            current.merge(kw);
+                            newLeafNode(kw, grammarAccess.getCompSignAccess().getGreaterThanSignKeyword_1()); 
+                        
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleCompSign"
+
+
+    // $ANTLR start "entryRuleInactivityLimit"
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3555:1: entryRuleInactivityLimit returns [EObject current=null] : iv_ruleInactivityLimit= ruleInactivityLimit EOF ;
+    public final EObject entryRuleInactivityLimit() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleInactivityLimit = null;
+
+
+        try {
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3556:2: (iv_ruleInactivityLimit= ruleInactivityLimit EOF )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3557:2: iv_ruleInactivityLimit= ruleInactivityLimit EOF
+            {
+             newCompositeNode(grammarAccess.getInactivityLimitRule()); 
+            pushFollow(FOLLOW_ruleInactivityLimit_in_entryRuleInactivityLimit7635);
+            iv_ruleInactivityLimit=ruleInactivityLimit();
+
+            state._fsp--;
+
+             current =iv_ruleInactivityLimit; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleInactivityLimit7645); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleInactivityLimit"
+
+
+    // $ANTLR start "ruleInactivityLimit"
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3564:1: ruleInactivityLimit returns [EObject current=null] : (otherlv_0= 'inactivity' ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_limit_2_0= RULE_INT ) ) otherlv_3= 'sec' ( (lv_triggerReactions_4_0= ruleActionReaction ) )+ ) ;
+    public final EObject ruleInactivityLimit() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_0=null;
+        Token lv_limit_2_0=null;
+        Token otherlv_3=null;
+        AntlrDatatypeRuleToken lv_sign_1_0 = null;
+
+        EObject lv_triggerReactions_4_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3567:28: ( (otherlv_0= 'inactivity' ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_limit_2_0= RULE_INT ) ) otherlv_3= 'sec' ( (lv_triggerReactions_4_0= ruleActionReaction ) )+ ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3568:1: (otherlv_0= 'inactivity' ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_limit_2_0= RULE_INT ) ) otherlv_3= 'sec' ( (lv_triggerReactions_4_0= ruleActionReaction ) )+ )
+            {
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3568:1: (otherlv_0= 'inactivity' ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_limit_2_0= RULE_INT ) ) otherlv_3= 'sec' ( (lv_triggerReactions_4_0= ruleActionReaction ) )+ )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3568:3: otherlv_0= 'inactivity' ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_limit_2_0= RULE_INT ) ) otherlv_3= 'sec' ( (lv_triggerReactions_4_0= ruleActionReaction ) )+
+            {
+            otherlv_0=(Token)match(input,78,FOLLOW_78_in_ruleInactivityLimit7682); 
+
+                	newLeafNode(otherlv_0, grammarAccess.getInactivityLimitAccess().getInactivityKeyword_0());
+                
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3572:1: ( (lv_sign_1_0= ruleCompSign ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3573:1: (lv_sign_1_0= ruleCompSign )
+            {
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3573:1: (lv_sign_1_0= ruleCompSign )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3574:3: lv_sign_1_0= ruleCompSign
+            {
+             
+            	        newCompositeNode(grammarAccess.getInactivityLimitAccess().getSignCompSignParserRuleCall_1_0()); 
+            	    
+            pushFollow(FOLLOW_ruleCompSign_in_ruleInactivityLimit7703);
+            lv_sign_1_0=ruleCompSign();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getInactivityLimitRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"sign",
+                    		lv_sign_1_0, 
+                    		"CompSign");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3590:2: ( (lv_limit_2_0= RULE_INT ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3591:1: (lv_limit_2_0= RULE_INT )
+            {
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3591:1: (lv_limit_2_0= RULE_INT )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3592:3: lv_limit_2_0= RULE_INT
+            {
+            lv_limit_2_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleInactivityLimit7720); 
+
+            			newLeafNode(lv_limit_2_0, grammarAccess.getInactivityLimitAccess().getLimitINTTerminalRuleCall_2_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getInactivityLimitRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"limit",
+                    		lv_limit_2_0, 
+                    		"INT");
+            	    
+
+            }
+
+
+            }
+
+            otherlv_3=(Token)match(input,59,FOLLOW_59_in_ruleInactivityLimit7737); 
+
+                	newLeafNode(otherlv_3, grammarAccess.getInactivityLimitAccess().getSecKeyword_3());
+                
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3612:1: ( (lv_triggerReactions_4_0= ruleActionReaction ) )+
+            int cnt76=0;
+            loop76:
+            do {
+                int alt76=2;
+                int LA76_0 = input.LA(1);
+
+                if ( (LA76_0==RULE_ID) ) {
+                    int LA76_2 = input.LA(2);
+
+                    if ( (LA76_2==60) ) {
+                        alt76=1;
+                    }
+
+
+                }
+                else if ( (LA76_0==12) ) {
+                    alt76=1;
+                }
+
+
+                switch (alt76) {
+            	case 1 :
+            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3613:1: (lv_triggerReactions_4_0= ruleActionReaction )
+            	    {
+            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3613:1: (lv_triggerReactions_4_0= ruleActionReaction )
+            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3614:3: lv_triggerReactions_4_0= ruleActionReaction
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getInactivityLimitAccess().getTriggerReactionsActionReactionParserRuleCall_4_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleActionReaction_in_ruleInactivityLimit7758);
+            	    lv_triggerReactions_4_0=ruleActionReaction();
+
+            	    state._fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getInactivityLimitRule());
+            	    	        }
+            	           		add(
+            	           			current, 
+            	           			"triggerReactions",
+            	            		lv_triggerReactions_4_0, 
+            	            		"ActionReaction");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt76 >= 1 ) break loop76;
+                        EarlyExitException eee =
+                            new EarlyExitException(76, input);
+                        throw eee;
+                }
+                cnt76++;
+            } while (true);
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
     // $ANTLR end "ruleInactivityLimit"
 
 
     // $ANTLR start "entryRuleBadgeModel"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3607:1: entryRuleBadgeModel returns [EObject current=null] : iv_ruleBadgeModel= ruleBadgeModel EOF ;
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3638:1: entryRuleBadgeModel returns [EObject current=null] : iv_ruleBadgeModel= ruleBadgeModel EOF ;
     public final EObject entryRuleBadgeModel() throws RecognitionException {
         EObject current = null;
 
@@ -9115,17 +9213,17 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3608:2: (iv_ruleBadgeModel= ruleBadgeModel EOF )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3609:2: iv_ruleBadgeModel= ruleBadgeModel EOF
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3639:2: (iv_ruleBadgeModel= ruleBadgeModel EOF )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3640:2: iv_ruleBadgeModel= ruleBadgeModel EOF
             {
              newCompositeNode(grammarAccess.getBadgeModelRule()); 
-            pushFollow(FOLLOW_ruleBadgeModel_in_entryRuleBadgeModel7722);
+            pushFollow(FOLLOW_ruleBadgeModel_in_entryRuleBadgeModel7795);
             iv_ruleBadgeModel=ruleBadgeModel();
 
             state._fsp--;
 
              current =iv_ruleBadgeModel; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBadgeModel7732); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBadgeModel7805); 
 
             }
 
@@ -9143,7 +9241,7 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBadgeModel"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3616:1: ruleBadgeModel returns [EObject current=null] : (otherlv_0= 'Badge-model' ( (lv_genericTriggers_1_0= ruleGenericTrigger ) )+ ruleEnd ) ;
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3647:1: ruleBadgeModel returns [EObject current=null] : (otherlv_0= 'Badge-model' ( (lv_genericTriggers_1_0= ruleGenericTrigger ) )+ ruleEnd ) ;
     public final EObject ruleBadgeModel() throws RecognitionException {
         EObject current = null;
 
@@ -9154,39 +9252,39 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3619:28: ( (otherlv_0= 'Badge-model' ( (lv_genericTriggers_1_0= ruleGenericTrigger ) )+ ruleEnd ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3620:1: (otherlv_0= 'Badge-model' ( (lv_genericTriggers_1_0= ruleGenericTrigger ) )+ ruleEnd )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3650:28: ( (otherlv_0= 'Badge-model' ( (lv_genericTriggers_1_0= ruleGenericTrigger ) )+ ruleEnd ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3651:1: (otherlv_0= 'Badge-model' ( (lv_genericTriggers_1_0= ruleGenericTrigger ) )+ ruleEnd )
             {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3620:1: (otherlv_0= 'Badge-model' ( (lv_genericTriggers_1_0= ruleGenericTrigger ) )+ ruleEnd )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3620:3: otherlv_0= 'Badge-model' ( (lv_genericTriggers_1_0= ruleGenericTrigger ) )+ ruleEnd
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3651:1: (otherlv_0= 'Badge-model' ( (lv_genericTriggers_1_0= ruleGenericTrigger ) )+ ruleEnd )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3651:3: otherlv_0= 'Badge-model' ( (lv_genericTriggers_1_0= ruleGenericTrigger ) )+ ruleEnd
             {
-            otherlv_0=(Token)match(input,79,FOLLOW_79_in_ruleBadgeModel7769); 
+            otherlv_0=(Token)match(input,79,FOLLOW_79_in_ruleBadgeModel7842); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getBadgeModelAccess().getBadgeModelKeyword_0());
                 
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3624:1: ( (lv_genericTriggers_1_0= ruleGenericTrigger ) )+
-            int cnt75=0;
-            loop75:
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3655:1: ( (lv_genericTriggers_1_0= ruleGenericTrigger ) )+
+            int cnt77=0;
+            loop77:
             do {
-                int alt75=2;
-                int LA75_0 = input.LA(1);
+                int alt77=2;
+                int LA77_0 = input.LA(1);
 
-                if ( ((LA75_0>=80 && LA75_0<=87)) ) {
-                    alt75=1;
+                if ( ((LA77_0>=80 && LA77_0<=87)) ) {
+                    alt77=1;
                 }
 
 
-                switch (alt75) {
+                switch (alt77) {
             	case 1 :
-            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3625:1: (lv_genericTriggers_1_0= ruleGenericTrigger )
+            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3656:1: (lv_genericTriggers_1_0= ruleGenericTrigger )
             	    {
-            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3625:1: (lv_genericTriggers_1_0= ruleGenericTrigger )
-            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3626:3: lv_genericTriggers_1_0= ruleGenericTrigger
+            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3656:1: (lv_genericTriggers_1_0= ruleGenericTrigger )
+            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3657:3: lv_genericTriggers_1_0= ruleGenericTrigger
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getBadgeModelAccess().getGenericTriggersGenericTriggerParserRuleCall_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleGenericTrigger_in_ruleBadgeModel7790);
+            	    pushFollow(FOLLOW_ruleGenericTrigger_in_ruleBadgeModel7863);
             	    lv_genericTriggers_1_0=ruleGenericTrigger();
 
             	    state._fsp--;
@@ -9210,18 +9308,18 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt75 >= 1 ) break loop75;
+            	    if ( cnt77 >= 1 ) break loop77;
                         EarlyExitException eee =
-                            new EarlyExitException(75, input);
+                            new EarlyExitException(77, input);
                         throw eee;
                 }
-                cnt75++;
+                cnt77++;
             } while (true);
 
              
                     newCompositeNode(grammarAccess.getBadgeModelAccess().getEndParserRuleCall_2()); 
                 
-            pushFollow(FOLLOW_ruleEnd_in_ruleBadgeModel7807);
+            pushFollow(FOLLOW_ruleEnd_in_ruleBadgeModel7880);
             ruleEnd();
 
             state._fsp--;
@@ -9250,7 +9348,7 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleGenericTrigger"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3658:1: entryRuleGenericTrigger returns [EObject current=null] : iv_ruleGenericTrigger= ruleGenericTrigger EOF ;
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3689:1: entryRuleGenericTrigger returns [EObject current=null] : iv_ruleGenericTrigger= ruleGenericTrigger EOF ;
     public final EObject entryRuleGenericTrigger() throws RecognitionException {
         EObject current = null;
 
@@ -9258,17 +9356,17 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3659:2: (iv_ruleGenericTrigger= ruleGenericTrigger EOF )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3660:2: iv_ruleGenericTrigger= ruleGenericTrigger EOF
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3690:2: (iv_ruleGenericTrigger= ruleGenericTrigger EOF )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3691:2: iv_ruleGenericTrigger= ruleGenericTrigger EOF
             {
              newCompositeNode(grammarAccess.getGenericTriggerRule()); 
-            pushFollow(FOLLOW_ruleGenericTrigger_in_entryRuleGenericTrigger7842);
+            pushFollow(FOLLOW_ruleGenericTrigger_in_entryRuleGenericTrigger7915);
             iv_ruleGenericTrigger=ruleGenericTrigger();
 
             state._fsp--;
 
              current =iv_ruleGenericTrigger; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleGenericTrigger7852); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleGenericTrigger7925); 
 
             }
 
@@ -9286,7 +9384,7 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleGenericTrigger"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3667:1: ruleGenericTrigger returns [EObject current=null] : ( ( (lv_simple_0_0= ruleSimpleTrigger ) ) | ( (lv_lo_1_0= ruleLOTrigger ) ) ) ;
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3698:1: ruleGenericTrigger returns [EObject current=null] : ( ( (lv_simple_0_0= ruleSimpleTrigger ) ) | ( (lv_lo_1_0= ruleLOTrigger ) ) ) ;
     public final EObject ruleGenericTrigger() throws RecognitionException {
         EObject current = null;
 
@@ -9298,39 +9396,39 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3670:28: ( ( ( (lv_simple_0_0= ruleSimpleTrigger ) ) | ( (lv_lo_1_0= ruleLOTrigger ) ) ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3671:1: ( ( (lv_simple_0_0= ruleSimpleTrigger ) ) | ( (lv_lo_1_0= ruleLOTrigger ) ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3701:28: ( ( ( (lv_simple_0_0= ruleSimpleTrigger ) ) | ( (lv_lo_1_0= ruleLOTrigger ) ) ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3702:1: ( ( (lv_simple_0_0= ruleSimpleTrigger ) ) | ( (lv_lo_1_0= ruleLOTrigger ) ) )
             {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3671:1: ( ( (lv_simple_0_0= ruleSimpleTrigger ) ) | ( (lv_lo_1_0= ruleLOTrigger ) ) )
-            int alt76=2;
-            int LA76_0 = input.LA(1);
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3702:1: ( ( (lv_simple_0_0= ruleSimpleTrigger ) ) | ( (lv_lo_1_0= ruleLOTrigger ) ) )
+            int alt78=2;
+            int LA78_0 = input.LA(1);
 
-            if ( ((LA76_0>=80 && LA76_0<=83)) ) {
-                alt76=1;
+            if ( ((LA78_0>=80 && LA78_0<=83)) ) {
+                alt78=1;
             }
-            else if ( ((LA76_0>=84 && LA76_0<=87)) ) {
-                alt76=2;
+            else if ( ((LA78_0>=84 && LA78_0<=87)) ) {
+                alt78=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 76, 0, input);
+                    new NoViableAltException("", 78, 0, input);
 
                 throw nvae;
             }
-            switch (alt76) {
+            switch (alt78) {
                 case 1 :
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3671:2: ( (lv_simple_0_0= ruleSimpleTrigger ) )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3702:2: ( (lv_simple_0_0= ruleSimpleTrigger ) )
                     {
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3671:2: ( (lv_simple_0_0= ruleSimpleTrigger ) )
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3672:1: (lv_simple_0_0= ruleSimpleTrigger )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3702:2: ( (lv_simple_0_0= ruleSimpleTrigger ) )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3703:1: (lv_simple_0_0= ruleSimpleTrigger )
                     {
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3672:1: (lv_simple_0_0= ruleSimpleTrigger )
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3673:3: lv_simple_0_0= ruleSimpleTrigger
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3703:1: (lv_simple_0_0= ruleSimpleTrigger )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3704:3: lv_simple_0_0= ruleSimpleTrigger
                     {
                      
                     	        newCompositeNode(grammarAccess.getGenericTriggerAccess().getSimpleSimpleTriggerParserRuleCall_0_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleSimpleTrigger_in_ruleGenericTrigger7898);
+                    pushFollow(FOLLOW_ruleSimpleTrigger_in_ruleGenericTrigger7971);
                     lv_simple_0_0=ruleSimpleTrigger();
 
                     state._fsp--;
@@ -9356,18 +9454,18 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3690:6: ( (lv_lo_1_0= ruleLOTrigger ) )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3721:6: ( (lv_lo_1_0= ruleLOTrigger ) )
                     {
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3690:6: ( (lv_lo_1_0= ruleLOTrigger ) )
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3691:1: (lv_lo_1_0= ruleLOTrigger )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3721:6: ( (lv_lo_1_0= ruleLOTrigger ) )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3722:1: (lv_lo_1_0= ruleLOTrigger )
                     {
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3691:1: (lv_lo_1_0= ruleLOTrigger )
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3692:3: lv_lo_1_0= ruleLOTrigger
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3722:1: (lv_lo_1_0= ruleLOTrigger )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3723:3: lv_lo_1_0= ruleLOTrigger
                     {
                      
                     	        newCompositeNode(grammarAccess.getGenericTriggerAccess().getLoLOTriggerParserRuleCall_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleLOTrigger_in_ruleGenericTrigger7925);
+                    pushFollow(FOLLOW_ruleLOTrigger_in_ruleGenericTrigger7998);
                     lv_lo_1_0=ruleLOTrigger();
 
                     state._fsp--;
@@ -9413,7 +9511,7 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSimpleTrigger"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3716:1: entryRuleSimpleTrigger returns [EObject current=null] : iv_ruleSimpleTrigger= ruleSimpleTrigger EOF ;
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3747:1: entryRuleSimpleTrigger returns [EObject current=null] : iv_ruleSimpleTrigger= ruleSimpleTrigger EOF ;
     public final EObject entryRuleSimpleTrigger() throws RecognitionException {
         EObject current = null;
 
@@ -9421,17 +9519,17 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3717:2: (iv_ruleSimpleTrigger= ruleSimpleTrigger EOF )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3718:2: iv_ruleSimpleTrigger= ruleSimpleTrigger EOF
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3748:2: (iv_ruleSimpleTrigger= ruleSimpleTrigger EOF )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3749:2: iv_ruleSimpleTrigger= ruleSimpleTrigger EOF
             {
              newCompositeNode(grammarAccess.getSimpleTriggerRule()); 
-            pushFollow(FOLLOW_ruleSimpleTrigger_in_entryRuleSimpleTrigger7961);
+            pushFollow(FOLLOW_ruleSimpleTrigger_in_entryRuleSimpleTrigger8034);
             iv_ruleSimpleTrigger=ruleSimpleTrigger();
 
             state._fsp--;
 
              current =iv_ruleSimpleTrigger; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleSimpleTrigger7971); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleSimpleTrigger8044); 
 
             }
 
@@ -9449,7 +9547,7 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSimpleTrigger"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3725:1: ruleSimpleTrigger returns [EObject current=null] : ( ( (lv_function_0_0= ruleFeedbackKeywordsSimple ) ) ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_negativeLimit_2_0= '-' ) )? ( (lv_limit_3_0= RULE_INT ) ) ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+ ) ;
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3756:1: ruleSimpleTrigger returns [EObject current=null] : ( ( (lv_function_0_0= ruleFeedbackKeywordsSimple ) ) ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_negativeLimit_2_0= '-' ) )? ( (lv_limit_3_0= RULE_INT ) ) ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+ ) ;
     public final EObject ruleSimpleTrigger() throws RecognitionException {
         EObject current = null;
 
@@ -9465,22 +9563,22 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3728:28: ( ( ( (lv_function_0_0= ruleFeedbackKeywordsSimple ) ) ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_negativeLimit_2_0= '-' ) )? ( (lv_limit_3_0= RULE_INT ) ) ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+ ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3729:1: ( ( (lv_function_0_0= ruleFeedbackKeywordsSimple ) ) ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_negativeLimit_2_0= '-' ) )? ( (lv_limit_3_0= RULE_INT ) ) ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+ )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3759:28: ( ( ( (lv_function_0_0= ruleFeedbackKeywordsSimple ) ) ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_negativeLimit_2_0= '-' ) )? ( (lv_limit_3_0= RULE_INT ) ) ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+ ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3760:1: ( ( (lv_function_0_0= ruleFeedbackKeywordsSimple ) ) ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_negativeLimit_2_0= '-' ) )? ( (lv_limit_3_0= RULE_INT ) ) ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+ )
             {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3729:1: ( ( (lv_function_0_0= ruleFeedbackKeywordsSimple ) ) ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_negativeLimit_2_0= '-' ) )? ( (lv_limit_3_0= RULE_INT ) ) ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+ )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3729:2: ( (lv_function_0_0= ruleFeedbackKeywordsSimple ) ) ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_negativeLimit_2_0= '-' ) )? ( (lv_limit_3_0= RULE_INT ) ) ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3760:1: ( ( (lv_function_0_0= ruleFeedbackKeywordsSimple ) ) ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_negativeLimit_2_0= '-' ) )? ( (lv_limit_3_0= RULE_INT ) ) ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+ )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3760:2: ( (lv_function_0_0= ruleFeedbackKeywordsSimple ) ) ( (lv_sign_1_0= ruleCompSign ) ) ( (lv_negativeLimit_2_0= '-' ) )? ( (lv_limit_3_0= RULE_INT ) ) ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+
             {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3729:2: ( (lv_function_0_0= ruleFeedbackKeywordsSimple ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3730:1: (lv_function_0_0= ruleFeedbackKeywordsSimple )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3760:2: ( (lv_function_0_0= ruleFeedbackKeywordsSimple ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3761:1: (lv_function_0_0= ruleFeedbackKeywordsSimple )
             {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3730:1: (lv_function_0_0= ruleFeedbackKeywordsSimple )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3731:3: lv_function_0_0= ruleFeedbackKeywordsSimple
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3761:1: (lv_function_0_0= ruleFeedbackKeywordsSimple )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3762:3: lv_function_0_0= ruleFeedbackKeywordsSimple
             {
              
             	        newCompositeNode(grammarAccess.getSimpleTriggerAccess().getFunctionFeedbackKeywordsSimpleParserRuleCall_0_0()); 
             	    
-            pushFollow(FOLLOW_ruleFeedbackKeywordsSimple_in_ruleSimpleTrigger8017);
+            pushFollow(FOLLOW_ruleFeedbackKeywordsSimple_in_ruleSimpleTrigger8090);
             lv_function_0_0=ruleFeedbackKeywordsSimple();
 
             state._fsp--;
@@ -9502,16 +9600,16 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3747:2: ( (lv_sign_1_0= ruleCompSign ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3748:1: (lv_sign_1_0= ruleCompSign )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3778:2: ( (lv_sign_1_0= ruleCompSign ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3779:1: (lv_sign_1_0= ruleCompSign )
             {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3748:1: (lv_sign_1_0= ruleCompSign )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3749:3: lv_sign_1_0= ruleCompSign
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3779:1: (lv_sign_1_0= ruleCompSign )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3780:3: lv_sign_1_0= ruleCompSign
             {
              
             	        newCompositeNode(grammarAccess.getSimpleTriggerAccess().getSignCompSignParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleCompSign_in_ruleSimpleTrigger8038);
+            pushFollow(FOLLOW_ruleCompSign_in_ruleSimpleTrigger8111);
             lv_sign_1_0=ruleCompSign();
 
             state._fsp--;
@@ -9533,21 +9631,21 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3765:2: ( (lv_negativeLimit_2_0= '-' ) )?
-            int alt77=2;
-            int LA77_0 = input.LA(1);
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3796:2: ( (lv_negativeLimit_2_0= '-' ) )?
+            int alt79=2;
+            int LA79_0 = input.LA(1);
 
-            if ( (LA77_0==34) ) {
-                alt77=1;
+            if ( (LA79_0==34) ) {
+                alt79=1;
             }
-            switch (alt77) {
+            switch (alt79) {
                 case 1 :
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3766:1: (lv_negativeLimit_2_0= '-' )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3797:1: (lv_negativeLimit_2_0= '-' )
                     {
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3766:1: (lv_negativeLimit_2_0= '-' )
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3767:3: lv_negativeLimit_2_0= '-'
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3797:1: (lv_negativeLimit_2_0= '-' )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3798:3: lv_negativeLimit_2_0= '-'
                     {
-                    lv_negativeLimit_2_0=(Token)match(input,34,FOLLOW_34_in_ruleSimpleTrigger8056); 
+                    lv_negativeLimit_2_0=(Token)match(input,34,FOLLOW_34_in_ruleSimpleTrigger8129); 
 
                             newLeafNode(lv_negativeLimit_2_0, grammarAccess.getSimpleTriggerAccess().getNegativeLimitHyphenMinusKeyword_2_0());
                         
@@ -9566,13 +9664,13 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3780:3: ( (lv_limit_3_0= RULE_INT ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3781:1: (lv_limit_3_0= RULE_INT )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3811:3: ( (lv_limit_3_0= RULE_INT ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3812:1: (lv_limit_3_0= RULE_INT )
             {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3781:1: (lv_limit_3_0= RULE_INT )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3782:3: lv_limit_3_0= RULE_INT
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3812:1: (lv_limit_3_0= RULE_INT )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3813:3: lv_limit_3_0= RULE_INT
             {
-            lv_limit_3_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSimpleTrigger8087); 
+            lv_limit_3_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleSimpleTrigger8160); 
 
             			newLeafNode(lv_limit_3_0, grammarAccess.getSimpleTriggerAccess().getLimitINTTerminalRuleCall_3_0()); 
             		
@@ -9592,283 +9690,7 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
             }
 
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3798:2: ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+
-            int cnt78=0;
-            loop78:
-            do {
-                int alt78=2;
-                int LA78_0 = input.LA(1);
-
-                if ( (LA78_0==12) ) {
-                    alt78=1;
-                }
-
-
-                switch (alt78) {
-            	case 1 :
-            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3799:1: (lv_triggerReactions_4_0= ruleTriggerFeedback )
-            	    {
-            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3799:1: (lv_triggerReactions_4_0= ruleTriggerFeedback )
-            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3800:3: lv_triggerReactions_4_0= ruleTriggerFeedback
-            	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getSimpleTriggerAccess().getTriggerReactionsTriggerFeedbackParserRuleCall_4_0()); 
-            	    	    
-            	    pushFollow(FOLLOW_ruleTriggerFeedback_in_ruleSimpleTrigger8113);
-            	    lv_triggerReactions_4_0=ruleTriggerFeedback();
-
-            	    state._fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getSimpleTriggerRule());
-            	    	        }
-            	           		add(
-            	           			current, 
-            	           			"triggerReactions",
-            	            		lv_triggerReactions_4_0, 
-            	            		"TriggerFeedback");
-            	    	        afterParserOrEnumRuleCall();
-            	    	    
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    if ( cnt78 >= 1 ) break loop78;
-                        EarlyExitException eee =
-                            new EarlyExitException(78, input);
-                        throw eee;
-                }
-                cnt78++;
-            } while (true);
-
-
-            }
-
-
-            }
-
-             leaveRule(); 
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleSimpleTrigger"
-
-
-    // $ANTLR start "entryRuleLOTrigger"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3824:1: entryRuleLOTrigger returns [EObject current=null] : iv_ruleLOTrigger= ruleLOTrigger EOF ;
-    public final EObject entryRuleLOTrigger() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleLOTrigger = null;
-
-
-        try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3825:2: (iv_ruleLOTrigger= ruleLOTrigger EOF )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3826:2: iv_ruleLOTrigger= ruleLOTrigger EOF
-            {
-             newCompositeNode(grammarAccess.getLOTriggerRule()); 
-            pushFollow(FOLLOW_ruleLOTrigger_in_entryRuleLOTrigger8150);
-            iv_ruleLOTrigger=ruleLOTrigger();
-
-            state._fsp--;
-
-             current =iv_ruleLOTrigger; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLOTrigger8160); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleLOTrigger"
-
-
-    // $ANTLR start "ruleLOTrigger"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3833:1: ruleLOTrigger returns [EObject current=null] : ( ( (lv_function_0_0= ruleFeedbackKeywordsComplex ) ) ( (otherlv_1= RULE_ID ) ) ( (lv_sign_2_0= ruleCompSign ) ) ( (lv_negativeLimit_3_0= '-' ) )? ( (lv_limit_4_0= RULE_INT ) ) ( (lv_triggerReactions_5_0= ruleTriggerFeedback ) )+ ) ;
-    public final EObject ruleLOTrigger() throws RecognitionException {
-        EObject current = null;
-
-        Token otherlv_1=null;
-        Token lv_negativeLimit_3_0=null;
-        Token lv_limit_4_0=null;
-        AntlrDatatypeRuleToken lv_function_0_0 = null;
-
-        AntlrDatatypeRuleToken lv_sign_2_0 = null;
-
-        EObject lv_triggerReactions_5_0 = null;
-
-
-         enterRule(); 
-            
-        try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3836:28: ( ( ( (lv_function_0_0= ruleFeedbackKeywordsComplex ) ) ( (otherlv_1= RULE_ID ) ) ( (lv_sign_2_0= ruleCompSign ) ) ( (lv_negativeLimit_3_0= '-' ) )? ( (lv_limit_4_0= RULE_INT ) ) ( (lv_triggerReactions_5_0= ruleTriggerFeedback ) )+ ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3837:1: ( ( (lv_function_0_0= ruleFeedbackKeywordsComplex ) ) ( (otherlv_1= RULE_ID ) ) ( (lv_sign_2_0= ruleCompSign ) ) ( (lv_negativeLimit_3_0= '-' ) )? ( (lv_limit_4_0= RULE_INT ) ) ( (lv_triggerReactions_5_0= ruleTriggerFeedback ) )+ )
-            {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3837:1: ( ( (lv_function_0_0= ruleFeedbackKeywordsComplex ) ) ( (otherlv_1= RULE_ID ) ) ( (lv_sign_2_0= ruleCompSign ) ) ( (lv_negativeLimit_3_0= '-' ) )? ( (lv_limit_4_0= RULE_INT ) ) ( (lv_triggerReactions_5_0= ruleTriggerFeedback ) )+ )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3837:2: ( (lv_function_0_0= ruleFeedbackKeywordsComplex ) ) ( (otherlv_1= RULE_ID ) ) ( (lv_sign_2_0= ruleCompSign ) ) ( (lv_negativeLimit_3_0= '-' ) )? ( (lv_limit_4_0= RULE_INT ) ) ( (lv_triggerReactions_5_0= ruleTriggerFeedback ) )+
-            {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3837:2: ( (lv_function_0_0= ruleFeedbackKeywordsComplex ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3838:1: (lv_function_0_0= ruleFeedbackKeywordsComplex )
-            {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3838:1: (lv_function_0_0= ruleFeedbackKeywordsComplex )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3839:3: lv_function_0_0= ruleFeedbackKeywordsComplex
-            {
-             
-            	        newCompositeNode(grammarAccess.getLOTriggerAccess().getFunctionFeedbackKeywordsComplexParserRuleCall_0_0()); 
-            	    
-            pushFollow(FOLLOW_ruleFeedbackKeywordsComplex_in_ruleLOTrigger8206);
-            lv_function_0_0=ruleFeedbackKeywordsComplex();
-
-            state._fsp--;
-
-
-            	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getLOTriggerRule());
-            	        }
-                   		set(
-                   			current, 
-                   			"function",
-                    		lv_function_0_0, 
-                    		"FeedbackKeywordsComplex");
-            	        afterParserOrEnumRuleCall();
-            	    
-
-            }
-
-
-            }
-
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3855:2: ( (otherlv_1= RULE_ID ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3856:1: (otherlv_1= RULE_ID )
-            {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3856:1: (otherlv_1= RULE_ID )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3857:3: otherlv_1= RULE_ID
-            {
-
-            			if (current==null) {
-            	            current = createModelElement(grammarAccess.getLOTriggerRule());
-            	        }
-                    
-            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleLOTrigger8226); 
-
-            		newLeafNode(otherlv_1, grammarAccess.getLOTriggerAccess().getOutcomeOutcomeCrossReference_1_0()); 
-            	
-
-            }
-
-
-            }
-
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3868:2: ( (lv_sign_2_0= ruleCompSign ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3869:1: (lv_sign_2_0= ruleCompSign )
-            {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3869:1: (lv_sign_2_0= ruleCompSign )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3870:3: lv_sign_2_0= ruleCompSign
-            {
-             
-            	        newCompositeNode(grammarAccess.getLOTriggerAccess().getSignCompSignParserRuleCall_2_0()); 
-            	    
-            pushFollow(FOLLOW_ruleCompSign_in_ruleLOTrigger8247);
-            lv_sign_2_0=ruleCompSign();
-
-            state._fsp--;
-
-
-            	        if (current==null) {
-            	            current = createModelElementForParent(grammarAccess.getLOTriggerRule());
-            	        }
-                   		set(
-                   			current, 
-                   			"sign",
-                    		lv_sign_2_0, 
-                    		"CompSign");
-            	        afterParserOrEnumRuleCall();
-            	    
-
-            }
-
-
-            }
-
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3886:2: ( (lv_negativeLimit_3_0= '-' ) )?
-            int alt79=2;
-            int LA79_0 = input.LA(1);
-
-            if ( (LA79_0==34) ) {
-                alt79=1;
-            }
-            switch (alt79) {
-                case 1 :
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3887:1: (lv_negativeLimit_3_0= '-' )
-                    {
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3887:1: (lv_negativeLimit_3_0= '-' )
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3888:3: lv_negativeLimit_3_0= '-'
-                    {
-                    lv_negativeLimit_3_0=(Token)match(input,34,FOLLOW_34_in_ruleLOTrigger8265); 
-
-                            newLeafNode(lv_negativeLimit_3_0, grammarAccess.getLOTriggerAccess().getNegativeLimitHyphenMinusKeyword_3_0());
-                        
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getLOTriggerRule());
-                    	        }
-                           		setWithLastConsumed(current, "negativeLimit", true, "-");
-                    	    
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3901:3: ( (lv_limit_4_0= RULE_INT ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3902:1: (lv_limit_4_0= RULE_INT )
-            {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3902:1: (lv_limit_4_0= RULE_INT )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3903:3: lv_limit_4_0= RULE_INT
-            {
-            lv_limit_4_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleLOTrigger8296); 
-
-            			newLeafNode(lv_limit_4_0, grammarAccess.getLOTriggerAccess().getLimitINTTerminalRuleCall_4_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getLOTriggerRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"limit",
-                    		lv_limit_4_0, 
-                    		"INT");
-            	    
-
-            }
-
-
-            }
-
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3919:2: ( (lv_triggerReactions_5_0= ruleTriggerFeedback ) )+
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3829:2: ( (lv_triggerReactions_4_0= ruleTriggerFeedback ) )+
             int cnt80=0;
             loop80:
             do {
@@ -9882,27 +9704,27 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
                 switch (alt80) {
             	case 1 :
-            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3920:1: (lv_triggerReactions_5_0= ruleTriggerFeedback )
+            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3830:1: (lv_triggerReactions_4_0= ruleTriggerFeedback )
             	    {
-            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3920:1: (lv_triggerReactions_5_0= ruleTriggerFeedback )
-            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3921:3: lv_triggerReactions_5_0= ruleTriggerFeedback
+            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3830:1: (lv_triggerReactions_4_0= ruleTriggerFeedback )
+            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3831:3: lv_triggerReactions_4_0= ruleTriggerFeedback
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getLOTriggerAccess().getTriggerReactionsTriggerFeedbackParserRuleCall_5_0()); 
+            	    	        newCompositeNode(grammarAccess.getSimpleTriggerAccess().getTriggerReactionsTriggerFeedbackParserRuleCall_4_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleTriggerFeedback_in_ruleLOTrigger8322);
-            	    lv_triggerReactions_5_0=ruleTriggerFeedback();
+            	    pushFollow(FOLLOW_ruleTriggerFeedback_in_ruleSimpleTrigger8186);
+            	    lv_triggerReactions_4_0=ruleTriggerFeedback();
 
             	    state._fsp--;
 
 
             	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getLOTriggerRule());
+            	    	            current = createModelElementForParent(grammarAccess.getSimpleTriggerRule());
             	    	        }
             	           		add(
             	           			current, 
             	           			"triggerReactions",
-            	            		lv_triggerReactions_5_0, 
+            	            		lv_triggerReactions_4_0, 
             	            		"TriggerFeedback");
             	    	        afterParserOrEnumRuleCall();
             	    	    
@@ -9939,11 +9761,287 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
+    // $ANTLR end "ruleSimpleTrigger"
+
+
+    // $ANTLR start "entryRuleLOTrigger"
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3855:1: entryRuleLOTrigger returns [EObject current=null] : iv_ruleLOTrigger= ruleLOTrigger EOF ;
+    public final EObject entryRuleLOTrigger() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleLOTrigger = null;
+
+
+        try {
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3856:2: (iv_ruleLOTrigger= ruleLOTrigger EOF )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3857:2: iv_ruleLOTrigger= ruleLOTrigger EOF
+            {
+             newCompositeNode(grammarAccess.getLOTriggerRule()); 
+            pushFollow(FOLLOW_ruleLOTrigger_in_entryRuleLOTrigger8223);
+            iv_ruleLOTrigger=ruleLOTrigger();
+
+            state._fsp--;
+
+             current =iv_ruleLOTrigger; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLOTrigger8233); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleLOTrigger"
+
+
+    // $ANTLR start "ruleLOTrigger"
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3864:1: ruleLOTrigger returns [EObject current=null] : ( ( (lv_function_0_0= ruleFeedbackKeywordsComplex ) ) ( (otherlv_1= RULE_ID ) ) ( (lv_sign_2_0= ruleCompSign ) ) ( (lv_negativeLimit_3_0= '-' ) )? ( (lv_limit_4_0= RULE_INT ) ) ( (lv_triggerReactions_5_0= ruleTriggerFeedback ) )+ ) ;
+    public final EObject ruleLOTrigger() throws RecognitionException {
+        EObject current = null;
+
+        Token otherlv_1=null;
+        Token lv_negativeLimit_3_0=null;
+        Token lv_limit_4_0=null;
+        AntlrDatatypeRuleToken lv_function_0_0 = null;
+
+        AntlrDatatypeRuleToken lv_sign_2_0 = null;
+
+        EObject lv_triggerReactions_5_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3867:28: ( ( ( (lv_function_0_0= ruleFeedbackKeywordsComplex ) ) ( (otherlv_1= RULE_ID ) ) ( (lv_sign_2_0= ruleCompSign ) ) ( (lv_negativeLimit_3_0= '-' ) )? ( (lv_limit_4_0= RULE_INT ) ) ( (lv_triggerReactions_5_0= ruleTriggerFeedback ) )+ ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3868:1: ( ( (lv_function_0_0= ruleFeedbackKeywordsComplex ) ) ( (otherlv_1= RULE_ID ) ) ( (lv_sign_2_0= ruleCompSign ) ) ( (lv_negativeLimit_3_0= '-' ) )? ( (lv_limit_4_0= RULE_INT ) ) ( (lv_triggerReactions_5_0= ruleTriggerFeedback ) )+ )
+            {
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3868:1: ( ( (lv_function_0_0= ruleFeedbackKeywordsComplex ) ) ( (otherlv_1= RULE_ID ) ) ( (lv_sign_2_0= ruleCompSign ) ) ( (lv_negativeLimit_3_0= '-' ) )? ( (lv_limit_4_0= RULE_INT ) ) ( (lv_triggerReactions_5_0= ruleTriggerFeedback ) )+ )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3868:2: ( (lv_function_0_0= ruleFeedbackKeywordsComplex ) ) ( (otherlv_1= RULE_ID ) ) ( (lv_sign_2_0= ruleCompSign ) ) ( (lv_negativeLimit_3_0= '-' ) )? ( (lv_limit_4_0= RULE_INT ) ) ( (lv_triggerReactions_5_0= ruleTriggerFeedback ) )+
+            {
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3868:2: ( (lv_function_0_0= ruleFeedbackKeywordsComplex ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3869:1: (lv_function_0_0= ruleFeedbackKeywordsComplex )
+            {
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3869:1: (lv_function_0_0= ruleFeedbackKeywordsComplex )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3870:3: lv_function_0_0= ruleFeedbackKeywordsComplex
+            {
+             
+            	        newCompositeNode(grammarAccess.getLOTriggerAccess().getFunctionFeedbackKeywordsComplexParserRuleCall_0_0()); 
+            	    
+            pushFollow(FOLLOW_ruleFeedbackKeywordsComplex_in_ruleLOTrigger8279);
+            lv_function_0_0=ruleFeedbackKeywordsComplex();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getLOTriggerRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"function",
+                    		lv_function_0_0, 
+                    		"FeedbackKeywordsComplex");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3886:2: ( (otherlv_1= RULE_ID ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3887:1: (otherlv_1= RULE_ID )
+            {
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3887:1: (otherlv_1= RULE_ID )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3888:3: otherlv_1= RULE_ID
+            {
+
+            			if (current==null) {
+            	            current = createModelElement(grammarAccess.getLOTriggerRule());
+            	        }
+                    
+            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleLOTrigger8299); 
+
+            		newLeafNode(otherlv_1, grammarAccess.getLOTriggerAccess().getOutcomeOutcomeCrossReference_1_0()); 
+            	
+
+            }
+
+
+            }
+
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3899:2: ( (lv_sign_2_0= ruleCompSign ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3900:1: (lv_sign_2_0= ruleCompSign )
+            {
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3900:1: (lv_sign_2_0= ruleCompSign )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3901:3: lv_sign_2_0= ruleCompSign
+            {
+             
+            	        newCompositeNode(grammarAccess.getLOTriggerAccess().getSignCompSignParserRuleCall_2_0()); 
+            	    
+            pushFollow(FOLLOW_ruleCompSign_in_ruleLOTrigger8320);
+            lv_sign_2_0=ruleCompSign();
+
+            state._fsp--;
+
+
+            	        if (current==null) {
+            	            current = createModelElementForParent(grammarAccess.getLOTriggerRule());
+            	        }
+                   		set(
+                   			current, 
+                   			"sign",
+                    		lv_sign_2_0, 
+                    		"CompSign");
+            	        afterParserOrEnumRuleCall();
+            	    
+
+            }
+
+
+            }
+
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3917:2: ( (lv_negativeLimit_3_0= '-' ) )?
+            int alt81=2;
+            int LA81_0 = input.LA(1);
+
+            if ( (LA81_0==34) ) {
+                alt81=1;
+            }
+            switch (alt81) {
+                case 1 :
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3918:1: (lv_negativeLimit_3_0= '-' )
+                    {
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3918:1: (lv_negativeLimit_3_0= '-' )
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3919:3: lv_negativeLimit_3_0= '-'
+                    {
+                    lv_negativeLimit_3_0=(Token)match(input,34,FOLLOW_34_in_ruleLOTrigger8338); 
+
+                            newLeafNode(lv_negativeLimit_3_0, grammarAccess.getLOTriggerAccess().getNegativeLimitHyphenMinusKeyword_3_0());
+                        
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getLOTriggerRule());
+                    	        }
+                           		setWithLastConsumed(current, "negativeLimit", true, "-");
+                    	    
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3932:3: ( (lv_limit_4_0= RULE_INT ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3933:1: (lv_limit_4_0= RULE_INT )
+            {
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3933:1: (lv_limit_4_0= RULE_INT )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3934:3: lv_limit_4_0= RULE_INT
+            {
+            lv_limit_4_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleLOTrigger8369); 
+
+            			newLeafNode(lv_limit_4_0, grammarAccess.getLOTriggerAccess().getLimitINTTerminalRuleCall_4_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getLOTriggerRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"limit",
+                    		lv_limit_4_0, 
+                    		"INT");
+            	    
+
+            }
+
+
+            }
+
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3950:2: ( (lv_triggerReactions_5_0= ruleTriggerFeedback ) )+
+            int cnt82=0;
+            loop82:
+            do {
+                int alt82=2;
+                int LA82_0 = input.LA(1);
+
+                if ( (LA82_0==12) ) {
+                    alt82=1;
+                }
+
+
+                switch (alt82) {
+            	case 1 :
+            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3951:1: (lv_triggerReactions_5_0= ruleTriggerFeedback )
+            	    {
+            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3951:1: (lv_triggerReactions_5_0= ruleTriggerFeedback )
+            	    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3952:3: lv_triggerReactions_5_0= ruleTriggerFeedback
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getLOTriggerAccess().getTriggerReactionsTriggerFeedbackParserRuleCall_5_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleTriggerFeedback_in_ruleLOTrigger8395);
+            	    lv_triggerReactions_5_0=ruleTriggerFeedback();
+
+            	    state._fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getLOTriggerRule());
+            	    	        }
+            	           		add(
+            	           			current, 
+            	           			"triggerReactions",
+            	            		lv_triggerReactions_5_0, 
+            	            		"TriggerFeedback");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt82 >= 1 ) break loop82;
+                        EarlyExitException eee =
+                            new EarlyExitException(82, input);
+                        throw eee;
+                }
+                cnt82++;
+            } while (true);
+
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
     // $ANTLR end "ruleLOTrigger"
 
 
     // $ANTLR start "entryRuleFeedbackKeywordsSimple"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3945:1: entryRuleFeedbackKeywordsSimple returns [String current=null] : iv_ruleFeedbackKeywordsSimple= ruleFeedbackKeywordsSimple EOF ;
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3976:1: entryRuleFeedbackKeywordsSimple returns [String current=null] : iv_ruleFeedbackKeywordsSimple= ruleFeedbackKeywordsSimple EOF ;
     public final String entryRuleFeedbackKeywordsSimple() throws RecognitionException {
         String current = null;
 
@@ -9951,17 +10049,17 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3946:2: (iv_ruleFeedbackKeywordsSimple= ruleFeedbackKeywordsSimple EOF )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3947:2: iv_ruleFeedbackKeywordsSimple= ruleFeedbackKeywordsSimple EOF
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3977:2: (iv_ruleFeedbackKeywordsSimple= ruleFeedbackKeywordsSimple EOF )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3978:2: iv_ruleFeedbackKeywordsSimple= ruleFeedbackKeywordsSimple EOF
             {
              newCompositeNode(grammarAccess.getFeedbackKeywordsSimpleRule()); 
-            pushFollow(FOLLOW_ruleFeedbackKeywordsSimple_in_entryRuleFeedbackKeywordsSimple8360);
+            pushFollow(FOLLOW_ruleFeedbackKeywordsSimple_in_entryRuleFeedbackKeywordsSimple8433);
             iv_ruleFeedbackKeywordsSimple=ruleFeedbackKeywordsSimple();
 
             state._fsp--;
 
              current =iv_ruleFeedbackKeywordsSimple.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFeedbackKeywordsSimple8371); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFeedbackKeywordsSimple8444); 
 
             }
 
@@ -9979,7 +10077,7 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFeedbackKeywordsSimple"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3954:1: ruleFeedbackKeywordsSimple returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'numberGameplays' | kw= 'numberWin' | kw= 'totalTime' | kw= 'averageTime' ) ;
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3985:1: ruleFeedbackKeywordsSimple returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'numberGameplays' | kw= 'numberWin' | kw= 'totalTime' | kw= 'averageTime' ) ;
     public final AntlrDatatypeRuleToken ruleFeedbackKeywordsSimple() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -9988,44 +10086,44 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3957:28: ( (kw= 'numberGameplays' | kw= 'numberWin' | kw= 'totalTime' | kw= 'averageTime' ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3958:1: (kw= 'numberGameplays' | kw= 'numberWin' | kw= 'totalTime' | kw= 'averageTime' )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3988:28: ( (kw= 'numberGameplays' | kw= 'numberWin' | kw= 'totalTime' | kw= 'averageTime' ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3989:1: (kw= 'numberGameplays' | kw= 'numberWin' | kw= 'totalTime' | kw= 'averageTime' )
             {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3958:1: (kw= 'numberGameplays' | kw= 'numberWin' | kw= 'totalTime' | kw= 'averageTime' )
-            int alt81=4;
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3989:1: (kw= 'numberGameplays' | kw= 'numberWin' | kw= 'totalTime' | kw= 'averageTime' )
+            int alt83=4;
             switch ( input.LA(1) ) {
             case 80:
                 {
-                alt81=1;
+                alt83=1;
                 }
                 break;
             case 81:
                 {
-                alt81=2;
+                alt83=2;
                 }
                 break;
             case 82:
                 {
-                alt81=3;
+                alt83=3;
                 }
                 break;
             case 83:
                 {
-                alt81=4;
+                alt83=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 81, 0, input);
+                    new NoViableAltException("", 83, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt81) {
+            switch (alt83) {
                 case 1 :
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3959:2: kw= 'numberGameplays'
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3990:2: kw= 'numberGameplays'
                     {
-                    kw=(Token)match(input,80,FOLLOW_80_in_ruleFeedbackKeywordsSimple8409); 
+                    kw=(Token)match(input,80,FOLLOW_80_in_ruleFeedbackKeywordsSimple8482); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getFeedbackKeywordsSimpleAccess().getNumberGameplaysKeyword_0()); 
@@ -10034,9 +10132,9 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3966:2: kw= 'numberWin'
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3997:2: kw= 'numberWin'
                     {
-                    kw=(Token)match(input,81,FOLLOW_81_in_ruleFeedbackKeywordsSimple8428); 
+                    kw=(Token)match(input,81,FOLLOW_81_in_ruleFeedbackKeywordsSimple8501); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getFeedbackKeywordsSimpleAccess().getNumberWinKeyword_1()); 
@@ -10045,9 +10143,9 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3973:2: kw= 'totalTime'
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:4004:2: kw= 'totalTime'
                     {
-                    kw=(Token)match(input,82,FOLLOW_82_in_ruleFeedbackKeywordsSimple8447); 
+                    kw=(Token)match(input,82,FOLLOW_82_in_ruleFeedbackKeywordsSimple8520); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getFeedbackKeywordsSimpleAccess().getTotalTimeKeyword_2()); 
@@ -10056,9 +10154,9 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3980:2: kw= 'averageTime'
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:4011:2: kw= 'averageTime'
                     {
-                    kw=(Token)match(input,83,FOLLOW_83_in_ruleFeedbackKeywordsSimple8466); 
+                    kw=(Token)match(input,83,FOLLOW_83_in_ruleFeedbackKeywordsSimple8539); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getFeedbackKeywordsSimpleAccess().getAverageTimeKeyword_3()); 
@@ -10087,7 +10185,7 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFeedbackKeywordsComplex"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3993:1: entryRuleFeedbackKeywordsComplex returns [String current=null] : iv_ruleFeedbackKeywordsComplex= ruleFeedbackKeywordsComplex EOF ;
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:4024:1: entryRuleFeedbackKeywordsComplex returns [String current=null] : iv_ruleFeedbackKeywordsComplex= ruleFeedbackKeywordsComplex EOF ;
     public final String entryRuleFeedbackKeywordsComplex() throws RecognitionException {
         String current = null;
 
@@ -10095,17 +10193,17 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3994:2: (iv_ruleFeedbackKeywordsComplex= ruleFeedbackKeywordsComplex EOF )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:3995:2: iv_ruleFeedbackKeywordsComplex= ruleFeedbackKeywordsComplex EOF
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:4025:2: (iv_ruleFeedbackKeywordsComplex= ruleFeedbackKeywordsComplex EOF )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:4026:2: iv_ruleFeedbackKeywordsComplex= ruleFeedbackKeywordsComplex EOF
             {
              newCompositeNode(grammarAccess.getFeedbackKeywordsComplexRule()); 
-            pushFollow(FOLLOW_ruleFeedbackKeywordsComplex_in_entryRuleFeedbackKeywordsComplex8507);
+            pushFollow(FOLLOW_ruleFeedbackKeywordsComplex_in_entryRuleFeedbackKeywordsComplex8580);
             iv_ruleFeedbackKeywordsComplex=ruleFeedbackKeywordsComplex();
 
             state._fsp--;
 
              current =iv_ruleFeedbackKeywordsComplex.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFeedbackKeywordsComplex8518); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFeedbackKeywordsComplex8591); 
 
             }
 
@@ -10123,7 +10221,7 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFeedbackKeywordsComplex"
-    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:4002:1: ruleFeedbackKeywordsComplex returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'sumScore' | kw= 'averageScore' | kw= 'maxScore' | kw= 'minScore' ) ;
+    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:4033:1: ruleFeedbackKeywordsComplex returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'sumScore' | kw= 'averageScore' | kw= 'maxScore' | kw= 'minScore' ) ;
     public final AntlrDatatypeRuleToken ruleFeedbackKeywordsComplex() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -10132,44 +10230,44 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
          enterRule(); 
             
         try {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:4005:28: ( (kw= 'sumScore' | kw= 'averageScore' | kw= 'maxScore' | kw= 'minScore' ) )
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:4006:1: (kw= 'sumScore' | kw= 'averageScore' | kw= 'maxScore' | kw= 'minScore' )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:4036:28: ( (kw= 'sumScore' | kw= 'averageScore' | kw= 'maxScore' | kw= 'minScore' ) )
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:4037:1: (kw= 'sumScore' | kw= 'averageScore' | kw= 'maxScore' | kw= 'minScore' )
             {
-            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:4006:1: (kw= 'sumScore' | kw= 'averageScore' | kw= 'maxScore' | kw= 'minScore' )
-            int alt82=4;
+            // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:4037:1: (kw= 'sumScore' | kw= 'averageScore' | kw= 'maxScore' | kw= 'minScore' )
+            int alt84=4;
             switch ( input.LA(1) ) {
             case 84:
                 {
-                alt82=1;
+                alt84=1;
                 }
                 break;
             case 85:
                 {
-                alt82=2;
+                alt84=2;
                 }
                 break;
             case 86:
                 {
-                alt82=3;
+                alt84=3;
                 }
                 break;
             case 87:
                 {
-                alt82=4;
+                alt84=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 82, 0, input);
+                    new NoViableAltException("", 84, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt82) {
+            switch (alt84) {
                 case 1 :
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:4007:2: kw= 'sumScore'
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:4038:2: kw= 'sumScore'
                     {
-                    kw=(Token)match(input,84,FOLLOW_84_in_ruleFeedbackKeywordsComplex8556); 
+                    kw=(Token)match(input,84,FOLLOW_84_in_ruleFeedbackKeywordsComplex8629); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getFeedbackKeywordsComplexAccess().getSumScoreKeyword_0()); 
@@ -10178,9 +10276,9 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:4014:2: kw= 'averageScore'
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:4045:2: kw= 'averageScore'
                     {
-                    kw=(Token)match(input,85,FOLLOW_85_in_ruleFeedbackKeywordsComplex8575); 
+                    kw=(Token)match(input,85,FOLLOW_85_in_ruleFeedbackKeywordsComplex8648); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getFeedbackKeywordsComplexAccess().getAverageScoreKeyword_1()); 
@@ -10189,9 +10287,9 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:4021:2: kw= 'maxScore'
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:4052:2: kw= 'maxScore'
                     {
-                    kw=(Token)match(input,86,FOLLOW_86_in_ruleFeedbackKeywordsComplex8594); 
+                    kw=(Token)match(input,86,FOLLOW_86_in_ruleFeedbackKeywordsComplex8667); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getFeedbackKeywordsComplexAccess().getMaxScoreKeyword_2()); 
@@ -10200,9 +10298,9 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:4028:2: kw= 'minScore'
+                    // ../uws.engage.dsl/src-gen/uws/engage/dsl/parser/antlr/internal/InternalAssess.g:4059:2: kw= 'minScore'
                     {
-                    kw=(Token)match(input,87,FOLLOW_87_in_ruleFeedbackKeywordsComplex8613); 
+                    kw=(Token)match(input,87,FOLLOW_87_in_ruleFeedbackKeywordsComplex8686); 
 
                             current.merge(kw);
                             newLeafNode(kw, grammarAccess.getFeedbackKeywordsComplexAccess().getMinScoreKeyword_3()); 
@@ -10486,93 +10584,95 @@ public class InternalAssessParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_71_in_ruleBOOL6285 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleReactions_in_entryRuleReactions6325 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleReactions6335 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_72_in_ruleReactions6372 = new BitSet(new long[]{0x0000000000000040L,0x0000000000000600L});
-    public static final BitSet FOLLOW_ruleReaction_in_ruleReactions6393 = new BitSet(new long[]{0x00000003F8000840L,0x0000000000000600L});
+    public static final BitSet FOLLOW_72_in_ruleReactions6372 = new BitSet(new long[]{0x0100000000000040L,0x0000000000000604L});
+    public static final BitSet FOLLOW_ruleReaction_in_ruleReactions6393 = new BitSet(new long[]{0x01000003F8000840L,0x0000000000000604L});
     public static final BitSet FOLLOW_ruleEnd_in_ruleReactions6410 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleReaction_in_entryRuleReaction6445 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleReaction6455 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleParamCondition_in_ruleReaction6501 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleParamCondition_in_ruleReaction6502 = new BitSet(new long[]{0x0000000000001000L});
     public static final BitSet FOLLOW_rulePointsCondition_in_ruleReaction6529 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_12_in_ruleReaction6541 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleReaction6561 = new BitSet(new long[]{0x6000000000000002L});
-    public static final BitSet FOLLOW_61_in_ruleReaction6579 = new BitSet(new long[]{0x4000000000000002L});
-    public static final BitSet FOLLOW_62_in_ruleReaction6611 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_12_in_ruleReaction6542 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleReaction6562 = new BitSet(new long[]{0x6000000000000002L});
+    public static final BitSet FOLLOW_61_in_ruleReaction6580 = new BitSet(new long[]{0x4000000000000002L});
+    public static final BitSet FOLLOW_62_in_ruleReaction6612 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleParamCondition_in_entryRuleParamCondition6662 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleParamCondition6672 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleParamCondition6716 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePointsCondition_in_entryRulePointsCondition6751 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePointsCondition6761 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePointsKeyWd_in_rulePointsCondition6807 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_20_in_rulePointsCondition6819 = new BitSet(new long[]{0x0000000400000020L,0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleSign_in_rulePointsCondition6841 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_rulePoint_in_rulePointsCondition6868 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_22_in_rulePointsCondition6881 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePointsKeyWd_in_entryRulePointsKeyWd6918 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePointsKeyWd6929 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_73_in_rulePointsKeyWd6967 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_74_in_rulePointsKeyWd6986 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFeedbackModel_in_entryRuleFeedbackModel7026 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFeedbackModel7036 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_75_in_ruleFeedbackModel7073 = new BitSet(new long[]{0x0000000000000040L,0x0000000000004000L});
-    public static final BitSet FOLLOW_ruleTrigger_in_ruleFeedbackModel7094 = new BitSet(new long[]{0x00000003F8000840L,0x0000000000004000L});
-    public static final BitSet FOLLOW_ruleEnd_in_ruleFeedbackModel7111 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTrigger_in_entryRuleTrigger7146 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTrigger7156 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOutcomeValueLimit_in_ruleTrigger7202 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInactivityLimit_in_ruleTrigger7229 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOutcomeValueLimit_in_entryRuleOutcomeValueLimit7265 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOutcomeValueLimit7275 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleOutcomeValueLimit7320 = new BitSet(new long[]{0x0000000000000000L,0x0000000000003000L});
-    public static final BitSet FOLLOW_ruleCompSign_in_ruleOutcomeValueLimit7341 = new BitSet(new long[]{0x0000000400000020L});
-    public static final BitSet FOLLOW_34_in_ruleOutcomeValueLimit7359 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleOutcomeValueLimit7390 = new BitSet(new long[]{0x0000000000001040L});
-    public static final BitSet FOLLOW_ruleTriggerFeedback_in_ruleOutcomeValueLimit7416 = new BitSet(new long[]{0x0000000000001042L});
-    public static final BitSet FOLLOW_ruleCompSign_in_entryRuleCompSign7454 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleCompSign7465 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_76_in_ruleCompSign7503 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_77_in_ruleCompSign7522 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInactivityLimit_in_entryRuleInactivityLimit7562 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleInactivityLimit7572 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_78_in_ruleInactivityLimit7609 = new BitSet(new long[]{0x0000000000000000L,0x0000000000003000L});
-    public static final BitSet FOLLOW_ruleCompSign_in_ruleInactivityLimit7630 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleInactivityLimit7647 = new BitSet(new long[]{0x0800000000000000L});
-    public static final BitSet FOLLOW_59_in_ruleInactivityLimit7664 = new BitSet(new long[]{0x0000000000001040L});
-    public static final BitSet FOLLOW_ruleActionReaction_in_ruleInactivityLimit7685 = new BitSet(new long[]{0x0000000000001042L});
-    public static final BitSet FOLLOW_ruleBadgeModel_in_entryRuleBadgeModel7722 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBadgeModel7732 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_79_in_ruleBadgeModel7769 = new BitSet(new long[]{0x0000000000000000L,0x0000000000FF0000L});
-    public static final BitSet FOLLOW_ruleGenericTrigger_in_ruleBadgeModel7790 = new BitSet(new long[]{0x00000003F8000800L,0x0000000000FF0000L});
-    public static final BitSet FOLLOW_ruleEnd_in_ruleBadgeModel7807 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleGenericTrigger_in_entryRuleGenericTrigger7842 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleGenericTrigger7852 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSimpleTrigger_in_ruleGenericTrigger7898 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLOTrigger_in_ruleGenericTrigger7925 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSimpleTrigger_in_entryRuleSimpleTrigger7961 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleSimpleTrigger7971 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFeedbackKeywordsSimple_in_ruleSimpleTrigger8017 = new BitSet(new long[]{0x0000000000000000L,0x0000000000003000L});
-    public static final BitSet FOLLOW_ruleCompSign_in_ruleSimpleTrigger8038 = new BitSet(new long[]{0x0000000400000020L});
-    public static final BitSet FOLLOW_34_in_ruleSimpleTrigger8056 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleSimpleTrigger8087 = new BitSet(new long[]{0x0000000000001040L});
-    public static final BitSet FOLLOW_ruleTriggerFeedback_in_ruleSimpleTrigger8113 = new BitSet(new long[]{0x0000000000001042L});
-    public static final BitSet FOLLOW_ruleLOTrigger_in_entryRuleLOTrigger8150 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLOTrigger8160 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFeedbackKeywordsComplex_in_ruleLOTrigger8206 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleLOTrigger8226 = new BitSet(new long[]{0x0000000000000000L,0x0000000000003000L});
-    public static final BitSet FOLLOW_ruleCompSign_in_ruleLOTrigger8247 = new BitSet(new long[]{0x0000000400000020L});
-    public static final BitSet FOLLOW_34_in_ruleLOTrigger8265 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleLOTrigger8296 = new BitSet(new long[]{0x0000000000001040L});
-    public static final BitSet FOLLOW_ruleTriggerFeedback_in_ruleLOTrigger8322 = new BitSet(new long[]{0x0000000000001042L});
-    public static final BitSet FOLLOW_ruleFeedbackKeywordsSimple_in_entryRuleFeedbackKeywordsSimple8360 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFeedbackKeywordsSimple8371 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_80_in_ruleFeedbackKeywordsSimple8409 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_81_in_ruleFeedbackKeywordsSimple8428 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_82_in_ruleFeedbackKeywordsSimple8447 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_83_in_ruleFeedbackKeywordsSimple8466 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFeedbackKeywordsComplex_in_entryRuleFeedbackKeywordsComplex8507 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFeedbackKeywordsComplex8518 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_84_in_ruleFeedbackKeywordsComplex8556 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_85_in_ruleFeedbackKeywordsComplex8575 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_86_in_ruleFeedbackKeywordsComplex8594 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_87_in_ruleFeedbackKeywordsComplex8613 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleParamCondition6717 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_66_in_ruleParamCondition6743 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_56_in_ruleParamCondition6772 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePointsCondition_in_entryRulePointsCondition6824 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePointsCondition6834 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePointsKeyWd_in_rulePointsCondition6880 = new BitSet(new long[]{0x0000000000100000L});
+    public static final BitSet FOLLOW_20_in_rulePointsCondition6892 = new BitSet(new long[]{0x0000000400000020L,0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleSign_in_rulePointsCondition6914 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_rulePoint_in_rulePointsCondition6941 = new BitSet(new long[]{0x0000000000400000L});
+    public static final BitSet FOLLOW_22_in_rulePointsCondition6954 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePointsKeyWd_in_entryRulePointsKeyWd6991 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePointsKeyWd7002 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_73_in_rulePointsKeyWd7040 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_74_in_rulePointsKeyWd7059 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFeedbackModel_in_entryRuleFeedbackModel7099 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFeedbackModel7109 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_75_in_ruleFeedbackModel7146 = new BitSet(new long[]{0x0000000000000040L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleTrigger_in_ruleFeedbackModel7167 = new BitSet(new long[]{0x00000003F8000840L,0x0000000000004000L});
+    public static final BitSet FOLLOW_ruleEnd_in_ruleFeedbackModel7184 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTrigger_in_entryRuleTrigger7219 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTrigger7229 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOutcomeValueLimit_in_ruleTrigger7275 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInactivityLimit_in_ruleTrigger7302 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOutcomeValueLimit_in_entryRuleOutcomeValueLimit7338 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOutcomeValueLimit7348 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleOutcomeValueLimit7393 = new BitSet(new long[]{0x0000000000000000L,0x0000000000003000L});
+    public static final BitSet FOLLOW_ruleCompSign_in_ruleOutcomeValueLimit7414 = new BitSet(new long[]{0x0000000400000020L});
+    public static final BitSet FOLLOW_34_in_ruleOutcomeValueLimit7432 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleOutcomeValueLimit7463 = new BitSet(new long[]{0x0000000000001040L});
+    public static final BitSet FOLLOW_ruleTriggerFeedback_in_ruleOutcomeValueLimit7489 = new BitSet(new long[]{0x0000000000001042L});
+    public static final BitSet FOLLOW_ruleCompSign_in_entryRuleCompSign7527 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleCompSign7538 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_76_in_ruleCompSign7576 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_77_in_ruleCompSign7595 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInactivityLimit_in_entryRuleInactivityLimit7635 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleInactivityLimit7645 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_78_in_ruleInactivityLimit7682 = new BitSet(new long[]{0x0000000000000000L,0x0000000000003000L});
+    public static final BitSet FOLLOW_ruleCompSign_in_ruleInactivityLimit7703 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleInactivityLimit7720 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_59_in_ruleInactivityLimit7737 = new BitSet(new long[]{0x0000000000001040L});
+    public static final BitSet FOLLOW_ruleActionReaction_in_ruleInactivityLimit7758 = new BitSet(new long[]{0x0000000000001042L});
+    public static final BitSet FOLLOW_ruleBadgeModel_in_entryRuleBadgeModel7795 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBadgeModel7805 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_79_in_ruleBadgeModel7842 = new BitSet(new long[]{0x0000000000000000L,0x0000000000FF0000L});
+    public static final BitSet FOLLOW_ruleGenericTrigger_in_ruleBadgeModel7863 = new BitSet(new long[]{0x00000003F8000800L,0x0000000000FF0000L});
+    public static final BitSet FOLLOW_ruleEnd_in_ruleBadgeModel7880 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleGenericTrigger_in_entryRuleGenericTrigger7915 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleGenericTrigger7925 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSimpleTrigger_in_ruleGenericTrigger7971 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLOTrigger_in_ruleGenericTrigger7998 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSimpleTrigger_in_entryRuleSimpleTrigger8034 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleSimpleTrigger8044 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFeedbackKeywordsSimple_in_ruleSimpleTrigger8090 = new BitSet(new long[]{0x0000000000000000L,0x0000000000003000L});
+    public static final BitSet FOLLOW_ruleCompSign_in_ruleSimpleTrigger8111 = new BitSet(new long[]{0x0000000400000020L});
+    public static final BitSet FOLLOW_34_in_ruleSimpleTrigger8129 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleSimpleTrigger8160 = new BitSet(new long[]{0x0000000000001040L});
+    public static final BitSet FOLLOW_ruleTriggerFeedback_in_ruleSimpleTrigger8186 = new BitSet(new long[]{0x0000000000001042L});
+    public static final BitSet FOLLOW_ruleLOTrigger_in_entryRuleLOTrigger8223 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLOTrigger8233 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFeedbackKeywordsComplex_in_ruleLOTrigger8279 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleLOTrigger8299 = new BitSet(new long[]{0x0000000000000000L,0x0000000000003000L});
+    public static final BitSet FOLLOW_ruleCompSign_in_ruleLOTrigger8320 = new BitSet(new long[]{0x0000000400000020L});
+    public static final BitSet FOLLOW_34_in_ruleLOTrigger8338 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleLOTrigger8369 = new BitSet(new long[]{0x0000000000001040L});
+    public static final BitSet FOLLOW_ruleTriggerFeedback_in_ruleLOTrigger8395 = new BitSet(new long[]{0x0000000000001042L});
+    public static final BitSet FOLLOW_ruleFeedbackKeywordsSimple_in_entryRuleFeedbackKeywordsSimple8433 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFeedbackKeywordsSimple8444 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_80_in_ruleFeedbackKeywordsSimple8482 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_81_in_ruleFeedbackKeywordsSimple8501 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_82_in_ruleFeedbackKeywordsSimple8520 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_83_in_ruleFeedbackKeywordsSimple8539 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFeedbackKeywordsComplex_in_entryRuleFeedbackKeywordsComplex8580 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFeedbackKeywordsComplex8591 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_84_in_ruleFeedbackKeywordsComplex8629 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_85_in_ruleFeedbackKeywordsComplex8648 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_86_in_ruleFeedbackKeywordsComplex8667 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_87_in_ruleFeedbackKeywordsComplex8686 = new BitSet(new long[]{0x0000000000000002L});
 
 }

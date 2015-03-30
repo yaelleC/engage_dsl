@@ -1502,13 +1502,22 @@ public interface AssessPackage extends EPackage
   int PARAM_CONDITION__PARAMS = 0;
 
   /**
+   * The feature id for the '<em><b>Condition Other</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAM_CONDITION__CONDITION_OTHER = 1;
+
+  /**
    * The number of structural features of the '<em>Param Condition</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PARAM_CONDITION_FEATURE_COUNT = 1;
+  int PARAM_CONDITION_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link uws.engage.dsl.assess.impl.PointsConditionImpl <em>Points Condition</em>}' class.
@@ -3289,6 +3298,17 @@ public interface AssessPackage extends EPackage
   EReference getParamCondition_Params();
 
   /**
+   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.ParamCondition#isConditionOther <em>Condition Other</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Condition Other</em>'.
+   * @see uws.engage.dsl.assess.ParamCondition#isConditionOther()
+   * @see #getParamCondition()
+   * @generated
+   */
+  EAttribute getParamCondition_ConditionOther();
+
+  /**
    * Returns the meta object for class '{@link uws.engage.dsl.assess.PointsCondition <em>Points Condition</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4780,6 +4800,14 @@ public interface AssessPackage extends EPackage
      * @generated
      */
     EReference PARAM_CONDITION__PARAMS = eINSTANCE.getParamCondition_Params();
+
+    /**
+     * The meta object literal for the '<em><b>Condition Other</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PARAM_CONDITION__CONDITION_OTHER = eINSTANCE.getParamCondition_ConditionOther();
 
     /**
      * The meta object literal for the '{@link uws.engage.dsl.assess.impl.PointsConditionImpl <em>Points Condition</em>}' class.

@@ -164,6 +164,7 @@
     </genClasses>
     <genClasses ecoreClass="Assess.ecore#//ParamCondition">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Assess.ecore#//ParamCondition/params"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//ParamCondition/conditionOther"/>
     </genClasses>
     <genClasses ecoreClass="Assess.ecore#//PointsCondition">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//PointsCondition/keyWd"/>

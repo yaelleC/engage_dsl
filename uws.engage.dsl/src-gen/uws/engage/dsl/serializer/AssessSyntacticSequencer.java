@@ -99,7 +99,7 @@ public class AssessSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     'Game' | 'Serious-game'
+	 *     'Serious-game' | 'Game'
 	 */
 	protected void emit_GameDescription_GameKeyword_0_1_or_SeriousGameKeyword_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);

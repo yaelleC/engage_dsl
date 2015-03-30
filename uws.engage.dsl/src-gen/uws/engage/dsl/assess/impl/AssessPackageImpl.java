@@ -1675,6 +1675,16 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getParamCondition_ConditionOther()
+  {
+    return (EAttribute)paramConditionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getPointsCondition()
   {
     return pointsConditionEClass;
@@ -2227,6 +2237,7 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
 
     paramConditionEClass = createEClass(PARAM_CONDITION);
     createEReference(paramConditionEClass, PARAM_CONDITION__PARAMS);
+    createEAttribute(paramConditionEClass, PARAM_CONDITION__CONDITION_OTHER);
 
     pointsConditionEClass = createEClass(POINTS_CONDITION);
     createEAttribute(pointsConditionEClass, POINTS_CONDITION__KEY_WD);
@@ -2463,6 +2474,7 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
 
     initEClass(paramConditionEClass, ParamCondition.class, "ParamCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getParamCondition_Params(), this.getParams(), null, "params", null, 0, 1, ParamCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getParamCondition_ConditionOther(), ecorePackage.getEBoolean(), "conditionOther", null, 0, 1, ParamCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(pointsConditionEClass, PointsCondition.class, "PointsCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getPointsCondition_KeyWd(), ecorePackage.getEString(), "keyWd", null, 0, 1, PointsCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

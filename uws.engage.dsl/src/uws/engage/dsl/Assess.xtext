@@ -175,6 +175,7 @@ Points:
 	End
 ;
 
+
 OutcomesPoints:
 	(outcome= [Outcome] '->')? resetValue ?= '='? ( pts=Point | var=[Parameter] )
 ;
@@ -210,11 +211,11 @@ Reactions:
 ;
 
 Reaction:
-	paramsC = ParamCondition | pointsC = PointsCondition  ':' feedback=[Feedback] immediate?= 'immediate'? delayed ?= 'delayed'?
+	(paramsC = ParamCondition | pointsC = PointsCondition)  ':' feedback=[Feedback] immediate?= 'immediate'? delayed ?= 'delayed'?
 ;
 
 ParamCondition:
-	params = [Params] 
+	(params = [Params] | conditionOther ?= ("others"|"else") )
 ;
 
 PointsCondition:
