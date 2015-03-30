@@ -49,6 +49,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Characteristic">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//Type" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="question" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LearningOutcomes">
     <eStructuralFeatures xsi:type="ecore:EReference" name="outcomes" upperBound="-1"
@@ -128,16 +129,28 @@
   <eClassifiers xsi:type="ecore:EClass" name="TriggerFeedback">
     <eStructuralFeatures xsi:type="ecore:EReference" name="feedback" eType="#//Feedback"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="immediate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="delayed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
         eType="#//Parameter" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="paramsIn" eType="#//ParamsIn"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="points" upperBound="-1"
         eType="#//Points" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="reactions" eType="#//Reactions"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParamsIn">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="paramIn" upperBound="-1"
+        eType="#//ParamIn" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ParamIn">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="param" eType="#//Parameter"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valuesPoss" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Parameter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="logOnly" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
@@ -177,6 +190,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="feedback" eType="#//Feedback"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="immediate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="delayed" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ParamCondition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="params" eType="#//Params"/>

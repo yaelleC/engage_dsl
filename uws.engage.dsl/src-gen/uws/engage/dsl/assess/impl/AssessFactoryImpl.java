@@ -33,8 +33,10 @@ import uws.engage.dsl.assess.Outcome;
 import uws.engage.dsl.assess.OutcomeValueLimit;
 import uws.engage.dsl.assess.OutcomesPoints;
 import uws.engage.dsl.assess.ParamCondition;
+import uws.engage.dsl.assess.ParamIn;
 import uws.engage.dsl.assess.Parameter;
 import uws.engage.dsl.assess.Params;
+import uws.engage.dsl.assess.ParamsIn;
 import uws.engage.dsl.assess.PlayerDescription;
 import uws.engage.dsl.assess.Point;
 import uws.engage.dsl.assess.Points;
@@ -125,6 +127,8 @@ public class AssessFactoryImpl extends EFactoryImpl implements AssessFactory
       case AssessPackage.UPDATE_SCORE: return createUpdateScore();
       case AssessPackage.TRIGGER_FEEDBACK: return createTriggerFeedback();
       case AssessPackage.ACTION: return createAction();
+      case AssessPackage.PARAMS_IN: return createParamsIn();
+      case AssessPackage.PARAM_IN: return createParamIn();
       case AssessPackage.PARAMETER: return createParameter();
       case AssessPackage.POINTS: return createPoints();
       case AssessPackage.OUTCOMES_POINTS: return createOutcomesPoints();
@@ -387,6 +391,28 @@ public class AssessFactoryImpl extends EFactoryImpl implements AssessFactory
   {
     ActionImpl action = new ActionImpl();
     return action;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ParamsIn createParamsIn()
+  {
+    ParamsInImpl paramsIn = new ParamsInImpl();
+    return paramsIn;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ParamIn createParamIn()
+  {
+    ParamInImpl paramIn = new ParamInImpl();
+    return paramIn;
   }
 
   /**

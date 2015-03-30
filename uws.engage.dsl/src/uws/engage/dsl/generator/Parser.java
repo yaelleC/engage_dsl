@@ -35,6 +35,7 @@ import uws.engage.dsl.assess.GenericTrigger;
 import uws.engage.dsl.assess.LearningOutcomes;
 import uws.engage.dsl.assess.Outcome;
 import uws.engage.dsl.assess.OutcomesPoints;
+import uws.engage.dsl.assess.ParamIn;
 import uws.engage.dsl.assess.Parameter;
 import uws.engage.dsl.assess.Params;
 import uws.engage.dsl.assess.PlayerDescription;
@@ -136,8 +137,12 @@ public class Parser {
 					}
 					type += ")";
 				}
-				
+
 				characteristicJson.put("type", type);
+				if (c.getQuestion() != null)
+				{
+					characteristicJson.put("question", c.getQuestion());
+				}
 							
 				playerJson.add(characteristicJson);
 			}	
@@ -175,7 +180,7 @@ public class Parser {
 						{
 							JSONObject feedbackDesc = new JSONObject();
 							feedbackDesc.put("name", reaction.getFeedback().getName());
-							feedbackDesc.put("immediate", reaction.isImmediate());
+							feedbackDesc.put("immediate", !reaction.isDelayed());
 							feedbackToTrigger.add(feedbackDesc);
 						}
 						
@@ -229,9 +234,20 @@ public class Parser {
 			// prepare the new JSON object
 			String actionName = a.getName();
 			JSONObject assessment = new JSONObject();
-			
+
 			// get the action description
 			if (a.getDesc() != null) { assessment.put("desc", a.getDesc()); }
+			
+			// get the exhaustive list of parameters, if any
+			if (a.getParamsIn() != null) { 
+				JSONObject listparams = new JSONObject();
+				
+				for (ParamIn listP : a.getParamsIn().getParamIn()) {
+					listparams.put(listP.getParam().getName(), listP.getValuesPoss());
+				}
+				
+				assessment.put("listParams", listparams); 
+			}
 			
 			// get the action parameters
 			JSONObject paramsJson = new JSONObject();
@@ -368,7 +384,7 @@ public class Parser {
 							{
 								JSONObject f = new JSONObject();
 								f.put("name", r.getFeedback().getName());
-								f.put("immediate", r.isImmediate());
+								f.put("immediate", !r.isDelayed());
 								feedbackJson.add(f);
 							}
 							else if (r.getPointsC().getValue() != null)
@@ -383,7 +399,7 @@ public class Parser {
 									{
 										JSONObject f = new JSONObject();
 										f.put("name", r.getFeedback().getName());
-										f.put("immediate", r.isImmediate());
+										f.put("immediate", !r.isDelayed());
 										feedbackJson.add(f);	
 										break;
 									}

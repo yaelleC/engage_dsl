@@ -221,6 +221,24 @@ public interface AssessFactory extends EFactory
   Action createAction();
 
   /**
+   * Returns a new object of class '<em>Params In</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Params In</em>'.
+   * @generated
+   */
+  ParamsIn createParamsIn();
+
+  /**
+   * Returns a new object of class '<em>Param In</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Param In</em>'.
+   * @generated
+   */
+  ParamIn createParamIn();
+
+  /**
    * Returns a new object of class '<em>Parameter</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

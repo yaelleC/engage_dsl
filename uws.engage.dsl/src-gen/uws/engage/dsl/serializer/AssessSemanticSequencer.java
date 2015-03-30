@@ -35,8 +35,10 @@ import uws.engage.dsl.assess.Outcome;
 import uws.engage.dsl.assess.OutcomeValueLimit;
 import uws.engage.dsl.assess.OutcomesPoints;
 import uws.engage.dsl.assess.ParamCondition;
+import uws.engage.dsl.assess.ParamIn;
 import uws.engage.dsl.assess.Parameter;
 import uws.engage.dsl.assess.Params;
+import uws.engage.dsl.assess.ParamsIn;
 import uws.engage.dsl.assess.PlayerDescription;
 import uws.engage.dsl.assess.Point;
 import uws.engage.dsl.assess.Points;
@@ -194,6 +196,12 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
+			case AssessPackage.PARAM_IN:
+				if(context == grammarAccess.getParamInRule()) {
+					sequence_ParamIn(context, (ParamIn) semanticObject); 
+					return; 
+				}
+				else break;
 			case AssessPackage.PARAMETER:
 				if(context == grammarAccess.getParameterRule()) {
 					sequence_Parameter(context, (Parameter) semanticObject); 
@@ -203,6 +211,12 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case AssessPackage.PARAMS:
 				if(context == grammarAccess.getParamsRule()) {
 					sequence_Params(context, (Params) semanticObject); 
+					return; 
+				}
+				else break;
+			case AssessPackage.PARAMS_IN:
+				if(context == grammarAccess.getParamsInRule()) {
+					sequence_ParamsIn(context, (ParamsIn) semanticObject); 
 					return; 
 				}
 				else break;
@@ -334,6 +348,7 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         params+=Parameter 
 	 *         params+=Parameter* 
 	 *         desc=STRING 
+	 *         paramsIn=ParamsIn? 
 	 *         points+=Points+ 
 	 *         reactions=Reactions?
 	 *     )
@@ -373,20 +388,10 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (name=ID type=Type)
+	 *     (name=ID type=Type question=STRING?)
 	 */
 	protected void sequence_Characteristic(EObject context, Characteristic semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, AssessPackage.Literals.CHARACTERISTIC__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AssessPackage.Literals.CHARACTERISTIC__NAME));
-			if(transientValues.isValueTransient(semanticObject, AssessPackage.Literals.CHARACTERISTIC__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, AssessPackage.Literals.CHARACTERISTIC__TYPE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getCharacteristicAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getCharacteristicAccess().getTypeTypeParserRuleCall_2_0(), semanticObject.getType());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -559,9 +564,27 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
+	 *     (param=[Parameter|ID] valuesPoss+=Param valuesPoss+=Param*)
+	 */
+	protected void sequence_ParamIn(EObject context, ParamIn semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (logOnly?='LogOnly'? type=Type name=ID)
 	 */
 	protected void sequence_Parameter(EObject context, Parameter semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     paramIn+=ParamIn+
+	 */
+	protected void sequence_ParamsIn(EObject context, ParamsIn semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -613,7 +636,7 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (paramsC=ParamCondition | (pointsC=PointsCondition feedback=[Feedback|ID] immediate?='immediate'?))
+	 *     (paramsC=ParamCondition | (pointsC=PointsCondition feedback=[Feedback|ID] immediate?='immediate'? delayed?='delayed'?))
 	 */
 	protected void sequence_Reaction(EObject context, Reaction semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -667,7 +690,7 @@ public class AssessSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	
 	/**
 	 * Constraint:
-	 *     (feedback=[Feedback|ID] immediate?='immediate'?)
+	 *     (feedback=[Feedback|ID] immediate?='immediate'? delayed?='delayed'?)
 	 */
 	protected void sequence_TriggerFeedback(EObject context, TriggerFeedback semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

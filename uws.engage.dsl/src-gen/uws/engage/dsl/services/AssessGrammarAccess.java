@@ -227,7 +227,9 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	public class GameDescriptionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GameDescription");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSeriousGameKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Keyword cSeriousGameKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
+		private final Keyword cGameKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
 		private final Keyword cSGnameKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final RuleCall cSeparatorParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
@@ -275,18 +277,26 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//// ******************************* Game Description ******************************* //
 		//GameDescription:
-		//	"Serious-game" "SGname" Separator name=STRING "SGdeveloper" Separator dev=INT ("SGdesc" Separator desc=STRING)?
-		//	("SGageRange" Separator ageRange=Age)? ("SGlanguage" Separator lang=ID)? ("SGcountry" Separator country=ID)?
-		//	("SGgenre" Separator genre=STRING)? ("SGsubject" Separator subject=STRING)? ("SGpublic" Separator public=BOOL)? End;
+		//	("Serious-game" | "Game") "SGname" Separator name=STRING "SGdeveloper" Separator dev=INT ("SGdesc" Separator
+		//	desc=STRING)? ("SGageRange" Separator ageRange=Age)? ("SGlanguage" Separator lang=ID)? ("SGcountry" Separator
+		//	country=ID)? ("SGgenre" Separator genre=STRING)? ("SGsubject" Separator subject=STRING)? ("SGpublic" Separator
+		//	public=BOOL)? End;
 		public ParserRule getRule() { return rule; }
 
-		//"Serious-game" "SGname" Separator name=STRING "SGdeveloper" Separator dev=INT ("SGdesc" Separator desc=STRING)?
-		//("SGageRange" Separator ageRange=Age)? ("SGlanguage" Separator lang=ID)? ("SGcountry" Separator country=ID)?
-		//("SGgenre" Separator genre=STRING)? ("SGsubject" Separator subject=STRING)? ("SGpublic" Separator public=BOOL)? End
+		//("Serious-game" | "Game") "SGname" Separator name=STRING "SGdeveloper" Separator dev=INT ("SGdesc" Separator
+		//desc=STRING)? ("SGageRange" Separator ageRange=Age)? ("SGlanguage" Separator lang=ID)? ("SGcountry" Separator
+		//country=ID)? ("SGgenre" Separator genre=STRING)? ("SGsubject" Separator subject=STRING)? ("SGpublic" Separator
+		//public=BOOL)? End
 		public Group getGroup() { return cGroup; }
 
+		//"Serious-game" | "Game"
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+
 		//"Serious-game"
-		public Keyword getSeriousGameKeyword_0() { return cSeriousGameKeyword_0; }
+		public Keyword getSeriousGameKeyword_0_0() { return cSeriousGameKeyword_0_0; }
+
+		//"Game"
+		public Keyword getGameKeyword_0_1() { return cGameKeyword_0_1; }
 
 		//"SGname"
 		public Keyword getSGnameKeyword_1() { return cSGnameKeyword_1; }
@@ -490,12 +500,14 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cSeparatorParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cTypeTypeParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		private final Assignment cQuestionAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cQuestionSTRINGTerminalRuleCall_3_0 = (RuleCall)cQuestionAssignment_3.eContents().get(0);
 		
 		//Characteristic:
-		//	name=ID Separator type=Type;
+		//	name=ID Separator? type=Type question=STRING?;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID Separator type=Type
+		//name=ID Separator? type=Type question=STRING?
 		public Group getGroup() { return cGroup; }
 
 		//name=ID
@@ -504,7 +516,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 
-		//Separator
+		//Separator?
 		public RuleCall getSeparatorParserRuleCall_1() { return cSeparatorParserRuleCall_1; }
 
 		//type=Type
@@ -512,26 +524,40 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 
 		//Type
 		public RuleCall getTypeTypeParserRuleCall_2_0() { return cTypeTypeParserRuleCall_2_0; }
+
+		//question=STRING?
+		public Assignment getQuestionAssignment_3() { return cQuestionAssignment_3; }
+
+		//STRING
+		public RuleCall getQuestionSTRINGTerminalRuleCall_3_0() { return cQuestionSTRINGTerminalRuleCall_3_0; }
 	}
 
 	public class LearningOutcomesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "LearningOutcomes");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cLearningOutcomesKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Keyword cLearningOutcomesKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
+		private final Keyword cScoresKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
 		private final Assignment cOutcomesAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cOutcomesOutcomeParserRuleCall_1_0 = (RuleCall)cOutcomesAssignment_1.eContents().get(0);
 		private final RuleCall cEndParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//// ******************************* Learning Outcomes ******************************* //
 		//LearningOutcomes:
-		//	"Learning-outcomes" outcomes+=Outcome+ End;
+		//	("Learning-outcomes" | "Scores") outcomes+=Outcome+ End;
 		public ParserRule getRule() { return rule; }
 
-		//"Learning-outcomes" outcomes+=Outcome+ End
+		//("Learning-outcomes" | "Scores") outcomes+=Outcome+ End
 		public Group getGroup() { return cGroup; }
 
+		//"Learning-outcomes" | "Scores"
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+
 		//"Learning-outcomes"
-		public Keyword getLearningOutcomesKeyword_0() { return cLearningOutcomesKeyword_0; }
+		public Keyword getLearningOutcomesKeyword_0_0() { return cLearningOutcomesKeyword_0_0; }
+
+		//"Scores"
+		public Keyword getScoresKeyword_0_1() { return cScoresKeyword_0_1; }
 
 		//outcomes+=Outcome+
 		public Assignment getOutcomesAssignment_1() { return cOutcomesAssignment_1; }
@@ -626,21 +652,29 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	public class FeedbackMessagesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FeedbackMessages");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cFeedbackMessagesKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Keyword cFeedbackMessagesKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
+		private final Keyword cFeedbackKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
 		private final Assignment cFeedbackMsgsAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cFeedbackMsgsFeedbackParserRuleCall_1_0 = (RuleCall)cFeedbackMsgsAssignment_1.eContents().get(0);
 		private final RuleCall cEndParserRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		
 		//// ******************************* Feedback Messages ******************************* //
 		//FeedbackMessages:
-		//	"Feedback-messages" feedbackMsgs+=Feedback+ End;
+		//	("Feedback-messages" | "Feedback") feedbackMsgs+=Feedback+ End;
 		public ParserRule getRule() { return rule; }
 
-		//"Feedback-messages" feedbackMsgs+=Feedback+ End
+		//("Feedback-messages" | "Feedback") feedbackMsgs+=Feedback+ End
 		public Group getGroup() { return cGroup; }
 
+		//"Feedback-messages" | "Feedback"
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+
 		//"Feedback-messages"
-		public Keyword getFeedbackMessagesKeyword_0() { return cFeedbackMessagesKeyword_0; }
+		public Keyword getFeedbackMessagesKeyword_0_0() { return cFeedbackMessagesKeyword_0_0; }
+
+		//"Feedback"
+		public Keyword getFeedbackKeyword_0_1() { return cFeedbackKeyword_0_1; }
 
 		//feedbackMsgs+=Feedback+
 		public Assignment getFeedbackMsgsAssignment_1() { return cFeedbackMsgsAssignment_1; }
@@ -732,12 +766,13 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cNeutralKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
 		private final Keyword cBadgeKeyword_3 = (Keyword)cAlternatives.eContents().get(3);
 		private final Keyword cHintKeyword_4 = (Keyword)cAlternatives.eContents().get(4);
+		private final Keyword cAdaptationKeyword_5 = (Keyword)cAlternatives.eContents().get(5);
 		
 		//TypeFeedback:
-		//	"positive" | "negative" | "neutral" | "badge" | "hint";
+		//	"positive" | "negative" | "neutral" | "badge" | "hint" | "adaptation";
 		public ParserRule getRule() { return rule; }
 
-		//"positive" | "negative" | "neutral" | "badge" | "hint"
+		//"positive" | "negative" | "neutral" | "badge" | "hint" | "adaptation"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"positive"
@@ -754,6 +789,9 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"hint"
 		public Keyword getHintKeyword_4() { return cHintKeyword_4; }
+
+		//"adaptation"
+		public Keyword getAdaptationKeyword_5() { return cAdaptationKeyword_5; }
 	}
 
 	public class EvidenceModelElements extends AbstractParserRuleElementFinder {
@@ -1082,12 +1120,14 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFeedbackFeedbackIDTerminalRuleCall_1_0_1 = (RuleCall)cFeedbackFeedbackCrossReference_1_0.eContents().get(1);
 		private final Assignment cImmediateAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final Keyword cImmediateImmediateKeyword_2_0 = (Keyword)cImmediateAssignment_2.eContents().get(0);
+		private final Assignment cDelayedAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final Keyword cDelayedDelayedKeyword_3_0 = (Keyword)cDelayedAssignment_3.eContents().get(0);
 		
 		//TriggerFeedback:
-		//	":" feedback=[Feedback] immediate?="immediate"?;
+		//	":" feedback=[Feedback] immediate?="immediate"? delayed?="delayed"?;
 		public ParserRule getRule() { return rule; }
 
-		//":" feedback=[Feedback] immediate?="immediate"?
+		//":" feedback=[Feedback] immediate?="immediate"? delayed?="delayed"?
 		public Group getGroup() { return cGroup; }
 
 		//":"
@@ -1107,6 +1147,12 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"immediate"
 		public Keyword getImmediateImmediateKeyword_2_0() { return cImmediateImmediateKeyword_2_0; }
+
+		//delayed?="delayed"?
+		public Assignment getDelayedAssignment_3() { return cDelayedAssignment_3; }
+
+		//"delayed"
+		public Keyword getDelayedDelayedKeyword_3_0() { return cDelayedDelayedKeyword_3_0; }
 	}
 
 	public class ActionElements extends AbstractParserRuleElementFinder {
@@ -1124,17 +1170,21 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		private final Assignment cDescAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cDescSTRINGTerminalRuleCall_5_0 = (RuleCall)cDescAssignment_5.eContents().get(0);
-		private final Assignment cPointsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cPointsPointsParserRuleCall_6_0 = (RuleCall)cPointsAssignment_6.eContents().get(0);
-		private final Assignment cReactionsAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cReactionsReactionsParserRuleCall_7_0 = (RuleCall)cReactionsAssignment_7.eContents().get(0);
-		private final RuleCall cEndParserRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
+		private final Assignment cParamsInAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cParamsInParamsInParserRuleCall_6_0 = (RuleCall)cParamsInAssignment_6.eContents().get(0);
+		private final Assignment cPointsAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cPointsPointsParserRuleCall_7_0 = (RuleCall)cPointsAssignment_7.eContents().get(0);
+		private final Assignment cReactionsAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cReactionsReactionsParserRuleCall_8_0 = (RuleCall)cReactionsAssignment_8.eContents().get(0);
+		private final RuleCall cEndParserRuleCall_9 = (RuleCall)cGroup.eContents().get(9);
 		
 		//Action:
-		//	name=ID "(" params+=Parameter ("," params+=Parameter)* ")" desc=STRING points+=Points+ reactions=Reactions? End;
+		//	name=ID "(" params+=Parameter ("," params+=Parameter)* ")" desc=STRING paramsIn=ParamsIn? points+=Points+
+		//	reactions=Reactions? End;
 		public ParserRule getRule() { return rule; }
 
-		//name=ID "(" params+=Parameter ("," params+=Parameter)* ")" desc=STRING points+=Points+ reactions=Reactions? End
+		//name=ID "(" params+=Parameter ("," params+=Parameter)* ")" desc=STRING paramsIn=ParamsIn? points+=Points+
+		//reactions=Reactions? End
 		public Group getGroup() { return cGroup; }
 
 		//name=ID
@@ -1173,20 +1223,98 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getDescSTRINGTerminalRuleCall_5_0() { return cDescSTRINGTerminalRuleCall_5_0; }
 
+		//paramsIn=ParamsIn?
+		public Assignment getParamsInAssignment_6() { return cParamsInAssignment_6; }
+
+		//ParamsIn
+		public RuleCall getParamsInParamsInParserRuleCall_6_0() { return cParamsInParamsInParserRuleCall_6_0; }
+
 		//points+=Points+
-		public Assignment getPointsAssignment_6() { return cPointsAssignment_6; }
+		public Assignment getPointsAssignment_7() { return cPointsAssignment_7; }
 
 		//Points
-		public RuleCall getPointsPointsParserRuleCall_6_0() { return cPointsPointsParserRuleCall_6_0; }
+		public RuleCall getPointsPointsParserRuleCall_7_0() { return cPointsPointsParserRuleCall_7_0; }
 
 		//reactions=Reactions?
-		public Assignment getReactionsAssignment_7() { return cReactionsAssignment_7; }
+		public Assignment getReactionsAssignment_8() { return cReactionsAssignment_8; }
 
 		//Reactions
-		public RuleCall getReactionsReactionsParserRuleCall_7_0() { return cReactionsReactionsParserRuleCall_7_0; }
+		public RuleCall getReactionsReactionsParserRuleCall_8_0() { return cReactionsReactionsParserRuleCall_8_0; }
 
 		//End
-		public RuleCall getEndParserRuleCall_8() { return cEndParserRuleCall_8; }
+		public RuleCall getEndParserRuleCall_9() { return cEndParserRuleCall_9; }
+	}
+
+	public class ParamsInElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ParamsIn");
+		private final Assignment cParamInAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cParamInParamInParserRuleCall_0 = (RuleCall)cParamInAssignment.eContents().get(0);
+		
+		//ParamsIn:
+		//	paramIn+=ParamIn+;
+		public ParserRule getRule() { return rule; }
+
+		//paramIn+=ParamIn+
+		public Assignment getParamInAssignment() { return cParamInAssignment; }
+
+		//ParamIn
+		public RuleCall getParamInParamInParserRuleCall_0() { return cParamInParamInParserRuleCall_0; }
+	}
+
+	public class ParamInElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ParamIn");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cParamAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final CrossReference cParamParameterCrossReference_0_0 = (CrossReference)cParamAssignment_0.eContents().get(0);
+		private final RuleCall cParamParameterIDTerminalRuleCall_0_0_1 = (RuleCall)cParamParameterCrossReference_0_0.eContents().get(1);
+		private final Keyword cInKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cValuesPossAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cValuesPossParamParserRuleCall_2_0 = (RuleCall)cValuesPossAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cValuesPossAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cValuesPossParamParserRuleCall_3_1_0 = (RuleCall)cValuesPossAssignment_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//ParamIn:
+		//	param=[Parameter] "in {" valuesPoss+=Param ("," valuesPoss+=Param)* "}";
+		public ParserRule getRule() { return rule; }
+
+		//param=[Parameter] "in {" valuesPoss+=Param ("," valuesPoss+=Param)* "}"
+		public Group getGroup() { return cGroup; }
+
+		//param=[Parameter]
+		public Assignment getParamAssignment_0() { return cParamAssignment_0; }
+
+		//[Parameter]
+		public CrossReference getParamParameterCrossReference_0_0() { return cParamParameterCrossReference_0_0; }
+
+		//ID
+		public RuleCall getParamParameterIDTerminalRuleCall_0_0_1() { return cParamParameterIDTerminalRuleCall_0_0_1; }
+
+		//"in {"
+		public Keyword getInKeyword_1() { return cInKeyword_1; }
+
+		//valuesPoss+=Param
+		public Assignment getValuesPossAssignment_2() { return cValuesPossAssignment_2; }
+
+		//Param
+		public RuleCall getValuesPossParamParserRuleCall_2_0() { return cValuesPossParamParserRuleCall_2_0; }
+
+		//("," valuesPoss+=Param)*
+		public Group getGroup_3() { return cGroup_3; }
+
+		//","
+		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
+
+		//valuesPoss+=Param
+		public Assignment getValuesPossAssignment_3_1() { return cValuesPossAssignment_3_1; }
+
+		//Param
+		public RuleCall getValuesPossParamParserRuleCall_3_1_0() { return cValuesPossParamParserRuleCall_3_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 
 	public class ParameterElements extends AbstractParserRuleElementFinder {
@@ -1580,12 +1708,14 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cFeedbackFeedbackIDTerminalRuleCall_1_2_0_1 = (RuleCall)cFeedbackFeedbackCrossReference_1_2_0.eContents().get(1);
 		private final Assignment cImmediateAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
 		private final Keyword cImmediateImmediateKeyword_1_3_0 = (Keyword)cImmediateAssignment_1_3.eContents().get(0);
+		private final Assignment cDelayedAssignment_1_4 = (Assignment)cGroup_1.eContents().get(4);
+		private final Keyword cDelayedDelayedKeyword_1_4_0 = (Keyword)cDelayedAssignment_1_4.eContents().get(0);
 		
 		//Reaction:
-		//	paramsC=ParamCondition | pointsC=PointsCondition ":" feedback=[Feedback] immediate?="immediate"?;
+		//	paramsC=ParamCondition | pointsC=PointsCondition ":" feedback=[Feedback] immediate?="immediate"? delayed?="delayed"?;
 		public ParserRule getRule() { return rule; }
 
-		//paramsC=ParamCondition | pointsC=PointsCondition ":" feedback=[Feedback] immediate?="immediate"?
+		//paramsC=ParamCondition | pointsC=PointsCondition ":" feedback=[Feedback] immediate?="immediate"? delayed?="delayed"?
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//paramsC=ParamCondition
@@ -1594,7 +1724,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		//ParamCondition
 		public RuleCall getParamsCParamConditionParserRuleCall_0_0() { return cParamsCParamConditionParserRuleCall_0_0; }
 
-		//pointsC=PointsCondition ":" feedback=[Feedback] immediate?="immediate"?
+		//pointsC=PointsCondition ":" feedback=[Feedback] immediate?="immediate"? delayed?="delayed"?
 		public Group getGroup_1() { return cGroup_1; }
 
 		//pointsC=PointsCondition
@@ -1620,6 +1750,12 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 
 		//"immediate"
 		public Keyword getImmediateImmediateKeyword_1_3_0() { return cImmediateImmediateKeyword_1_3_0; }
+
+		//delayed?="delayed"?
+		public Assignment getDelayedAssignment_1_4() { return cDelayedAssignment_1_4; }
+
+		//"delayed"
+		public Keyword getDelayedDelayedKeyword_1_4_0() { return cDelayedDelayedKeyword_1_4_0; }
 	}
 
 	public class ParamConditionElements extends AbstractParserRuleElementFinder {
@@ -2145,6 +2281,8 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	private final UpdateScoreElements pUpdateScore;
 	private final TriggerFeedbackElements pTriggerFeedback;
 	private final ActionElements pAction;
+	private final ParamsInElements pParamsIn;
+	private final ParamInElements pParamIn;
 	private final ParameterElements pParameter;
 	private final PointsElements pPoints;
 	private final OutcomesPointsElements pOutcomesPoints;
@@ -2206,6 +2344,8 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 		this.pUpdateScore = new UpdateScoreElements();
 		this.pTriggerFeedback = new TriggerFeedbackElements();
 		this.pAction = new ActionElements();
+		this.pParamsIn = new ParamsInElements();
+		this.pParamIn = new ParamInElements();
 		this.pParameter = new ParameterElements();
 		this.pPoints = new PointsElements();
 		this.pOutcomesPoints = new OutcomesPointsElements();
@@ -2323,9 +2463,10 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// ******************************* Game Description ******************************* //
 	//GameDescription:
-	//	"Serious-game" "SGname" Separator name=STRING "SGdeveloper" Separator dev=INT ("SGdesc" Separator desc=STRING)?
-	//	("SGageRange" Separator ageRange=Age)? ("SGlanguage" Separator lang=ID)? ("SGcountry" Separator country=ID)?
-	//	("SGgenre" Separator genre=STRING)? ("SGsubject" Separator subject=STRING)? ("SGpublic" Separator public=BOOL)? End;
+	//	("Serious-game" | "Game") "SGname" Separator name=STRING "SGdeveloper" Separator dev=INT ("SGdesc" Separator
+	//	desc=STRING)? ("SGageRange" Separator ageRange=Age)? ("SGlanguage" Separator lang=ID)? ("SGcountry" Separator
+	//	country=ID)? ("SGgenre" Separator genre=STRING)? ("SGsubject" Separator subject=STRING)? ("SGpublic" Separator
+	//	public=BOOL)? End;
 	public GameDescriptionElements getGameDescriptionAccess() {
 		return pGameDescription;
 	}
@@ -2356,7 +2497,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Characteristic:
-	//	name=ID Separator type=Type;
+	//	name=ID Separator? type=Type question=STRING?;
 	public CharacteristicElements getCharacteristicAccess() {
 		return pCharacteristic;
 	}
@@ -2367,7 +2508,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// ******************************* Learning Outcomes ******************************* //
 	//LearningOutcomes:
-	//	"Learning-outcomes" outcomes+=Outcome+ End;
+	//	("Learning-outcomes" | "Scores") outcomes+=Outcome+ End;
 	public LearningOutcomesElements getLearningOutcomesAccess() {
 		return pLearningOutcomes;
 	}
@@ -2398,7 +2539,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 
 	//// ******************************* Feedback Messages ******************************* //
 	//FeedbackMessages:
-	//	"Feedback-messages" feedbackMsgs+=Feedback+ End;
+	//	("Feedback-messages" | "Feedback") feedbackMsgs+=Feedback+ End;
 	public FeedbackMessagesElements getFeedbackMessagesAccess() {
 		return pFeedbackMessages;
 	}
@@ -2418,7 +2559,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TypeFeedback:
-	//	"positive" | "negative" | "neutral" | "badge" | "hint";
+	//	"positive" | "negative" | "neutral" | "badge" | "hint" | "adaptation";
 	public TypeFeedbackElements getTypeFeedbackAccess() {
 		return pTypeFeedback;
 	}
@@ -2509,7 +2650,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//TriggerFeedback:
-	//	":" feedback=[Feedback] immediate?="immediate"?;
+	//	":" feedback=[Feedback] immediate?="immediate"? delayed?="delayed"?;
 	public TriggerFeedbackElements getTriggerFeedbackAccess() {
 		return pTriggerFeedback;
 	}
@@ -2519,13 +2660,34 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Action:
-	//	name=ID "(" params+=Parameter ("," params+=Parameter)* ")" desc=STRING points+=Points+ reactions=Reactions? End;
+	//	name=ID "(" params+=Parameter ("," params+=Parameter)* ")" desc=STRING paramsIn=ParamsIn? points+=Points+
+	//	reactions=Reactions? End;
 	public ActionElements getActionAccess() {
 		return pAction;
 	}
 	
 	public ParserRule getActionRule() {
 		return getActionAccess().getRule();
+	}
+
+	//ParamsIn:
+	//	paramIn+=ParamIn+;
+	public ParamsInElements getParamsInAccess() {
+		return pParamsIn;
+	}
+	
+	public ParserRule getParamsInRule() {
+		return getParamsInAccess().getRule();
+	}
+
+	//ParamIn:
+	//	param=[Parameter] "in {" valuesPoss+=Param ("," valuesPoss+=Param)* "}";
+	public ParamInElements getParamInAccess() {
+		return pParamIn;
+	}
+	
+	public ParserRule getParamInRule() {
+		return getParamInAccess().getRule();
 	}
 
 	//Parameter:
@@ -2630,7 +2792,7 @@ public class AssessGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Reaction:
-	//	paramsC=ParamCondition | pointsC=PointsCondition ":" feedback=[Feedback] immediate?="immediate"?;
+	//	paramsC=ParamCondition | pointsC=PointsCondition ":" feedback=[Feedback] immediate?="immediate"? delayed?="delayed"?;
 	public ReactionElements getReactionAccess() {
 		return pReaction;
 	}

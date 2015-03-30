@@ -44,6 +44,7 @@
     <genClasses ecoreClass="Assess.ecore#//Characteristic">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Characteristic/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//Characteristic/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Characteristic/question"/>
     </genClasses>
     <genClasses ecoreClass="Assess.ecore#//LearningOutcomes">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//LearningOutcomes/outcomes"/>
@@ -110,13 +111,22 @@
     <genClasses ecoreClass="Assess.ecore#//TriggerFeedback">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Assess.ecore#//TriggerFeedback/feedback"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//TriggerFeedback/immediate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//TriggerFeedback/delayed"/>
     </genClasses>
     <genClasses ecoreClass="Assess.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Action/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//Action/params"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Action/desc"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//Action/paramsIn"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//Action/points"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//Action/reactions"/>
+    </genClasses>
+    <genClasses ecoreClass="Assess.ecore#//ParamsIn">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//ParamsIn/paramIn"/>
+    </genClasses>
+    <genClasses ecoreClass="Assess.ecore#//ParamIn">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Assess.ecore#//ParamIn/param"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//ParamIn/valuesPoss"/>
     </genClasses>
     <genClasses ecoreClass="Assess.ecore#//Parameter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Parameter/logOnly"/>
@@ -150,6 +160,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Assess.ecore#//Reaction/pointsC"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Assess.ecore#//Reaction/feedback"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Reaction/immediate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Assess.ecore#//Reaction/delayed"/>
     </genClasses>
     <genClasses ecoreClass="Assess.ecore#//ParamCondition">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Assess.ecore#//ParamCondition/params"/>

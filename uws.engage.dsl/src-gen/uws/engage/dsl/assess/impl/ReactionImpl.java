@@ -28,6 +28,7 @@ import uws.engage.dsl.assess.Reaction;
  *   <li>{@link uws.engage.dsl.assess.impl.ReactionImpl#getPointsC <em>Points C</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.ReactionImpl#getFeedback <em>Feedback</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.ReactionImpl#isImmediate <em>Immediate</em>}</li>
+ *   <li>{@link uws.engage.dsl.assess.impl.ReactionImpl#isDelayed <em>Delayed</em>}</li>
  * </ul>
  * </p>
  *
@@ -84,6 +85,26 @@ public class ReactionImpl extends MinimalEObjectImpl.Container implements Reacti
    * @ordered
    */
   protected boolean immediate = IMMEDIATE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isDelayed() <em>Delayed</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isDelayed()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean DELAYED_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isDelayed() <em>Delayed</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isDelayed()
+   * @generated
+   * @ordered
+   */
+  protected boolean delayed = DELAYED_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -273,6 +294,29 @@ public class ReactionImpl extends MinimalEObjectImpl.Container implements Reacti
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isDelayed()
+  {
+    return delayed;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDelayed(boolean newDelayed)
+  {
+    boolean oldDelayed = delayed;
+    delayed = newDelayed;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AssessPackage.REACTION__DELAYED, oldDelayed, delayed));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -305,6 +349,8 @@ public class ReactionImpl extends MinimalEObjectImpl.Container implements Reacti
         return basicGetFeedback();
       case AssessPackage.REACTION__IMMEDIATE:
         return isImmediate();
+      case AssessPackage.REACTION__DELAYED:
+        return isDelayed();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -330,6 +376,9 @@ public class ReactionImpl extends MinimalEObjectImpl.Container implements Reacti
         return;
       case AssessPackage.REACTION__IMMEDIATE:
         setImmediate((Boolean)newValue);
+        return;
+      case AssessPackage.REACTION__DELAYED:
+        setDelayed((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -357,6 +406,9 @@ public class ReactionImpl extends MinimalEObjectImpl.Container implements Reacti
       case AssessPackage.REACTION__IMMEDIATE:
         setImmediate(IMMEDIATE_EDEFAULT);
         return;
+      case AssessPackage.REACTION__DELAYED:
+        setDelayed(DELAYED_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -379,6 +431,8 @@ public class ReactionImpl extends MinimalEObjectImpl.Container implements Reacti
         return feedback != null;
       case AssessPackage.REACTION__IMMEDIATE:
         return immediate != IMMEDIATE_EDEFAULT;
+      case AssessPackage.REACTION__DELAYED:
+        return delayed != DELAYED_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -396,6 +450,8 @@ public class ReactionImpl extends MinimalEObjectImpl.Container implements Reacti
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (immediate: ");
     result.append(immediate);
+    result.append(", delayed: ");
+    result.append(delayed);
     result.append(')');
     return result.toString();
   }

@@ -23,6 +23,7 @@ import uws.engage.dsl.assess.TriggerFeedback;
  * <ul>
  *   <li>{@link uws.engage.dsl.assess.impl.TriggerFeedbackImpl#getFeedback <em>Feedback</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.TriggerFeedbackImpl#isImmediate <em>Immediate</em>}</li>
+ *   <li>{@link uws.engage.dsl.assess.impl.TriggerFeedbackImpl#isDelayed <em>Delayed</em>}</li>
  * </ul>
  * </p>
  *
@@ -59,6 +60,26 @@ public class TriggerFeedbackImpl extends MinimalEObjectImpl.Container implements
    * @ordered
    */
   protected boolean immediate = IMMEDIATE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isDelayed() <em>Delayed</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isDelayed()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean DELAYED_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isDelayed() <em>Delayed</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isDelayed()
+   * @generated
+   * @ordered
+   */
+  protected boolean delayed = DELAYED_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -152,6 +173,29 @@ public class TriggerFeedbackImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
+  public boolean isDelayed()
+  {
+    return delayed;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDelayed(boolean newDelayed)
+  {
+    boolean oldDelayed = delayed;
+    delayed = newDelayed;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AssessPackage.TRIGGER_FEEDBACK__DELAYED, oldDelayed, delayed));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -162,6 +206,8 @@ public class TriggerFeedbackImpl extends MinimalEObjectImpl.Container implements
         return basicGetFeedback();
       case AssessPackage.TRIGGER_FEEDBACK__IMMEDIATE:
         return isImmediate();
+      case AssessPackage.TRIGGER_FEEDBACK__DELAYED:
+        return isDelayed();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -181,6 +227,9 @@ public class TriggerFeedbackImpl extends MinimalEObjectImpl.Container implements
         return;
       case AssessPackage.TRIGGER_FEEDBACK__IMMEDIATE:
         setImmediate((Boolean)newValue);
+        return;
+      case AssessPackage.TRIGGER_FEEDBACK__DELAYED:
+        setDelayed((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -202,6 +251,9 @@ public class TriggerFeedbackImpl extends MinimalEObjectImpl.Container implements
       case AssessPackage.TRIGGER_FEEDBACK__IMMEDIATE:
         setImmediate(IMMEDIATE_EDEFAULT);
         return;
+      case AssessPackage.TRIGGER_FEEDBACK__DELAYED:
+        setDelayed(DELAYED_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -220,6 +272,8 @@ public class TriggerFeedbackImpl extends MinimalEObjectImpl.Container implements
         return feedback != null;
       case AssessPackage.TRIGGER_FEEDBACK__IMMEDIATE:
         return immediate != IMMEDIATE_EDEFAULT;
+      case AssessPackage.TRIGGER_FEEDBACK__DELAYED:
+        return delayed != DELAYED_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -237,6 +291,8 @@ public class TriggerFeedbackImpl extends MinimalEObjectImpl.Container implements
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (immediate: ");
     result.append(immediate);
+    result.append(", delayed: ");
+    result.append(delayed);
     result.append(')');
     return result.toString();
   }

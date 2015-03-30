@@ -34,7 +34,7 @@ Enum:
 
 // ******************************* Game Description ******************************* //
 GameDescription:
-	'Serious-game'
+	('Serious-game' | 'Game')
 		'SGname' Separator name=STRING
 		'SGdeveloper' Separator dev=INT
 		('SGdesc' Separator desc=STRING)?
@@ -60,13 +60,13 @@ PlayerDescription:
 ;
 
 Characteristic:
-	name=ID Separator type=Type
+	name=ID Separator? type=Type (question = STRING)?
 ;
 
 
 // ******************************* Learning Outcomes ******************************* //
 LearningOutcomes: 
-	'Learning-outcomes'
+	('Learning-outcomes' | 'Scores')
 		outcomes += Outcome+
 	End
 ;
@@ -83,7 +83,7 @@ TypeOutcome:
 // ******************************* Feedback Messages ******************************* //
 
 FeedbackMessages:
-	'Feedback-messages'
+	('Feedback-messages' | 'Feedback')
 		feedbackMsgs += Feedback+
 	End
 ;
@@ -93,7 +93,7 @@ Feedback:
 ;
 
 TypeFeedback:
-	'positive' |'negative' | 'neutral' | 'badge' | 'hint'
+	'positive' |'negative' | 'neutral' | 'badge' | 'hint' | 'adaptation'
 ;
 
 
@@ -145,15 +145,24 @@ UpdateScore:
 ;
 
 TriggerFeedback:
-	':' feedback=[Feedback] immediate ?= 'immediate'?
+	':' feedback=[Feedback] immediate ?= 'immediate'? delayed ?= 'delayed'?
 ;
 
 Action:
 	name=ID '('params += Parameter (',' params += Parameter)* ')'
 	desc = STRING
+	(paramsIn = ParamsIn)?
 		points += Points+
 		(reactions = Reactions)?
 	End
+;
+
+ParamsIn:
+	paramIn += ParamIn+
+;
+
+ParamIn:
+	param = [Parameter] "in {" valuesPoss += Param (',' valuesPoss += Param)* "}"
 ;
 
 Parameter:
@@ -201,7 +210,7 @@ Reactions:
 ;
 
 Reaction:
-	paramsC = ParamCondition | pointsC = PointsCondition  ':' feedback=[Feedback] immediate?= 'immediate'?
+	paramsC = ParamCondition | pointsC = PointsCondition  ':' feedback=[Feedback] immediate?= 'immediate'? delayed ?= 'delayed'?
 ;
 
 ParamCondition:

@@ -11,8 +11,8 @@ Serious-game
 End
 
 Player
-  age : Int
-  grade : String
+  age : Int "How old are you?"
+  grade : String "What grade are you in?"
   gender : Char
 End
 

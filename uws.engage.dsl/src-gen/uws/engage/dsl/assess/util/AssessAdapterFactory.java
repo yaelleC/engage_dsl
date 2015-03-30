@@ -31,8 +31,10 @@ import uws.engage.dsl.assess.Outcome;
 import uws.engage.dsl.assess.OutcomeValueLimit;
 import uws.engage.dsl.assess.OutcomesPoints;
 import uws.engage.dsl.assess.ParamCondition;
+import uws.engage.dsl.assess.ParamIn;
 import uws.engage.dsl.assess.Parameter;
 import uws.engage.dsl.assess.Params;
+import uws.engage.dsl.assess.ParamsIn;
 import uws.engage.dsl.assess.PlayerDescription;
 import uws.engage.dsl.assess.Point;
 import uws.engage.dsl.assess.Points;
@@ -221,6 +223,16 @@ public class AssessAdapterFactory extends AdapterFactoryImpl
       public Adapter caseAction(Action object)
       {
         return createActionAdapter();
+      }
+      @Override
+      public Adapter caseParamsIn(ParamsIn object)
+      {
+        return createParamsInAdapter();
+      }
+      @Override
+      public Adapter caseParamIn(ParamIn object)
+      {
+        return createParamInAdapter();
       }
       @Override
       public Adapter caseParameter(Parameter object)
@@ -655,6 +667,36 @@ public class AssessAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createActionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uws.engage.dsl.assess.ParamsIn <em>Params In</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uws.engage.dsl.assess.ParamsIn
+   * @generated
+   */
+  public Adapter createParamsInAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link uws.engage.dsl.assess.ParamIn <em>Param In</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see uws.engage.dsl.assess.ParamIn
+   * @generated
+   */
+  public Adapter createParamInAdapter()
   {
     return null;
   }

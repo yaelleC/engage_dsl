@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link uws.engage.dsl.assess.Action#getName <em>Name</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.Action#getParams <em>Params</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.Action#getDesc <em>Desc</em>}</li>
+ *   <li>{@link uws.engage.dsl.assess.Action#getParamsIn <em>Params In</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.Action#getPoints <em>Points</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.Action#getReactions <em>Reactions</em>}</li>
  * </ul>
@@ -95,6 +96,32 @@ public interface Action extends EObject
    * @generated
    */
   void setDesc(String value);
+
+  /**
+   * Returns the value of the '<em><b>Params In</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Params In</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Params In</em>' containment reference.
+   * @see #setParamsIn(ParamsIn)
+   * @see uws.engage.dsl.assess.AssessPackage#getAction_ParamsIn()
+   * @model containment="true"
+   * @generated
+   */
+  ParamsIn getParamsIn();
+
+  /**
+   * Sets the value of the '{@link uws.engage.dsl.assess.Action#getParamsIn <em>Params In</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Params In</em>' containment reference.
+   * @see #getParamsIn()
+   * @generated
+   */
+  void setParamsIn(ParamsIn value);
 
   /**
    * Returns the value of the '<em><b>Points</b></em>' containment reference list.

@@ -24,6 +24,7 @@ import uws.engage.dsl.assess.Type;
  * <ul>
  *   <li>{@link uws.engage.dsl.assess.impl.CharacteristicImpl#getName <em>Name</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.CharacteristicImpl#getType <em>Type</em>}</li>
+ *   <li>{@link uws.engage.dsl.assess.impl.CharacteristicImpl#getQuestion <em>Question</em>}</li>
  * </ul>
  * </p>
  *
@@ -60,6 +61,26 @@ public class CharacteristicImpl extends MinimalEObjectImpl.Container implements 
    * @ordered
    */
   protected Type type;
+
+  /**
+   * The default value of the '{@link #getQuestion() <em>Question</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getQuestion()
+   * @generated
+   * @ordered
+   */
+  protected static final String QUESTION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getQuestion() <em>Question</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getQuestion()
+   * @generated
+   * @ordered
+   */
+  protected String question = QUESTION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -158,6 +179,29 @@ public class CharacteristicImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getQuestion()
+  {
+    return question;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setQuestion(String newQuestion)
+  {
+    String oldQuestion = question;
+    question = newQuestion;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AssessPackage.CHARACTERISTIC__QUESTION, oldQuestion, question));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -183,6 +227,8 @@ public class CharacteristicImpl extends MinimalEObjectImpl.Container implements 
         return getName();
       case AssessPackage.CHARACTERISTIC__TYPE:
         return getType();
+      case AssessPackage.CHARACTERISTIC__QUESTION:
+        return getQuestion();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -202,6 +248,9 @@ public class CharacteristicImpl extends MinimalEObjectImpl.Container implements 
         return;
       case AssessPackage.CHARACTERISTIC__TYPE:
         setType((Type)newValue);
+        return;
+      case AssessPackage.CHARACTERISTIC__QUESTION:
+        setQuestion((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -223,6 +272,9 @@ public class CharacteristicImpl extends MinimalEObjectImpl.Container implements 
       case AssessPackage.CHARACTERISTIC__TYPE:
         setType((Type)null);
         return;
+      case AssessPackage.CHARACTERISTIC__QUESTION:
+        setQuestion(QUESTION_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -241,6 +293,8 @@ public class CharacteristicImpl extends MinimalEObjectImpl.Container implements 
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case AssessPackage.CHARACTERISTIC__TYPE:
         return type != null;
+      case AssessPackage.CHARACTERISTIC__QUESTION:
+        return QUESTION_EDEFAULT == null ? question != null : !QUESTION_EDEFAULT.equals(question);
     }
     return super.eIsSet(featureID);
   }
@@ -258,6 +312,8 @@ public class CharacteristicImpl extends MinimalEObjectImpl.Container implements 
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", question: ");
+    result.append(question);
     result.append(')');
     return result.toString();
   }

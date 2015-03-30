@@ -29,8 +29,10 @@ import uws.engage.dsl.assess.Outcome;
 import uws.engage.dsl.assess.OutcomeValueLimit;
 import uws.engage.dsl.assess.OutcomesPoints;
 import uws.engage.dsl.assess.ParamCondition;
+import uws.engage.dsl.assess.ParamIn;
 import uws.engage.dsl.assess.Parameter;
 import uws.engage.dsl.assess.Params;
+import uws.engage.dsl.assess.ParamsIn;
 import uws.engage.dsl.assess.PlayerDescription;
 import uws.engage.dsl.assess.Point;
 import uws.engage.dsl.assess.Points;
@@ -261,6 +263,20 @@ public class AssessSwitch<T> extends Switch<T>
       {
         Action action = (Action)theEObject;
         T result = caseAction(action);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AssessPackage.PARAMS_IN:
+      {
+        ParamsIn paramsIn = (ParamsIn)theEObject;
+        T result = caseParamsIn(paramsIn);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case AssessPackage.PARAM_IN:
+      {
+        ParamIn paramIn = (ParamIn)theEObject;
+        T result = caseParamIn(paramIn);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -735,6 +751,38 @@ public class AssessSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAction(Action object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Params In</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Params In</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseParamsIn(ParamsIn object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Param In</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Param In</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseParamIn(ParamIn object)
   {
     return null;
   }

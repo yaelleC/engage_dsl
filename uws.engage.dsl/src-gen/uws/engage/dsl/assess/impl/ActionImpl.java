@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import uws.engage.dsl.assess.Action;
 import uws.engage.dsl.assess.AssessPackage;
 import uws.engage.dsl.assess.Parameter;
+import uws.engage.dsl.assess.ParamsIn;
 import uws.engage.dsl.assess.Points;
 import uws.engage.dsl.assess.Reactions;
 
@@ -34,6 +35,7 @@ import uws.engage.dsl.assess.Reactions;
  *   <li>{@link uws.engage.dsl.assess.impl.ActionImpl#getName <em>Name</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.ActionImpl#getParams <em>Params</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.ActionImpl#getDesc <em>Desc</em>}</li>
+ *   <li>{@link uws.engage.dsl.assess.impl.ActionImpl#getParamsIn <em>Params In</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.ActionImpl#getPoints <em>Points</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.impl.ActionImpl#getReactions <em>Reactions</em>}</li>
  * </ul>
@@ -92,6 +94,16 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * @ordered
    */
   protected String desc = DESC_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getParamsIn() <em>Params In</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getParamsIn()
+   * @generated
+   * @ordered
+   */
+  protected ParamsIn paramsIn;
 
   /**
    * The cached value of the '{@link #getPoints() <em>Points</em>}' containment reference list.
@@ -199,6 +211,54 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * <!-- end-user-doc -->
    * @generated
    */
+  public ParamsIn getParamsIn()
+  {
+    return paramsIn;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetParamsIn(ParamsIn newParamsIn, NotificationChain msgs)
+  {
+    ParamsIn oldParamsIn = paramsIn;
+    paramsIn = newParamsIn;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, AssessPackage.ACTION__PARAMS_IN, oldParamsIn, newParamsIn);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setParamsIn(ParamsIn newParamsIn)
+  {
+    if (newParamsIn != paramsIn)
+    {
+      NotificationChain msgs = null;
+      if (paramsIn != null)
+        msgs = ((InternalEObject)paramsIn).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - AssessPackage.ACTION__PARAMS_IN, null, msgs);
+      if (newParamsIn != null)
+        msgs = ((InternalEObject)newParamsIn).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - AssessPackage.ACTION__PARAMS_IN, null, msgs);
+      msgs = basicSetParamsIn(newParamsIn, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, AssessPackage.ACTION__PARAMS_IN, newParamsIn, newParamsIn));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Points> getPoints()
   {
     if (points == null)
@@ -268,6 +328,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
     {
       case AssessPackage.ACTION__PARAMS:
         return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
+      case AssessPackage.ACTION__PARAMS_IN:
+        return basicSetParamsIn(null, msgs);
       case AssessPackage.ACTION__POINTS:
         return ((InternalEList<?>)getPoints()).basicRemove(otherEnd, msgs);
       case AssessPackage.ACTION__REACTIONS:
@@ -292,6 +354,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
         return getParams();
       case AssessPackage.ACTION__DESC:
         return getDesc();
+      case AssessPackage.ACTION__PARAMS_IN:
+        return getParamsIn();
       case AssessPackage.ACTION__POINTS:
         return getPoints();
       case AssessPackage.ACTION__REACTIONS:
@@ -320,6 +384,9 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
         return;
       case AssessPackage.ACTION__DESC:
         setDesc((String)newValue);
+        return;
+      case AssessPackage.ACTION__PARAMS_IN:
+        setParamsIn((ParamsIn)newValue);
         return;
       case AssessPackage.ACTION__POINTS:
         getPoints().clear();
@@ -351,6 +418,9 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
       case AssessPackage.ACTION__DESC:
         setDesc(DESC_EDEFAULT);
         return;
+      case AssessPackage.ACTION__PARAMS_IN:
+        setParamsIn((ParamsIn)null);
+        return;
       case AssessPackage.ACTION__POINTS:
         getPoints().clear();
         return;
@@ -377,6 +447,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
         return params != null && !params.isEmpty();
       case AssessPackage.ACTION__DESC:
         return DESC_EDEFAULT == null ? desc != null : !DESC_EDEFAULT.equals(desc);
+      case AssessPackage.ACTION__PARAMS_IN:
+        return paramsIn != null;
       case AssessPackage.ACTION__POINTS:
         return points != null && !points.isEmpty();
       case AssessPackage.ACTION__REACTIONS:

@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link uws.engage.dsl.assess.TriggerFeedback#getFeedback <em>Feedback</em>}</li>
  *   <li>{@link uws.engage.dsl.assess.TriggerFeedback#isImmediate <em>Immediate</em>}</li>
+ *   <li>{@link uws.engage.dsl.assess.TriggerFeedback#isDelayed <em>Delayed</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,5 +75,31 @@ public interface TriggerFeedback extends EObject
    * @generated
    */
   void setImmediate(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Delayed</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Delayed</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Delayed</em>' attribute.
+   * @see #setDelayed(boolean)
+   * @see uws.engage.dsl.assess.AssessPackage#getTriggerFeedback_Delayed()
+   * @model
+   * @generated
+   */
+  boolean isDelayed();
+
+  /**
+   * Sets the value of the '{@link uws.engage.dsl.assess.TriggerFeedback#isDelayed <em>Delayed</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Delayed</em>' attribute.
+   * @see #isDelayed()
+   * @generated
+   */
+  void setDelayed(boolean value);
 
 } // TriggerFeedback

@@ -32,8 +32,10 @@ import uws.engage.dsl.assess.Outcome;
 import uws.engage.dsl.assess.OutcomeValueLimit;
 import uws.engage.dsl.assess.OutcomesPoints;
 import uws.engage.dsl.assess.ParamCondition;
+import uws.engage.dsl.assess.ParamIn;
 import uws.engage.dsl.assess.Parameter;
 import uws.engage.dsl.assess.Params;
+import uws.engage.dsl.assess.ParamsIn;
 import uws.engage.dsl.assess.PlayerDescription;
 import uws.engage.dsl.assess.Point;
 import uws.engage.dsl.assess.Points;
@@ -211,6 +213,20 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    * @generated
    */
   private EClass actionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass paramsInEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass paramInEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -702,6 +718,16 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
   public EReference getCharacteristic_Type()
   {
     return (EReference)characteristicEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getCharacteristic_Question()
+  {
+    return (EAttribute)characteristicEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1229,6 +1255,16 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getTriggerFeedback_Delayed()
+  {
+    return (EAttribute)triggerFeedbackEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getAction()
   {
     return actionEClass;
@@ -1269,7 +1305,7 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAction_Points()
+  public EReference getAction_ParamsIn()
   {
     return (EReference)actionEClass.getEStructuralFeatures().get(3);
   }
@@ -1279,9 +1315,69 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAction_Reactions()
+  public EReference getAction_Points()
   {
     return (EReference)actionEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAction_Reactions()
+  {
+    return (EReference)actionEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getParamsIn()
+  {
+    return paramsInEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getParamsIn_ParamIn()
+  {
+    return (EReference)paramsInEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getParamIn()
+  {
+    return paramInEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getParamIn_Param()
+  {
+    return (EReference)paramInEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getParamIn_ValuesPoss()
+  {
+    return (EAttribute)paramInEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1542,6 +1638,16 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
   public EAttribute getReaction_Immediate()
   {
     return (EAttribute)reactionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getReaction_Delayed()
+  {
+    return (EAttribute)reactionEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -2001,6 +2107,7 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
     characteristicEClass = createEClass(CHARACTERISTIC);
     createEAttribute(characteristicEClass, CHARACTERISTIC__NAME);
     createEReference(characteristicEClass, CHARACTERISTIC__TYPE);
+    createEAttribute(characteristicEClass, CHARACTERISTIC__QUESTION);
 
     learningOutcomesEClass = createEClass(LEARNING_OUTCOMES);
     createEReference(learningOutcomesEClass, LEARNING_OUTCOMES__OUTCOMES);
@@ -2067,13 +2174,22 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
     triggerFeedbackEClass = createEClass(TRIGGER_FEEDBACK);
     createEReference(triggerFeedbackEClass, TRIGGER_FEEDBACK__FEEDBACK);
     createEAttribute(triggerFeedbackEClass, TRIGGER_FEEDBACK__IMMEDIATE);
+    createEAttribute(triggerFeedbackEClass, TRIGGER_FEEDBACK__DELAYED);
 
     actionEClass = createEClass(ACTION);
     createEAttribute(actionEClass, ACTION__NAME);
     createEReference(actionEClass, ACTION__PARAMS);
     createEAttribute(actionEClass, ACTION__DESC);
+    createEReference(actionEClass, ACTION__PARAMS_IN);
     createEReference(actionEClass, ACTION__POINTS);
     createEReference(actionEClass, ACTION__REACTIONS);
+
+    paramsInEClass = createEClass(PARAMS_IN);
+    createEReference(paramsInEClass, PARAMS_IN__PARAM_IN);
+
+    paramInEClass = createEClass(PARAM_IN);
+    createEReference(paramInEClass, PARAM_IN__PARAM);
+    createEAttribute(paramInEClass, PARAM_IN__VALUES_POSS);
 
     parameterEClass = createEClass(PARAMETER);
     createEAttribute(parameterEClass, PARAMETER__LOG_ONLY);
@@ -2107,6 +2223,7 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
     createEReference(reactionEClass, REACTION__POINTS_C);
     createEReference(reactionEClass, REACTION__FEEDBACK);
     createEAttribute(reactionEClass, REACTION__IMMEDIATE);
+    createEAttribute(reactionEClass, REACTION__DELAYED);
 
     paramConditionEClass = createEClass(PARAM_CONDITION);
     createEReference(paramConditionEClass, PARAM_CONDITION__PARAMS);
@@ -2226,6 +2343,7 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
     initEClass(characteristicEClass, Characteristic.class, "Characteristic", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getCharacteristic_Name(), ecorePackage.getEString(), "name", null, 0, 1, Characteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCharacteristic_Type(), this.getType(), null, "type", null, 0, 1, Characteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getCharacteristic_Question(), ecorePackage.getEString(), "question", null, 0, 1, Characteristic.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(learningOutcomesEClass, LearningOutcomes.class, "LearningOutcomes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getLearningOutcomes_Outcomes(), this.getOutcome(), null, "outcomes", null, 0, -1, LearningOutcomes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2292,13 +2410,22 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
     initEClass(triggerFeedbackEClass, TriggerFeedback.class, "TriggerFeedback", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTriggerFeedback_Feedback(), this.getFeedback(), null, "feedback", null, 0, 1, TriggerFeedback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTriggerFeedback_Immediate(), ecorePackage.getEBoolean(), "immediate", null, 0, 1, TriggerFeedback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTriggerFeedback_Delayed(), ecorePackage.getEBoolean(), "delayed", null, 0, 1, TriggerFeedback.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAction_Params(), this.getParameter(), null, "params", null, 0, -1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAction_Desc(), ecorePackage.getEString(), "desc", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAction_ParamsIn(), this.getParamsIn(), null, "paramsIn", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAction_Points(), this.getPoints(), null, "points", null, 0, -1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAction_Reactions(), this.getReactions(), null, "reactions", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(paramsInEClass, ParamsIn.class, "ParamsIn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getParamsIn_ParamIn(), this.getParamIn(), null, "paramIn", null, 0, -1, ParamsIn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(paramInEClass, ParamIn.class, "ParamIn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getParamIn_Param(), this.getParameter(), null, "param", null, 0, 1, ParamIn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getParamIn_ValuesPoss(), ecorePackage.getEString(), "valuesPoss", null, 0, -1, ParamIn.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getParameter_LogOnly(), ecorePackage.getEBoolean(), "logOnly", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2332,6 +2459,7 @@ public class AssessPackageImpl extends EPackageImpl implements AssessPackage
     initEReference(getReaction_PointsC(), this.getPointsCondition(), null, "pointsC", null, 0, 1, Reaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getReaction_Feedback(), this.getFeedback(), null, "feedback", null, 0, 1, Reaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getReaction_Immediate(), ecorePackage.getEBoolean(), "immediate", null, 0, 1, Reaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getReaction_Delayed(), ecorePackage.getEBoolean(), "delayed", null, 0, 1, Reaction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(paramConditionEClass, ParamCondition.class, "ParamCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getParamCondition_Params(), this.getParams(), null, "params", null, 0, 1, ParamCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

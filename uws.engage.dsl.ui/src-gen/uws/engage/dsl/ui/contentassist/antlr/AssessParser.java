@@ -39,7 +39,10 @@ public class AssessParser extends AbstractContentAssistParser {
 				{
 					put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
 					put(grammarAccess.getTypeAccess().getSimpleTypeAlternatives_0_0(), "rule__Type__SimpleTypeAlternatives_0_0");
+					put(grammarAccess.getGameDescriptionAccess().getAlternatives_0(), "rule__GameDescription__Alternatives_0");
+					put(grammarAccess.getLearningOutcomesAccess().getAlternatives_0(), "rule__LearningOutcomes__Alternatives_0");
 					put(grammarAccess.getTypeOutcomeAccess().getAlternatives(), "rule__TypeOutcome__Alternatives");
+					put(grammarAccess.getFeedbackMessagesAccess().getAlternatives_0(), "rule__FeedbackMessages__Alternatives_0");
 					put(grammarAccess.getFeedbackAccess().getAlternatives_4(), "rule__Feedback__Alternatives_4");
 					put(grammarAccess.getTypeFeedbackAccess().getAlternatives(), "rule__TypeFeedback__Alternatives");
 					put(grammarAccess.getActionSequenceAccess().getAlternatives_1(), "rule__ActionSequence__Alternatives_1");
@@ -87,6 +90,8 @@ public class AssessParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTriggerFeedbackAccess().getGroup(), "rule__TriggerFeedback__Group__0");
 					put(grammarAccess.getActionAccess().getGroup(), "rule__Action__Group__0");
 					put(grammarAccess.getActionAccess().getGroup_3(), "rule__Action__Group_3__0");
+					put(grammarAccess.getParamInAccess().getGroup(), "rule__ParamIn__Group__0");
+					put(grammarAccess.getParamInAccess().getGroup_3(), "rule__ParamIn__Group_3__0");
 					put(grammarAccess.getParameterAccess().getGroup(), "rule__Parameter__Group__0");
 					put(grammarAccess.getPointsAccess().getGroup(), "rule__Points__Group__0");
 					put(grammarAccess.getPointsAccess().getGroup_1(), "rule__Points__Group_1__0");
@@ -132,6 +137,7 @@ public class AssessParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPlayerDescriptionAccess().getCharacteristicsAssignment_1(), "rule__PlayerDescription__CharacteristicsAssignment_1");
 					put(grammarAccess.getCharacteristicAccess().getNameAssignment_0(), "rule__Characteristic__NameAssignment_0");
 					put(grammarAccess.getCharacteristicAccess().getTypeAssignment_2(), "rule__Characteristic__TypeAssignment_2");
+					put(grammarAccess.getCharacteristicAccess().getQuestionAssignment_3(), "rule__Characteristic__QuestionAssignment_3");
 					put(grammarAccess.getLearningOutcomesAccess().getOutcomesAssignment_1(), "rule__LearningOutcomes__OutcomesAssignment_1");
 					put(grammarAccess.getOutcomeAccess().getNameAssignment_0(), "rule__Outcome__NameAssignment_0");
 					put(grammarAccess.getOutcomeAccess().getDescAssignment_1(), "rule__Outcome__DescAssignment_1");
@@ -170,12 +176,18 @@ public class AssessParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUpdateScoreAccess().getPtsAssignment_2(), "rule__UpdateScore__PtsAssignment_2");
 					put(grammarAccess.getTriggerFeedbackAccess().getFeedbackAssignment_1(), "rule__TriggerFeedback__FeedbackAssignment_1");
 					put(grammarAccess.getTriggerFeedbackAccess().getImmediateAssignment_2(), "rule__TriggerFeedback__ImmediateAssignment_2");
+					put(grammarAccess.getTriggerFeedbackAccess().getDelayedAssignment_3(), "rule__TriggerFeedback__DelayedAssignment_3");
 					put(grammarAccess.getActionAccess().getNameAssignment_0(), "rule__Action__NameAssignment_0");
 					put(grammarAccess.getActionAccess().getParamsAssignment_2(), "rule__Action__ParamsAssignment_2");
 					put(grammarAccess.getActionAccess().getParamsAssignment_3_1(), "rule__Action__ParamsAssignment_3_1");
 					put(grammarAccess.getActionAccess().getDescAssignment_5(), "rule__Action__DescAssignment_5");
-					put(grammarAccess.getActionAccess().getPointsAssignment_6(), "rule__Action__PointsAssignment_6");
-					put(grammarAccess.getActionAccess().getReactionsAssignment_7(), "rule__Action__ReactionsAssignment_7");
+					put(grammarAccess.getActionAccess().getParamsInAssignment_6(), "rule__Action__ParamsInAssignment_6");
+					put(grammarAccess.getActionAccess().getPointsAssignment_7(), "rule__Action__PointsAssignment_7");
+					put(grammarAccess.getActionAccess().getReactionsAssignment_8(), "rule__Action__ReactionsAssignment_8");
+					put(grammarAccess.getParamsInAccess().getParamInAssignment(), "rule__ParamsIn__ParamInAssignment");
+					put(grammarAccess.getParamInAccess().getParamAssignment_0(), "rule__ParamIn__ParamAssignment_0");
+					put(grammarAccess.getParamInAccess().getValuesPossAssignment_2(), "rule__ParamIn__ValuesPossAssignment_2");
+					put(grammarAccess.getParamInAccess().getValuesPossAssignment_3_1(), "rule__ParamIn__ValuesPossAssignment_3_1");
 					put(grammarAccess.getParameterAccess().getLogOnlyAssignment_0(), "rule__Parameter__LogOnlyAssignment_0");
 					put(grammarAccess.getParameterAccess().getTypeAssignment_1(), "rule__Parameter__TypeAssignment_1");
 					put(grammarAccess.getParameterAccess().getNameAssignment_2(), "rule__Parameter__NameAssignment_2");
@@ -197,6 +209,7 @@ public class AssessParser extends AbstractContentAssistParser {
 					put(grammarAccess.getReactionAccess().getPointsCAssignment_1_0(), "rule__Reaction__PointsCAssignment_1_0");
 					put(grammarAccess.getReactionAccess().getFeedbackAssignment_1_2(), "rule__Reaction__FeedbackAssignment_1_2");
 					put(grammarAccess.getReactionAccess().getImmediateAssignment_1_3(), "rule__Reaction__ImmediateAssignment_1_3");
+					put(grammarAccess.getReactionAccess().getDelayedAssignment_1_4(), "rule__Reaction__DelayedAssignment_1_4");
 					put(grammarAccess.getParamConditionAccess().getParamsAssignment(), "rule__ParamCondition__ParamsAssignment");
 					put(grammarAccess.getPointsConditionAccess().getKeyWdAssignment_0(), "rule__PointsCondition__KeyWdAssignment_0");
 					put(grammarAccess.getPointsConditionAccess().getSignAssignment_2_0(), "rule__PointsCondition__SignAssignment_2_0");

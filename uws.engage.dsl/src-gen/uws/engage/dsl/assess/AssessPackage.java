@@ -397,13 +397,22 @@ public interface AssessPackage extends EPackage
   int CHARACTERISTIC__TYPE = 1;
 
   /**
+   * The feature id for the '<em><b>Question</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHARACTERISTIC__QUESTION = 2;
+
+  /**
    * The number of structural features of the '<em>Characteristic</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CHARACTERISTIC_FEATURE_COUNT = 2;
+  int CHARACTERISTIC_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link uws.engage.dsl.assess.impl.LearningOutcomesImpl <em>Learning Outcomes</em>}' class.
@@ -1005,13 +1014,22 @@ public interface AssessPackage extends EPackage
   int TRIGGER_FEEDBACK__IMMEDIATE = 1;
 
   /**
+   * The feature id for the '<em><b>Delayed</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRIGGER_FEEDBACK__DELAYED = 2;
+
+  /**
    * The number of structural features of the '<em>Trigger Feedback</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TRIGGER_FEEDBACK_FEATURE_COUNT = 2;
+  int TRIGGER_FEEDBACK_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link uws.engage.dsl.assess.impl.ActionImpl <em>Action</em>}' class.
@@ -1051,13 +1069,22 @@ public interface AssessPackage extends EPackage
   int ACTION__DESC = 2;
 
   /**
+   * The feature id for the '<em><b>Params In</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION__PARAMS_IN = 3;
+
+  /**
    * The feature id for the '<em><b>Points</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTION__POINTS = 3;
+  int ACTION__POINTS = 4;
 
   /**
    * The feature id for the '<em><b>Reactions</b></em>' containment reference.
@@ -1066,7 +1093,7 @@ public interface AssessPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION__REACTIONS = 4;
+  int ACTION__REACTIONS = 5;
 
   /**
    * The number of structural features of the '<em>Action</em>' class.
@@ -1075,7 +1102,72 @@ public interface AssessPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ACTION_FEATURE_COUNT = 5;
+  int ACTION_FEATURE_COUNT = 6;
+
+  /**
+   * The meta object id for the '{@link uws.engage.dsl.assess.impl.ParamsInImpl <em>Params In</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uws.engage.dsl.assess.impl.ParamsInImpl
+   * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getParamsIn()
+   * @generated
+   */
+  int PARAMS_IN = 22;
+
+  /**
+   * The feature id for the '<em><b>Param In</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMS_IN__PARAM_IN = 0;
+
+  /**
+   * The number of structural features of the '<em>Params In</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAMS_IN_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link uws.engage.dsl.assess.impl.ParamInImpl <em>Param In</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see uws.engage.dsl.assess.impl.ParamInImpl
+   * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getParamIn()
+   * @generated
+   */
+  int PARAM_IN = 23;
+
+  /**
+   * The feature id for the '<em><b>Param</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAM_IN__PARAM = 0;
+
+  /**
+   * The feature id for the '<em><b>Values Poss</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAM_IN__VALUES_POSS = 1;
+
+  /**
+   * The number of structural features of the '<em>Param In</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PARAM_IN_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link uws.engage.dsl.assess.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -1085,7 +1177,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getParameter()
    * @generated
    */
-  int PARAMETER = 22;
+  int PARAMETER = 24;
 
   /**
    * The feature id for the '<em><b>Log Only</b></em>' attribute.
@@ -1131,7 +1223,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getPoints()
    * @generated
    */
-  int POINTS = 23;
+  int POINTS = 25;
 
   /**
    * The feature id for the '<em><b>Outcomes Points</b></em>' containment reference list.
@@ -1177,7 +1269,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getOutcomesPoints()
    * @generated
    */
-  int OUTCOMES_POINTS = 24;
+  int OUTCOMES_POINTS = 26;
 
   /**
    * The feature id for the '<em><b>Outcome</b></em>' reference.
@@ -1232,7 +1324,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getPoint()
    * @generated
    */
-  int POINT = 25;
+  int POINT = 27;
 
   /**
    * The feature id for the '<em><b>Negative</b></em>' attribute.
@@ -1269,7 +1361,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getParams()
    * @generated
    */
-  int PARAMS = 26;
+  int PARAMS = 28;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1306,7 +1398,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getReactions()
    * @generated
    */
-  int REACTIONS = 27;
+  int REACTIONS = 29;
 
   /**
    * The feature id for the '<em><b>Reaction</b></em>' containment reference list.
@@ -1334,7 +1426,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getReaction()
    * @generated
    */
-  int REACTION = 28;
+  int REACTION = 30;
 
   /**
    * The feature id for the '<em><b>Params C</b></em>' containment reference.
@@ -1373,13 +1465,22 @@ public interface AssessPackage extends EPackage
   int REACTION__IMMEDIATE = 3;
 
   /**
+   * The feature id for the '<em><b>Delayed</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REACTION__DELAYED = 4;
+
+  /**
    * The number of structural features of the '<em>Reaction</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REACTION_FEATURE_COUNT = 4;
+  int REACTION_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link uws.engage.dsl.assess.impl.ParamConditionImpl <em>Param Condition</em>}' class.
@@ -1389,7 +1490,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getParamCondition()
    * @generated
    */
-  int PARAM_CONDITION = 29;
+  int PARAM_CONDITION = 31;
 
   /**
    * The feature id for the '<em><b>Params</b></em>' reference.
@@ -1417,7 +1518,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getPointsCondition()
    * @generated
    */
-  int POINTS_CONDITION = 30;
+  int POINTS_CONDITION = 32;
 
   /**
    * The feature id for the '<em><b>Key Wd</b></em>' attribute.
@@ -1463,7 +1564,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getFeedbackModel()
    * @generated
    */
-  int FEEDBACK_MODEL = 31;
+  int FEEDBACK_MODEL = 33;
 
   /**
    * The feature id for the '<em><b>Triggers</b></em>' containment reference list.
@@ -1491,7 +1592,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getTrigger()
    * @generated
    */
-  int TRIGGER = 32;
+  int TRIGGER = 34;
 
   /**
    * The feature id for the '<em><b>Perf</b></em>' containment reference.
@@ -1528,7 +1629,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getOutcomeValueLimit()
    * @generated
    */
-  int OUTCOME_VALUE_LIMIT = 33;
+  int OUTCOME_VALUE_LIMIT = 35;
 
   /**
    * The feature id for the '<em><b>Outcome</b></em>' reference.
@@ -1592,7 +1693,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getInactivityLimit()
    * @generated
    */
-  int INACTIVITY_LIMIT = 34;
+  int INACTIVITY_LIMIT = 36;
 
   /**
    * The feature id for the '<em><b>Sign</b></em>' attribute.
@@ -1638,7 +1739,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getBadgeModel()
    * @generated
    */
-  int BADGE_MODEL = 35;
+  int BADGE_MODEL = 37;
 
   /**
    * The feature id for the '<em><b>Generic Triggers</b></em>' containment reference list.
@@ -1666,7 +1767,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getGenericTrigger()
    * @generated
    */
-  int GENERIC_TRIGGER = 36;
+  int GENERIC_TRIGGER = 38;
 
   /**
    * The feature id for the '<em><b>Simple</b></em>' containment reference.
@@ -1703,7 +1804,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getSimpleTrigger()
    * @generated
    */
-  int SIMPLE_TRIGGER = 37;
+  int SIMPLE_TRIGGER = 39;
 
   /**
    * The feature id for the '<em><b>Function</b></em>' attribute.
@@ -1767,7 +1868,7 @@ public interface AssessPackage extends EPackage
    * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getLOTrigger()
    * @generated
    */
-  int LO_TRIGGER = 38;
+  int LO_TRIGGER = 40;
 
   /**
    * The feature id for the '<em><b>Function</b></em>' attribute.
@@ -2166,6 +2267,17 @@ public interface AssessPackage extends EPackage
    * @generated
    */
   EReference getCharacteristic_Type();
+
+  /**
+   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.Characteristic#getQuestion <em>Question</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Question</em>'.
+   * @see uws.engage.dsl.assess.Characteristic#getQuestion()
+   * @see #getCharacteristic()
+   * @generated
+   */
+  EAttribute getCharacteristic_Question();
 
   /**
    * Returns the meta object for class '{@link uws.engage.dsl.assess.LearningOutcomes <em>Learning Outcomes</em>}'.
@@ -2726,6 +2838,17 @@ public interface AssessPackage extends EPackage
   EAttribute getTriggerFeedback_Immediate();
 
   /**
+   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.TriggerFeedback#isDelayed <em>Delayed</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Delayed</em>'.
+   * @see uws.engage.dsl.assess.TriggerFeedback#isDelayed()
+   * @see #getTriggerFeedback()
+   * @generated
+   */
+  EAttribute getTriggerFeedback_Delayed();
+
+  /**
    * Returns the meta object for class '{@link uws.engage.dsl.assess.Action <em>Action</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2769,6 +2892,17 @@ public interface AssessPackage extends EPackage
   EAttribute getAction_Desc();
 
   /**
+   * Returns the meta object for the containment reference '{@link uws.engage.dsl.assess.Action#getParamsIn <em>Params In</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Params In</em>'.
+   * @see uws.engage.dsl.assess.Action#getParamsIn()
+   * @see #getAction()
+   * @generated
+   */
+  EReference getAction_ParamsIn();
+
+  /**
    * Returns the meta object for the containment reference list '{@link uws.engage.dsl.assess.Action#getPoints <em>Points</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2789,6 +2923,59 @@ public interface AssessPackage extends EPackage
    * @generated
    */
   EReference getAction_Reactions();
+
+  /**
+   * Returns the meta object for class '{@link uws.engage.dsl.assess.ParamsIn <em>Params In</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Params In</em>'.
+   * @see uws.engage.dsl.assess.ParamsIn
+   * @generated
+   */
+  EClass getParamsIn();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link uws.engage.dsl.assess.ParamsIn#getParamIn <em>Param In</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Param In</em>'.
+   * @see uws.engage.dsl.assess.ParamsIn#getParamIn()
+   * @see #getParamsIn()
+   * @generated
+   */
+  EReference getParamsIn_ParamIn();
+
+  /**
+   * Returns the meta object for class '{@link uws.engage.dsl.assess.ParamIn <em>Param In</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Param In</em>'.
+   * @see uws.engage.dsl.assess.ParamIn
+   * @generated
+   */
+  EClass getParamIn();
+
+  /**
+   * Returns the meta object for the reference '{@link uws.engage.dsl.assess.ParamIn#getParam <em>Param</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Param</em>'.
+   * @see uws.engage.dsl.assess.ParamIn#getParam()
+   * @see #getParamIn()
+   * @generated
+   */
+  EReference getParamIn_Param();
+
+  /**
+   * Returns the meta object for the attribute list '{@link uws.engage.dsl.assess.ParamIn#getValuesPoss <em>Values Poss</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Values Poss</em>'.
+   * @see uws.engage.dsl.assess.ParamIn#getValuesPoss()
+   * @see #getParamIn()
+   * @generated
+   */
+  EAttribute getParamIn_ValuesPoss();
 
   /**
    * Returns the meta object for class '{@link uws.engage.dsl.assess.Parameter <em>Parameter</em>}'.
@@ -3068,6 +3255,17 @@ public interface AssessPackage extends EPackage
    * @generated
    */
   EAttribute getReaction_Immediate();
+
+  /**
+   * Returns the meta object for the attribute '{@link uws.engage.dsl.assess.Reaction#isDelayed <em>Delayed</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Delayed</em>'.
+   * @see uws.engage.dsl.assess.Reaction#isDelayed()
+   * @see #getReaction()
+   * @generated
+   */
+  EAttribute getReaction_Delayed();
 
   /**
    * Returns the meta object for class '{@link uws.engage.dsl.assess.ParamCondition <em>Param Condition</em>}'.
@@ -3774,6 +3972,14 @@ public interface AssessPackage extends EPackage
     EReference CHARACTERISTIC__TYPE = eINSTANCE.getCharacteristic_Type();
 
     /**
+     * The meta object literal for the '<em><b>Question</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CHARACTERISTIC__QUESTION = eINSTANCE.getCharacteristic_Question();
+
+    /**
      * The meta object literal for the '{@link uws.engage.dsl.assess.impl.LearningOutcomesImpl <em>Learning Outcomes</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4218,6 +4424,14 @@ public interface AssessPackage extends EPackage
     EAttribute TRIGGER_FEEDBACK__IMMEDIATE = eINSTANCE.getTriggerFeedback_Immediate();
 
     /**
+     * The meta object literal for the '<em><b>Delayed</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute TRIGGER_FEEDBACK__DELAYED = eINSTANCE.getTriggerFeedback_Delayed();
+
+    /**
      * The meta object literal for the '{@link uws.engage.dsl.assess.impl.ActionImpl <em>Action</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4252,6 +4466,14 @@ public interface AssessPackage extends EPackage
     EAttribute ACTION__DESC = eINSTANCE.getAction_Desc();
 
     /**
+     * The meta object literal for the '<em><b>Params In</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION__PARAMS_IN = eINSTANCE.getAction_ParamsIn();
+
+    /**
      * The meta object literal for the '<em><b>Points</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4266,6 +4488,50 @@ public interface AssessPackage extends EPackage
      * @generated
      */
     EReference ACTION__REACTIONS = eINSTANCE.getAction_Reactions();
+
+    /**
+     * The meta object literal for the '{@link uws.engage.dsl.assess.impl.ParamsInImpl <em>Params In</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uws.engage.dsl.assess.impl.ParamsInImpl
+     * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getParamsIn()
+     * @generated
+     */
+    EClass PARAMS_IN = eINSTANCE.getParamsIn();
+
+    /**
+     * The meta object literal for the '<em><b>Param In</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PARAMS_IN__PARAM_IN = eINSTANCE.getParamsIn_ParamIn();
+
+    /**
+     * The meta object literal for the '{@link uws.engage.dsl.assess.impl.ParamInImpl <em>Param In</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see uws.engage.dsl.assess.impl.ParamInImpl
+     * @see uws.engage.dsl.assess.impl.AssessPackageImpl#getParamIn()
+     * @generated
+     */
+    EClass PARAM_IN = eINSTANCE.getParamIn();
+
+    /**
+     * The meta object literal for the '<em><b>Param</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PARAM_IN__PARAM = eINSTANCE.getParamIn_Param();
+
+    /**
+     * The meta object literal for the '<em><b>Values Poss</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PARAM_IN__VALUES_POSS = eINSTANCE.getParamIn_ValuesPoss();
 
     /**
      * The meta object literal for the '{@link uws.engage.dsl.assess.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -4488,6 +4754,14 @@ public interface AssessPackage extends EPackage
      * @generated
      */
     EAttribute REACTION__IMMEDIATE = eINSTANCE.getReaction_Immediate();
+
+    /**
+     * The meta object literal for the '<em><b>Delayed</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REACTION__DELAYED = eINSTANCE.getReaction_Delayed();
 
     /**
      * The meta object literal for the '{@link uws.engage.dsl.assess.impl.ParamConditionImpl <em>Param Condition</em>}' class.
