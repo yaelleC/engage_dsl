@@ -1,83 +1,163 @@
-Serious-game 
-    SGname : "GeoFall" 
-    SGdeveloper : 1 
-    SGdesc : "A small serious game for learning european capitals" 
-    SGlanguage : EN 
-End 
+Serious-game
+   SGname : "EU Mouse"
+   SGdeveloper : 2
+   SGdesc : "This is a mini serious game that teaches you to identify countries part of the European Union. Click the screen to make the mouse fly and collect ALL the EU countries."
+   SGageRange : 10-99
+   SGlanguage : EN
+   SGcountry : UK
+   SGgenre : "endless runner"
+   SGsubject : "Europe, Capitals, Geography"
+   SGpublic : false 
+End
 
-Player 
-   gender: Char 
-   age: Int 
-   country: String 
-End 
+Player
+    age Int "How old are you?"
+    gender Char "Are you a boy or a girl?"
+    country String "Where do you live?"
+End
 
-Learning-outcomes 
-   european_capitals "Associate a capital to the right country" 
-   biggerChain "know the longest chain of letters"
-End 
+Learning-outcomes
+    eu_countries "the number of unique EU countries found" 0
+    eu_score "the number of EU countries found by the player" 0
+    lives "the number of lives left to the player" 3
+End
 
-Feedback-messages 
-   correct_match "Well done! [capital] is indeed the capital of [country]." positive 
-   wrong_match "Sorry! [capital] is not the capital of [country]." negative 
-   capitalBadge "Well done you know european capitals!" badge
-   user_confused "Are you okay? Use the right and left arrows to select a cloud and then press the upper arrow to jump when you're sure about your answer." 
-   user_needsHelp "Hum... Do you need help? You might need to revise a little bit your geography. Click here for a quick overview of europ's capitals." 
-End 
+Feedback-messages
+  correctEU "[country] is part of the EU!" positive
+  wrongEU "Sorry! [country] is not part of the EU!" negative
+  endWin "Coungratulations! you're a champion" win
+  endLose "Too bad! Try again." lose
+  
+  gold_medal "Well found 200 EU countries" badge
+  silver_medal "You found 100 EU countries" badge
+  bronze_medal "You found 50 EU countries" badge
+  expert_time "You played more than 60 minutes" badge
+  master_time "You played more than 30 minutes" badge
+  novice_time "You played more than 10 minutes" badge
+  effort "You played 5+ times" badge
+  performance "You won 10+ times" badge
+  
+  speedGame "You're too good, let's make things more challenging" adaptation
+  slowGame "Hey, let's slow things down a bit" adaptation
+End
 
-Evidence-model 
- 
- associate_CountyCapital ( String country, String capital, LogOnly Int time ) 
-   european_capitals -> 1 
-      UK, London 
-      Italy, Rome
-      Spain, Madrid
-      France, Paris 
-      Ireland, Dublin 
-   End 
-   european_capitals -> 2 
-      Norway, Oslo 
-      Sweden, Stockholm 
-      Greece, Athens
-      Austria, Vienna 
-   End 
-   european_capitals -> 3 
-      Poland, Warsaw 
-   End 
-   european_capitals -> -1
-      others 
-   End 
-   When 
-      any (3) : correct_match 
-      any (-1) : wrong_match 
-   End 
- End 
- chainCount(Bool success)
- 	biggerChain -> 1
- 		true 
- 	End
- 	biggerChain -> = 0
- 		else
- 	End
- End
- testValue ( Int toReset )
- 	european_capitals -> toReset
- 		else
- 	End
- End
- 		
- Timer-actions
- 	selectGame 
- 		after 180 sec 
- 			: user_confused
- 		End
- 	End
- End
- Action-sequence
- 	selectGame before associate_CountyCapital else
- 		: user_confused
- 	End
- End
-End 
+Evidence-model
+    newCountrySelected (String country) 
+    "When a player selects a country for the first time"
+    country in {albania, andorra, armenia, austria, azerbaijan, 
+            belarus, belgium, bosnia_and_herzegovina, bulgaria,
+            croatia, cyprus, czech_republic, denmark, estonia,
+            finland, france, georgia, germany, greece, hungary,
+            iceland, ireland, italy, kazakhstan, kosovo,
+            latvia, liechtenstein, lithuania, luxembourg,
+            macedonia, malta, moldova, monaco, montenegro, 
+            netherlands, norway, poland, portugal, romania, russia, 
+            san_marino, serbia, slovakia, slovenia, spain, sweden,
+            switzerland, turkey, ukraine, united_kingdom, vatican_city}
+        eu_countries -> 1, eu_score -> 1
+            austria
+            belgium
+            cyprus
+            czech_republic
+            denmark
+            estonia
+            finland
+            france
+            germany
+            greece
+            hungary
+            ireland
+            italy
+            latvia
+            lithuania
+            luxembourg
+            malta
+            netherlands
+            poland
+            portugal
+            slovakia
+            slovenia
+            spain
+            sweden
+            united_kingdom
+        End
+        lives -> -1
+          others
+        End
+    
+        When
+          /* for any positive point obtained, correctEU feedback is triggered */
+          any(+) : correctEU 
+          others : wrongEU 
+        End
+    End
+    
+    countrySelectedAgain (String country)
+    "When a player selects a country again"
+    country in {albania, andorra, armenia, austria, azerbaijan, 
+            belarus, belgium, bosnia_and_herzegovina, bulgaria,
+            croatia, cyprus, czech_republic, denmark, estonia,
+            finland, france, georgia, germany, greece, hungary,
+            iceland, ireland, italy, kazakhstan, kosovo,
+            latvia, liechtenstein, lithuania, luxembourg,
+            macedonia, malta, moldova, monaco, montenegro, 
+            netherlands, norway, poland, portugal, romania, russia, 
+            san_marino, serbia, slovakia, slovenia, spain, sweden,
+            switzerland, turkey, ukraine, united_kingdom, vatican_city}
+        eu_score -> 1
+            austria
+            belgium
+            cyprus
+            czech_republic
+            denmark
+            estonia
+            finland
+            france
+            germany
+            greece
+            hungary
+            ireland
+            italy
+            latvia
+            lithuania
+            luxembourg
+            malta
+            netherlands
+            poland
+            portugal
+            slovakia
+            slovenia
+            spain
+            sweden
+            united_kingdom
+        End
+        lives -> -1
+          others
+        End
+    
+        When
+          any(+) : correctEU 
+          any(-) : wrongEU 
+        End
+    End
+End
 
+Feedback-model
+  /* inactivity or outcome feedback */
+  eu_countries > 24 : endWin 
+  lives <  1 : endLose 
+  eu_countries >  10 : speedGame 
+  lives <  2 : slowGame 
+End
 
-	
+Badge-model
+
+  numberGameplays >  4 : effort
+  numberGameplays >  10 : performance
+  totalTime >  60 : expert_time
+  totalTime >  30 : master_time
+  totalTime >  10 : novice_time
+  sumScore eu_score >  199 : gold_medal 
+  sumScore eu_score >  99 : silver_medal 
+  sumScore eu_score >  49 : bronze_medal
+End
